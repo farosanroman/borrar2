@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Main from './components/main'
 import logo from './logo.png';
 import './App.css';
+import CursoCard from  './components/cursocard'
 import {BrowserRouter as Router, Route,Link,Switch} from 'react-router-dom'
 
 class App extends Component {
@@ -9,6 +10,7 @@ class App extends Component {
     return (
       <Router>
       <div>
+      
        <Main></Main>
       </div>
       </Router>

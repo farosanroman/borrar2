@@ -39,22 +39,27 @@ class Header extends Component {
                   </NavLink>
               </NavItem>
               <NavItem>
+                  <NavLink className="nav-link" to="/cursos">
+                  <span className="fa fa-graduation-cap"></span>Netflix
+                  </NavLink>
+              </NavItem>
+              <NavItem>
                   <NavLink className="nav-link" to="/map">
-                  <span className="fa fa-map-marker"></span>Centros
+                  <span className="fa fa-map-marker"></span>Uber
                   </NavLink>
               </NavItem>
               <NavItem>
-                  <NavLink className="nav-link" to="/home">
-                  <span className="fa fa-rebel"></span>Defensores
+                  <NavLink className="nav-link" to="/personas">
+                  <span className="fa fa-rebel"></span>Facebook
                   </NavLink>
               </NavItem>
               <NavItem>
-                  <NavLink className="nav-link" to="/home">
+                  <NavLink className="nav-link" to="/about">
                   <span className="fa fa-info-circle"></span>OpenFaro
                   </NavLink>
               </NavItem>
               <NavItem>
-                  <NavLink className="nav-link" to="/home">
+                  <NavLink className="nav-link" to="/login">
                   <span className="fa fa-key"></span>Login
                   </NavLink>
               </NavItem>
