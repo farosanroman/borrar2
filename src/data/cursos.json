@@ -1,10 +1,10 @@
 {"cursos":
     [
-        {"key":1,"image":"./images/manual1.png","titulo":"Titulo1","subtitulo":"En este video podremos encontrar los primeros pasos a ser realizados en un evento electoral. bla bla bla"},
-        {"key":2,"image":"./images/mesa_comovotar_maual.png","titulo":"Titulo2","subtitulo":"En este video podremos encontrar los primeros pasos a ser realizados en un evento electoral. bla bla bla"},
-        {"key":3,"image":"./images/mesa_comovotar.png","titulo":"Titulo3","subtitulo":"En este video podremos encontrar los primeros pasos a ser realizados en un evento electoral. bla bla bla"},
-        {"key":4,"image":"./images/mesa_escrutinio.png","titulo":"Titulo4","subtitulo":"En este video podremos encontrar los primeros pasos a ser realizados en un evento electoral. bla bla bla"},
-        {"key":5,"image":"./images/mesa_instalacion.png","titulo":"Titulo4","subtitulo":"En este video podremos encontrar los primeros pasos a ser realizados en un evento electoral. bla bla bla"}
+        {"key":1,"image":"./manual1.png","titulo":"Titulo1","subtitulo":"En este video podremos encontrar los primeros pasos a ser realizados en un evento electoral. bla bla bla","url":"https://archivosamarillos.blob.core.windows.net/manualesfaro/manual1.png"},
+        {"key":2,"image":"./mesa_comovotar_maual.png","titulo":"Titulo2","subtitulo":"En este video podremos encontrar los primeros pasos a ser realizados en un evento electoral. bla bla bla","url":"https://archivosamarillos.blob.core.windows.net/manualesfaro/mesa_comovotar_maual.png"},
+        {"key":3,"image":"./mesa_comovotar.png","titulo":"Titulo3","subtitulo":"En este video podremos encontrar los primeros pasos a ser realizados en un evento electoral. bla bla bla","url":"https://archivosamarillos.blob.core.windows.net/manualesfaro/mesa_comovotar.png"},
+        {"key":4,"image":"./mesa_escrutinio.png","titulo":"Titulo4","subtitulo":"En este video podremos encontrar los primeros pasos a ser realizados en un evento electoral. bla bla bla","url":"https://archivosamarillos.blob.core.windows.net/manualesfaro/mesa_escrutinio.png"},
+        {"key":5,"image":"./mesa_instalacion.png","titulo":"Titulo4","subtitulo":"En este video podremos encontrar los primeros pasos a ser realizados en un evento electoral. bla bla bla","url":"https://archivosamarillos.blob.core.windows.net/manualesfaro/mesa_instalacion.png"}
         
     ]
 }

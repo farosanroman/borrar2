@@ -43,6 +43,7 @@ class Header extends Component {
                   <span className="fa fa-graduation-cap"></span>Netflix
                   </NavLink>
               </NavItem>
+              
               <NavItem>
                   <NavLink className="nav-link" to="/map">
                   <span className="fa fa-map-marker"></span>Uber

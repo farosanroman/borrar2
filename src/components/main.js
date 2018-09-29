@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Navbar,Nav,NavItem,NavDropdown,MenuItem,NavbarBrand} from 'react-bootstrap'
+//import { Navbar,Nav,NavItem,NavDropdown,MenuItem,NavbarBrand} from 'react-bootstrap'
 //import {Navbar,Nav,NavItem} from 'react-bootstrap'
 import {BrowserRouter as Router, Route,Link,Switch,Redirect} from 'react-router-dom'
 //port {LinkContainer} from 'react-router-bootstrap'
@@ -11,6 +11,7 @@ import Personas from  '../components/personas'
 import MapBox from  '../components/map'
 import About from  '../components/about'
 import Login from  '../components/login'
+import YouTube from  '../components/youtube'
 //import Footer from  '../components/footer'
 //import Login from  '../components/login'
 //import About from '../components/about'
@@ -33,8 +34,7 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      flag:0,
-     
+      flag:0,     
       config:null };
   }
   
@@ -53,15 +53,18 @@ class Main extends Component {
   
        
         <Router>
-           <div className= "App">
+           <div >
             <Header></Header>
             <Switch>
             <Route path="/home" component={()=><Home/>}/>
             <Route path="/cursos" component={Cursos}/>
+            <Route path="/youtube" component={YouTube}/>
+            <Route path="/map" component={MapBox}/>
             <Route path="/personas" component={Personas}/>
             <Route path="/about" component={About}/>
             <Route path="/login" component={Login}/>
-            <Route path="/map" component={MapBox}/>
+            
+            
                 <Redirect to="/home"/>
             </Switch>         
            </div>

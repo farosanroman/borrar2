@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Jumbotron }  from 'reactstrap';
- 
+import {BrowserRouter as Router, Route,Link,Switch,Redirect} from 'react-router-dom'
+
 //import 'font-awesome/css/font-awesome.css';
 //import 'bootstrap-social/bootstrap-social.css';
 
@@ -41,6 +42,7 @@ class Login extends Component {
  
     return(
         <div>
+            
         <h2>Autenticacion al Portal BizFin</h2>
         
         <form onSubmit={this.onSearch}>

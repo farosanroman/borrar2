@@ -21,7 +21,8 @@ class Cursos extends Component {
         const cursosreact=cursos.map(cur=>{
             return(
                 
-               <CursoCard key={cur.key} curso={cur}  ></CursoCard>
+               <CursoCard key={cur.key} curso={cur} url="../images/manual1.png"  >
+               </CursoCard>
                  )
            } )
         console.log(cursosreact)
