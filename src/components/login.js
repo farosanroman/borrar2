@@ -9,8 +9,7 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-          flag:0,
-          
+          flag:0,          
           config:null };
       }
     onSearch = (e) => {
