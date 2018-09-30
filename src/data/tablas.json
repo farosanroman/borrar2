@@ -1,0 +1,44 @@
+{
+    "tendencias":
+ 
+  [
+      {
+      "idt":1,
+      "tendencia":"Sociedad Civil"
+      },
+      {
+        "idt":2,
+        "tendencia":"MUD"
+        },
+        
+      {
+        "idt":3,
+        "tendencia":"AD"
+        },
+        {
+            "idt":4,
+            "tendencia":"PJ"
+            }
+            ,
+            {
+                "idt":5,
+                "tendencia":"UNT"
+                }
+  ],
+  "roles":
+ 
+  [
+      {
+      "idr":1,
+      "rol":"Facilitadores"
+      },
+      {
+        "idr":2,
+        "rol":"Formadores"
+        },
+        {
+            "idr":3,
+            "rol":"Observador"
+            }
+    ]
+}

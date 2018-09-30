@@ -9,6 +9,7 @@ import Home from '../components/home'
 import Cursos from '../components/cursos'
 import Personas from  '../components/personas'
 import MapBox from  '../components/map'
+import FaroBot from  '../components/farobot'
 import About from  '../components/about'
 import Login from  '../components/login'
 import YouTube from  '../components/youtube'
@@ -61,6 +62,7 @@ class Main extends Component {
             <Route path="/youtube" component={YouTube}/>
             <Route path="/map" component={MapBox}/>
             <Route path="/personas" component={Personas}/>
+            <Route path="/farobot" component={FaroBot}/>
             <Route path="/about" component={About}/>
             <Route path="/login" component={Login}/>
             
