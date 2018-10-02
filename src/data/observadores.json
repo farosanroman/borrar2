@@ -7,7 +7,10 @@
           "nombre":"Luis Aparicio",
           "centro":"centro",
           "rol":"Defensor",
-          "tendencia":"Defensor"
+          "tendencia":"Defensor",
+          "telefono":"041278728282",
+          "correo":"luis@gmail.com"
+
         },
         {
             "id": 2,
@@ -15,7 +18,10 @@
             "nombre":"Jose Gomez",
             "centro":"centro",
             "rol":"Defensor",
-            "tendencia":"Defensor"
+            "tendencia":"Defensor",
+            "telefono":"0412787833",
+            "correo":"josegomez@gmail.com"
+  
         },
         {
             "id": 3,
@@ -23,7 +29,10 @@
             "nombre":"FErnando Gutierrez",
             "centro":"centro",
             "rol":"Defensor",
-            "tendencia":"Defensor"
+            "tendencia":"Defensor",
+            "telefono":"04164344434",
+            "correo":"fgutierrez@gmail.com"
+  
           },
           {
               "id":4,
@@ -31,7 +40,10 @@
               "nombre":"Ramon Velasquez",
               "centro":"centro",
               "rol":"Defensor",
-              "tendencia":"Defensor"
+              "tendencia":"Defensor",
+              "telefono":"0412333333",
+              "correo":"rvel@gmail.com"
+    
           },
           {
             "id": 5,
@@ -39,7 +51,10 @@
             "nombre":"Rafael Hernadez Ron",
             "centro":"centro",
             "rol":"Defensor",
-            "tendencia":"Defensor"
+            "tendencia":"Defensor",
+            
+            "telefono":"0412555555",
+            "correo":"rron@gmail.com"
           },
           {
               "id": 6,
@@ -47,7 +62,10 @@
               "nombre":"Guildredo Ramirez",
               "centro":"centro",
               "rol":"Defensor",
-              "tendencia":"Defensor"
+              "tendencia":"Defensor",
+              
+              "telefono":"04125455454",
+              "correo":"guildredo@gmail.com"
           },
           {
             "id": 7,
@@ -55,7 +73,10 @@
             "nombre":"William Jose Perez",
             "centro":"centro",
             "rol":"Defensor",
-            "tendencia":"Defensor"
+            "tendencia":"Defensor",
+            
+            "telefono":"04129999",
+            "correo":"william@gmail.com"
           },
           {
               "id":8,
@@ -63,6 +84,9 @@
               "nombre":"Renato Venezia",
               "centro":"centro",
               "rol":"Defensor",
-              "tendencia":"Defensor"
+              "tendencia":"Defensor",
+              
+              "telefono":"04148949494",
+              "correo":"renato@gmail.com"
           }  
     ]}

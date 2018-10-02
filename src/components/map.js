@@ -86,8 +86,9 @@ class Map2 extends Component {
    onFeatureMouseLeave(e) {
     console.log("App:mosu leave.................................. ")
     //console.log(e)
+    if (this.state.popupType=="msg"){
      this.setState({popupInfo:{"coordinates":[0,0],"nombre":"oJo","error":"sin error"}})
-     
+    }
  }
    onPopupClose(e) {
     console.log("App:popupclose.................................. ")
@@ -127,6 +128,7 @@ class Map2 extends Component {
         //console.log(features)
         return(
         <div className= "Map2">
+        <button>Municipios</button><button>Parroquias</button><button>Tendencia</button>
         <Map        
           style={"mapbox://styles/mapbox/light-v9"}
           center={centro} 
@@ -155,12 +157,12 @@ class Map2 extends Component {
                 layout={{
                 "icon-image": "harbor-15",
                "icon-allow-overlap": true,
-"text-field": "Put the text in here",
-    "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
-    "text-size": 11,
-    "text-transform": "uppercase",
-    "text-letter-spacing": 0.05,
-    "text-offset": [0, 1.5]
+               "field": "Put the text in here",
+                "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
+                "text-size": 11,
+                 "text-transform": "uppercase",
+                "text-letter-spacing": 0.05,
+                 "text-offset": [0, 1.5]
    
             }}>
                <Feature

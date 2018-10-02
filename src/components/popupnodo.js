@@ -5,24 +5,56 @@ import MapGL,{Layer,Feature,Polygon,Popup} from 'react-mapbox-gl';
 import {tendencias,roles} from '../data/tablas.json';
 import {observadores} from '../data/observadores.json';
 class PopupNodo extends Component {
-handleSubmit(f) {
- console.log("handleSubmit ")
-
-}
+ 
 //onPopupClose(e) {
 //  console.log("popupclose ")
   //console.log(e)
   // this.setState({popupInfo2:{"coordinates":[0,0],"nombre":"oJo","error":"sin error"}})
    
 //}
-render() {
 
+//https://stackoverflow.com/questions/51479592/react-submit-form-not-sending-post-request
+constructor(props) {
+  super(props);
+  this.state = { 
+    identificacion:"v3333333333", 
+    correo:"ppazzzz@gmail.com",
+    telefono:"041289828928", 
+    idr:1,   
+    config:null };
+    this.onChangeFunc = this.onChangeFunc.bind(this)
+}
+onChangeFunc(event) {
+  console.log("onChangeFunc")
+  console.log(event.target.value)
+  const persona = observadores.filter(r => r.identificacion === event.target.value);
+  this.setState({telefono:persona[0].telefono})
+  this.setState({correo:persona[0].correo})
+  this.setState({identificacion:persona[0].identificacion})
+  this.setState({idr:2})
+  //const name = this.name;
+  //const value = optionSelected.value;
+  //const label = optionSelected.label;
+  
+}
+
+onSubmit = (e) => {
+  e.preventDefault();
+console.log(this.state)
+https://stackoverflow.com/questions/51479592/react-submit-form-not-sending-post-request
+  //const { name, email, title, description } = this.state;
+
+ //axios.post('/create', { name, email, title, description })
+ //   .then((result) => {
+ //     this.props.history.push("/")
+ //   });
+
+
+}
+render() {
+  const { idr } = 3;
   const popupinfo=this.props.popupnodoinfo 
-  console.log("popup renderrr rrr")
-  console.log(popupinfo)
-  console.log("popup renderrr rrr")
-  //const popupinfo2={"coordinates":[0,0],"nombre":"oJo","error":"sin error"}
-    
+ 
      let observadoresOpciones=observadores.map(o=>{       
       return(
          <option key={o.identificacion} value={o.identificacion}>{o.nombre}</option>
@@ -40,9 +72,7 @@ render() {
         <option key={t.idt} value={t.idy}>{t.tendencia}</option>
           )
     } )
-    console.log("ifffffff")
-       console.log(this.props)
-       console.log("ifffffff")
+    
       if (this.props.popupnodotype==="form"){
       return (
       <div className= "Popup">
@@ -50,32 +80,40 @@ render() {
    <Popup       
                key={1}
                coordinates={popupinfo.coordinates}
-               offset={{'bottom-left': [0, -10],  'bottom': [0, -38], 'bottom-right': [-0, -10]}}
+               offset={{'bottom-left': [0, -0],  'bottom': [0, -1], 'bottom-right': [-0, -1]}}
               // onClick={this.onPopupClick.bind(this)}            
      >
             <h3>{popupinfo.nombre}</h3>
             <div>
             <label>Padron:</label>
-            <select ref="observador">
+           
+            <select ref="observador"  onChange={this.onChangeFunc}>
                 {observadoresOpciones}
             </select>
             </div>
-            <form onSubmit={this.handleSubmit.bind(this)}>
+            <form onSubmit={this.onSubmit}>
              <div>
               <label>Cedula:</label>
-              <input type="text" ref="cedula" />
+              <input input type="text" ref="cedula" name="cedula" value={this.state.identificacion}  />
             </div>
             <div>
               <label>Correo:</label>
-              <input type="text" ref="correo" />
+              <input type="text" ref="correo"  name="correo" value={this.state.correo} />
             </div>
             <div>
             <label>Telefono:</label>
-             <input type="text" ref="telefono" />
+             <input type="text" ref="telefono"  name="telefono" value={this.state.telefono} />
             </div>
             <div>
+            <select onChange={this.handleChange} value={idr}>
+          {rolesOpciones.map(item => (
+            <option key={item.identificacion} value={item.idr}>
+              {item.rol}
+            </option>
+          ))}
+        </select>
             <label>Rol:</label>
-             <select ref="rol">
+             <select ref="rol" value={this.state.idr}>
               {rolesOpciones}
             </select>
             </div>
@@ -100,7 +138,8 @@ render() {
         <Popup       
         key={1}
         coordinates={popupinfo.coordinates}
-        offset={{'bottom-left': [12, -38],  'bottom': [0, -38], 'bottom-right': [-12, -38]}}
+        offset={{'bottom-left': [0, -0],  'bottom': [0, -1], 'bottom-right': [-0, -1]}}
+            
        // onClick={this.onPopupClick.bind(this)}            
 >
      <h3>{popupinfo.nombre}</h3>
