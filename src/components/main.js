@@ -13,12 +13,11 @@ import FaroBot from  '../components/farobot'
 import About from  '../components/about'
 import Login from  '../components/login'
 import YouTube from  '../components/youtube'
+import Sms from  '../components/sms'
 //import Footer from  '../components/footer'
 //import Login from  '../components/login'
 //import About from '../components/about'
 //import logo from '../logo.png';
-
-
 //
 //npm start
 ////
@@ -38,10 +37,7 @@ class Main extends Component {
       flag:0,     
       config:null };
   }
-  
-  render() {
-    
-  
+  render() { 
     const HomePage=()=>{return(
       <div>bizzz</div>
       )
@@ -51,8 +47,6 @@ class Main extends Component {
         )
       }
       return(
-  
-       
         <Router>
            <div >
             <Header></Header>
@@ -63,11 +57,10 @@ class Main extends Component {
             <Route path="/map" component={MapBox}/>
             <Route path="/personas" component={Personas}/>
             <Route path="/farobot" component={FaroBot}/>
+            <Route path="/sms" component={Sms}/>
             <Route path="/about" component={About}/>
-            <Route path="/login" component={Login}/>
-            
-            
-                <Redirect to="/home"/>
+            <Route path="/login" component={Login}/>              
+            <Redirect to="/home"/>
             </Switch>         
            </div>
         </Router>

@@ -1,0 +1,68 @@
+{
+    "observadores":
+    [
+        {
+          "id": 1,
+          "identificacion": "V3298392",
+          "nombre":"Luis Aparicio",
+          "centro":"centro",
+          "rol":"Defensor",
+          "tendencia":"Defensor"
+        },
+        {
+            "id": 2,
+            "identificacion": "V222222",
+            "nombre":"Jose Gomez",
+            "centro":"centro",
+            "rol":"Defensor",
+            "tendencia":"Defensor"
+        },
+        {
+            "id": 3,
+            "identificacion": "V3333333",
+            "nombre":"FErnando Gutierrez",
+            "centro":"centro",
+            "rol":"Defensor",
+            "tendencia":"Defensor"
+          },
+          {
+              "id":4,
+              "identificacion": "V329283",
+              "nombre":"Ramon Velasquez",
+              "centro":"centro",
+              "rol":"Defensor",
+              "tendencia":"Defensor"
+          },
+          {
+            "id": 5,
+            "identificacion": "V2983983",
+            "nombre":"Rafael Hernadez Ron",
+            "centro":"centro",
+            "rol":"Defensor",
+            "tendencia":"Defensor"
+          },
+          {
+              "id": 6,
+              "identificacion": "V2983928",
+              "nombre":"Guildredo Ramirez",
+              "centro":"centro",
+              "rol":"Defensor",
+              "tendencia":"Defensor"
+          },
+          {
+            "id": 7,
+            "identificacion": "V4444444444444",
+            "nombre":"William Jose Perez",
+            "centro":"centro",
+            "rol":"Defensor",
+            "tendencia":"Defensor"
+          },
+          {
+              "id":8,
+              "identificacion": "V8298392",
+              "nombre":"Renato Venezia",
+              "centro":"centro",
+              "rol":"Defensor",
+              "tendencia":"Defensor"
+          }  
+    ]}
