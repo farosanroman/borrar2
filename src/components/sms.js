@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import sms from '../images/sms.png';
 function ResponsiveImage( { src, width, height } ) {
   return (
@@ -8,7 +8,7 @@ function ResponsiveImage( { src, width, height } ) {
       <div style={ { paddingBottom: ( height / width * 100 ) + '%' } } />
       <img
         src={ src }
-        className="responsive-image__image" />
+        className="responsive-image__image" alt=""/>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import manual from '../images/manual1.png';
-import {BrowserRouter as Router, Route,Link,Switch,Redirect} from 'react-router-dom'
+
+import {Redirect} from 'react-router-dom'
 
 class CursoCard extends Component { 
     constructor(props) {

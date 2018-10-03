@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import MapGL,{Layer,Feature,Polygon,Popup} from 'react-mapbox-gl';
+import {Popup} from 'react-mapbox-gl';
 //var ReactMapboxGl = require("react-mapbox-gl");
 
-import {tendencias,roles,correos} from '../data/tablas.json';
+import {tendencias,roles} from '../data/tablas.json';
 import {observadores} from '../data/observadores.json';
 class PopupNodo extends Component {
  
@@ -66,12 +66,7 @@ render() {
          <option key={r.idr}  value={r.idr}>{r.rol}</option>
            )
      } )
-     let tendenciasOpciones=tendencias.map(t=>{
      
-     return(
-        <option key={t.idt} value={t.idy}>{t.tendencia}</option>
-          )
-    } )
     
       if (this.props.popupnodotype==="form"){
       return (

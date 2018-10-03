@@ -1,6 +1,6 @@
 import React from 'react';
-import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import {Card, CardBody, CardHeader, Media } from 'reactstrap';
+//import { Link } from 'react-router-dom';
 //import {leaderss} from '../data/productos.json';
 function About(props) {
    // console.log(leaderss)
@@ -9,7 +9,7 @@ function About(props) {
     //        <p>Leader {leader.name}</p>
     //    );
     //});
-    const lideres=["<PPa>","<PPa>"]
+    
     return(
         <div className="container">
             <div className="row">

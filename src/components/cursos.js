@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {cursos} from '../data/cursos.json';
 import CursoCard from '../components/cursocard'
-console.log(cursos)
+//console.log(cursos)
 class Cursos extends Component {
 
     constructor() {

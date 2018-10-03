@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 //import { Navbar,Nav,NavItem,NavDropdown,MenuItem,NavbarBrand} from 'react-bootstrap'
 //import {Navbar,Nav,NavItem} from 'react-bootstrap'
-import {BrowserRouter as Router, Route,Link,Switch,Redirect} from 'react-router-dom'
+import {BrowserRouter as Router, Route,Switch,Redirect} from 'react-router-dom'
 //port {LinkContainer} from 'react-router-bootstrap'
 import Header from '../components/header'
 import Home from '../components/home'
@@ -14,19 +14,12 @@ import About from  '../components/about'
 import Login from  '../components/login'
 import YouTube from  '../components/youtube'
 import Sms from  '../components/sms'
-//import Footer from  '../components/footer'
-//import Login from  '../components/login'
-//import About from '../components/about'
-//import logo from '../logo.png';
-//
-//npm start
-////
 //https://www.coursera.org/lecture/front-end-react/exercise-video-header-and-footer-7abwF
 
    
-const Desarrollo =()=>(
-  <h1>En Desarrollo</h1>
-)
+//const Desarrollo =()=>(
+//  <h1>En Desarrollo</h1>/
+//)
 
 //https://www.robinwieruch.de/local-storage-react/
 
@@ -38,14 +31,7 @@ class Main extends Component {
       config:null };
   }
   render() { 
-    const HomePage=()=>{return(
-      <div>bizzz</div>
-      )
-    }
-    const HomePage2=()=>{return(
-        <div>bizzz 222</div>
-        )
-      }
+    
       return(
         <Router>
            <div >

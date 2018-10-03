@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Jumbotron }  from 'reactstrap';
-import {BrowserRouter as Router, Route,Link,Switch,Redirect} from 'react-router-dom'
 
 //import 'font-awesome/css/font-awesome.css';
 //import 'bootstrap-social/bootstrap-social.css';
