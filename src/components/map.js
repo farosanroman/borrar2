@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import MapGL,{Layer,Feature,Polygon,Popup,ZoomControl} from 'react-mapbox-gl';
+import MapGL,{Layer,Feature,ZoomControl} from 'react-mapbox-gl';
 import {centros} from '../data/geojson.json';
 import {resumen} from '../data/resumen.json';
 import PopupNodo from './popupnodo';
+import {tendencias,roles,evaluacion,correos} from '../data/tablas.json';
 //import Popup2 from './popup2';
 const TOKEN="pk.eyJ1IjoiZmFyb21hcGJveCIsImEiOiJjamt6amF4c3MwdXJ3M3JxdDRpYm9ha2pzIn0.V8cqmZH6dFIcxtKoaWcZZw"
 const Map = MapGL({
@@ -96,6 +97,12 @@ class Map2 extends Component {
      this.setState({popupInfo:{"coordinates":[0,0],"nombre":"oJo","error":"sin error"}})
      
  }
+ getCirclePaint = (color) => ({
+  'circle-radius': 5,
+  'circle-color': color,
+  'circle-opacity': 0.8
+});
+
     render() {
       const municipiosf = resumen.filter(r => r.nivel === 5);
       const municipios=municipiosf.map(cv=>{
@@ -124,34 +131,58 @@ class Map2 extends Component {
                />
                  )
            } )
-           
+           let tendenciasOpciones=tendencias.map(t=>{
+     
+            return(
+               <option key={t.idt} value={t.idy}>{t.tendencia}</option>
+                 )
+           } )
+           let evaluacionOpciones=evaluacion.map(t=>{
+     
+            return(
+               <option key={t.ide} value={t.ide}>{t.puntos}</option>
+                 )
+           } )
+           let correosOpciones=correos.map(t=>{
+     
+            return(
+               <option key={t.idc} value={t.idc}>{t.correo}</option>
+                 )
+           } )
         //console.log(features)
         return(
         <div className= "Map2">
-        <button>Municipios</button><button>Parroquias</button><button>Tendencia</button>
+        <button>Municipios</button><button>Parroquias</button>
+        <label>Tendencia:</label>
+        <select ref="tendencia">
+              {tendenciasOpciones}
+            </select>
+            <label>Evaluacion:</label>
+            <select ref="evaluacion">
+              {evaluacionOpciones}
+            </select>
+            <label>Calidad de Correos:</label>
+            <select ref="correos">
+              {correosOpciones}
+            </select>
         <Map        
           style={"mapbox://styles/mapbox/light-v9"}
           center={centro} 
           zoom={zoom}
           containerStyle={{height: "80vh",width: "80vw"}}
         > 
-          <Layer
-             type="symbol"
-             id="marker2"
-             layout={{ 'icon-allow-overlap': true, "icon-image": "marker-15" }}
-             
-             >            
-               {parroquias}
-          </Layer>
-             <Layer
-             type="circle" 
-             radius={20} 
-             color={ 'red'} 
-             id="marker11"
-             fillColor= 'red' fillOpacity= {0.5}             
-             >            
-               {parroquias0}
-          </Layer>
+        <Layer type="circle" radius={10} color={ 'blue'} fillColor= '#f05' 
+       fillOpacity= {0.5} paint={this.getCirclePaint('blue')}> 
+      {parroquias}
+        </Layer>
+       <Layer type="circle" radius={20} color={ 'red'} fillColor= '#f03' 
+       fillOpacity= {0.5} paint={this.getCirclePaint('red')}> 
+      {parroquias0}
+        </Layer>
+
+         
+          
+            
           <Layer
                 type="symbol"
                 layout={{
@@ -179,8 +210,14 @@ class Map2 extends Component {
  }
 export default Map2;
 /*
-<Feature key={cv.id} properties={cv}  coordinates={cv.latlng} 
-               onMouseEnter={this.props.onMouseEnter} onClick={this.props.onClick}/>
-                 )
+https://github.com/alex3165/react-mapbox-gl/blob/master/example/src/demos/allShapes.tsx
+ <Layer
+              type="symbol"
+              id="marker2"
+              layout={{ 'icon-allow-overlap': true, "icon-image": "embassy-15" }}
+             
+             >            
+               {parroquias0}
+          </Layer>
 
                  */

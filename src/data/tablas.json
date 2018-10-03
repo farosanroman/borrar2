@@ -1,4 +1,54 @@
+
+
+
 {
+    "correos":[
+        {
+            "idc":1,
+            "correo":"SIN CORREO"
+            },
+            {
+                "idc":2,
+                "correo":"SIN RESPUESTA"
+                },
+                {
+                    "idc":3,
+                    "correo":"NO EXISTE"
+                    },
+                    {
+                        "idc":4,
+                        "correo":"CONFIRMADO"
+                        }
+                    
+                
+    ],
+        "evaluacion":[
+            {
+                "ide":1,
+                "puntos":"0"
+                },
+                {
+                    "ide":2,
+                    "puntos":"5"
+                    },
+                    
+                {
+                    "ide":3,
+                    "puntos":"10"
+                    },
+                    
+                {
+                    "ide":4,
+                    "puntos":"15"
+                    }
+                    ,
+                    
+                    {
+                        "ide":5,
+                        "puntos":"20"
+                        }
+            
+        ],
     "tendencias":
  
   [

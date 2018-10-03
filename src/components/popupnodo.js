@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import MapGL,{Layer,Feature,Polygon,Popup} from 'react-mapbox-gl';
 //var ReactMapboxGl = require("react-mapbox-gl");
 
-import {tendencias,roles} from '../data/tablas.json';
+import {tendencias,roles,correos} from '../data/tablas.json';
 import {observadores} from '../data/observadores.json';
 class PopupNodo extends Component {
  
@@ -41,7 +41,7 @@ onChangeFunc(event) {
 onSubmit = (e) => {
   e.preventDefault();
 console.log(this.state)
-https://stackoverflow.com/questions/51479592/react-submit-form-not-sending-post-request
+//https://stackoverflow.com/questions/51479592/react-submit-form-not-sending-post-request
   //const { name, email, title, description } = this.state;
 
  //axios.post('/create', { name, email, title, description })
@@ -105,13 +105,7 @@ render() {
              <input type="text" ref="telefono"  name="telefono" value={this.state.telefono} />
             </div>
             <div>
-            <select onChange={this.handleChange} value={idr}>
-          {rolesOpciones.map(item => (
-            <option key={item.identificacion} value={item.idr}>
-              {item.rol}
-            </option>
-          ))}
-        </select>
+           
             <label>Rol:</label>
              <select ref="rol" value={this.state.idr}>
               {rolesOpciones}
@@ -119,8 +113,12 @@ render() {
             </div>
             <div>
             <label>Tendencia:</label>
-            <select ref="tendencia">
-              {tendenciasOpciones}
+            <select onChange={this.handleChange} value={idr}>
+                {tendencias.map(item => (
+                <option key={item.idr} value={item.idt}>
+                  {item.tendencia}
+                </option>
+                ))}
             </select>
             </div>
             <input type="submit" value="Submit" />
