@@ -32,7 +32,11 @@ class Header extends Component {
             <Collapse isOpen={this.state.isNavOpen} navbar>
             
             <Nav navbar>
-            
+            <NavItem>
+                  <NavLink className="nav-link" to="/carousel">
+                  <span className="fa fa-home"></span>Home
+                  </NavLink>
+              </NavItem>
               <NavItem>
                   <NavLink className="nav-link" to="/home">
                   <span className="fa fa-home"></span>Home

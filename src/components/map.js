@@ -82,13 +82,15 @@ class Map2 extends Component {
     this.setState({center:JSON.parse(evt.feature.properties.latlng)})
     this.setState({popupInfo:pop})
     this.setState({popupType:"msg"})
+    this.setState({comentario:pop.nombre})
     
    }
    onFeatureMouseLeave(e) {
+    
     if (this.state.popupType==="msg"){
      this.setState({popupInfo:{"coordinates":[0,0],"nombre":"oJo","error":"sin error"}})
-     const fecha=new Date();
-     this.setState({comentario:fecha})
+     //const fecha=new Date();
+     //this.setState({comentario:fecha})
     }
  }
    onPopupClose(e) {
@@ -219,7 +221,7 @@ class Map2 extends Component {
                 layout={{
                   "icon-image": "marker-15",
                   "icon-allow-overlap": true,
-                  "text-field": "Put the text in here",
+                  "text-field": "Ejemplo de Texto",
                   "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
                   "text-size": 11,
                   "text-transform": "uppercase",
@@ -237,7 +239,7 @@ class Map2 extends Component {
           </Map>
           <BottomBar>
          
-          <Indicator>{`Comentario:${comentario}`}</Indicator>
+          <Indicator>{`${comentario}`}</Indicator>
         </BottomBar>
           </div>
         )    

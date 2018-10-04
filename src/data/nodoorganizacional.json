@@ -1,0 +1,34 @@
+{
+"funcional":
+    [{
+
+        "type": "nodoorganizacional",
+        "idtipoorganizacion":1,
+        "tipoorganizacon":"alianza",
+        "idorganizacion":1,
+        "organizacion":"sumate",
+        "idfuncional":1,
+        "funcional":"observacion",
+        "idrol":1,
+        "rol":"observador",
+        "niveles":[1,2,3],
+        "nivel":4
+        
+    }
+    ,
+    {
+      "type": "nodoorganizacional",
+      "idtipoorganizacion":1,
+      "tipoorganizacon":"alianza",
+      "idorganizacion":1,
+      "organizacion":"sumate",
+      "idfuncional":1,
+      "funcional":"observacion",
+      "idrol":1,
+      "rol":"observador",
+      "niveles":[1,2,3],
+      "nivel":4
+        
+    }
+    ]
+}
