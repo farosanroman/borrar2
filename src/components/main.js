@@ -15,6 +15,7 @@ import Login from  '../components/login'
 import YouTube from  '../components/youtube'
 import Sms from  '../components/sms'
 import Carousel from  '../components/carousel'
+import ChartFaro from  '../components/chart'
 //https://www.coursera.org/lecture/front-end-react/exercise-video-header-and-footer-7abwF
 
    
@@ -43,6 +44,7 @@ class Main extends Component {
             <Route path="/cursos" component={Cursos}/>
             <Route path="/youtube" component={YouTube}/>
             <Route path="/map" component={MapBox}/>
+            <Route path="/chart" component={ChartFaro}/>
             <Route path="/personas" component={Personas}/>
             <Route path="/farobot" component={FaroBot}/>
             <Route path="/sms" component={Sms}/>

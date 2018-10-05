@@ -1,5 +1,6 @@
 import React from 'react';
 import {Card, CardBody, CardHeader, Media } from 'reactstrap';
+import Chart from '../components/chart'
 //import { Link } from 'react-router-dom';
 //import {leaderss} from '../data/productos.json';
 function About(props) {
@@ -12,6 +13,7 @@ function About(props) {
     
     return(
         <div className="container">
+        <Chart></Chart>
             <div className="row">
                 
                 <div className="col-12">

@@ -1,33 +1,117 @@
 {
 "funcional":
     [{
-
+        "id":1,
         "type": "nodoorganizacional",
         "idtipoorganizacion":1,
         "tipoorganizacon":"alianza",
-        "idorganizacion":1,
-        "organizacion":"sumate",
-        "idfuncional":1,
-        "funcional":"observacion",
-        "idrol":1,
-        "rol":"observador",
-        "niveles":[1,2,3],
-        "nivel":4
+        "idorganizacion":0,
+        "organizacion":"",
+        "idfuncional":0,
+        "funcional":"",
+        "idrol":0,
+        "rol":"",
+        "niveles":[],
+        "nivel":0
         
     }
     ,
     {
+        "id":2,
       "type": "nodoorganizacional",
       "idtipoorganizacion":1,
       "tipoorganizacon":"alianza",
       "idorganizacion":1,
-      "organizacion":"sumate",
+      "organizacion":"unidad",
+      "idfuncional":0,
+      "funcional":"",
+      "idrol":0,
+      "rol":"",
+      "niveles":[],
+      "nivel":1
+        
+    }
+    ,
+    {
+        "id":4,
+      "type": "nodoorganizacional",
+      "idtipoorganizacion":1,
+      "tipoorganizacon":"alianza",
+      "idorganizacion":1,
+      "organizacion":"unidad",
       "idfuncional":1,
-      "funcional":"observacion",
+      "funcional":"Observacion",
+      "idrol":0,
+      "rol":"",
+      "niveles":[],
+      "nivel":2
+        
+    },
+    
+    {
+        "id":4,
+      "type": "nodoorganizacional",
+      "idtipoorganizacion":1,
+      "tipoorganizacon":"alianza",
+      "idorganizacion":1,
+      "organizacion":"unidad",
+      "idfuncional":1,
+      "funcional":"Observacion",
       "idrol":1,
-      "rol":"observador",
-      "niveles":[1,2,3],
-      "nivel":4
+      "rol":"Testigo Mesa",
+      "niveles":[],
+      "nivel":3
+        
+    }
+    ,
+    
+    {
+        "id":5,
+      "type": "nodoorganizacional",
+      "idtipoorganizacion":1,
+      "tipoorganizacon":"alianza",
+      "idorganizacion":1,
+      "organizacion":"unidad",
+      "idfuncional":1,
+      "funcional":"Observacion",
+      "idrol":2,
+      "rol":"Facilitador",
+      "niveles":[],
+      "nivel":3
+        
+    }
+    ,
+    
+    {
+        "id":6,
+      "type": "nodoorganizacional",
+      "idtipoorganizacion":1,
+      "tipoorganizacon":"alianza",
+      "idorganizacion":1,
+      "organizacion":"unidad",
+      "idfuncional":1,
+      "funcional":"Observacion",
+      "idrol":3,
+      "rol":"Formador",
+      "niveles":[],
+      "nivel":3
+        
+    }
+    ,
+    
+    {
+        "id":7,
+      "type": "nodoorganizacional",
+      "idtipoorganizacion":1,
+      "tipoorganizacon":"alianza",
+      "idorganizacion":1,
+      "organizacion":"unidad",
+      "idfuncional":1,
+      "funcional":"Observacion",
+      "idrol":4,
+      "rol":"Movilizador",
+      "niveles":[],
+      "nivel":3
         
     }
     ]

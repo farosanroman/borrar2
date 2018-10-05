@@ -78,7 +78,11 @@ class Header extends Component {
                   <span className="fa fa-key"></span>Login
                   </NavLink>
               </NavItem>
-
+              <NavItem>
+                  <NavLink className="nav-link" to="/chart">
+                  <span className="fa fa-pie-chart"></span>React CHART
+                  </NavLink>
+              </NavItem>
                          
             </Nav>
             
