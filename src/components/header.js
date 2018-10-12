@@ -64,7 +64,7 @@ class Header extends Component {
                   </NavLink>
               </NavItem>
               <NavItem>
-                  <NavLink className="nav-link" to="/sms">
+                  <NavLink className="nav-link" to="/mensajeria">
                   <span className="fa fa-phone"></span>SMS Colmena
                   </NavLink>
               </NavItem>

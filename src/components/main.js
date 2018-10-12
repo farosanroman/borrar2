@@ -13,7 +13,8 @@ import FaroBot from  '../components/farobot'
 import About from  '../components/about'
 import Login from  '../components/login'
 import YouTube from  '../components/youtube'
-import Sms from  '../components/sms'
+//import Sms from  '../components/sms'
+import Mensajeria from  '../components/mensajeria'
 import Carousel from  '../components/carousel'
 import ChartFaro from  '../components/chart'
 //https://www.coursera.org/lecture/front-end-react/exercise-video-header-and-footer-7abwF
@@ -47,7 +48,7 @@ class Main extends Component {
             <Route path="/chart" component={ChartFaro}/>
             <Route path="/personas" component={Personas}/>
             <Route path="/farobot" component={FaroBot}/>
-            <Route path="/sms" component={Sms}/>
+            <Route path="/mensajeria" component={Mensajeria}/>
             <Route path="/about" component={About}/>
             <Route path="/login" component={Login}/>              
             <Redirect to="/home"/>

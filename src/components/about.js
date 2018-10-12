@@ -13,7 +13,7 @@ function About(props) {
     
     return(
         <div className="container">
-        <Chart></Chart>
+        
             <div className="row">
                 
                 <div className="col-12">

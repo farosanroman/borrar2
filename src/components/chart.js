@@ -2,55 +2,60 @@ import * as React from 'react';
 import { Card } from 'reactstrap';
 import {
   Chart,
-  AreaSeries,
-  Title,
+  ArgumentAxis,
+  ValueAxis,
+  ArgumentGrid,
+  BarSeries,
+  LineSeries,
+  Legend,
+  PieSeries
 } from '@devexpress/dx-react-chart-bootstrap4';
-
 import { Scale } from '@devexpress/dx-react-chart';
-//import { born as data } from '../../../demo-data/data-vizualization';
-class ChartFaro extends React.Component {
-//export default class ChartFaro extends React.PureComponent {
+import "@devexpress/dx-react-chart-bootstrap4/dist/dx-react-chart-bootstrap4.css";
+export default class Demo extends React.PureComponent {
   constructor(props) {
     super(props);
 
     this.state = {
-      data:[
-        {ru:222,ch:333,us:234,year:"1"},
-        {ru:222,ch:333,us:234,year:"2"},
-        {ru:444,ch:555,us:66,year:"3"},
-    ],
+      data2: [
+        { month: 'Jan', sale: 50, total: 987 },
+        { month: 'Feb', sale: 100, total: 3000 },
+        { month: 'March', sale: 30, total: 1100 },
+        { month: 'April', sale: 107, total: 7100 },
+        { month: 'May', sale: 95, total: 4300 },
+        { month: 'June', sale: 1150, total: 7500 },
+      ],
+      data9: [
+        { country: 'Russia', area: 12 },
+        { country: 'Canada', area: 7 },
+        { country: 'USA', area: 7 },
+        { country: 'China', area: 7 },
+        { country: 'Brazil', area: 6 },
+        { country: 'Australia', area: 5 },
+        { country: 'India', area: 2 },
+        { country: 'Others', area: 55 },
+      ]
     };
   }
 
   render() {
-    const {  data  } = this.state;
- console.log({data})
+    const { data2: chartData2, data9:chartData9 } = this.state;
+
     return (
       <Card>
+        
         <Chart
-          data={data}
-          width={650}
-           height={500}
+          data={chartData9}
         >
-       
-          <AreaSeries
-            valueField="ru"
-            argumentField="year"
+          <PieSeries
+            valueField="area"
+            argumentField="country"
           />
-          <AreaSeries
-            valueField="ch"
-            argumentField="year"
-          />
-          <AreaSeries
-            valueField="us"
-            argumentField="year"
-          />
- <Title text={"PRUEBA:dx-react-chart"} />
+          
           <Scale />
         </Chart>
+       
       </Card>
     );
   }
 }
-
-export default ChartFaro;
