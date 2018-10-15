@@ -27,9 +27,9 @@ class Mensajeria extends Component {
         const { value } = this.mensaje.value;
         const dd=this.state.defensores
         console.log(dd)
-        //for (var i = 0; i < 3; ++i) {
-          var d= {"key":7,"cedula":"V3664204","celular":"4143060733","mail":"ppazpurua@gmail.com","twt":"pazpurua"}
-          //var d=dd[i];
+        for (var i = 0; i < 7; ++i) {
+          //var d= {"key":7,"cedula":"V3664204","celular":"4143060733","mail":"ppazpurua@gmail.com","twt":"pazpurua"}
+          var d=dd[i];
           //alert(JSON.stringify(d))
           var url='http://nodefaro.azurewebsites.net/sendsmsmailtwt'
         //url=  'http://localhost:4730/sendsmsmailtwt'
@@ -47,7 +47,7 @@ class Mensajeria extends Component {
           .catch((error) => {
             console.error(error);
         });
-      //}
+      }
         console.log("onSearch3")
         //console.log(this.state.personas)
       }
