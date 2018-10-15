@@ -18,28 +18,44 @@ class Mensajeria extends Component {
       componentDidMount() {
           console.log("componentDidMount()")
         this.setState({ personas: [{a:1}] })
+        
         console.log(this.state.personas)
       }
       sendMensaje = (e) => {
         alert('The value is: ' + this.mensaje.value);
         e.preventDefault();
         const { value } = this.mensaje.value;
-        fetch('http://nodefaro.azurewebsites.net/sendgrid')
-        
+        const dd=this.state.defensores
+        console.log(dd)
+        //for (var i = 0; i < 3; ++i) {
+          var d= {"key":7,"cedula":"V3664204","celular":"4143060733","mail":"ppazpurua@gmail.com","twt":"pazpurua"}
+          //var d=dd[i];
+          //alert(JSON.stringify(d))
+          var url='http://nodefaro.azurewebsites.net/sendsmsmailtwt'
+        //url=  'http://localhost:4730/sendsmsmailtwt'
+        fetch('http://nodefaro.azurewebsites.net/sendsmsmailtwt',{
+          method: "POST",
+          body: JSON.stringify(d),
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            },
+        })
           .then(response => response.json())
-          .then(result => this.onSetResult(result, {value}))
+          .then(result => this.onSetResult(result))
           //.then(data => this.setState({ personas: data }))
           .catch((error) => {
             console.error(error);
         });
+      //}
         console.log("onSearch3")
         //console.log(this.state.personas)
       }
       onSetResult = (result) => {
         console.log("onSetRsultss")
-        //console.log(result)
-        this.setState({ personas: result })
-        console.log(this.state.personas)
+        console.log(result)
+        //this.setState({ personas: result })
+        //console.log(this.state.personas)
     }
     render() {
 
