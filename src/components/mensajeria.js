@@ -22,7 +22,7 @@ class Mensajeria extends Component {
         console.log(this.state.personas)
       }
       sendMensaje = (e) => {
-        alert('The value is: ' + this.mensaje.value);
+        //alert('The value is: ' + this.mensaje.value);
         e.preventDefault();
         const { value } = this.mensaje.value;
         const dd=this.state.defensores
