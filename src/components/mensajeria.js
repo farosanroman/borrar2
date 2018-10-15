@@ -24,7 +24,7 @@ class Mensajeria extends Component {
         alert('The value is: ' + this.mensaje.value);
         e.preventDefault();
         const { value } = this.mensaje.value;
-        fetch('http://faro2018personas.azurewebsites.net/api/faroreapi_getpersonare?identificacion=V3664204')
+        fetch('http://nodefaro.azurewebsites.net/sendgrid')
         
           .then(response => response.json())
           .then(result => this.onSetResult(result, {value}))
