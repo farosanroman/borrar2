@@ -12,7 +12,8 @@ class Header extends Component {
         super(props);    
         this.toggleNav = this.toggleNav.bind(this);
         this.state = {
-          isNavOpen: false
+          isNavOpen: false,
+          flagLogin:false
         };
       }
       toggleNav() {
@@ -21,6 +22,7 @@ class Header extends Component {
         });
       }
   render() {
+    const { flagLogin } = this.state;
     return(
        <div>
       <Navbar dark expand="md"> 
@@ -32,11 +34,13 @@ class Header extends Component {
             <Collapse isOpen={this.state.isNavOpen} navbar>
             
             <Nav navbar>
+            {flagLogin&&
             <NavItem>
                   <NavLink className="nav-link" to="/carousel">
                   <span className="fa fa-home"></span>Home
                   </NavLink>
               </NavItem>
+            }
               <NavItem>
                   <NavLink className="nav-link" to="/home">
                   <span className="fa fa-home"></span>Home

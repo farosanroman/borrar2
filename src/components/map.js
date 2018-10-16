@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import MapGL,{Layer,Feature,ZoomControl} from 'react-mapbox-gl';
-//import {centros} from '../data/geojson.json';
 import {resumen} from '../data/resumen.json';
-import MapPopup from './mappopup';
+
 import MapLayerMunicipios from './maplayermunicipios';
 import MapLayerParroquias from './maplayerparroquias';
 import {tendencias,roles,evaluacion,correos} from '../data/tablas.json';
@@ -42,18 +41,17 @@ class Map2 extends Component {
       cvnombre:"",
       popupInfo:popupInfo0,
       nuevodefensor:{},
-      popupType:"msg"
+      popupType:"msg",
+      flagMunicipios:false,
+      flagParroquias:false
     }
     
   //console.log({centros})
     //this.renderPopup = this.renderPopup.bind(this)  
-    this.onFeatureClick = this.onFeatureClick.bind(this)
-    this.onFeatureMouseEnter = this.onFeatureMouseEnter.bind(this)
-    this.onFeatureMouseLeave = this.onFeatureMouseLeave.bind(this)
-    //this.onListMouseEnter = this.onListMouseEnter.bind(this)
+   
     //this._onClickMap=this._onClickMap.bind(this)
     //this.handleSubmit=this.handleSubmit.bind(this)
-    this.onPopupClose=this.onPopupClose.bind(this) 
+
   }
   componentDidMount() {
     console.log('El componente está disponible en el DOM');
@@ -61,54 +59,30 @@ class Map2 extends Component {
     //this.setState({nodos:[{"id":0,"nombre":"UNIDAD EDUCATIVA DISTRITAL PASTORA LANDAEZ","latlng":[-66.9099,10.499]},{"id":1,"nombre":"UNIDAD EDUCATIVA MARIA ROSA MOLAS FE Y ALEGRIA","latlng":[-66.96723,10.53164]},{"id":2,"nombre":"COLEGIO DE EDUCACIÒN INTEGRAL DOCTOR RAUL LEONIS","latlng":[-66.96723,10.53164]},{"id":3,"nombre":"LICEO BOLIVARIANO PEDRO EMILIO COLL","latlng":[-66.92489,10.45352]},{"id":4,"nombre":"UNIDAD EDUCATIVA DISTRITAL MANUEL ANTONIO CARREÑO","latlng":[-66.94229,10.49292]}]}
     this.setState({nodos:resumen})
     this.setState({comentario:"sin"})
-    
+    this.setState({popupInfo:popupInfo0})
+    this.setState({popupType:"msg"})
+    this.setState({comentario:popupInfo0.nombre})
   }
   
-
-  onFeatureClick(evt) {
-    
-    this.setState({zoom:[5]})
-    const pop={coordinates:JSON.parse(evt.feature.properties.latlng),nombre:evt.feature.properties.nombre};
-    this.setState({center:JSON.parse(evt.feature.properties.latlng)})
- // let pop={"coordinates":JSON.parse(evt.feature.properties.latlng),"nombre":evt.feature.properties.nombre}
-   this.setState({popupInfo:pop})
-   this.setState({popupType:"form"})
-   console.log(this.state.popupInfo)
-   console.log("onFeatureClick ----------")
-    //this.setState({dummy:"bbbb"})
-    
-  }
-  onFeatureMouseEnter(evt) {
-   
-    const pop={coordinates:JSON.parse(evt.feature.properties.latlng),nombre:evt.feature.properties.nombre};
-    this.setState({center:JSON.parse(evt.feature.properties.latlng)})
-    this.setState({popupInfo:pop})
-    this.setState({popupType:"msg"})
-    this.setState({comentario:pop.nombre})
-    
-   }
-   onFeatureMouseLeave(e) {
-    
-    if (this.state.popupType==="msg"){
-     this.setState({popupInfo:{"coordinates":[0,0],"nombre":"oJo","error":"sin error"}})
-     //const fecha=new Date();
-     //this.setState({comentario:fecha})
-    }
- }
-   onPopupClose(e) {
-    
-     this.setState({popupInfo:{"coordinates":[0,0],"nombre":"oJo","error":"sin error"}})
-     
- }
  getCirclePaint = (color) => ({
   'circle-radius': 4,
   'circle-color': color,
   'circle-opacity': 0.6
 });
+onMClick = (e) => {
+  console.log(e)
+  this.setState({flagMunicipios:true})
+  this.setState({flagParroquias:false})
 
+}
+onPClick = (e) => {
+  this.setState({flagMunicipios:false})
+  this.setState({flagParroquias:true})
+
+}
     render() {
       //const { styleKey } = this.state;
-    const { nodos,comentario } = this.state;
+    const { nodos,comentario,flagMunicipios,flagParroquias } = this.state;
     const Button = styled.button`
     border: 1px solid #3770c6;
   background-color: rgb(84, 152, 255);
@@ -143,11 +117,7 @@ class Map2 extends Component {
       padding: 6px 10px;
       background-color: white;
     `;
-    
-     
-      
-      
-        
+         
            let tendenciasOpciones=tendencias.map(t=>{
      
             return(
@@ -170,7 +140,8 @@ class Map2 extends Component {
         //this.setState({comentario:"otra mas"})
         return(
         <div>
-        <Button>Municipios</Button><Button>Parroquias</Button>
+         
+        <Button onClick={this.onMClick}>Municipios</Button><Button onClick={this.onPClick}>Parroquias</Button>
         <label>Tendencia:</label>
         <select ref="tendencia">
               {tendenciasOpciones}
@@ -189,8 +160,8 @@ class Map2 extends Component {
           zoom={zoom}
           containerStyle={{height: "80vh",width: "80vw"}}
         > 
-        <MapLayerMunicipios></MapLayerMunicipios>
-        <MapLayerParroquias></MapLayerParroquias>
+        {flagMunicipios&&<MapLayerMunicipios></MapLayerMunicipios>}
+        {flagParroquias&&<MapLayerParroquias></MapLayerParroquias>}
        
         
         <Layer
@@ -223,15 +194,5 @@ class Map2 extends Component {
      }
  }
 export default Map2;
-/*
-https://github.com/alex3165/react-mapbox-gl/blob/master/example/src/demos/allShapes.tsx
- <Layer
-              type="symbol"
-              id="marker2"
-              layout={{ 'icon-allow-overlap': true, "icon-image": "embassy-15" }}
-             
-             >            
-               {parroquias0}
-          </Layer>
 
-                 */
+//https://github.com/alex3165/react-mapbox-gl/blob/master/example/src/demos/allShapes.tsx

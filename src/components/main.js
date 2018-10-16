@@ -31,17 +31,20 @@ class Main extends Component {
     super(props);
     this.state = { 
       flag:0,     
-      config:null };
+      config:null,
+      flagLogin:true
+     };
   }
   render() { 
-    
+    const { flagLogin } = this.state;
       return(
         <Router>
            <div >
             <Header></Header>
             <Switch>
             <Route path="/home" component={()=><Home/>}/>
-            <Route path="/carousel" component={Carousel}/>
+
+            {flagLogin&&<Route path="/carousel" component={Carousel}/>}
             <Route path="/cursos" component={Cursos}/>
             <Route path="/youtube" component={YouTube}/>
             <Route path="/map" component={MapBox}/>
