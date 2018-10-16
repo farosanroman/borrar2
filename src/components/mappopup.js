@@ -4,7 +4,7 @@ import {Popup} from 'react-mapbox-gl';
 
 import {tendencias,roles} from '../data/tablas.json';
 import {observadores} from '../data/observadores.json';
-class PopupNodo extends Component {
+class MapPopup extends Component {
  
 //onPopupClose(e) {
 //  console.log("popupclose ")
@@ -142,4 +142,4 @@ render() {
       }
   }
 }
-export default PopupNodo;
+export default MapPopup;

@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import MapGL,{Layer,Feature,ZoomControl} from 'react-mapbox-gl';
 //import {centros} from '../data/geojson.json';
 import {resumen} from '../data/resumen.json';
-import PopupNodo from './popupnodo';
+import MapPopup from './mappopup';
+import MapLayerMunicipios from './maplayermunicipios';
+import MapLayerParroquias from './maplayerparroquias';
 import {tendencias,roles,evaluacion,correos} from '../data/tablas.json';
 import styled ,{csc} from 'styled-components';
 //import Popup2 from './popup2';
@@ -143,28 +145,8 @@ class Map2 extends Component {
     `;
     
      
-      const municipiosf = nodos.filter(r => r.nivel === 5);
-      const municipios=municipiosf.map(cv=>{
-        return(
-           <Feature key={cv.id} popuptype={this.state.popupType} onMouseEnter={this.onFeatureMouseEnter} onClick={this.onFeatureClick}  coordinates={cv.latlng} 
-           />
-             )
-       } )  
-       const parroquiasf0 = nodos.filter(r => (r.nivel === 7)&&(r.OBSERVADOR===0));
-      const parroquias0=parroquiasf0.map(cv=>{
-        return(
-           <Feature key={cv.id} popuptype={this.state.popupType} properties={cv} onMouseEnter={this.onFeatureMouseEnter} onMouseLeave={this.onFeatureMouseLeave} onClick={this.onFeatureClick}  coordinates={cv.latlng} 
-           />
-             )
-       } )  
-       
-       const parroquiasf = nodos.filter(r => (r.nivel === 7)&&(r.OBSERVADOR>0));
-      const parroquias=parroquiasf.map(cv=>{
-        return(
-           <Feature key={cv.id} popuptype={this.state.popupType} properties={cv} onMouseEnter={this.onFeatureMouseEnter} onMouseLeave={this.onFeatureMouseLeave} onClick={this.onFeatureClick}  coordinates={cv.latlng} 
-           />
-             )
-       } ) 
+      
+      
         
            let tendenciasOpciones=tendencias.map(t=>{
      
@@ -207,14 +189,10 @@ class Map2 extends Component {
           zoom={zoom}
           containerStyle={{height: "80vh",width: "80vw"}}
         > 
-        <Layer type="circle" radius={20} color={ 'blue'} fillColor= '#f05' 
-       fillOpacity= {0.5} paint={this.getCirclePaint('blue')}> 
-      {parroquias}
-        </Layer>
-        <Layer type="circle" radius={20} color={ 'red'} fillColor= '#f03' 
-       fillOpacity= {0.5} paint={this.getCirclePaint('red')}> 
-      {parroquias0}
-        </Layer>
+        <MapLayerMunicipios></MapLayerMunicipios>
+        <MapLayerParroquias></MapLayerParroquias>
+       
+        
         <Layer
                 type="symbol"
                 id="marker3"
@@ -233,8 +211,7 @@ class Map2 extends Component {
                 />
             </Layer>
           
-     <PopupNodo key={111} popupnodotype={this.state.popupType} popupnodoinfo={this.state.popupInfo}  />
-          
+        
           <ZoomControl position={"bottomRight"} />
           </Map>
           <BottomBar>
