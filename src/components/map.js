@@ -4,6 +4,7 @@ import {resumen} from '../data/resumen.json';
 
 import MapLayerMunicipios from './maplayermunicipios';
 import MapLayerParroquias from './maplayerparroquias';
+import MapLayerCentros from './maplayercentros';
 import {tendencias,roles,evaluacion,correos} from '../data/tablas.json';
 import styled ,{csc} from 'styled-components';
 //import Popup2 from './popup2';
@@ -43,7 +44,8 @@ class Map2 extends Component {
       nuevodefensor:{},
       popupType:"msg",
       flagMunicipios:false,
-      flagParroquias:false
+      flagParroquias:false,
+      flagCentros:true
     }
     
   //console.log({centros})
@@ -73,16 +75,27 @@ onMClick = (e) => {
   console.log(e)
   this.setState({flagMunicipios:true})
   this.setState({flagParroquias:false})
+  this.setState({flagCentros:false})
 
 }
 onPClick = (e) => {
   this.setState({flagMunicipios:false})
   this.setState({flagParroquias:true})
+  this.setState({flagCentros:false})
+  this.setState({zoom:[5]})
+  this.setState({center:[-66.95286,7]})
 
+}
+onCClick = (e) => {
+  this.setState({flagMunicipios:false})
+  this.setState({flagParroquias:false})
+  this.setState({flagCentros:true})
+  this.setState({zoom:[9]})
+  this.setState({center:[-66.25286,10.3]})
 }
     render() {
       //const { styleKey } = this.state;
-    const { nodos,comentario,flagMunicipios,flagParroquias } = this.state;
+    const { nodos,comentario,flagMunicipios,flagParroquias,flagCentros,zoom,center } = this.state;
     const Button = styled.button`
     border: 1px solid #3770c6;
   background-color: rgb(84, 152, 255);
@@ -141,7 +154,10 @@ onPClick = (e) => {
         return(
         <div>
          
-        <Button onClick={this.onMClick}>Municipios</Button><Button onClick={this.onPClick}>Parroquias</Button>
+        <Button onClick={this.onMClick}>Municipios</Button>
+        <Button onClick={this.onPClick}>Parroquias</Button>
+        <Button onClick={this.onCClick}>Centros</Button>
+        
         <label>Tendencia:</label>
         <select ref="tendencia">
               {tendenciasOpciones}
@@ -156,12 +172,13 @@ onPClick = (e) => {
             </select>
         <Map        
           style={"mapbox://styles/mapbox/light-v9"}
-          center={centro} 
+          center={center} 
           zoom={zoom}
           containerStyle={{height: "80vh",width: "80vw"}}
         > 
         {flagMunicipios&&<MapLayerMunicipios></MapLayerMunicipios>}
         {flagParroquias&&<MapLayerParroquias></MapLayerParroquias>}
+        {flagCentros&&<MapLayerCentros></MapLayerCentros>}
        
         
         <Layer
@@ -170,15 +187,15 @@ onPClick = (e) => {
                 layout={{
                   "icon-image": "marker-15",
                   "icon-allow-overlap": true,
-                  "text-field": "Ejemplo de Texto",
-                  "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
+                  "text-field": "Parroquia",
+                  "text-font": ["Open Sans", "Arial Unicode MS Bold"],
                   "text-size": 11,
                   "text-transform": "uppercase",
                   "text-letter-spacing": 0.05,
                   "text-offset": [0, 1.5]
                 }}>
                <Feature
-                 coordinates={[-62,5]}
+                 coordinates={[-66,2]}
                 />
             </Layer>
           
