@@ -7,6 +7,7 @@ import MapLayerParroquias from './maplayerparroquias';
 import MapLayerCentros from './maplayercentros';
 import {tendencias,roles,evaluacion,correos} from '../data/tablas.json';
 import styled ,{csc} from 'styled-components';
+//https://mpv.cenditel.gob.ve/cadenas/browser/observatorio/procesos/apps/geocadena/media/geojson?rev=4b459a71f72c425396d545c0dcf9ec6dca20171a&order=name
 //import Popup2 from './popup2';
 const TOKEN="pk.eyJ1IjoiZmFyb21hcGJveCIsImEiOiJjamt6amF4c3MwdXJ3M3JxdDRpYm9ha2pzIn0.V8cqmZH6dFIcxtKoaWcZZw"
 const Map = MapGL({

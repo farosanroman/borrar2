@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import {Layer,Feature,GeoJSONLayer} from 'react-mapbox-gl';
+import  MapboxGL, {Layer,Feature,GeoJSONLayer} from 'react-mapbox-gl';
 import {centros} from '../data/centros.json';
+import {green} from '../geo/green.json';
+import {red} from '../geo/red.json';
+import {blue} from '../geo/blue.json';
+import {acevedo} from '../geo/munacevedo.json';
 import MapPopup from './mappopup';
 //import {Popup} from 'react-mapbox-gl';
 //var ReactMapboxGl = require("react-mapbox-gl");
@@ -11,6 +15,22 @@ const popupInfo0={"coordinates":[0,0],"nombre":"oJo","error":"sin error"}
 
 let centro=[-66.45286,10.3]
 let zoom=[8]
+let polygonPaint = MapboxGL.FillPaint = {
+  'fill-color': "#ff0000",
+  'fill-opacity': 0.3
+}
+let polygonPaintY = MapboxGL.FillPaint = {
+  'fill-color': "yellow",
+  'fill-opacity': 0.1
+}
+let polygonPaintB = MapboxGL.FillPaint = {
+  'fill-color': "blue",
+  'fill-opacity': 0.3
+}
+let polygonPaintG = MapboxGL.FillPaint = {
+  'fill-color': "green",
+  'fill-opacity': 0.3
+}
 class MapLayerCentros extends Component {
  
 
@@ -44,7 +64,7 @@ componentDidMount() {
 getCirclePaint = (color) => ({
     'circle-radius': 4,
     'circle-color': color,
-    'circle-opacity': 0.6
+    'circle-opacity': 0.8
   });
   onFeatureMouseEnter(evt) {
     
@@ -81,6 +101,7 @@ getCirclePaint = (color) => ({
      this.setState({popupInfo:{"coordinates":[0,0],"nombre":"oJo","error":"sin error"}})
      
  }
+
 render() { 
      //console.log(this.state.center)
      console.log("centrooooooo")
@@ -98,26 +119,32 @@ render() {
     
       return (
       <div className= "Popup">
-      <Layer
-       type="symbol"
-       id="marker3"
-       layout={{
-        "icon-image": "marker-15",
-        "icon-allow-overlap": true,
-        "text-field": "Centro de Votacion",
-        "text-font": ["Open Sans", "Arial Unicode MS"],
-        "text-size": 8,
-        "text-transform": "uppercase",
-        "text-letter-spacing": 0.05,
-        "text-offset": [0, 1.5]
-      }}>
-        
+     
+    
+       <Layer type="circle" radius={100} color={ 'green'} fillColor= 'green' 
+       fillOpacity= {0.5} paint={this.getCirclePaint('purple')}> 
       {centroslayer}
-        </Layer>
+ </Layer>
+<Layer key={"polygonKeyG"} type="fill" paint={polygonPaintG}>
+    <Feature coordinates=
+    {green}
+     />
+ </Layer>
+
+<Layer key={"polygonKeyB"} type="fill" paint={polygonPaintB}>
+    <Feature coordinates={blue}/>
+ </Layer>
+<Layer key={"polygonKey"} type="fill" paint={polygonPaint}>
+    <Feature coordinates={red}/>
+ </Layer>
+ <Layer key={"polygonKey"} type="fill" paint={polygonPaintY}>
+    <Feature coordinates={acevedo}/>
+ </Layer>
+
+
         
     
-        <MapPopup key={111} popupnodotype={this.state.popupType} popupnodoinfo={this.state.popupInfo}  />
-     
+       
      </div>
       )
   
