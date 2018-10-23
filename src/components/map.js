@@ -92,7 +92,7 @@ onCClick = (e) => {
   this.setState({flagParroquias:false})
   this.setState({flagCentros:true})
   this.setState({zoom:[9]})
-  this.setState({center:[-66.25286,10.3]})
+  this.setState({center:[-66.65286,10.3]})
 }
     render() {
       //const { styleKey } = this.state;
