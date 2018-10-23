@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import  MapboxGL, {Layer,Feature,GeoJSONLayer} from 'react-mapbox-gl';
 import {centros} from '../data/centros.json';
-import {green} from '../geo/green.json';
+
 import {red} from '../geo/red.json';
-import {blue} from '../geo/blue.json';
 import {acevedo} from '../geo/munacevedo.json';
 import {CV0101} from '../geo/0101.json';
 import {CV0102} from '../geo/0102.json';
@@ -41,21 +40,10 @@ const popupInfo0={"coordinates":[0,0],"nombre":"oJo","error":"sin error"}
 let centro=[-66.45286,10.3]
 let zoom=[8]
 let polygonPaint = MapboxGL.FillPaint = {
-  'fill-color': "#ff0000",
-  'fill-opacity': 0.3
-}
-let polygonPaintY = MapboxGL.FillPaint = {
-  'fill-color': "yellow",
-  'fill-opacity': 0.1
-}
-let polygonPaintB = MapboxGL.FillPaint = {
   'fill-color': "blue",
-  'fill-opacity': 0.3
+  'fill-opacity': 0.2
 }
-let polygonPaintG = MapboxGL.FillPaint = {
-  'fill-color': "green",
-  'fill-opacity': 0.3
-}
+
 class MapLayerCentros extends Component {
  
 
@@ -93,7 +81,8 @@ constructor(props) {
     poligono20:[],
     
     poligono21:[],
-    poligono22:[]
+    poligono22:[],
+    red:null
 };
 this.onFeatureClick = this.onFeatureClick.bind(this)
 this.onFeatureMouseEnter = this.onFeatureMouseEnter.bind(this)
@@ -106,6 +95,7 @@ componentDidMount() {
     //this.setState({nodos:[{"id":0,"nombre":"UNIDAD EDUCATIVA DISTRITAL PASTORA LANDAEZ","latlng":[-66.9099,10.499]},{"id":1,"nombre":"UNIDAD EDUCATIVA MARIA ROSA MOLAS FE Y ALEGRIA","latlng":[-66.96723,10.53164]},{"id":2,"nombre":"COLEGIO DE EDUCACIÒN INTEGRAL DOCTOR RAUL LEONIS","latlng":[-66.96723,10.53164]},{"id":3,"nombre":"LICEO BOLIVARIANO PEDRO EMILIO COLL","latlng":[-66.92489,10.45352]},{"id":4,"nombre":"UNIDAD EDUCATIVA DISTRITAL MANUEL ANTONIO CARREÑO","latlng":[-66.94229,10.49292]}]}
     this.setState({nodos:centros})
     this.setState({comentario:"sin"})
+    this.setState({red:red})
     this.setState({poligono01:CV0101.features[0].geometry.coordinates})
     this.setState({poligono02:CV0102.features[0].geometry.coordinates})
     this.setState({poligono03:CV0103.features[0].geometry.coordinates})
@@ -180,7 +170,7 @@ getCirclePaint = (color) => ({
 render() { 
      //console.log(this.state.center)
      console.log("centrooooooo")
-     const { nodos ,poligono01,poligono02,poligono03,poligono04,poligono05,poligono06,poligono07,poligono08,poligono09,poligono10,poligono11,poligono12,poligono13,poligono14,poligono15,poligono16,poligono17,poligono18,poligono19,poligono20,poligono21,poligono22} = this.state;
+     const {red, nodos ,poligono01,poligono02,poligono03,poligono04,poligono05,poligono06,poligono07,poligono08,poligono09,poligono10,poligono11,poligono12,poligono13,poligono14,poligono15,poligono16,poligono17,poligono18,poligono19,poligono20,poligono21,poligono22} = this.state;
      //const parroquiasf0 = this.state.nodos.filter(r => (r.nivel === 7)&&(r.OBSERVADOR===0));
      var i;
      
@@ -196,6 +186,12 @@ render() {
       return (
       <div className= "Popup">
      
+     <GeoJSONLayer
+   key={"g1"}
+   data={red}
+   fillPaint={polygonPaint}
+/>
+
      <Layer key={"polygonKeyA"} type="fill" paint={this.getPolygonPaint('lightyellow')}>
     <Feature coordinates=
     {acevedo}
