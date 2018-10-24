@@ -4,6 +4,7 @@ import {centros} from '../data/centros.json';
 
 import {red} from '../geo/red.json';
 import {acevedo} from '../geo/munacevedo.json';
+import {coffe} from '../geo/coffe.json';
 import {CV0101} from '../geo/0101.json';
 import {CV0102} from '../geo/0102.json';
 import {CV0103} from '../geo/0103.json';
@@ -43,7 +44,20 @@ let polygonPaint = MapboxGL.FillPaint = {
   'fill-color': "blue",
   'fill-opacity': 0.2
 }
+const symbolLayout= MapboxGL.SymbolLayout = {
+  'text-field': '{place}',
+  'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
+  'text-offset': [0, 0.6],
+  'text-anchor': 'top'
+};
+const symbolPaint= MapboxGL.SymbolPaint = {
+  'text-color': 'black'
+};
 
+const circleLayout= MapboxGL.CircleLayout = { visibility: 'visible' };
+const circlePaint= MapboxGL.CirclePaint = {
+  'circle-color': 'black'
+};
 class MapLayerCentros extends Component {
  
 
@@ -82,7 +96,8 @@ constructor(props) {
     
     poligono21:[],
     poligono22:[],
-    red:null
+    red:null,
+    coffe:null
 };
 this.onFeatureClick = this.onFeatureClick.bind(this)
 this.onFeatureMouseEnter = this.onFeatureMouseEnter.bind(this)
@@ -96,6 +111,7 @@ componentDidMount() {
     this.setState({nodos:centros})
     this.setState({comentario:"sin"})
     this.setState({red:red})
+    this.setState({coffe:coffe})
     this.setState({poligono01:CV0101.features[0].geometry.coordinates})
     this.setState({poligono02:CV0102.features[0].geometry.coordinates})
     this.setState({poligono03:CV0103.features[0].geometry.coordinates})
@@ -121,7 +137,7 @@ componentDidMount() {
     this.setState({poligono22:CV0122.features[0].geometry.coordinates})
  
   }
- 
+  
   getPolygonPaint = (color) => (MapboxGL.FillPaint = {
     'fill-color': color,
     'fill-opacity': 0.3
@@ -168,10 +184,12 @@ getCirclePaint = (color) => ({
  }
 
 render() { 
+  
      //console.log(this.state.center)
      console.log("centrooooooo")
-     const {red, nodos ,poligono01,poligono02,poligono03,poligono04,poligono05,poligono06,poligono07,poligono08,poligono09,poligono10,poligono11,poligono12,poligono13,poligono14,poligono15,poligono16,poligono17,poligono18,poligono19,poligono20,poligono21,poligono22} = this.state;
+     const {red,coffe, nodos ,poligono01,poligono02,poligono03,poligono04,poligono05,poligono06,poligono07,poligono08,poligono09,poligono10,poligono11,poligono12,poligono13,poligono14,poligono15,poligono16,poligono17,poligono18,poligono19,poligono20,poligono21,poligono22} = this.state;
      //const parroquiasf0 = this.state.nodos.filter(r => (r.nivel === 7)&&(r.OBSERVADOR===0));
+     console.log(coffe)
      var i;
      
      const centroslayer=centros.map(cv=>{
@@ -191,6 +209,14 @@ render() {
    data={red}
    fillPaint={polygonPaint}
 />
+<GeoJSONLayer
+          data={coffe}
+          circleLayout={circleLayout}
+          circlePaint={circlePaint}
+         
+          symbolLayout={symbolLayout}
+          symbolPaint={symbolPaint}
+        />
 
      <Layer key={"polygonKeyA"} type="fill" paint={this.getPolygonPaint('lightyellow')}>
     <Feature coordinates=
