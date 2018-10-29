@@ -4,8 +4,9 @@ import {Popup} from 'react-mapbox-gl';
 
 import {tendencias,roles} from '../data/tablas.json';
 import {observadores} from '../data/observadores.json';
-class MapPopup extends Component {
  
+class MapPopup extends Component {
+
 //onPopupClose(e) {
 //  console.log("popupclose ")
   //console.log(e)
@@ -52,6 +53,7 @@ console.log(this.state)
 
 }
 render() {
+  //alert("popup")
   const { idr } = 3;
   const popupinfo=this.props.popupnodoinfo 
  

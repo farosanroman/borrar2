@@ -1,0 +1,108 @@
+{"muestra":
+    [
+        {
+            "idcentro": "130101001",
+            "idpais": "01",
+            "pais": "Venezuela",
+            "idestado": "13",
+            "estado": "MIRANDA",
+            "idmunicipio": "01",
+            "municipio": "ACEVEDO",
+            "idparroquia": "01",
+            "parroquia": "CAUCAGUA",
+            "centro": "UNIDAD EDUCATIVA ROSCIO",
+            "lng": -66.3778,
+            "lat": 10.2851,
+            "direccioncentro": "SECTOR LAS CLAVELLINAS DERECHA CALLE MERCAL. IZQUIERDA CALLE FERRETERIA. FRENTE CARRETERA LAS CLAVELLINAS AL FRENTE DEL POLIDEPORTIVO LAS TOMUZAS EDIFICIO",
+            "capitalmunicipio": "CAUCAGUA",
+            "testigos":[{"nombre":"Luis Lopex","celular":"04125555"},
+                {"nombre":"RRoberto Peres","celular":"04124444"},
+                {"nombre":"Maria Guzman","celular":"0412882928"}]
+        
+            },
+        {
+            "idcentro": "130101002",
+            "idpais": "01",
+            "pais": "Venezuela",
+            "idestado": "13",
+            "estado": "MIRANDA",
+            "idmunicipio": "01",
+            "municipio": "ACEVEDO",
+            "idparroquia": "01",
+            "parroquia": "CAUCAGUA",
+            "centro": "UNIDAD EDUCATIVA RICARDA TOVAR",
+            "lng": -66.3734,
+            "lat": 10.2954,
+            "direccioncentro": "URBANIZACION CERRO GRANDE DERECHA CALLE EL PARAISO. IZQUIERDA CALLE CIUDAD TABLITA. FRENTE CALLE PRINCIPAL SECTOR LOS SILOS CASA",
+            "capitalmunicipio": "CAUCAGUA",
+            "testigos":[{"nombre":"Pedro Jose Aguilar","celular":"04129999"},
+                {"nombre":"Rafael Martinex","celular":"041221111"},
+                {"nombre":"Luisa Lopez","celular":"041266666"}]
+        
+        }
+        ,
+        {
+            "idcentro": "130101002",
+            "idpais": "01",
+            "pais": "Venezuela",
+            "idestado": "13",
+            "estado": "MIRANDA",
+            "idmunicipio": "01",
+            "municipio": "ACEVEDO",
+            "idparroquia": "01",
+            "parroquia": "CAUCAGUA",
+            "centro": "UNIDAD EDUCATIVA RICARDA TOVAR",
+            "lng": -66.3934,
+            "lat": 10.2754,
+            "direccioncentro": "URBANIZACION CERRO GRANDE DERECHA CALLE EL PARAISO. IZQUIERDA CALLE CIUDAD TABLITA. FRENTE CALLE PRINCIPAL SECTOR LOS SILOS CASA",
+            "capitalmunicipio": "CAUCAGUA",
+            "testigos":[{"nombre":"Pedro Jose Aguilar","celular":"04129999"},
+                {"nombre":"Rafael Martinex","celular":"041221111"},
+                {"nombre":"Luisa Lopez","celular":"041266666"}]
+        
+        }
+        ,
+        
+        {
+            "idcentro": "130101002",
+            "idpais": "01",
+            "pais": "Venezuela",
+            "idestado": "13",
+            "estado": "MIRANDA",
+            "idmunicipio": "01",
+            "municipio": "ACEVEDO",
+            "idparroquia": "01",
+            "parroquia": "CAUCAGUA",
+            "centro": "UNIDAD EDUCATIVA RICARDA TOVAR",
+            "lng": -66.2734,
+            "lat": 10.2554,
+            "direccioncentro": "URBANIZACION CERRO GRANDE DERECHA CALLE EL PARAISO. IZQUIERDA CALLE CIUDAD TABLITA. FRENTE CALLE PRINCIPAL SECTOR LOS SILOS CASA",
+            "capitalmunicipio": "CAUCAGUA",
+            "testigos":[{"nombre":"Pedro Jose Aguilar","celular":"04129999"},
+                {"nombre":"Rafael Martinex","celular":"041221111"},
+                {"nombre":"Luisa Lopez","celular":"041266666"}]
+        
+        }
+        ,
+        {
+            "idcentro": "130101002",
+            "idpais": "01",
+            "pais": "Venezuela",
+            "idestado": "13",
+            "estado": "MIRANDA",
+            "idmunicipio": "01",
+            "municipio": "ACEVEDO",
+            "idparroquia": "01",
+            "parroquia": "CAUCAGUA",
+            "centro": "UNIDAD EDUCATIVA RICARDA TOVAR",
+            "lng": -66.3634,
+            "lat": 10.3054,
+            "direccioncentro": "URBANIZACION CERRO GRANDE DERECHA CALLE EL PARAISO. IZQUIERDA CALLE CIUDAD TABLITA. FRENTE CALLE PRINCIPAL SECTOR LOS SILOS CASA",
+            "capitalmunicipio": "CAUCAGUA",
+            "testigos":[{"nombre":"Pedro Jose Aguilar","celular":"04129999"},
+                {"nombre":"Rafael Martinex","celular":"041221111"},
+                {"nombre":"Luisa Lopez","celular":"041266666"}]
+        
+        }
+    ]
+}

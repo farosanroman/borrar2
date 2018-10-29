@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import MapGL,{Layer,Feature,ZoomControl} from 'react-mapbox-gl';
 import {resumen} from '../data/resumen.json';
-
+import Chart from './chart';
 import MapLayerMunicipios from './maplayermunicipios';
 import MapLayerParroquias from './maplayerparroquias';
 import MapLayerCentros from './maplayercentros';
-import {tendencias,roles,evaluacion,correos} from '../data/tablas.json';
+import MapLayerMuestra from './maplayermuestra';
+import Formulario from './formulario';
+import {tendencias,formularios,roles,evaluacion,correos} from '../data/tablas.json';
 import styled ,{csc} from 'styled-components';
 //https://mpv.cenditel.gob.ve/cadenas/browser/observatorio/procesos/apps/geocadena/media/geojson?rev=4b459a71f72c425396d545c0dcf9ec6dca20171a&order=name
 //import Popup2 from './popup2';
@@ -46,7 +48,8 @@ class Map2 extends Component {
       popupType:"msg",
       flagMunicipios:false,
       flagParroquias:false,
-      flagCentros:true
+      flagCentros:true,
+      flagMuestra:false
     }
     
   //console.log({centros})
@@ -94,12 +97,33 @@ onCClick = (e) => {
   this.setState({zoom:[9]})
   this.setState({center:[-66.65286,10.3]})
 }
+onMuestraClick = (e) => {
+  this.setState({flagMunicipios:false})
+  this.setState({flagParroquias:false})
+  this.setState({flagCentros:false})
+  this.setState({flagMuestra:true})
+  this.setState({zoom:[9]})
+  this.setState({center:[-66.65286,10.3]})
+}
     render() {
       //const { styleKey } = this.state;
-    const { nodos,comentario,flagMunicipios,flagParroquias,flagCentros,zoom,center } = this.state;
+    const { nodos,comentario,flagMuestra,flagMunicipios,flagParroquias,flagCentros,zoom,center } = this.state;
     const Button = styled.button`
     border: 1px solid #3770c6;
   background-color: rgb(84, 152, 255);
+  height: 100%;
+  color: white;
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+  :hover {
+    background-color: #3770c6;
+  };`
+  const ButtonRed = styled.button`
+    border: 1px solid #3770c6;
+  background-color: rgb(240,10, 10);
   height: 100%;
   color: white;
   font-size: 13px;
@@ -131,7 +155,12 @@ onCClick = (e) => {
       padding: 6px 10px;
       background-color: white;
     `;
-         
+    let formulariosOpciones=formularios.map(t=>{
+     
+      return(
+         <option key={t.idformulario} value={t.idformulario}>{t.nombre}</option>
+           )
+     } )
            let tendenciasOpciones=tendencias.map(t=>{
      
             return(
@@ -158,8 +187,12 @@ onCClick = (e) => {
         <Button onClick={this.onMClick}>Municipios</Button>
         <Button onClick={this.onPClick}>Parroquias</Button>
         <Button onClick={this.onCClick}>Centros</Button>
-        
-        <label>Tendencia:</label>
+        <ButtonRed onClick={this.onMuestraClick}>Muestra</ButtonRed>
+        <label>Formulario:</label>
+        <select ref="formularios">
+              {formulariosOpciones}
+            </select>
+            <label>Tendencia:</label>
         <select ref="tendencia">
               {tendenciasOpciones}
             </select>
@@ -171,16 +204,18 @@ onCClick = (e) => {
             <select ref="correos">
               {correosOpciones}
             </select>
+            <table>
+              <tr><td valign="top">
         <Map        
           style={"mapbox://styles/mapbox/light-v9"}
           center={center} 
           zoom={zoom}
-          containerStyle={{height: "80vh",width: "80vw"}}
+          containerStyle={{height: "80vh",width: "70vw"}}
         > 
         {flagMunicipios&&<MapLayerMunicipios></MapLayerMunicipios>}
         {flagParroquias&&<MapLayerParroquias></MapLayerParroquias>}
         {flagCentros&&<MapLayerCentros></MapLayerCentros>}
-       
+         {flagMuestra&&<MapLayerMuestra></MapLayerMuestra>}
         
         <Layer
                 type="symbol"
@@ -188,7 +223,7 @@ onCClick = (e) => {
                 layout={{
                   "icon-image": "marker-15",
                   "icon-allow-overlap": true,
-                  "text-field": "Parroquia",
+                  "text-field": "Prueba de TEXTO",
                   "text-font": ["Open Sans", "Arial Unicode MS Bold"],
                   "text-size": 11,
                   "text-transform": "uppercase",
@@ -203,6 +238,11 @@ onCClick = (e) => {
         
           <ZoomControl position={"bottomRight"} />
           </Map>
+</td><td>
+<Formulario />
+<Chart/>
+          </td></tr>
+          </table>
           <BottomBar>
          
           <Indicator>{`${comentario}`}</Indicator>

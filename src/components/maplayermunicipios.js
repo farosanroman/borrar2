@@ -18,9 +18,9 @@ constructor(props) {
     
 }
 getCirclePaint = (color) => ({
-    'circle-radius': 10,
+    'circle-radius': 4,
     'circle-color': color,
-    'circle-opacity': 0.3
+    'circle-opacity': 0.8
   });
 render() { 
      
@@ -34,7 +34,7 @@ render() {
       return (
       <div className= "Popup">
    <Layer type="circle" radius={100} color={ 'green'} fillColor= 'green' 
-       fillOpacity= {0.5} paint={this.getCirclePaint('green')}> 
+       fillOpacity= {0.5} paint={this.getCirclePaint('red')}> 
       {municipios}
         </Layer>
      </div>

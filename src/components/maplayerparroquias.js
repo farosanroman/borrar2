@@ -25,11 +25,11 @@ constructor(props) {
     zoom:zoom,    
     cvnombre:"",
     popupInfo:popupInfo0,
-    nuevodefensor:{}
-    
+    nuevodefensor:{}    
 };
-this.onFeatureClick = this.onFeatureClick.bind(this)
+
 this.onFeatureMouseEnter = this.onFeatureMouseEnter.bind(this)
+this.onFeatureClick = this.onFeatureClick.bind(this)
 this.onFeatureMouseLeave = this.onFeatureMouseLeave.bind(this)   
     
 }
@@ -64,7 +64,7 @@ getCirclePaint = (color) => ({
    this.setState({popupInfo:pop})
    this.setState({popupType:"form"})
    console.log(this.state.popupInfo)
-   console.log("onFeatureClick ----------")
+   console.log("onFeatureClick ------------")
     //this.setState({dummy:"bbbb"})
     
   }
@@ -72,7 +72,7 @@ getCirclePaint = (color) => ({
     
     if (this.state.popupType==="msg"){
      this.setState({popupInfo:{"coordinates":[0,0],"nombre":"oJo","error":"sin error"}})
-     //const fecha=new Date();
+     ///const fecha=new Date();
      //this.setState({comentario:fecha})
     }
  }
@@ -91,7 +91,7 @@ render() {
             )
       } )  
       
-    const parroquiasf = this.state.nodos.filter(r => (r.nivel === 7)&&(r.OBSERVADOR>0));
+    const parroquiasf = this.state.nodos.filter(r => (r.nivel === 7)&&(r.FACILITADOR>0));
     const parroquias=parroquiasf.map(cv=>{
         return(
            <Feature key={cv.id} popuptype={this.state.popupType} properties={cv} onMouseEnter={this.onFeatureMouseEnter} onMouseLeave={this.onFeatureMouseLeave} onClick={this.onFeatureClick}  coordinates={cv.latlng} 
@@ -105,7 +105,7 @@ render() {
       {parroquias0}
         </Layer>
    <Layer type="circle" radius={100} color={ 'green'} fillColor= 'green' 
-       fillOpacity= {0.5} paint={this.getCirclePaint('blue')}> 
+       fillOpacity= {0.5} paint={this.getCirclePaint('green')}> 
       {parroquias}
         </Layer>
         <MapPopup key={111} popupnodotype={this.state.popupType} popupnodoinfo={this.state.popupInfo}  />

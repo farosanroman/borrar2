@@ -2,6 +2,16 @@
 
 
 {
+    "formularios":[
+        { "id": 0, "idformulario": "A1", "nombre": "USO DE RECURSOS DEL ESTADO / PUBLICIDAD ELECTORAL" },
+        { "id": 1, "idformulario": "A2", "nombre": "COACCION / INTIMIDACION / CARNET DE LA PATRIA" },
+        { "id": 2, "idformulario": "D1", "nombre": "ACTO DE VOTACIÓN / MAQUINAS ELECTORALES " },
+        { "id": 3, "idformulario": "D2", "nombre": "SECRETO DEL VOTO / COACCION / INTIMIDACION" },
+        { "id": 4, "idformulario": "D3", "nombre": "PUNTOS ROJOS/ CARNET DE LA PATRIA/ VIOLENCIA" },
+        { "id": 5, "idformulario": "D4", "nombre": "CIERRE / ESCRUTINIO " },
+        { "id": 6, "idformulario": "D5", "nombre": "VERIFICACION CIUDADANA " }
+    
+    ],
     "correos":[
         {
             "idc":1,

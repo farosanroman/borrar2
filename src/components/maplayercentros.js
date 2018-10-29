@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import  MapboxGL, {Layer,Feature,GeoJSONLayer} from 'react-mapbox-gl';
-import {centros} from '../data/centros.json';
+import {centros} from '../data/acevedo.json';
 
 import {red} from '../geo/red.json';
-import {acevedo} from '../geo/munacevedo.json';
+import {poliacevedo} from '../geo/poliacevedo.json';
 import {coffe} from '../geo/coffe.json';
 import {CV0101} from '../geo/0101.json';
 import {CV0102} from '../geo/0102.json';
@@ -220,7 +220,7 @@ render() {
 
      <Layer key={"polygonKeyA"} type="fill" paint={this.getPolygonPaint('lightyellow')}>
     <Feature coordinates=
-    {acevedo}
+    {poliacevedo}
      />
  </Layer> 
   <Layer type="circle" radius={100} color={ 'green'} fillColor= 'green' 
@@ -229,10 +229,6 @@ render() {
  </Layer>
 
 
-
- 
- 
- 
  
  <Layer key={"polygonKey1"} type="fill" paint={this.getPolygonPaint('orange')}>
     <Feature coordinates={poligono01}/>
