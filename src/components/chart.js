@@ -1,11 +1,10 @@
 import * as React from 'react';
 import {Radar} from 'react-chartjs-2';
 import {Pie} from 'react-chartjs-2';
-
+import RadioGroup from 'devextreme-react/ui/radio-group'
 import { Card } from 'reactstrap';
 import {
-  Chart as ChartR,
-  
+  Chart as ChartR,  
   PieSeries as PieSeriesR
 } from '@devexpress/dx-react-chart-bootstrap4';
 import Chart , {

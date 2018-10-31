@@ -1,20 +1,8 @@
 import React, { Component } from 'react';
-
 import ReactDOM from 'react-dom';
-import Form, {DateBox,RadioGroup} from 'devextreme-react/ui/form';
-import Chart, {
-  ArgumentAxis,
-  ArgumentAxisLabel,
-  CommonSeriesSettings,
-  Legend,
-  Series,
-  Tooltip,
-  ValueAxis,
-  ValueAxisConstantLine,
-  ValueAxisConstantLineLabel,
-  ValueAxisLabel
-} from 'devextreme-react/ui/chart';
 
+import Form from 'devextreme-react/ui/form';
+import  'devextreme-react/ui/radio-group';
 import 'devextreme-react/ui/text-area';
 
 const employee = {
@@ -52,7 +40,7 @@ const formItems =
       dataField: 'Pregunta',
       editorType: 'dxRadioGroup',
       editorOptions: {
-        layout: "vertical",
+        layout: "horizontal",
         items: ["Si", "No"],
       
     },
@@ -65,21 +53,7 @@ const formItems =
 function customizePercentageText(info) {
   return `${info.valueText}%`;
 }
-const customizeTooltip = function(info) {
-  return {
-      html: `<div><div class="tooltip-header">${
-          info.argumentText
-          }</div><div class="tooltip-body"><div class="series-name">${
-          info.points[0].seriesName 
-          }: </div><div class="value-text">${
-          info.points[0].valueText 
-          }</div><div class="series-name">${
-          info.points[1].seriesName 
-          }: </div><div class="value-text">${
-          info.points[1].valueText 
-          }% </div></div></div>`
-  };
-};
+
 ;
 class Formulario extends Component {
 constructor(props) {
