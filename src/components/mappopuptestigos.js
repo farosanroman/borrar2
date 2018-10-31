@@ -21,32 +21,8 @@ render() {
   const popupinfo=this.props.popupnodoinfo 
   const properties=this.props.properties
   
-  console.log("poooooupinfo")
-  console.log(popupinfo)
-  console.log(popupinfo.testigos)
-  console.log("poooooupinfo centro")
-  //console.log(popupinfo.properties.centro)
-  var t=[{"nombre":"Luis"},{"nombre":"Jose"},{"nombre":"Pedro"}]
-  const tt=popupinfo.testigos
-  //t=popupinfo.testigos
-  console.log(tt)
-  var ttt=[]
-  
- // for (var i = 0; i < tt.length; i++) { 
- //   ttt.push(tt[i]);
-//}
-var telefonos=[]
-  
-  if (tt!=undefined){  
-  telefonos=tt.map(p=>{
-    return(
-       <li>{p.nombre}-{p.celular}</li>
-         )
-         } 
-     )
-        }else{
-        
-        }
+ 
+ 
       return (
       <div className= "Popup">
          <Popup       
@@ -56,8 +32,11 @@ var telefonos=[]
             
        // onClick={this.onPopupClick.bind(this)}            
 >
-     <h3>{popupinfo.centro}</h3>
-     {telefonos}
+     <h6>{popupinfo.centro}</h6>
+     <h6>{popupinfo.nombre}</h6>
+     <h6>{popupinfo.celular}</h6>
+     <h6>{popupinfo.correo}</h6>
+    
      </Popup>
    </div>
        )

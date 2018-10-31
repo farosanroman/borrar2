@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import MapGL,{Layer,Feature,ZoomControl} from 'react-mapbox-gl';
-import {resumen} from '../data/resumen.json';
+
 import Chart from './chart';
 import MapLayerMunicipios from './maplayermunicipios';
 import MapLayerParroquias from './maplayerparroquias';
 import MapLayerCentros from './maplayercentros';
 import MapLayerMuestra from './maplayermuestra';
 import Formulario from './formulario';
-import {tendencias,formularios,roles,evaluacion,correos} from '../data/tablas.json';
+import {resumen} from '../data/resumen.json';
+import {tendencias,estratos,formularios,roles,evaluacion,correos} from '../data/tablas.json';
 import styled ,{csc} from 'styled-components';
 //https://mpv.cenditel.gob.ve/cadenas/browser/observatorio/procesos/apps/geocadena/media/geojson?rev=4b459a71f72c425396d545c0dcf9ec6dca20171a&order=name
 //import Popup2 from './popup2';
@@ -49,13 +50,15 @@ class Map2 extends Component {
       flagMunicipios:false,
       flagParroquias:false,
       flagCentros:true,
-      flagMuestra:false
+      flagMuestra:false,
+      idformulario:1,
+      idestrato:0
     }
     
   //console.log({centros})
     //this.renderPopup = this.renderPopup.bind(this)  
    
-    //this._onClickMap=this._onClickMap.bind(this)
+    this.onChangeEstrato=this.onChangeEstrato.bind(this)
     //this.handleSubmit=this.handleSubmit.bind(this)
 
   }
@@ -69,7 +72,15 @@ class Map2 extends Component {
     this.setState({popupType:"msg"})
     this.setState({comentario:popupInfo0.nombre})
   }
+  onChangeEstrato(e) {
+    //alert("onChangeEstrato"+e.target.value)
+   
+    this.setState({idestrato:e.target.value})
+    //e.preventDefault();
+    //console.log(e)
   
+  
+  }
  getCirclePaint = (color) => ({
   'circle-radius': 4,
   'circle-color': color,
@@ -102,12 +113,12 @@ onMuestraClick = (e) => {
   this.setState({flagParroquias:false})
   this.setState({flagCentros:false})
   this.setState({flagMuestra:true})
-  this.setState({zoom:[9]})
-  this.setState({center:[-66.65286,10.3]})
+  this.setState({zoom:[5]})
+  this.setState({center:[-66.65286,7.3]})
 }
     render() {
       //const { styleKey } = this.state;
-    const { nodos,comentario,flagMuestra,flagMunicipios,flagParroquias,flagCentros,zoom,center } = this.state;
+    const { idestrato,nodos,comentario,flagMuestra,flagMunicipios,flagParroquias,flagCentros,zoom,center } = this.state;
     const Button = styled.button`
     border: 1px solid #3770c6;
   background-color: rgb(84, 152, 255);
@@ -158,7 +169,12 @@ onMuestraClick = (e) => {
     let formulariosOpciones=formularios.map(t=>{
      
       return(
-         <option key={t.idformulario} value={t.idformulario}>{t.nombre}</option>
+         <option key={t.idformulario} value={t.idformulario}>{t.nombre} </option>
+           )
+     } )
+     let estratosOpciones=estratos.map(e=>{     
+      return(
+         <option key={e.id} value={e.id}>{e.nombre}</option>
            )
      } )
            let tendenciasOpciones=tendencias.map(t=>{
@@ -192,6 +208,9 @@ onMuestraClick = (e) => {
         <select ref="formularios">
               {formulariosOpciones}
             </select>
+            <select ref="estratos" onChange={this.onChangeEstrato}>
+              {estratosOpciones}
+            </select>
             <label>Tendencia:</label>
         <select ref="tendencia">
               {tendenciasOpciones}
@@ -204,8 +223,7 @@ onMuestraClick = (e) => {
             <select ref="correos">
               {correosOpciones}
             </select>
-            <table>
-              <tr><td valign="top">
+            <table><tr><td valign="top">
         <Map        
           style={"mapbox://styles/mapbox/light-v9"}
           center={center} 
@@ -215,7 +233,7 @@ onMuestraClick = (e) => {
         {flagMunicipios&&<MapLayerMunicipios></MapLayerMunicipios>}
         {flagParroquias&&<MapLayerParroquias></MapLayerParroquias>}
         {flagCentros&&<MapLayerCentros></MapLayerCentros>}
-         {flagMuestra&&<MapLayerMuestra></MapLayerMuestra>}
+         {flagMuestra&&<MapLayerMuestra propidestrato={this.state.idestrato}></MapLayerMuestra>}
         
         <Layer
                 type="symbol"

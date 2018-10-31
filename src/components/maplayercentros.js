@@ -31,11 +31,7 @@ import {CV0120} from '../geo/0120.json';
 import {CV0121} from '../geo/0121.json';
 import {CV0122} from '../geo/0122.json';
 import MapPopup from './mappopup';
-//import {Popup} from 'react-mapbox-gl';
-//var ReactMapboxGl = require("react-mapbox-gl");
-//https://stackoverflow.com/questions/49059467/display-polygon-in-react-mapbox-gl
-//import {tendencias,roles} from '../data/tablas.json';
-//import {observadores} from '../data/observadores.json';
+
 const popupInfo0={"coordinates":[0,0],"nombre":"oJo","error":"sin error"}
 
 let centro=[-66.45286,10.3]
@@ -186,7 +182,7 @@ getCirclePaint = (color) => ({
 render() { 
   
      //console.log(this.state.center)
-     console.log("centrooooooo")
+     
      const {red,coffe, nodos ,poligono01,poligono02,poligono03,poligono04,poligono05,poligono06,poligono07,poligono08,poligono09,poligono10,poligono11,poligono12,poligono13,poligono14,poligono15,poligono16,poligono17,poligono18,poligono19,poligono20,poligono21,poligono22} = this.state;
      //const parroquiasf0 = this.state.nodos.filter(r => (r.nivel === 7)&&(r.OBSERVADOR===0));
      console.log(coffe)
@@ -302,19 +298,10 @@ render() {
  <Layer key={"polygonKey28"} type="fill" paint={this.getPolygonPaint('black')}>
     <Feature coordinates={poligono22}/>
  </Layer>
- 
-        
-    
-       
+      
      </div>
       )
   
 }
 }
 export default MapLayerCentros;
-/*
-<Layer key={"polygonKey9"} type="fill" paint={this.getPolygonPaint('fuchsia')}>
-    <Feature coordinates={poligono01}/>
- </Layer>
- 
- */

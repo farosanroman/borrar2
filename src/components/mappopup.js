@@ -7,12 +7,7 @@ import {observadores} from '../data/observadores.json';
  
 class MapPopup extends Component {
 
-//onPopupClose(e) {
-//  console.log("popupclose ")
-  //console.log(e)
-  // this.setState({popupInfo2:{"coordinates":[0,0],"nombre":"oJo","error":"sin error"}})
-   
-//}
+
 
 //https://stackoverflow.com/questions/51479592/react-submit-form-not-sending-post-request
 constructor(props) {
@@ -41,7 +36,7 @@ onChangeFunc(event) {
 
 onSubmit = (e) => {
   e.preventDefault();
-console.log(this.state)
+//console.log(this.state)
 //https://stackoverflow.com/questions/51479592/react-submit-form-not-sending-post-request
   //const { name, email, title, description } = this.state;
 

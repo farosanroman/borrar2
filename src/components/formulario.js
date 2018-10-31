@@ -65,6 +65,7 @@ constructor(props) {
 
 }
 componentDidMount() {
+  
   fetch('https://hn.algolia.com/api/v1/search?query=redux')
     .then(response => response.json())
     .then(data => this.setState({ geo:data }));
