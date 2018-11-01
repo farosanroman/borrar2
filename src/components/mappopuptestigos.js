@@ -8,18 +8,18 @@ constructor(props) {
   super(props);
   this.state = { 
     identificacion:"v3333333333", 
-    correo:"ppazzzz@gmail.com",
-    telefono:"041289828928", 
-    idr:1,   
-    config:null };
+   };
     //this.onChangeFunc = this.onChangeFunc.bind(this)
 }
 
 
 render() {
-  //alert("testigos")
+  //alert("aaa")
+  //alert(this.props.muestra)
+ // console.log("testigoooooo")
+ // console.log(this.props.propmuestra)
   const popupinfo=this.props.popupnodoinfo 
-  const properties=this.props.properties
+  //const properties=this.props.properties
   
  
  

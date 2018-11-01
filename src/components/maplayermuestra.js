@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import  MapboxGL, {Layer,Feature,GeoJSONLayer} from 'react-mapbox-gl';
 
 import {red} from '../geo/red.json';
-import {muestra} from '../data/muestra.json';
+//import {muestra} from '../data/muestra.json';
 import {coffe} from '../geo/coffe.json';
 
 import MapPopupTestigos from './mappopuptestigos';
@@ -48,9 +48,11 @@ class MapLayerMuestra extends Component {
     nuevodefensor:{},    
     red:null,
     coffe:null,
-    idestrato:0
-  
+    idestrato:0,
+    muestra:this.props.propmuestra
 };
+console.log("this.state.muestra en maplayermuestra")
+console.log(this.state.muestra)
 this.onFeatureClick = this.onFeatureClick.bind(this)
 this.onFeatureMouseEnter = this.onFeatureMouseEnter.bind(this)
 this.onFeatureMouseLeave = this.onFeatureMouseLeave.bind(this)   
@@ -61,7 +63,7 @@ componentDidMount() {
    // console.log('El componente está disponible en el DOM');
     // Pedimos algunos datos
     //this.setState({nodos:[{"id":0,"nombre":"UNIDAD EDUCATIVA DISTRITAL PASTORA LANDAEZ","latlng":[-66.9099,10.499]},{"id":1,"nombre":"UNIDAD EDUCATIVA MARIA ROSA MOLAS FE Y ALEGRIA","latlng":[-66.96723,10.53164]},{"id":2,"nombre":"COLEGIO DE EDUCACIÒN INTEGRAL DOCTOR RAUL LEONIS","latlng":[-66.96723,10.53164]},{"id":3,"nombre":"LICEO BOLIVARIANO PEDRO EMILIO COLL","latlng":[-66.92489,10.45352]},{"id":4,"nombre":"UNIDAD EDUCATIVA DISTRITAL MANUEL ANTONIO CARREÑO","latlng":[-66.94229,10.49292]}]}
-    this.setState({nodos:muestra})
+    //this.setState({nodos:muestra})
     this.setState({comentario:"sin"})
     this.setState({red:red})
     this.setState({coffe:coffe})
@@ -79,18 +81,18 @@ getCirclePaint = (color) => ({
     'circle-opacity': 0.8
   });
   onFeatureMouseEnter(evt) {
-    console.log("evt evt evt evt evt")
-    console.log(evt)
+   // console.log("evt evt evt evt evt")
+   // console.log(evt)
     const lnglat=[evt.feature.properties.lng,evt.feature.properties.lat]
     //console.log(lnglat)
     //alert(lnglat[0])
     //alert(evt.feature.properties.latlng)
     //const pop={coordinates:JSON.parse(evt.feature.properties.latlng),nombre:evt.feature.properties.nombre};
     //this.setState({center:lnglat})
-    this.setState({center:[-66.45286,10.3]})
+    //this.setState({center:[-66.45286,10.3]})
     //this.setState({popupInfo:pop})
     this.setState({popupType:"msg"})
-    this.setState({comentario:"pop.nombre"})
+    //this.setState({comentario:"pop.nombre"})
     const pop={coordinates:lnglat,centro:evt.feature.properties.centro,nombre:evt.feature.properties.nombre,celular:evt.feature.properties.celular,correo:evt.feature.properties.correo};
     this.setState({popupInfo:pop})
     
@@ -124,41 +126,39 @@ getCirclePaint = (color) => ({
 
 render() { 
  // alert("render muestra"+this.props.propidestrato)
-     //console.log(this.state.center)
+  console.log("aaaaa render maplaeymuestra aaaaaaaaaaa")
     const idestrato=this.props.propidestrato*1
     //const idestrato=3
-     const {red,coffe, nodos } = this.state;
+     const {red,coffe, nodos,muestra } = this.state;
+     console.log("maplayermuestraaaaaaaaa  nnnn")
+     console.log(this.props.propmuestra)
+       console.log(muestra)
      //const parroquiasf0 = this.state.nodos.filter(r => (r.nivel === 7)&&(r.OBSERVADOR===0));
     
      var i;
-     let nodose=nodos;
+     //let nodosprop=this.props.propmuestra
+     //let nodose=muestra;
      //alert(idestrato)
-     if (idestrato>0){
-     nodose = nodos.filter(r => (r.e === idestrato));
-     }
-     const muestralayer=nodose.map(cv=>{
-      // if (idestrato===cv.e){
+     //if (idestrato>0){
+     //    nodose = muestra.filter(r => (r.e === idestrato));
+     //}
+     const muestralayer=muestra.map(cv=>{
+     
        i+=1;
         return(
           <Feature key={i} properties={cv}   coordinates={[cv.lng,cv.lat]} 
           onMouseEnter={this.onFeatureMouseEnter} onMouseLeave={this.onFeatureMouseLeave}
           />
             )
-      //}
+     
     }
       )  
-      
-    
       return (
       <div className= "Popup">
-     
-     
-
-
-  <Layer type="circle" radius={100} color={ 'green'} fillColor= 'green' 
-       fillOpacity= {0.5} paint={this.getCirclePaint('red')}> 
-      {muestralayer}
- </Layer>
+       <Layer type="circle" radius={100} color={ 'green'} fillColor= 'green' 
+         fillOpacity= {0.5} paint={this.getCirclePaint('red')}> 
+        {muestralayer}
+     </Layer>
 
 
  

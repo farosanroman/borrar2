@@ -71,8 +71,7 @@ componentDidMount() {
     .then(data => this.setState({ geo:data }));
 }
 render() {
-  console.log("this.state.geoooooo")
-  console.log(this.state.geo)
+  
    return(
             <div>Formulario
                

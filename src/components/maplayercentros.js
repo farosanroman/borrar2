@@ -101,10 +101,7 @@ this.onFeatureMouseLeave = this.onFeatureMouseLeave.bind(this)
     
 }
 componentDidMount() {
-    console.log('El componente está disponible en el DOM');
-    // Pedimos algunos datos
-    //this.setState({nodos:[{"id":0,"nombre":"UNIDAD EDUCATIVA DISTRITAL PASTORA LANDAEZ","latlng":[-66.9099,10.499]},{"id":1,"nombre":"UNIDAD EDUCATIVA MARIA ROSA MOLAS FE Y ALEGRIA","latlng":[-66.96723,10.53164]},{"id":2,"nombre":"COLEGIO DE EDUCACIÒN INTEGRAL DOCTOR RAUL LEONIS","latlng":[-66.96723,10.53164]},{"id":3,"nombre":"LICEO BOLIVARIANO PEDRO EMILIO COLL","latlng":[-66.92489,10.45352]},{"id":4,"nombre":"UNIDAD EDUCATIVA DISTRITAL MANUEL ANTONIO CARREÑO","latlng":[-66.94229,10.49292]}]}
-    this.setState({nodos:centros})
+     this.setState({nodos:centros})
     this.setState({comentario:"sin"})
     this.setState({red:red})
     this.setState({coffe:coffe})
@@ -160,9 +157,7 @@ getCirclePaint = (color) => ({
  // let pop={"coordinates":JSON.parse(evt.feature.properties.latlng),"nombre":evt.feature.properties.nombre}
    this.setState({popupInfo:pop})
    this.setState({popupType:"form"})
-   console.log(this.state.popupInfo)
-   console.log("onFeatureClick ----------")
-    //this.setState({dummy:"bbbb"})
+   
     
   }
    onFeatureMouseLeave(e) {
@@ -185,7 +180,7 @@ render() {
      
      const {red,coffe, nodos ,poligono01,poligono02,poligono03,poligono04,poligono05,poligono06,poligono07,poligono08,poligono09,poligono10,poligono11,poligono12,poligono13,poligono14,poligono15,poligono16,poligono17,poligono18,poligono19,poligono20,poligono21,poligono22} = this.state;
      //const parroquiasf0 = this.state.nodos.filter(r => (r.nivel === 7)&&(r.OBSERVADOR===0));
-     console.log(coffe)
+    
      var i;
      
      const centroslayer=centros.map(cv=>{

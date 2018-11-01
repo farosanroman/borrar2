@@ -8,6 +8,7 @@ import MapLayerCentros from './maplayercentros';
 import MapLayerMuestra from './maplayermuestra';
 import Formulario from './formulario';
 import {resumen} from '../data/resumen.json';
+//import {muestra} from '../data/muestra.json';
 import {tendencias,estratos,formularios,roles,evaluacion,correos} from '../data/tablas.json';
 import styled ,{csc} from 'styled-components';
 //https://mpv.cenditel.gob.ve/cadenas/browser/observatorio/procesos/apps/geocadena/media/geojson?rev=4b459a71f72c425396d545c0dcf9ec6dca20171a&order=name
@@ -32,7 +33,7 @@ const iconByScianGroup = {
   10: 'garden-15',
 }
 const popupInfo0={"coordinates":[0,0],"nombre":"oJo","error":"sin error"}
-console.log("App Inicio")
+
 let centro=[-66.95286,7]
 let zoom=[5]
 class Map2 extends Component {    
@@ -52,7 +53,8 @@ class Map2 extends Component {
       flagCentros:true,
       flagMuestra:false,
       idformulario:1,
-      idestrato:0
+      idestrato:0,
+      muestra:[]
     }
     
   //console.log({centros})
@@ -63,40 +65,54 @@ class Map2 extends Component {
 
   }
   componentDidMount() {
-    console.log('El componente está disponible en el DOM');
+   // console.log('El componente está disponible en el DOM');
     // Pedimos algunos datos
     //this.setState({nodos:[{"id":0,"nombre":"UNIDAD EDUCATIVA DISTRITAL PASTORA LANDAEZ","latlng":[-66.9099,10.499]},{"id":1,"nombre":"UNIDAD EDUCATIVA MARIA ROSA MOLAS FE Y ALEGRIA","latlng":[-66.96723,10.53164]},{"id":2,"nombre":"COLEGIO DE EDUCACIÒN INTEGRAL DOCTOR RAUL LEONIS","latlng":[-66.96723,10.53164]},{"id":3,"nombre":"LICEO BOLIVARIANO PEDRO EMILIO COLL","latlng":[-66.92489,10.45352]},{"id":4,"nombre":"UNIDAD EDUCATIVA DISTRITAL MANUEL ANTONIO CARREÑO","latlng":[-66.94229,10.49292]}]}
+     var url="http://faro2018nodos.azurewebsites.net/api/faronodosapi_getnodoselectoralesescrutiniossos?idestado=13&idcircunscripcion=&idmunicipio=&idparroquia=&idcentro=&idmesa=&muestra=1&estrato=0&callcenter=&grupocallcenter=&opcion=1&idmomento=0";
+     url="https://faro2018consultas.azurewebsites.net/api/nodoscentros"
+     fetch(url)
+    .then(response => response.json())
+    .then(result => this.onSetResult(result))
     this.setState({nodos:resumen})
     this.setState({comentario:"sin"})
     this.setState({popupInfo:popupInfo0})
     this.setState({popupType:"msg"})
     this.setState({comentario:popupInfo0.nombre})
   }
+   onSetResult = (result) => {
+    console.log("onSetRsultss sss")
+    console.log(result)
+    this.setState({muestra:result})
+    
+    //this.setState({ personas: result })
+    //console.log(this.state.personas)
+}
   onChangeEstrato(e) {
-    //alert("onChangeEstrato"+e.target.value)
-   
     this.setState({idestrato:e.target.value})
-    //e.preventDefault();
-    //console.log(e)
-  
+   // alert("onChangeEstrato"+e.target.value)
+   
+   
   
   }
+ 
+
  getCirclePaint = (color) => ({
   'circle-radius': 4,
   'circle-color': color,
   'circle-opacity': 0.6
 });
 onMClick = (e) => {
-  console.log(e)
+ 
   this.setState({flagMunicipios:true})
   this.setState({flagParroquias:false})
   this.setState({flagCentros:false})
-
+  this.setState({flagMuestra:false})
 }
 onPClick = (e) => {
   this.setState({flagMunicipios:false})
   this.setState({flagParroquias:true})
   this.setState({flagCentros:false})
+  this.setState({flagMuestra:false})
   this.setState({zoom:[5]})
   this.setState({center:[-66.95286,7]})
 
@@ -105,6 +121,7 @@ onCClick = (e) => {
   this.setState({flagMunicipios:false})
   this.setState({flagParroquias:false})
   this.setState({flagCentros:true})
+  this.setState({flagMuestra:false})
   this.setState({zoom:[9]})
   this.setState({center:[-66.65286,10.3]})
 }
@@ -114,7 +131,8 @@ onMuestraClick = (e) => {
   this.setState({flagCentros:false})
   this.setState({flagMuestra:true})
   this.setState({zoom:[5]})
-  this.setState({center:[-66.65286,7.3]})
+  this.setState({center:[-66.65286,7.303]})
+  //this.setState({muestra:this.state.muestra})
 }
     render() {
       //const { styleKey } = this.state;
@@ -124,7 +142,7 @@ onMuestraClick = (e) => {
   background-color: rgb(84, 152, 255);
   height: 100%;
   color: white;
-  font-size: 13px;
+  font-size: 13p
   padding: 6px 12px;
   border-radius: 6px;
   cursor: pointer;
@@ -223,7 +241,7 @@ onMuestraClick = (e) => {
             <select ref="correos">
               {correosOpciones}
             </select>
-            <table><tr><td valign="top">
+            <table><tbody><tr><td valign="top">
         <Map        
           style={"mapbox://styles/mapbox/light-v9"}
           center={center} 
@@ -233,7 +251,7 @@ onMuestraClick = (e) => {
         {flagMunicipios&&<MapLayerMunicipios></MapLayerMunicipios>}
         {flagParroquias&&<MapLayerParroquias></MapLayerParroquias>}
         {flagCentros&&<MapLayerCentros></MapLayerCentros>}
-         {flagMuestra&&<MapLayerMuestra propidestrato={this.state.idestrato}></MapLayerMuestra>}
+         {flagMuestra&&<MapLayerMuestra propmuestra={this.state.muestra} propidestrato={this.state.idestrato}></MapLayerMuestra>}
         
         <Layer
                 type="symbol"
@@ -257,9 +275,11 @@ onMuestraClick = (e) => {
           <ZoomControl position={"bottomRight"} />
           </Map>
 </td><td>
-<Formulario />
+
 <Chart/>
+<Formulario />
           </td></tr>
+          </tbody>
           </table>
           <BottomBar>
          
