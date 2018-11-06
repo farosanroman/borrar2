@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import  MapboxGL, {Layer,Feature,GeoJSONLayer} from 'react-mapbox-gl';
 
-import {red} from '../geo/red.json';
+
 //import {muestra} from '../data/muestra.json';
 import {coffe} from '../geo/coffe.json';
 
-import MapPopupTestigos from './mappopuptestigos';
-//import {Popup} from 'react-mapbox-gl';
-//var ReactMapboxGl = require("react-mapbox-gl");
+import MapPopupTestigo from './mappopuptestigos';
 //https://stackoverflow.com/questions/49059467/display-polygon-in-react-mapbox-gl
-//import {tendencias,roles} from '../data/tablas.json';
-//import {observadores} from '../data/observadores.json';
+
 const popupInfo0={"coordinates":[0,0],"nombre":"oJo","error":"sin error"}
 //console.log(muestra)
 let centro=[-66.45286,10.3]
@@ -40,37 +37,44 @@ class MapLayerMuestra extends Component {
     nodos:[],
     popupType:"msg",
     config:null,
-    comentario:"comentario",      
+   // comentario:"comentario",      
     center:centro,
     zoom:zoom,    
     cvnombre:"",
-    popupInfo:popupInfo0,
-    nuevodefensor:{},    
-    red:null,
-    coffe:null,
+    popupInfo:{"coordinates":[0,0],"nombre":"oJo","error":"sin error"},
+    nuevodefensor:{}, 
+    flagPopupTestigo:this.props.flagPopupTestigo,     
     idestrato:0,
-    muestra:this.props.propmuestra
+    muestra:[]
 };
-console.log("this.state.muestra en maplayermuestra")
-console.log(this.state.muestra)
+console.log("class MapLayerMuestra=>" +this.state.flagPopupTestigo)
+//console.log("this.state.muestra e1n maplayermuestra")
+//console.log(this.state.muestra)
 this.onFeatureClick = this.onFeatureClick.bind(this)
 this.onFeatureMouseEnter = this.onFeatureMouseEnter.bind(this)
 this.onFeatureMouseLeave = this.onFeatureMouseLeave.bind(this)   
     
 }
 componentDidMount() {
- // alert("this.props.propidestrato"+this.props.propidestrato)
-   // console.log('El componente está disponible en el DOM');
-    // Pedimos algunos datos
-    //this.setState({nodos:[{"id":0,"nombre":"UNIDAD EDUCATIVA DISTRITAL PASTORA LANDAEZ","latlng":[-66.9099,10.499]},{"id":1,"nombre":"UNIDAD EDUCATIVA MARIA ROSA MOLAS FE Y ALEGRIA","latlng":[-66.96723,10.53164]},{"id":2,"nombre":"COLEGIO DE EDUCACIÒN INTEGRAL DOCTOR RAUL LEONIS","latlng":[-66.96723,10.53164]},{"id":3,"nombre":"LICEO BOLIVARIANO PEDRO EMILIO COLL","latlng":[-66.92489,10.45352]},{"id":4,"nombre":"UNIDAD EDUCATIVA DISTRITAL MANUEL ANTONIO CARREÑO","latlng":[-66.94229,10.49292]}]}
-    //this.setState({nodos:muestra})
-    this.setState({comentario:"sin"})
-    this.setState({red:red})
+  var url="https://faro2018nodos.azurewebsites.net/api/faronodosapi_getnodoselectoralesescrutiniossos10122018?idestado=&idcircunscripcion=&idmunicipio=&idparroquia=&idcentro=&idmesa=&muestra=1&estrato=0&callcenter=&grupocallcenter=&opcion=1&idmomento=0";
+  //url="https://faro2018consultas.azurewebsites.net/api/nodoscentros"
+  fetch(url)
+ .then(response => response.json())
+ .then(result => this.onSetResult(result))
+    //this.setState({comentario:"sin"})
+    
     this.setState({coffe:coffe})
-   this.setState({idestrato:this.props.propidestrato}) 
+    this.setState({idestrato:this.props.propidestrato}) 
    
   }
-  
+  onSetResult = (result) => {
+    //console.log("onSetRsultss sss")
+    console.log(result)
+    this.setState({muestra:result})
+    
+    //this.setState({ personas: result })
+    //console.log(this.state.personas)
+}
   getPolygonPaint = (color) => (MapboxGL.FillPaint = {
     'fill-color': color,
     'fill-opacity': 0.3
@@ -83,96 +87,104 @@ getCirclePaint = (color) => ({
   onFeatureMouseEnter(evt) {
    // console.log("evt evt evt evt evt")
    // console.log(evt)
-    const lnglat=[evt.feature.properties.lng,evt.feature.properties.lat]
-    //console.log(lnglat)
-    //alert(lnglat[0])
-    //alert(evt.feature.properties.latlng)
-    //const pop={coordinates:JSON.parse(evt.feature.properties.latlng),nombre:evt.feature.properties.nombre};
-    //this.setState({center:lnglat})
-    //this.setState({center:[-66.45286,10.3]})
-    //this.setState({popupInfo:pop})
+    //const lnglat=[evt.feature.properties.lng,evt.feature.properties.lat]
+    const lnglat=[evt.feature.properties.longitud,evt.feature.properties.latitud]
     this.setState({popupType:"msg"})
+    this.setState({flagPopupTestigo:true})
     //this.setState({comentario:"pop.nombre"})
-    const pop={coordinates:lnglat,centro:evt.feature.properties.centro,nombre:evt.feature.properties.nombre,celular:evt.feature.properties.celular,correo:evt.feature.properties.correo};
+    const pop={coordinates:lnglat,idcentro:evt.feature.properties.idcentro,centro:evt.feature.properties.nombrecentro,nombre:evt.feature.properties.nombretestigo,celular:evt.feature.properties.celulartestigo,correo:evt.feature.properties.correotestigo};
+    console.log(JSON.stringify(pop))
     this.setState({popupInfo:pop})
-    
+    this.props.flagPopUpTestigoTrue()
    }
    onFeatureClick(evt) {
-    
     this.setState({zoom:[8]})
     const pop={coordinates:JSON.parse(evt.feature.properties.latlng),nombre:evt.feature.properties.nombre};
     this.setState({center:JSON.parse(evt.feature.properties.latlng)})
- // let pop={"coordinates":JSON.parse(evt.feature.properties.latlng),"nombre":evt.feature.properties.nombre}
-   this.setState({popupInfo:pop})
-   this.setState({popupType:"form"})
-  // console.log(this.state.popupInfo)
-   //console.log("onFeatureClick ----------")
-    //this.setState({dummy:"bbbb"})
-    
+    this.setState({popupInfo:pop})
+    this.setState({popupType:"form"})
   }
    onFeatureMouseLeave(e) {
-    
-    if (this.state.popupType==="msg"){
-     this.setState({popupInfo:{"coordinates":[0,0],"nombre":"oJo","error":"sin error"}})
-     //const fecha=new Date();
-     //this.setState({comentario:fecha})
-    }
+    this.setState({popupInfo:{"coordinates":[0,0],"nombre":"oJo","error":"sin error"}})
+
  }
-   onPopupClose(e) {
-    
+   onPopupClose(e) {    
      this.setState({popupInfo:{"coordinates":[0,0],"nombre":"oJo","error":"sin error"}})
-     
  }
 
 render() { 
  // alert("render muestra"+this.props.propidestrato)
   console.log("aaaaa render maplaeymuestra aaaaaaaaaaa")
+  const { popupInfo,flagPopupTestigo } = this.state;
+  console.log("LAYER MUESTRA") 
+  console.log(this.props.flagPopupTestigo+" "+this.state.flagPopupTestigo)
+  console.log({popupInfo})
     const idestrato=this.props.propidestrato*1
     //const idestrato=3
-     const {red,coffe, nodos,muestra } = this.state;
-     console.log("maplayermuestraaaaaaaaa  nnnn")
-     console.log(this.props.propmuestra)
-       console.log(muestra)
-     //const parroquiasf0 = this.state.nodos.filter(r => (r.nivel === 7)&&(r.OBSERVADOR===0));
     
+     const {muestra } = this.state;
+     //console.log({muestra })
      var i;
      //let nodosprop=this.props.propmuestra
-     //let nodose=muestra;
-     //alert(idestrato)
-     //if (idestrato>0){
-     //    nodose = muestra.filter(r => (r.e === idestrato));
-     //}
-     const muestralayer=muestra.map(cv=>{
      
+     //const azules = muestra.filter(r => (r.nombretestigo.indexOf('SIN')>-1));
+     const azules=[]
+     const rojos=[]
+     for (var i = 0; i< muestra.length; ++i) {
+          if (muestra[i].nombretestigo==="SIN OBSERVADOR 9D"){
+             rojos.push(muestra[i])
+          }else{
+             azules.push(muestra[i])    
+          }
+     }
+     console.log(azules)
+     //alert(idestrato)
+     let nodoserojos=rojos;
+     if (idestrato>0){
+         nodoserojos = rojos.filter(r => (r.estratocentro === idestrato));
+     }
+     const muestraroja=nodoserojos.map(cv=>{     
        i+=1;
         return(
-          <Feature key={i} properties={cv}   coordinates={[cv.lng,cv.lat]} 
-          onMouseEnter={this.onFeatureMouseEnter} onMouseLeave={this.onFeatureMouseLeave}
+          <Feature key={i} properties={cv}   coordinates={[cv.longitud,cv.latitud]} 
+          onMouseEnter={this.onFeatureMouseEnter} 
           />
-            )
-     
-    }
-      )  
+            )     
+      }) 
+      let nodoseazules=azules;
+      if (idestrato>0){
+          nodoseazules = azules.filter(r => (r.estratocentro === idestrato));
+      }
+ 
+      const muestraazul=nodoseazules.map(cv=>{     
+        i+=1;
+         return(
+           <Feature key={i} properties={cv}   coordinates={[cv.longitud,cv.latitud]} 
+           onMouseEnter={this.onFeatureMouseEnter} 
+           />
+             )     
+       })   
       return (
       <div className= "Popup">
        <Layer type="circle" radius={100} color={ 'green'} fillColor= 'green' 
          fillOpacity= {0.5} paint={this.getCirclePaint('red')}> 
-        {muestralayer}
-     </Layer>
-
-
- 
-  <MapPopupTestigos key={111} popupnodotype={this.state.popupType} popupnodoinfo={this.state.popupInfo}  />
+        {muestraroja}
+     </Layer> 
+     <Layer type="circle" radius={100} color={ 'green'} fillColor= 'green' 
+         fillOpacity= {0.5} paint={this.getCirclePaint('blue')}> 
+        {muestraazul}
+     </Layer> 
+  <MapPopupTestigo key={111} 
+     functionclose={this.onFeatureMouseLeave} 
+     popupnodotype={this.state.popupType} 
+     popupnodoinfo={popupInfo} 
+     flagPopupTestigo={this.props.flagPopupTestigo} 
+     />
        
      </div>
-      )
+ 
+ )
   
 }
 }
 export default MapLayerMuestra;
-/*
-<Layer key={"polygonKey9"} type="fill" paint={this.getPolygonPaint('fuchsia')}>
-    <Feature coordinates={poligono01}/>
- </Layer>
- 
- */

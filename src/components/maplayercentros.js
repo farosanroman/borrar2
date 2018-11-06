@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import  MapboxGL, {Layer,Feature,GeoJSONLayer} from 'react-mapbox-gl';
 import {centros} from '../data/acevedo.json';
 
-import {red} from '../geo/red.json';
+import {nuevaesparta} from '../geo/nuevaesparta.json';
 import {poliacevedo} from '../geo/poliacevedo.json';
 import {coffe} from '../geo/coffe.json';
 import {CV0101} from '../geo/0101.json';
@@ -92,7 +92,7 @@ constructor(props) {
     
     poligono21:[],
     poligono22:[],
-    red:null,
+    nuevaesparta:null,
     coffe:null
 };
 this.onFeatureClick = this.onFeatureClick.bind(this)
@@ -103,7 +103,7 @@ this.onFeatureMouseLeave = this.onFeatureMouseLeave.bind(this)
 componentDidMount() {
      this.setState({nodos:centros})
     this.setState({comentario:"sin"})
-    this.setState({red:red})
+    this.setState({nuevaesparta:nuevaesparta})
     this.setState({coffe:coffe})
     this.setState({poligono01:CV0101.features[0].geometry.coordinates})
     this.setState({poligono02:CV0102.features[0].geometry.coordinates})
@@ -178,7 +178,7 @@ render() {
   
      //console.log(this.state.center)
      
-     const {red,coffe, nodos ,poligono01,poligono02,poligono03,poligono04,poligono05,poligono06,poligono07,poligono08,poligono09,poligono10,poligono11,poligono12,poligono13,poligono14,poligono15,poligono16,poligono17,poligono18,poligono19,poligono20,poligono21,poligono22} = this.state;
+     const {nuevaesparta,coffe, nodos ,poligono01,poligono02,poligono03,poligono04,poligono05,poligono06,poligono07,poligono08,poligono09,poligono10,poligono11,poligono12,poligono13,poligono14,poligono15,poligono16,poligono17,poligono18,poligono19,poligono20,poligono21,poligono22} = this.state;
      //const parroquiasf0 = this.state.nodos.filter(r => (r.nivel === 7)&&(r.OBSERVADOR===0));
     
      var i;
@@ -197,7 +197,7 @@ render() {
      
      <GeoJSONLayer
    key={"g1"}
-   data={red}
+   data={nuevaesparta}
    fillPaint={polygonPaint}
 />
 <GeoJSONLayer

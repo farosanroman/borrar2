@@ -1,6 +1,6 @@
 import React from 'react';
 import {Card, CardBody, CardHeader, Media } from 'reactstrap';
-import Chart from '../components/chart'
+
 //import { Link } from 'react-router-dom';
 //import {leaderss} from '../data/productos.json';
 function About(props) {

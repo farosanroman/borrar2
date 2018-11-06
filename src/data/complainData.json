@@ -1,0 +1,83 @@
+
+{
+  "polardata":
+  [{
+    "arg": "USA",
+    "apples": 4.21,
+    "grapes": 6.22,
+    "lemons": 0.8,
+    "oranges": 7.47
+}, {
+    "arg": "China",
+    "apples": 3.33,
+    "grapes": 8.65,
+    "lemons": 1.06,
+    "oranges": 5
+}, {
+    "arg": "Turkey",
+    "apples": 2.6,
+    "grapes": 4.25,
+    "lemons": 0.78,
+    "oranges": 1.71
+}, {
+    "arg": "Italy",
+    "apples": 2.2,
+    "grapes": 7.78,
+    "lemons": 0.52,
+    "oranges": 2.39
+}, {
+    "arg": "India",
+    "apples": 2.16,
+    "grapes": 2.26,
+    "lemons": 3.09,
+    "oranges": 6.26
+}],
+    "areas": [{
+        "country": "Russia",
+        "area": 12
+      }, {
+        "country": "Canada",
+        "area": 7
+      }, {
+        "country": "USA",
+        "area": 7
+      }, {
+        "country": "China",
+        "area": 7
+      }, {
+        "country": "Brazil",
+        "area": 6
+      }, {
+        "country": "Australia",
+        "area": 5
+      }, {
+        "country": "India",
+        "area": 2
+      }, {
+        "country": "Others",
+        "area": 55
+      }]
+    ,
+    "populationData" : [{
+    "arg": 1950,
+    "val": 2525778669
+  }, {
+    "arg": 1960,
+    "val": 3026002942
+  }, {
+    "arg": 1970,
+    "val": 3691172616
+  }, {
+    "arg": 1980,
+    "val": 4449048798
+  }, {
+    "arg": 1990,
+    "val": 5320816667
+  }, {
+    "arg": 2000,
+    "val": 6127700428
+  }, {
+    "arg": 2010,
+    "val": 6916183482
+  }]
+}

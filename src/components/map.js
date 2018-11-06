@@ -20,18 +20,7 @@ const Map = MapGL({
 //https://www.youtube.com/watch?v=I7WfxhF2wEg
 
 //https://medium.com/@to_pe/deploying-create-react-app-on-microsoft-azure-c0f6686a4321
-const iconByScianGroup = {
-  1: 'doctor-15',
-  2: 'dog-park-15',
-  3: 'drinking-water-15',
-  4: 'embassy-15',
-  5: 'entrance-15',
-  6: 'fast-food-15',
-  7: 'ferry-15',
-  8: 'fire-station-15',
-  9: 'fuel-15',
-  10: 'garden-15',
-}
+
 const popupInfo0={"coordinates":[0,0],"nombre":"oJo","error":"sin error"}
 
 let centro=[-66.95286,7]
@@ -52,55 +41,44 @@ class Map2 extends Component {
       flagParroquias:false,
       flagCentros:true,
       flagMuestra:false,
+      flagPopupTestigo:true,
       idformulario:1,
       idestrato:0,
       muestra:[]
     }
-    
-  //console.log({centros})
-    //this.renderPopup = this.renderPopup.bind(this)  
-   
-    this.onChangeEstrato=this.onChangeEstrato.bind(this)
-    //this.handleSubmit=this.handleSubmit.bind(this)
-
+    this.onMapClick = this.onMapClick.bind(this)
+    this.onChangeEstrato=this.onChangeEstrato.bind(this)  
   }
   componentDidMount() {
-   // console.log('El componente está disponible en el DOM');
-    // Pedimos algunos datos
-    //this.setState({nodos:[{"id":0,"nombre":"UNIDAD EDUCATIVA DISTRITAL PASTORA LANDAEZ","latlng":[-66.9099,10.499]},{"id":1,"nombre":"UNIDAD EDUCATIVA MARIA ROSA MOLAS FE Y ALEGRIA","latlng":[-66.96723,10.53164]},{"id":2,"nombre":"COLEGIO DE EDUCACIÒN INTEGRAL DOCTOR RAUL LEONIS","latlng":[-66.96723,10.53164]},{"id":3,"nombre":"LICEO BOLIVARIANO PEDRO EMILIO COLL","latlng":[-66.92489,10.45352]},{"id":4,"nombre":"UNIDAD EDUCATIVA DISTRITAL MANUEL ANTONIO CARREÑO","latlng":[-66.94229,10.49292]}]}
-     var url="http://faro2018nodos.azurewebsites.net/api/faronodosapi_getnodoselectoralesescrutiniossos?idestado=13&idcircunscripcion=&idmunicipio=&idparroquia=&idcentro=&idmesa=&muestra=1&estrato=0&callcenter=&grupocallcenter=&opcion=1&idmomento=0";
-     url="https://faro2018consultas.azurewebsites.net/api/nodoscentros"
-     fetch(url)
-    .then(response => response.json())
-    .then(result => this.onSetResult(result))
+ 
     this.setState({nodos:resumen})
     this.setState({comentario:"sin"})
     this.setState({popupInfo:popupInfo0})
     this.setState({popupType:"msg"})
     this.setState({comentario:popupInfo0.nombre})
   }
-   onSetResult = (result) => {
-    console.log("onSetRsultss sss")
-    console.log(result)
-    this.setState({muestra:result})
-    
-    //this.setState({ personas: result })
-    //console.log(this.state.personas)
-}
+
   onChangeEstrato(e) {
     this.setState({idestrato:e.target.value})
    // alert("onChangeEstrato"+e.target.value)
    
-   
   
   }
- 
 
  getCirclePaint = (color) => ({
   'circle-radius': 4,
   'circle-color': color,
   'circle-opacity': 0.6
 });
+onMapClick = (e) => {
+  console.log("onMapClick")
+  this.setState({popupInfo:{"coordinates":[0,0],"nombre":"oJo","error":"sin error"}})
+  this.setState({flagPopupTestigo:false})  
+}
+onflagPopupTestigo=(e)=>{
+  this.setState({flagPopupTestigo:true})  
+}
+
 onMClick = (e) => {
  
   this.setState({flagMunicipios:true})
@@ -126,17 +104,21 @@ onCClick = (e) => {
   this.setState({center:[-66.65286,10.3]})
 }
 onMuestraClick = (e) => {
+  //window.open("https://polidata.azurewebsites.net/#observacion?cedula=v3664204","_blank")
+  
   this.setState({flagMunicipios:false})
   this.setState({flagParroquias:false})
   this.setState({flagCentros:false})
   this.setState({flagMuestra:true})
   this.setState({zoom:[5]})
   this.setState({center:[-66.65286,7.303]})
-  //this.setState({muestra:this.state.muestra})
+ 
 }
     render() {
+     
       //const { styleKey } = this.state;
-    const { idestrato,nodos,comentario,flagMuestra,flagMunicipios,flagParroquias,flagCentros,zoom,center } = this.state;
+    const {flagPopupTestigo, idestrato,nodos,comentario,flagMuestra,flagMunicipios,flagParroquias,flagCentros,zoom,center } = this.state;
+    console.log({flagPopupTestigo})
     const Button = styled.button`
     border: 1px solid #3770c6;
   background-color: rgb(84, 152, 255);
@@ -247,11 +229,17 @@ onMuestraClick = (e) => {
           center={center} 
           zoom={zoom}
           containerStyle={{height: "80vh",width: "70vw"}}
+          onClick={this.onMapClick}
         > 
         {flagMunicipios&&<MapLayerMunicipios></MapLayerMunicipios>}
         {flagParroquias&&<MapLayerParroquias></MapLayerParroquias>}
         {flagCentros&&<MapLayerCentros></MapLayerCentros>}
-         {flagMuestra&&<MapLayerMuestra propmuestra={this.state.muestra} propidestrato={this.state.idestrato}></MapLayerMuestra>}
+        {flagMuestra&&<MapLayerMuestra propmuestra={this.state.muestra}
+           propidestrato={this.state.idestrato} 
+           proppopupinfo={this.state.popupInfo}
+           flagPopupTestigo={this.state.flagPopupTestigo}
+           flagPopUpTestigoTrue={this.onflagPopupTestigo}
+          ></MapLayerMuestra>}
         
         <Layer
                 type="symbol"
@@ -292,3 +280,18 @@ onMuestraClick = (e) => {
 export default Map2;
 
 //https://github.com/alex3165/react-mapbox-gl/blob/master/example/src/demos/allShapes.tsx
+
+/*
+const iconByScianGroup = {
+  1: 'doctor-15',
+  2: 'dog-park-15',
+  3: 'drinking-water-15',
+  4: 'embassy-15',
+  5: 'entrance-15',
+  6: 'fast-food-15',
+  7: 'ferry-15',
+  8: 'fire-station-15',
+  9: 'fuel-15',
+  10: 'garden-15',
+}
+*/
