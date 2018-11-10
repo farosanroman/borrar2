@@ -1,0 +1,8 @@
+{
+    "serief":
+    [
+        { "fecha": 1, "qty": 0,"acum":0 },
+        { "fecha": 2, "qty": 10,"acum":10 },
+        { "fecha": 3, "qty": 15,"acum":25 }
+    ]
+}

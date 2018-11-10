@@ -204,12 +204,14 @@ onMuestraClick = (e) => {
         <Button onClick={this.onPClick}>Parroquias</Button>
         <Button onClick={this.onCClick}>Centros</Button>
         <ButtonRed onClick={this.onMuestraClick}>Muestra</ButtonRed>
-        <label>Formulario:</label>
-        <select ref="formularios">
-              {formulariosOpciones}
-            </select>
+        
             <select ref="estratos" onChange={this.onChangeEstrato}>
               {estratosOpciones}
+            </select>
+            <label>Formulario:</label>
+       
+            <select ref="formularios">
+              {formulariosOpciones}
             </select>
             <label>Tendencia:</label>
         <select ref="tendencia">
