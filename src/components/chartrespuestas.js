@@ -24,16 +24,17 @@ import PieChart, {
     <PieChart
         id={'resultados'}
         dataSource={respuestas}
-        palette={'Bright'}
-        title={'Orientacion Tecnologica'}
+        palette={['deepskyblue', 'orange', 'limegreen', 'lightgrey', '#DEB887', '#87CEFA', '#BDBDBD']}
+        
+        title={this.props.pregunta}
         onPointClick={this.pointClickHandler}
         onLegendClick={this.legendClickHandler}
       >
       <Series argumentField={'respuesta'} valueField={'porc'} >
          <Label visible={true}>  <Connector visible={true} width={1} /> </Label>
       </Series>
-        <Size width={500} />
-        <Export enabled={true} />
+        <Size width={400} />
+        <Export enabled={false} />
       </PieChart>
 
         

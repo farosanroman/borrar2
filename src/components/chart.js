@@ -30,85 +30,55 @@ import RadioGroup from 'devextreme-react/ui/radio-group'
 import { Card } from 'reactstrap';
 
 import { Scale } from '@devexpress/dx-react-chart';
-
-const serieF=[];
-    serieF.push({ "fecha": new Date(1994, 2, 1), "qty": 0,"acum":0 })
-    serieF.push({ "fecha": new Date(1994, 2, 4), "qty":5,"acum":5 })
-    serieF.push({ "fecha": new Date(1994, 3, 6), "qty": 10,"acum":15 })
-    serieF.push({ "fecha": new Date(1994, 3, 20), "qty": 6,"acum":21 })
-    serieF.push({ "fecha": new Date(1994, 5, 6), "qty": 10,"acum":31 })
-    
- const polardata=
-    [{
-      "arg": "E1",
-      "F1": 80.1,
-      "F2": 72.22,
-      "F3": 50.8,
-      "F4": 30.47
-  }, {
-      "arg": "E2",
-      "F1": 75.1,
-      "F2": 64.22,
-      "F3": 43.8,
-      "F4": 22.47
-  }, {
-      "arg": "E3",
-      "F1": 90.1,
-      "F2": 52.22,
-      "F3": 40.8,
-      "F4": 20.47
-  }, {
-      "arg": "E4",
-      "F1": 70.1,
-      "F2": 42.22,
-      "F3": 20.8,
-      "F4": 12.47
-  }, {
-      "arg": "E5",
-      "F1": 82.1,
-      "F2": 64.22,
-      "F3": 54.8,
-      "F4": 23.47
-  },
-  {
-    "arg": "E6",
-    "F1": 81.1,
-    "F2": 56.22,
-    "F3": 30.8,
-    "F4": 20.47
-}, {
-    "arg": "E7",
-    "F1": 50.1,
-    "F2": 30.22,
-    "F3": 10.8,
-    "F4": 5.47
+import {serie} from '../data/serie.json';
+import {polar} from '../data/polar.json';
+//getCirclePaint = (jsondate) => (
+//  var a=1
+//);
+const serieD=[]
+for (let i = 0; i < serie.length; ++i) {
+ serieD.push({fecha:new Date(serie[i].fecha),cant:i,acum:i})
 }
-]
+let polardata=[
+  { "arg": "E1","F1": 0},
+  { "arg": "E2","F1": 0},
+  { "arg": "E3","F1": 0},
+  { "arg": "E4","F1": 0},
+  { "arg": "E5","F1": 0},
+  { "arg": "E6","F1": 0},
+  { "arg": "E7","F1": 0}
+
+];
+for (let i = 0; i < polar.length; ++i) {
+  //var cant=polardata[polar[i].ec-1].F1 
+  polardata[polar[i].ec-1].F1 += 1
+ }
+ 
+ 
 
 var respuestas1=
-[{
-  "respuesta": "Antes 7am",
-  "porc": 40.3
-}, {
-  "respuesta": "Entre 7am - 8am",
-  "porc":34.34
-}, {
-  "respuesta": "Despues de 10am",
-  "porc": 2.3
-}
-, {
-  "respuesta": "Nunca",
-  "porc": .34
-}
+[{"respuesta": "<200mts","porc": 40.3},
+ {"respuesta": ">200mts","porc":34.34},
+{"respuesta": "Dentro","porc": 2.3},
+ {"respuesta": "No Hay","porc": .34}
 ]
 var respuestas2=
-[{
-  "respuesta": "Si",
-  "porc": 64.3
-}, {
-  "respuesta": "No",
-  "porc":34.34
-}
+[{"respuesta": "En Punto Rojo","porc": 40.3},
+ {"respuesta": "En Centro o Mesa","porc":34.34},
+{"respuesta": "No solicitada","porc": 2.3},
+ {"respuesta": "No Abrio","porc": .34}
+]
+var respuestas3=
+[{"respuesta": "Adentro Centro","porc": 40.3},
+ {"respuesta": "Afuera Centro","porc":34.34},
+{"respuesta": "Adentro y Afuera","porc": 2.3},
+ {"respuesta": "No Abrio","porc": .34}
+]
+var respuestas4=
+[{"respuesta": "<20","porc": 40.3},
+ {"respuesta": ">20 <50","porc":34.34},
+{"respuesta": ">50","porc": 2.3},
+ {"respuesta": "No Abrio","porc": .34}
 ]
 
 var respuestasjson=
@@ -250,32 +220,13 @@ export default class Demo extends React.PureComponent {
      }
     }
     console.log(propspreguntas)
-      /*
-       let pregunta0=preguntas[i][0].respuestas
-      console.log(".............")
-       console.log(pregunta0)
-       console.log(".............")
-       for (var j = 0; j < pregunta0.length; ++j) {
-           pregunta0[j].cant=0
-           pregunta0[j].porc=0
-       }
-       
-       for (var jestrato = 0; jestrato < preguntas[i].length; ++jestrato) {
-       
-        for (let k = 0; k < preguntas[i].length; ++k) {
-          pregunta0[k].cant=preguntas[i][k].cant
-          //pregunta0[j].porc=cant=preguntas[i].respuesta[k].cant
-         }
-       
-        }
-       propspreguntas.push(pregunta0)
-       */
+
      
     console.log(propspreguntas)
     console.log("-----------------------")
     //console.log(preguntas)
     
-    const pies=propspreguntas.map(p=>{ 
+    const pies2=propspreguntas.map(p=>{ 
 
       i+=1;
        return(
@@ -284,7 +235,12 @@ export default class Demo extends React.PureComponent {
            )     
      }
      ) 
-     
+     const pies=[
+     <ChartRespuestas key={1} pregunta={'Ubicacion Punto Rojo'} respuestas={respuestas1}/>,
+      <ChartRespuestas key={2} pregunta={'Solicitan Carnet de la Patria'} respuestas={respuestas2}/>,
+      <ChartRespuestas key={3} pregunta={'Propaganda Electoral'} respuestas={respuestas3}/>,
+      <ChartRespuestas key={4} pregunta={'Participacion'} respuestas={respuestas4}/>
+    ]
     return (
       <Card>
            <h5>Centros de la Muestra</h5>
@@ -294,14 +250,14 @@ export default class Demo extends React.PureComponent {
                     <div className="card-deck">
 
                     <Chart               
-               dataSource={serieF}
-               id={'serieF'}
+               dataSource={serieD}
+               id={'serie'}
                
            >
-           <SizeS height={500} width={500} />
+           <SizeS height={400} width={400} />
            <ValueAxis
             grid={{ opacity: 0.2 }}
-            valueType={'numeric'}
+            valueType={'currency'}
           />
            <CommonSeriesSettings
             argumentField={'fecha'}
@@ -311,7 +267,7 @@ export default class Demo extends React.PureComponent {
             valueMarginsEnabled={false}
             discreteAxisDivisionMode={'crossLabels'}            
           >
-          <Label format={'datetime'} />
+          <Label format={'HH:mm'} />
             <Grid visible={true} />
           </ArgumentAxis>
           <CommonPaneSettings>
@@ -324,7 +280,7 @@ export default class Demo extends React.PureComponent {
           </CommonPaneSettings>
           <Series key={'2'} valueField={'acum'} color={'lightgrey'} name={'acumulado'} type={'area'}/>
        
-        <Series key={'1'} valueField={'qty'} name={'cantidad'} type={'bar'}/>
+        <Series key={'1'} valueField={'cant'} color={'deepskyblue'} name={'cantidad'} type={'bar'}/>
       
         <Grid visible={true} />
         <Legend
@@ -354,7 +310,7 @@ export default class Demo extends React.PureComponent {
         dataSource={polardata}
         useSpiderWeb={true}
         commonSeriesSettings= {{type: "line"}}
-        palette={'Bright'}
+        palette={['deepskyblue', '#FFC0CB', '#808000', '#A2CD5A', '#DEB887', '#87CEFA', '#BDBDBD']}
         title={'% Recepcion Formularios'}
         tooltip= {{
           enabled: true
@@ -362,7 +318,7 @@ export default class Demo extends React.PureComponent {
       }
       >
         <Series          
-          valueField={'F1'} name={'A1'}
+          valueField={'F1'} name={'A1'} 
         >
 
           <Label visible={false}>
@@ -396,7 +352,7 @@ export default class Demo extends React.PureComponent {
             <Connector visible={true} width={1} />
           </Label>
         </Series>
-        <Size width={500} />
+        <Size width={400} />
         <Export enabled={true} />
       </PolarChart>
                     </div>
@@ -422,3 +378,22 @@ export default class Demo extends React.PureComponent {
     );
   }
 }
+
+/*
+argumentAxis: {
+        valueMarginsEnabled: false,
+        discreteAxisDivisionMode: "crossLabels",
+        grid: { visible: true },
+        label: {
+            //overlappingBehavior: {  mode: 'stagger', staggeringSpacing: 0},
+            overlappingBehavior: { mode: 'rotate', rotationAngle: 45, indentFromAxis: 1 },
+            //customizeText: function (arg) {
+
+            //    return arg.value.getMonths() + ":" + arg.value.getDays()
+            //     //return Globalize.format(arg.value, "hh:mm")
+            //},
+            //format: "yyyy-MMdd HH:mm:ss"
+            format: "MMdd"
+
+        },
+        */

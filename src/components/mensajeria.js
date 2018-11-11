@@ -27,9 +27,10 @@ class Mensajeria extends Component {
         const { value } = this.mensaje.value;
         const dd=this.state.defensores
         console.log(dd)
-        for (var i = 0; i < 7; ++i) {
+        for (var i = 0; i < dd.length; ++i) {
           //var d= {"key":7,"cedula":"V3664204","celular":"4143060733","mail":"ppazpurua@gmail.com","twt":"pazpurua"}
           var d=dd[i];
+          d.mensaje=this.mensaje.value
           //alert(JSON.stringify(d))
           var url='http://nodefaro.azurewebsites.net/sendsmsmailtwt'
         //url=  'http://localhost:4730/sendsmsmailtwt'

@@ -23,8 +23,8 @@ const Map = MapGL({
 
 const popupInfo0={"coordinates":[0,0],"nombre":"oJo","error":"sin error"}
 
-let centro=[-66.95286,7]
-let zoom=[5]
+let centro=[-66.95286,8]
+let zoom=[6]
 class Map2 extends Component {    
   constructor(props){
     super(props);    
@@ -110,9 +110,9 @@ onMuestraClick = (e) => {
   this.setState({flagParroquias:false})
   this.setState({flagCentros:false})
   this.setState({flagMuestra:true})
-  this.setState({zoom:[5]})
-  this.setState({center:[-66.65286,7.303]})
- 
+  this.setState({zoom:[6]})
+  this.setState({center:[-66.65286,8]})
+
 }
     render() {
      

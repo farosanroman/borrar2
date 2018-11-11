@@ -18,7 +18,8 @@ constructor(props) {
   onSubmit = (e) => {
     e.preventDefault();
      console.log(e)
-     window.open('https://polidata.azurewebsites.net/#observacion?cedula=v3664204', '_blank', 'location=yes,height=470,width=580,scrollbars=yes,status=yes');
+     var cedula=this.props.popupnodoinfo.cedula
+     window.open('https://polidata.azurewebsites.net/#observacion?cedula='+cedula+'&f=A1', '_blank', 'location=yes,height=470,width=580,scrollbars=yes,status=yes');
   }
   
   closePopup = (e) => {
@@ -53,11 +54,11 @@ constructor(props) {
                 
      >
     <form onSubmit={this.onSubmit}>
-     <h6>{popupnodoinfo.idcentro}</h6>
+     <h6>{popupnodoinfo.idcentro}{'-'}{popupnodoinfo.cedula}</h6>
      <h6>{popupnodoinfo.centro}</h6>
      <h6>{popupnodoinfo.nombre}</h6>
-     <h6>{popupnodoinfo.celular}</h6>
-     <h6>{popupnodoinfo.correo}</h6>
+     <h6>{popupnodoinfo.celular}{' '} {popupnodoinfo.correo} </h6>
+    
      <input style={{backgroundColor:'orange'}} type="submit" value="Polidata" />
      <input type="button"  onClick={this.closePopup} value="X" />
   

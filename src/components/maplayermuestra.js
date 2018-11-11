@@ -92,7 +92,7 @@ getCirclePaint = (color) => ({
     this.setState({popupType:"msg"})
     this.setState({flagPopupTestigo:true})
     //this.setState({comentario:"pop.nombre"})
-    const pop={coordinates:lnglat,idcentro:evt.feature.properties.idcentro,centro:evt.feature.properties.nombrecentro,nombre:evt.feature.properties.nombretestigo,celular:evt.feature.properties.celulartestigo,correo:evt.feature.properties.correotestigo};
+    const pop={coordinates:lnglat,idcentro:evt.feature.properties.idcentro,centro:evt.feature.properties.nombrecentro,nombre:evt.feature.properties.nombretestigo,celular:evt.feature.properties.celulartestigo,correo:evt.feature.properties.correotestigo,cedula:evt.feature.properties.cedulatestigo};
     console.log(JSON.stringify(pop))
     this.setState({popupInfo:pop})
     this.props.flagPopUpTestigoTrue()
@@ -171,7 +171,7 @@ render() {
         {muestraroja}
      </Layer> 
      <Layer type="circle" radius={100} color={ 'green'} fillColor= 'green' 
-         fillOpacity= {0.5} paint={this.getCirclePaint('blue')}> 
+         fillOpacity= {0.5} paint={this.getCirclePaint('dodgerblue')}> 
         {muestraazul}
      </Layer> 
   <MapPopupTestigo key={111} 
