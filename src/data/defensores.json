@@ -1,17 +1,379 @@
 {"defensores":
-[
+    [
 
- {"key":1,"cedula":"V1869694","celular":"4143211036","mail":"ejsaldivia@gmail.com","twt":"ejotasalda","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
-    {"key":2,"cedula":"V15842477","celular":"4142863817","mail":"franciscojcastrom@gmail.com","twt":"fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
-    {"key":3,"cedula":"V12119810","celular":"4143443737","mail":"jaspe1010@gmail.com","twt":"jaspe1307","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
-    {"key":4,"cedula":"V8677951","celular":"4166101273","mail":"nelidasanchezo@gmail.com","twt":"nelidasanchezo","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
-    {"key":5,"cedula":"V21119337","celular":"4265143524","mail":"danelighernandezs@gmail.com","twt":"gaby_taw","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
-    {"key":6,"cedula":"V15395765","celular":"4143060733","mail":"juan.saluotto@gmail.com","twt":"juanluisquero","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
-    {"key":7,"cedula":"V3664204","celular":"4143060733","mail":"ppazpurua@gmail.com","twt":"pazpurua","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
-    {"key":8,"cedula":"V3664204","celular":"04264020509","mail":"gboyerizo@gmail.com","twt":"gboyerizo","mensaje":"Prueba de Concepto SMS, TWT, MAIL"}
-    
- 
- 
+        {"key":1,"cedula":"V2440234","celular":"4163370071","mail":"isidroleonf@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
         
-]
+        {"key":1,"cedula":"V18713724","celular":"4261390129","mail":"rubenarcila2010@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+        
+        {"key":1,"cedula":"V2180868","celular":"4140203104","mail":"manuelfhernandez08@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+        
+        {"key":1,"cedula":"V7278333","celular":"4142321220","mail":"sorayajperez@yahoo.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+        
+        {"key":1,"cedula":"V12529003","celular":"4142268232","mail":"aliriovalde@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+        
+        {"key":1,"cedula":"V6938209","celular":"4164162730","mail":"mantecal98@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+        
+        {"key":1,"cedula":"V13750353","celular":"4242944727","mail":"v13750353@notiene.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V23694107","celular":"4162157440","mail":"mosaicosoliz12@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V15842477","celular":"4142863817","mail":"franciscojcastrom@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V6826386","celular":"4143099516","mail":"alexisoswaldoc@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V5425402","celular":"4241396243","mail":"manuelmir10@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V12119810","celular":"4143443737","mail":"jaspe1010@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V25964426","celular":"4241305800","mail":"joserondon_24@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V5887891","celular":"4241284365","mail":"cargadeportiva@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V14156824","celular":"4129595625","mail":"anaelizabeth42@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V14196332","celular":"4248567377","mail":"djalxx209@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V6661007","celular":"4140126546","mail":"jgbecerrit@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V2398666","celular":"4142859958","mail":"pintoyoer@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V3476620","celular":"4126341189","mail":"lfrancove@yahoo.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V3961246","celular":"4166835413","mail":"acostafr1@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V4702270","celular":"4124646510","mail":"migdalia_bf@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V3715596","celular":"4145635376","mail":"eduardomora2020@outlook.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V19701561","celular":"4243074210","mail":"maye_807@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V3850678","celular":"4148418240","mail":"jchuchogonzalez@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V20233886","celular":"4242344882","mail":"adrian-rodriguez@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V8161444","celular":"4244077630","mail":"edgarjbejas@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V9591495","celular":"4243452614","mail":"aurasandoval63@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V11759425","celular":"4143472485","mail":"mayra_diazm@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V12168723","celular":"4140533940","mail":"jossiedeus@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V5138370","celular":"4160396469","mail":"zule370@yahoo.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V5268523","celular":"4124751265","mail":"fashiondays@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V8585274","celular":"4144591065","mail":"dexytrejo@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V3842611","celular":"4145902214","mail":"lisbethparadisi@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V5267539","celular":"4144657421","mail":"menesesadela@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V3748680","celular":"4163476354","mail":"rodolfojaimesochoa@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V7206733","celular":"4144537690","mail":"jesuscastillomarquez@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V15737261","celular":"4123431785","mail":"ninolibnig@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V9399412","celular":"4143300544","mail":"longori0805@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V11070822","celular":"4121142233","mail":"diputadamarielamagallanes@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V25069243","celular":"4243590325","mail":"cristianmt_123@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V15270090","celular":"4268775198","mail":"jesus23calderon9@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V9384294","celular":"4245049671","mail":"taniamicara12@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V26229933","celular":"4165116825","mail":"isleysarabeth@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V3977891","celular":"4129110129","mail":"jjmauquer@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V8147715","celular":"4265754393","mail":"josepastor.ce@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V4984132","celular":"4249148303","mail":"laboroqui@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V13546744","celular":"4249367828","mail":"samirabaladi10@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V5554103","celular":"4169881063","mail":"jnj_rivasr@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V14043215","celular":"4249133255","mail":"elizebethalessandra2014@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V10047015","celular":"4148546692","mail":"aracelis_lira@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V4596162","celular":"4148535335","mail":"joedim53@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V15984243","celular":"4262921960","mail":"angelctorres94@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V20554659","celular":"4261963444","mail":"frannielsotillo27@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V12107333","celular":"4126457424","mail":"radiologia_08@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V16946045","celular":"4143541729","mail":"stalinlinares@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V13755418","celular":"4144354250","mail":"izaguirrelynettecnsl@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V10321008","celular":"4145977056","mail":"maritzasuarez17@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V12769716","celular":"4244318624","mail":"yrigoyenyasociados@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V3691291","celular":"4125177035","mail":"domingox66@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V3671852","celular":"4120379587","mail":"darett53@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V9267931","celular":"4140415042","mail":"jglv_11@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V9983880","celular":"4124717426","mail":"andrewtorresm@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V9929543","celular":"4146111427","mail":"wil.ollarvez2018@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V14796499","celular":"4246662564","mail":"alexiskikegarcia@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V26310272","celular":"4146814557","mail":"h.hugo.fernandez@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V7476180","celular":"4166680401","mail":"rafaelflo2010@yahoo.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V5292745","celular":"4263650100","mail":"echpaul@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V5292745","celular":"4263650100","mail":"echpaul@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V7498866","celular":"4246013509","mail":"jpoza.43@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V8633356","celular":"4144927690","mail":"franklindaniels1@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V8629012","celular":"4166447224","mail":"noctienecorreo@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V4137860","celular":"4144689330","mail":"v4137860@notiene.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V11120083","celular":"4243284594","mail":"yndirahernandez@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V5800116","celular":"4144433221","mail":"organizacionuntguarico@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V21337228","celular":"4127485946","mail":"perezlozanocelina@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V4358749","celular":"4160272516","mail":"joserodriguezrodri7@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V5238529","celular":"4143505865","mail":"pellicercarlos01@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V21296812","celular":"4143574501","mail":"rosasotillo93@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V15667862","celular":"4145510229","mail":"karelisheredia@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V15667862","celular":"4145510229","mail":"karelisheredia@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V9543291","celular":"4245078424","mail":"rosario_sangronis@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V9606612","celular":"4165582781","mail":"juanafrancisca28@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V12698480","celular":"4146947870","mail":"ernestojvasquez@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V9615739","celular":"4245771348","mail":"sivira_asociados@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V9615739","celular":"4245771348","mail":"sivira_asociados@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V7364901","celular":"4140540118","mail":"nancybeatrizhernandez@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V4730827","celular":"4145172561","mail":"aliciamontes_07@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V26732402","celular":"4145215969","mail":"nakareheredia@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V9543111","celular":"4269527187","mail":"jorgevmendezp@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V5690204","celular":"4146850186","mail":"zulikvalle@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V4536876","celular":"4246220050","mail":"tuto_marquez@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V11959383","celular":"4169507245","mail":"monicaraujolopez@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V8023304","celular":"4147036853","mail":"sumatemerida@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V3739986","celular":"4247082690","mail":"isbeliacarismendi@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V8046006","celular":"4140749437","mail":"oscarram69@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V5839746","celular":"4247702461","mail":"carlosmtorresg@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V8028936","celular":"4147486527","mail":"hjou1965@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V4492811","celular":"4149716793","mail":"jenriqueduque@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V6877404","celular":"4127348627","mail":"luisgregorioalayon@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V21119337","celular":"4265143524","mail":"danelighernandezs@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V24101010","celular":"4128289868","mail":"mileydivivas17@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V11041704","celular":"4143202016","mail":"katty_vepe@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V9969004","celular":"4242295705","mail":"guillermobarrosohb@hotmail.es","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V5084780","celular":"4167039248","mail":"margaritac50@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"v3664204","celular":"4126340692","mail":"ppazpurua@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V2747623","celular":"4141246644","mail":"milvalera@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V4362916","celular":"4142621374","mail":"aleidaoropezaa@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V12803819","celular":"4142123242","mail":"mdlasuarez@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V13589537","celular":"4163222054","mail":"velasquez74@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V16711551","celular":"4128750299","mail":"silviaallenb@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V3235419","celular":"4249310047","mail":"manuelmartin59@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V1389101","celular":"4248637333","mail":"angelhenriquez1389@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V3654339","celular":"4128688689","mail":"eye1950@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V8370399","celular":"4248834437","mail":"henrygomezalcala@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V22966187","celular":"4249448319","mail":"henryalejandrog12@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V6922025","celular":"4141921520","mail":"scas2912@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V16518500","celular":"4147600874","mail":"graceyanez96@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V24868534","celular":"4128780503","mail":"jrvidela75@yahoo.es","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V9304348","celular":"4269893457","mail":"joseagustinsalmar@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V23589841","celular":"4148266321","mail":"jenniferlopez_14@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V11852141","celular":"4248573052","mail":"samershtayeh@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V11638902","celular":"4147938636","mail":"cabeaufond@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V25547772","celular":"4245225849","mail":"andazorajosue@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V5129315","celular":"4126748543","mail":"anagteran@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V10058410","celular":"4145685971","mail":"mielita_7186@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V12164687","celular":"4245362223","mail":"leminyhierro@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V9401072","celular":"4269772360","mail":"mina167@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V19083547","celular":"4148228190","mail":"eduardojaviermarquez@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V18027373","celular":"4248436254","mail":"mario.fagiolo@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V5433279","celular":"4147738189","mail":"jose.untsucre@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V17622054","celular":"4149959050","mail":"albamendez2010@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V13835436","celular":"4248528863","mail":"filos70@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V15550427","celular":"4248570072","mail":"luisbastardo2007@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V15360939","celular":"4128765653","mail":"pepegrengel@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V14776633","celular":"4120728827","mail":"manuel02_02guillen@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V196459","celular":"4147092897","mail":"akokaiser@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V4001371","celular":"4140746327","mail":"paulasierra281@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V5674837","celular":"4247248778","mail":"jarturomolina@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V5674837","celular":"4247248778","mail":"jarturomolina@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V12970574","celular":"4140750957","mail":"paulasierra18@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V15080373","celular":"4269750433","mail":"moreno225@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V10157074","celular":"4162794949","mail":"videotachira@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V5645938","celular":"4265752809","mail":"rafaelantonio6051@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V3904140","celular":"4147326814","mail":"ramonabarrios@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V4059108","celular":"4147313995","mail":"gladysmateran3@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V5500777","celular":"4147307946","mail":"drjjviloria@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V26191103","celular":"4140702074","mail":"andresmanzanilla07@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V5507688","celular":"4147398609","mail":"elisebr0403@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V11651435","celular":"4245470561","mail":"miled.kalife@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V14209728","celular":"4265583125","mail":"caujarales@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V7590413","celular":"4245656028","mail":"aniuskaherrera65@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V14139465","celular":"4166012331","mail":"m_garcia_ol@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V10369719","celular":"4126667389","mail":"carmelorg@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V13094725","celular":"4145472293","mail":"eduardojparrar@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V26640713","celular":"4146605648","mail":"orlandochaconpj@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V3380474","celular":"4143623589","mail":"angelurdaneta45@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V5828918","celular":"4146191187","mail":"participame@yahoo.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V2883574","celular":"4166332683","mail":"mmayzl08@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V16783120","celular":"4246450721","mail":"gera_27@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V4521185","celular":"4146823708","mail":"algapar50@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V5849668","celular":"4146721150","mail":"josepina55@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V17180196","celular":"4261606404","mail":"adrianaqa83@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V7627187","celular":"4146127325","mail":"yolimavpformacionmaracaibo@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V4992282","celular":"4146094128","mail":"edea21mar@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V8945063","celular":"4169998051","mail":"carolinaraquel1239897@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V14258421","celular":"4169752322","mail":"miguelponce3179@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V13964768","celular":"4124374176","mail":"mauligmer@yahoo.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V3978804","celular":"4165435383","mail":"marujera67@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V8947877","celular":"4165124240","mail":"rpetitgspama@yahoo.es","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V20720378","celular":"4163311041","mail":"josegcoro21@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V20019765","celular":"4268429621","mail":"deivis_p12@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V18505008","celular":"4160423111","mail":"ehurimarbn@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V13325534","celular":"4263440203","mail":"yanetlaica@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V17106603","celular":"4168773960","mail":"juanbautistarodriguez17@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V13521134","celular":"4149979045","mail":"rosavalderrey_2301@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V11212350","celular":"4148970813","mail":"juanjfigueraf@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V6173482","celular":"4249180183","mail":"nancyanael@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V631238","celular":"4148791266","mail":"alonsoarias6@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V8950985","celular":"4148799556","mail":"arbelaezej@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V3941300","celular":"4167905071","mail":"molinadiegoj@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V8927199","celular":"4163969719","mail":"8927199@notienecorreo.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V7060447","celular":"4147601735","mail":"williamalvarez113@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V6470128","celular":"4242243218","mail":"nubiamagallanes@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V6920437","celular":"4141631963","mail":"alfredopalmcase@hotmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V4915652","celular":"4142917715","mail":"jgrojasmedina581213@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V3364242","celular":"4142843555","mail":"graciela.my@gmail.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"},
+         
+        {"key":1,"cedula":"V3892493","celular":"4241807644","mail":"manuelmelg@yahoo.com","twt":"@fcastrom","mensaje":"Prueba de Concepto SMS, TWT, MAIL"}
+        
+        ]
 }

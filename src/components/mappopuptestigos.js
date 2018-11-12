@@ -20,7 +20,8 @@ constructor(props) {
      console.log(e)
      var cedula=this.props.popupnodoinfo.cedula
      window.open('https://polidata.azurewebsites.net/#observacion?cedula='+cedula+'&f=A1', '_blank', 'location=yes,height=470,width=580,scrollbars=yes,status=yes');
-  }
+  
+    }
   
   closePopup = (e) => {
     // this.state.Ppopupnodoinfo={"coordinates":[0,0],"nombre":"oJo","error":"sin error"}

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import ChartRespuestas from './chartrespuestas'
 import Chart , {
   ArgumentAxis,
@@ -30,57 +30,234 @@ import RadioGroup from 'devextreme-react/ui/radio-group'
 import { Card } from 'reactstrap';
 
 import { Scale } from '@devexpress/dx-react-chart';
-import {serie} from '../data/serie.json';
-import {polar} from '../data/polar.json';
+
 //getCirclePaint = (jsondate) => (
 //  var a=1
 //);
-const serieD=[]
-for (let i = 0; i < serie.length; ++i) {
- serieD.push({fecha:new Date(serie[i].fecha),cant:i,acum:i})
+
+
+  function customizePercentageText(info) {
+      return `${info.valueText}%`;
+    }
+    
+//export default class Chart extends React.PureComponent {
+  class ChartFaro extends Component {
+ 
+constructor(props) {
+    super(props);
+
+    this.state = {
+     flag:false,
+     muestra:[] ,
+     totalizacion:[],
+     matriz:[],
+     isLoading: false,
+     error:null
+    };
+  }
+  componentDidMount() {
+    this.setState({ isLoading: true });
+    var url="http://faro2018consultas.azurewebsites.net/api/nodosmuestrajsonsumate";
+    url="http://faro2018consultas.azurewebsites.net/api/polidatatotalizacion"
+    fetch(url)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error('Something went wrong ...');
+      }
+    })
+   .then(totalizacion => this.setState({ totalizacion ,isLoading:false}))
+   .catch(error => this.setState({ error, isLoading: false }));
+
+  
+
+    }
+    onSetResult = (muestra) => {
+      //console.log("onSetRsultss sss")
+      this.setState({muestra})
+      this.setState({flag:true})
+         
+  }
+  render() {  
+    let i=0
+    console.log("render")
+    const {muestra,totalizacion,flag,isLoading,error } = this.state;
+    if (error) {
+      return <p>{error.message}</p>;
+    }
+
+    if (isLoading) {
+      return <p>Loading ...</p>;
+    }
+    if (isLoading) {
+      return <p>Loading ...</p>;
+  }
+
+    var s=totalizacion[5]
+     console.log(s)
+     const serieD=[]
+     if (s!==undefined){
+     for (let i = 0; i < s.length; ++i) {
+        serieD.push({fecha:new Date(s[i].fecha),cant:i,acum:i})
+     }
+      
+    }
+    var texto=["Ubicacion Punto Rojo","Solicitud Carnet P","Propaganda Electoral","Colas"] 
+    ///console.log(propspreguntas)
+    var ii=-1
+    const respuestasC=totalizacion.map(r=>{     
+      ii+=1;
+      if (ii<5){
+       return(
+        <ChartRespuestas key={ii} pregunta={texto[ii]} respuestas={totalizacion[ii]}/>
+    
+           )  
+       }   
+     }) 
+     
+   //return <p>Loading...</p>
+
+    return (
+      <Card>
+          
+           <div className="container-fluid" style={{marginLeft: '-15px'}}>
+                <div className="d-flex flex-row">                    
+                    <div className="col-sm-12">
+                    <div className="card-deck">
+
+                    <Chart               
+               dataSource={serieD}
+               id={'serie'}
+               
+           >
+           <SizeS height={400} width={400} />
+           <ValueAxis
+            grid={{ opacity: 0.2 }}
+            valueType={'currency'}
+          />
+           <CommonSeriesSettings
+            argumentField={'fecha'}
+            type={'line'}
+          />
+         <ArgumentAxis
+            valueMarginsEnabled={false}
+            discreteAxisDivisionMode={'crossLabels'}            
+          >
+          <Label format={'HH:mm'} />
+            <Grid visible={true} />
+          </ArgumentAxis>
+          <CommonPaneSettings>
+            <Border
+              visible={true}
+              width={3}
+              top={false}
+              right={false}
+            />
+          </CommonPaneSettings>
+          <Series key={'2'} valueField={'acum'} color={'lightgrey'} name={'acumulado'} type={'area'}/>
+       
+        <Series key={'1'} valueField={'cant'} color={'deepskyblue'} name={'cantidad'} type={'bar'}/>
+      
+        <Grid visible={true} />
+        
+          <Legend
+            verticalAlignment={'bottom'}
+            horizontalAlignment={'center'}
+            itemTextPosition={'bottom'}
+            visible={true}
+          />
+         
+          <Title text={'Transmision'}>
+            <Subtitle text={'(Dia del Evento)'} />
+          </Title>
+          <Tooltip
+          enabled={true}
+          shared={true}
+        />
+
+      </Chart>
+
+
+
+
+        <PolarChart
+        id={'contactos'}
+        dataSource={totalizacion[4]}
+        useSpiderWeb={true}
+        commonSeriesSettings= {{type: "line"}}
+        
+        palette={['deepskyblue', 'orange', 'limegreen', 'lightgrey', '#DEB887', '#87CEFA', '#BDBDBD']}
+        
+        title={'% Recepcion Formularios'}
+        tooltip= {{
+          enabled: true
+        }
+      }
+      >
+        <Series          
+          valueField={'F1'} name={'A1'} 
+        >
+
+          <Label visible={false}>
+            <Connector visible={true} width={1} />
+          </Label>
+        </Series>
+        <Series
+          
+          valueField={'F2'} name={'A2'}
+        >
+
+          <Label visible={false}>
+            <Connector visible={true} width={1} />
+          </Label>
+        </Series>
+        <Series
+          
+          valueField={'F3'} name={'D1'}
+        >
+
+          <Label visible={false}>
+            <Connector visible={true} width={1} />
+          </Label>
+        </Series>
+        <Series
+          
+          valueField={'F4'} name={'D2'}
+        >
+
+          <Label visible={false}>
+            <Connector visible={true} width={1} />
+          </Label>
+        </Series>
+        <Size width={400} />
+        <Export enabled={true} />
+      </PolarChart>
+                    </div>
+                    </div>
+                </div>
+            </div>
+           
+          
+<div className="container-fluid" style={{marginLeft: '-15px'}}>
+    <div className="d-flex flex-row">                    
+      <div className="col-sm-12">
+        <div className="card-deck">
+        {respuestasC}
+     </div>
+   </div>
+ </div>
+</div>
+       
+        
+       
+      </Card>
+    );
+  }
 }
-let polardata=[
-  { "arg": "E1","F1": 0},
-  { "arg": "E2","F1": 0},
-  { "arg": "E3","F1": 0},
-  { "arg": "E4","F1": 0},
-  { "arg": "E5","F1": 0},
-  { "arg": "E6","F1": 0},
-  { "arg": "E7","F1": 0}
+export default ChartFaro;
 
-];
-for (let i = 0; i < polar.length; ++i) {
-  //var cant=polardata[polar[i].ec-1].F1 
-  polardata[polar[i].ec-1].F1 += 1
- }
- 
- 
-
-var respuestas1=
-[{"respuesta": "<200mts","porc": 40.3},
- {"respuesta": ">200mts","porc":34.34},
-{"respuesta": "Dentro","porc": 2.3},
- {"respuesta": "No Hay","porc": .34}
-]
-var respuestas2=
-[{"respuesta": "En Punto Rojo","porc": 40.3},
- {"respuesta": "En Centro o Mesa","porc":34.34},
-{"respuesta": "No solicitada","porc": 2.3},
- {"respuesta": "No Abrio","porc": .34}
-]
-var respuestas3=
-[{"respuesta": "Adentro Centro","porc": 40.3},
- {"respuesta": "Afuera Centro","porc":34.34},
-{"respuesta": "Adentro y Afuera","porc": 2.3},
- {"respuesta": "No Abrio","porc": .34}
-]
-var respuestas4=
-[{"respuesta": "<20","porc": 40.3},
- {"respuesta": ">20 <50","porc":34.34},
-{"respuesta": ">50","porc": 2.3},
- {"respuesta": "No Abrio","porc": .34}
-]
-
+/*
 var respuestasjson=
 {
   codcne:"13",
@@ -181,36 +358,10 @@ var respuestasjson=
   
 
 }
-    function customizePercentageText(info) {
-      return `${info.valueText}%`;
-    }
-    
-export default class Demo extends React.PureComponent {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-     flag:null
-      
-    };
-  }
-  
-  render() {  
-    let i=0
-
-    //let preguntas=[];
-    //const preguntas=respuesta.preguntas.map(p=> 
-    //   p.estratos   
-    //)
-    
-    console.log("ddddddddddd")
-    //console.log(preguntas)
-    //alert(JSON.stringify(preguntas))
-    let propspreguntas=[]
+   let propspreguntas=[]
     for (let i = 0; i < respuestasjson.preguntas.length; ++i) {
           propspreguntas.push(respuestasjson.preguntas[i].estratos[0].respuestas)
     }
-    console.log(propspreguntas)
     for (let i = 0; i < respuestasjson.preguntas.length; ++i) {
       for (let j = 0; j <   respuestasjson.preguntas[i].estratos.length; ++j) {
         for (let k = 0; k < respuestasjson.preguntas[i].estratos[j].respuestas.length; ++k) {
@@ -219,167 +370,6 @@ export default class Demo extends React.PureComponent {
         }
      }
     }
-    console.log(propspreguntas)
-
-     
-    console.log(propspreguntas)
-    console.log("-----------------------")
-    //console.log(preguntas)
-    
-    const pies2=propspreguntas.map(p=>{ 
-
-      i+=1;
-       return(
-         <ChartRespuestas key={i} respuestas={p}
-         />
-           )     
-     }
-     ) 
-     const pies=[
-     <ChartRespuestas key={1} pregunta={'Ubicacion Punto Rojo'} respuestas={respuestas1}/>,
-      <ChartRespuestas key={2} pregunta={'Solicitan Carnet de la Patria'} respuestas={respuestas2}/>,
-      <ChartRespuestas key={3} pregunta={'Propaganda Electoral'} respuestas={respuestas3}/>,
-      <ChartRespuestas key={4} pregunta={'Participacion'} respuestas={respuestas4}/>
-    ]
-    return (
-      <Card>
-           <h5>Centros de la Muestra</h5>
-           <div className="container-fluid" style={{marginLeft: '-15px'}}>
-                <div className="d-flex flex-row">                    
-                    <div className="col-sm-12">
-                    <div className="card-deck">
-
-                    <Chart               
-               dataSource={serieD}
-               id={'serie'}
-               
-           >
-           <SizeS height={400} width={400} />
-           <ValueAxis
-            grid={{ opacity: 0.2 }}
-            valueType={'currency'}
-          />
-           <CommonSeriesSettings
-            argumentField={'fecha'}
-            type={'line'}
-          />
-         <ArgumentAxis
-            valueMarginsEnabled={false}
-            discreteAxisDivisionMode={'crossLabels'}            
-          >
-          <Label format={'HH:mm'} />
-            <Grid visible={true} />
-          </ArgumentAxis>
-          <CommonPaneSettings>
-            <Border
-              visible={true}
-              width={3}
-              top={false}
-              right={false}
-            />
-          </CommonPaneSettings>
-          <Series key={'2'} valueField={'acum'} color={'lightgrey'} name={'acumulado'} type={'area'}/>
-       
-        <Series key={'1'} valueField={'cant'} color={'deepskyblue'} name={'cantidad'} type={'bar'}/>
-      
-        <Grid visible={true} />
-        <Legend
-          visible={true}
-        />
-          <Legend
-            verticalAlignment={'bottom'}
-            horizontalAlignment={'center'}
-            itemTextPosition={'bottom'}
-          />
-         
-          <Title text={'Llegada de Formularios'}>
-            <Subtitle text={'(Dia del Evento)'} />
-          </Title>
-          <Tooltip
-          enabled={true}
-          shared={true}
-        />
-
-      </Chart>
-
-
-
-
-        <PolarChart
-        id={'contactos'}
-        dataSource={polardata}
-        useSpiderWeb={true}
-        commonSeriesSettings= {{type: "line"}}
-        palette={['deepskyblue', '#FFC0CB', '#808000', '#A2CD5A', '#DEB887', '#87CEFA', '#BDBDBD']}
-        title={'% Recepcion Formularios'}
-        tooltip= {{
-          enabled: true
-        }
-      }
-      >
-        <Series          
-          valueField={'F1'} name={'A1'} 
-        >
-
-          <Label visible={false}>
-            <Connector visible={true} width={1} />
-          </Label>
-        </Series>
-        <Series
-          
-          valueField={'F2'} name={'A2'}
-        >
-
-          <Label visible={false}>
-            <Connector visible={true} width={1} />
-          </Label>
-        </Series>
-        <Series
-          
-          valueField={'F3'} name={'D1'}
-        >
-
-          <Label visible={false}>
-            <Connector visible={true} width={1} />
-          </Label>
-        </Series>
-        <Series
-          
-          valueField={'F4'} name={'D2'}
-        >
-
-          <Label visible={false}>
-            <Connector visible={true} width={1} />
-          </Label>
-        </Series>
-        <Size width={400} />
-        <Export enabled={true} />
-      </PolarChart>
-                    </div>
-                    </div>
-                </div>
-            </div>
-           
-          
-<div className="container-fluid" style={{marginLeft: '-15px'}}>
-    <div className="d-flex flex-row">                    
-      <div className="col-sm-12">
-        <div className="card-deck">
-       {pies}
-                 
-     </div>
-   </div>
- </div>
-</div>
-       
-        
-       
-      </Card>
-    );
-  }
-}
-
-/*
 argumentAxis: {
         valueMarginsEnabled: false,
         discreteAxisDivisionMode: "crossLabels",
@@ -396,4 +386,6 @@ argumentAxis: {
             format: "MMdd"
 
         },
+
+
         */
