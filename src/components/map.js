@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import MapGL,{Layer,Feature,ZoomControl} from 'react-mapbox-gl';
-
 import Chart from './chart';
 import MapLayerMunicipios from './maplayermunicipios';
 import MapLayerParroquias from './maplayerparroquias';
@@ -49,8 +48,7 @@ class Map2 extends Component {
     this.onMapClick = this.onMapClick.bind(this)
     this.onChangeEstrato=this.onChangeEstrato.bind(this)  
   }
-  componentDidMount() {
- 
+  componentDidMount() { 
     this.setState({nodos:resumen})
     this.setState({comentario:"sin"})
     this.setState({popupInfo:popupInfo0})
@@ -60,9 +58,7 @@ class Map2 extends Component {
 
   onChangeEstrato(e) {
     this.setState({idestrato:e.target.value})
-   // alert("onChangeEstrato"+e.target.value)
-   
-  
+   // alert("onChangeEstrato"+e.target.value) 
   }
 
  getCirclePaint = (color) => ({

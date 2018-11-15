@@ -45,7 +45,9 @@ class MapLayerMuestra extends Component {
     nuevodefensor:{}, 
     flagPopupTestigo:this.props.flagPopupTestigo,     
     idestrato:0,
-    muestra:[]
+    muestra:[],
+    isLoading: false,
+     error:null
 };
 console.log("class MapLayerMuestra=>" +this.state.flagPopupTestigo)
 //console.log("this.state.muestra e1n maplayermuestra")
@@ -56,22 +58,31 @@ this.onFeatureMouseLeave = this.onFeatureMouseLeave.bind(this)
     
 }
 componentDidMount() {
+  this.setState({ isLoading: true });
   var url="https://faro2018nodos.azurewebsites.net/api/faronodosapi_getnodoselectoralesescrutiniossos10122018?idestado=&idcircunscripcion=&idmunicipio=&idparroquia=&idcentro=&idmesa=&muestra=1&estrato=0&callcenter=&grupocallcenter=&opcion=1&idmomento=0";
-  //url="https://faro2018consultas.azurewebsites.net/api/nodoscentros"
   fetch(url)
- .then(response => response.json())
- .then(result => this.onSetResult(result))
-    //this.setState({comentario:"sin"})
-    
-    this.setState({coffe:coffe})
-    this.setState({idestrato:this.props.propidestrato}) 
-   
+// .then(response => response.json())
+// .then(result => this.onSetResult(result))
+ 
+ .then(response => {
+  if (response.ok) {
+    return response.json();
+  } else {
+    throw new Error('Something went wrong ...');
+  }
+})
+.then(result => this.setState({muestra:result,isLoading:false,coffe:coffe,idestrato:this.props.propidestrato}))
+.catch(error => this.setState({ error, isLoading: false }));
+
+
   }
   onSetResult = (result) => {
     //console.log("onSetRsultss sss")
     console.log(result)
     this.setState({muestra:result})
-    
+    this.setState({coffe:coffe})
+    this.setState({idestrato:this.props.propidestrato}) 
+    this.setState({ isLoading: false });
     //this.setState({ personas: result })
     //console.log(this.state.personas)
 }
@@ -113,12 +124,18 @@ getCirclePaint = (color) => ({
  }
 
 render() { 
- // alert("render muestra"+this.props.propidestrato)
-  console.log("aaaaa render maplaeymuestra aaaaaaaaaaa")
-  const { popupInfo,flagPopupTestigo } = this.state;
-  console.log("LAYER MUESTRA") 
-  console.log(this.props.flagPopupTestigo+" "+this.state.flagPopupTestigo)
-  console.log({popupInfo})
+ 
+  const { popupInfo,flagPopupTestigo,error,isLoading } = this.state;
+  if (error) {
+    return <p>{error.message}</p>;
+  }
+
+  if (isLoading) {
+    return <p>Loading ...</p>;
+  }
+  //console.log("LAYER MUESTRA") 
+  //console.log(this.props.flagPopupTestigo+" "+this.state.flagPopupTestigo)
+  //console.log({popupInfo})
     const idestrato=this.props.propidestrato*1
     //const idestrato=3
     
@@ -134,10 +151,12 @@ render() {
           if (muestra[i].nombretestigo==="SIN OBSERVADOR 9D"){
              rojos.push(muestra[i])
           }else{
-             azules.push(muestra[i])    
+             azules.push(muestra[i])  
+             
           }
      }
-     console.log(azules)
+     console.log("O9D "+azules.length)  
+     //console.log(azules)
      //alert(idestrato)
      let nodoserojos=rojos;
      if (idestrato>0){

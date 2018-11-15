@@ -28,29 +28,22 @@ import PolarChart, {
 
 import RadioGroup from 'devextreme-react/ui/radio-group'
 import { Card } from 'reactstrap';
-
 import { Scale } from '@devexpress/dx-react-chart';
-
-//getCirclePaint = (jsondate) => (
-//  var a=1
-//);
-
 
   function customizePercentageText(info) {
       return `${info.valueText}%`;
     }
     
 //export default class Chart extends React.PureComponent {
-  class ChartFaro extends Component {
- 
+class ChartFaro extends Component { 
 constructor(props) {
     super(props);
-
     this.state = {
      flag:false,
      muestra:[] ,
      totalizacion:[],
-     matriz:[],
+    serie:[],
+    polarchart:[],
      isLoading: false,
      error:null
     };
@@ -58,7 +51,7 @@ constructor(props) {
   componentDidMount() {
     this.setState({ isLoading: true });
     var url="http://faro2018consultas.azurewebsites.net/api/nodosmuestrajsonsumate";
-    url="http://faro2018consultas.azurewebsites.net/api/polidatatotalizacion"
+    url="https://faro2018consultas.azurewebsites.net/api/polidatatotalizacion?formulario=D1&muestra=1&estrato=0"
     fetch(url)
     .then(response => {
       if (response.ok) {
@@ -67,22 +60,17 @@ constructor(props) {
         throw new Error('Something went wrong ...');
       }
     })
-   .then(totalizacion => this.setState({ totalizacion ,isLoading:false}))
+   .then(totalizacion => this.setState({totalizacion: totalizacion[0],serie:totalizacion[1],polarchart:totalizacion[2] ,isLoading:false}))
    .catch(error => this.setState({ error, isLoading: false }));
-
-  
-
     }
     onSetResult = (muestra) => {
       //console.log("onSetRsultss sss")
       this.setState({muestra})
-      this.setState({flag:true})
-         
+      this.setState({flag:true})         
   }
-  render() {  
-    let i=0
-    console.log("render")
-    const {muestra,totalizacion,flag,isLoading,error } = this.state;
+  render() {      
+    console.log("render chart")
+    const {muestra,totalizacion,serie,polarchart,flag,isLoading,error,isloading } = this.state;
     if (error) {
       return <p>{error.message}</p>;
     }
@@ -90,32 +78,36 @@ constructor(props) {
     if (isLoading) {
       return <p>Loading ...</p>;
     }
-    if (isLoading) {
-      return <p>Loading ...</p>;
-  }
+    if (totalizacion===undefined){
+      return <p>Undefined ...</p>;
 
-    var s=totalizacion[5]
-     console.log(s)
+    }
+  //console.log(totalizacion)
+    
+    var s=totalizacion[1]
+     //console.log(s)
      const serieD=[]
-     if (s!==undefined){
-     for (let i = 0; i < s.length; ++i) {
-        serieD.push({fecha:new Date(s[i].fecha),cant:i,acum:i})
+     if (serie!==undefined){
+     for (let i = 0; i < serie.length; ++i) {
+        serieD.push({fecha:new Date(serie[i].fecha),cant:i,acum:i})
      }
       
     }
-    var texto=["Ubicacion Punto Rojo","Solicitud Carnet P","Propaganda Electoral","Colas"] 
+    var texto=["Ubicacion Punto Rojo","Solicitud Carnet P","Propaganda Electoral","Colas","qq","aa"] 
     ///console.log(propspreguntas)
+     
     var ii=-1
-    const respuestasC=totalizacion.map(r=>{     
+    const t=totalizacion[0]
+    const respuestasC=totalizacion.map(r=>{  
       ii+=1;
-      if (ii<5){
+      if (ii<7){
        return(
         <ChartRespuestas key={ii} pregunta={texto[ii]} respuestas={totalizacion[ii]}/>
     
            )  
        }   
      }) 
-     
+    
    //return <p>Loading...</p>
 
     return (
@@ -183,7 +175,7 @@ constructor(props) {
 
         <PolarChart
         id={'contactos'}
-        dataSource={totalizacion[4]}
+        dataSource={polarchart}
         useSpiderWeb={true}
         commonSeriesSettings= {{type: "line"}}
         
@@ -257,135 +249,3 @@ constructor(props) {
 }
 export default ChartFaro;
 
-/*
-var respuestasjson=
-{
-  codcne:"13",
-  nombre:"Estado Miranda",
-  idformulario:"A1",
-  formulario:"Preferencias Tecnologicas",
-  respuestas:"230",
-      preguntas:[
-         {
-         idpregunta:1,pregunta:"Quiere Usted Salir del Mundo Relacional",
-         estratos:[
-             {estrato:1 , 
-              respuestas:[
-                  {respuesta:"Si",cant:23,porc:10.34},
-                  {respuesta:"No",cant:54,porc:20.34},
-                  {respuesta:"No entiendo porque",cant:23,porc:10.34},
-                  {respuesta:"No es necesario",cant:54,porc:20.34},         
-          ] 
-        },
-        {estrato:2 , 
-          respuestas:[
-              {respuesta:"Si",cant:13,porc:10.34},
-              {respuesta:"No",cant:64,porc:20.34},
-              {respuesta:"No entiendo porque",cant:13,porc:10.34},
-              {respuesta:"No es necesario",cant:54,porc:20.34},         
-         ] 
-       },
-       {estrato:3 , 
-        respuestas:[
-            {respuesta:"Si",cant:23,porc:10.34},
-            {respuesta:"No",cant:54,porc:20.34},
-            {respuesta:"No entiendo porque",cant:23,porc:10.34},
-            {respuesta:"No es necesario",cant:54,porc:20.34},         
-           ] 
-        }
-        ]
-         },
-         {
-          idpregunta:2,pregunta:"Cual es su Front End ",
-          estratos:[
-              {estrato:1 , 
-               respuestas:[
-                {respuesta:"jQuery",cant:23,porc:10.34},
-                {respuesta:"React",cant:54,porc:20.34},
-                {respuesta:"Vue",cant:23,porc:10.34},
-                {respuesta:"Angular",cant:54,porc:20.34},  
-                  ] 
-         },
-         {estrato:2 , 
-           respuestas:[
-            {respuesta:"jQuery",cant:23,porc:10.34},
-            {respuesta:"React",cant:54,porc:20.34},
-            {respuesta:"Vue",cant:23,porc:10.34},
-            {respuesta:"Angular",cant:54,porc:20.34},         
-    ] 
-        },
-        {estrato:3 , 
-         respuestas:[
-          {respuesta:"jQuery",cant:23,porc:10.34},
-          {respuesta:"React",cant:54,porc:20.34},
-          {respuesta:"Vue",cant:23,porc:10.34},
-          {respuesta:"Angular",cant:54,porc:20.34},         
-         ] 
-         }
-         ]
-          },
-          {
-            idpregunta:3,pregunta:"Cual es su Plataforma Cloud",
-            estratos:[
-                {estrato:1 , 
-                 respuestas:[
-                  {respuesta:"Azure",cant:23,porc:10.34},
-                  {respuesta:"AWS",cant:54,porc:20.34},
-                  {respuesta:"IBM",cant:23,porc:10.34},
-                  {respuesta:"Amazon",cant:54,porc:20.34},
-                    ] 
-           },
-           {estrato:2 , 
-             respuestas:[
-              {respuesta:"Azure",cant:23,porc:10.34},
-              {respuesta:"AWS",cant:54,porc:20.34},
-              {respuesta:"IBM",cant:23,porc:10.34},
-              {respuesta:"Amazon",cant:54,porc:20.34},         
-
-            ] 
-          },
-          {estrato:3 , 
-           respuestas:[
-            {respuesta:"Azure",cant:23,porc:10.34},
-            {respuesta:"AWS",cant:54,porc:20.34},
-            {respuesta:"IBM",cant:23,porc:10.34},
-            {respuesta:"Amazon",cant:54,porc:20.34},         
-         ] 
-           }
-           ]
-            }
-       ]
-  
-
-}
-   let propspreguntas=[]
-    for (let i = 0; i < respuestasjson.preguntas.length; ++i) {
-          propspreguntas.push(respuestasjson.preguntas[i].estratos[0].respuestas)
-    }
-    for (let i = 0; i < respuestasjson.preguntas.length; ++i) {
-      for (let j = 0; j <   respuestasjson.preguntas[i].estratos.length; ++j) {
-        for (let k = 0; k < respuestasjson.preguntas[i].estratos[j].respuestas.length; ++k) {
-          propspreguntas[i][k].cant+=respuestasjson.preguntas[i].estratos[j].respuestas[k].cant
-          //respuestasjson.preguntas[i].estratos[j].respuestas[k].cant
-        }
-     }
-    }
-argumentAxis: {
-        valueMarginsEnabled: false,
-        discreteAxisDivisionMode: "crossLabels",
-        grid: { visible: true },
-        label: {
-            //overlappingBehavior: {  mode: 'stagger', staggeringSpacing: 0},
-            overlappingBehavior: { mode: 'rotate', rotationAngle: 45, indentFromAxis: 1 },
-            //customizeText: function (arg) {
-
-            //    return arg.value.getMonths() + ":" + arg.value.getDays()
-            //     //return Globalize.format(arg.value, "hh:mm")
-            //},
-            //format: "yyyy-MMdd HH:mm:ss"
-            format: "MMdd"
-
-        },
-
-
-        */

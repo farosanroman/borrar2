@@ -18,6 +18,8 @@ import PieChart, {
 
   render() {
     const { respuestas } = this.state;
+    //console.log("render chart pies")
+    //console.log(respuestas)
     return(
         <div>
             
@@ -30,7 +32,7 @@ import PieChart, {
         onPointClick={this.pointClickHandler}
         onLegendClick={this.legendClickHandler}
       >
-      <Series argumentField={'respuesta'} valueField={'porc'} >
+      <Series argumentField={'respuesta'} valueField={'cant'} >
          <Label visible={true}>  <Connector visible={true} width={1} /> </Label>
       </Series>
         <Size width={400} />
