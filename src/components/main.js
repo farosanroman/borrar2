@@ -17,6 +17,7 @@ import YouTube from  '../components/youtube'
 import Mensajeria from  '../components/mensajeria'
 import Carousel from  '../components/carousel'
 import ChartFaro from  '../components/chart'
+import ChartTestigos from  '../components/charttestigos'
 //https://www.coursera.org/lecture/front-end-react/exercise-video-header-and-footer-7abwF
 
    
@@ -32,11 +33,17 @@ class Main extends Component {
     this.state = { 
       flag:0,     
       config:null,
-      flagLogin:true
+      flagLogin:true,
+      idformulario:"D3"
      };
   }
+  onSetFormulario = (id) => {
+    
+    this.setState({idformulario:id})
+}
   render() { 
     const { flagLogin } = this.state;
+    
       return(
         <Router>
            <div >
@@ -47,13 +54,16 @@ class Main extends Component {
             {flagLogin&&<Route path="/carousel" component={Carousel}/>}
             <Route path="/cursos" component={Cursos}/>
             <Route path="/youtube" component={YouTube}/>
-            <Route path="/map" component={MapBox}/>
-            <Route path="/chart" component={ChartFaro}/>
-            <Route path="/personas" component={Personas}/>
+            {flagLogin&&<Route path="/map" component={MapBox}/>}
+           
+            {flagLogin&&<Route path="/personas" component={Personas}/>}
             <Route path="/farobot" component={FaroBot}/>
             <Route path="/mensajeria" component={Mensajeria}/>
             <Route path="/about" component={About}/>
-            <Route path="/login" component={Login}/>              
+            <Route path="/login" component={Login}/>  
+            <Route path="/polar" component={()=><ChartTestigos />}/>/>  
+            <Route path="/chart" component={()=><ChartFaro onsetformulario={this.onSetFormulario} idformulario={this.state.idformulario}/>}/>/>  
+                             
             <Redirect to="/home"/>
             </Switch>         
            </div>
@@ -63,5 +73,6 @@ class Main extends Component {
     
   }
 }
+//npm i devextreme@18.2.1-pre-18268
 
 export default Main;

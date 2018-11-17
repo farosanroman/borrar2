@@ -2,6 +2,35 @@
 
 
 {
+    "estados" : [
+        { "id": "00", "name": "Venezuela" },
+        { "id": "01", "name": "Distrito Capital" },
+        { "id": "02", "name": "Anzoátegui" },
+        { "id": "03", "name": "Apure" },
+        { "id": "04", "name": "Aragua" },
+        { "id": "05", "name": "Barinas" },
+        { "id": "06", "name": "Bolívar" },
+        { "id": "07", "name": "Carabobo" },
+        { "id": "08", "name": "Cojedes" },
+        { "id": "09", "name": "Falcón" },
+        { "id": "10", "name": "Guárico" },
+        { "id": "11", "name": "Lara" },
+        { "id": "12", "name": "Mérida" },
+        { "id": "13", "name": "Miranda" },
+        { "id": "14", "name": "Monagas" },
+        { "id": "15", "name": "Nueva Esparta" },
+        { "id": "16", "name": "Portuguesa" },
+        { "id": "17", "name": "Sucre" },
+        { "id": "18", "name": "Táchira" },
+        { "id": "19", "name": "Trujillo" },
+        { "id": "20", "name": "Yaracauy" },
+        { "id": "21", "name": "Zulia" },
+        { "id": "22", "name": "Amazonas" },    
+        { "id": "23", "name": "Delta" },
+        { "id": "24", "name": "Vargas" }
+        
+    ],
+
     "estratos":[
         { "id": 0,  "nombre": "Todos" },
         { "id": 1,  "nombre": "Estrato 1" },
@@ -14,14 +43,12 @@
         
     ],
     "formularios":[
-        { "id": 0, "idformulario": "A1", "nombre": "USO DE RECURSOS DEL ESTADO / PUBLICIDAD ELECTORAL" },
+        { "id": 0, "idformulario": "A1", "nombre": "SIMULACRO / CENTROS PILOTOS" },
         { "id": 1, "idformulario": "A2", "nombre": "COACCION / INTIMIDACION / CARNET DE LA PATRIA" },
-        { "id": 2, "idformulario": "D1", "nombre": "ACTO DE VOTACIÓN / MAQUINAS ELECTORALES " },
-        { "id": 3, "idformulario": "D2", "nombre": "SECRETO DEL VOTO / COACCION / INTIMIDACION" },
-        { "id": 4, "idformulario": "D3", "nombre": "PUNTOS ROJOS/ CARNET DE LA PATRIA/ VIOLENCIA" },
-        { "id": 5, "idformulario": "D4", "nombre": "CIERRE / ESCRUTINIO " },
-        { "id": 6, "idformulario": "D5", "nombre": "VERIFICACION CIUDADANA " }
-    
+        { "id": 2, "idformulario": "D1", "nombre": "SECRETO DEL VOTO / COACCION / INTIMIDACION / PUNTOS ROJOS/ CARNET DE LA PATRIA" },
+        { "id": 3, "idformulario": "D2", "nombre": "PARTICIPACION / COLA / MOVILIZACION" },
+        { "id": 4, "idformulario": "D3", "nombre": "CIERRE / ESCRUTINIO / VERIFICACION CIUDADANA" }
+       
     ],
     "correos":[
         {

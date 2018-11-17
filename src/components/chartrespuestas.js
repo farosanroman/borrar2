@@ -11,7 +11,7 @@ import PieChart, {
         super(props);
         this.state = { 
             respuestas:this.props.respuestas,
-            
+            error:null,
             flag:0,          
             config:null };
       }

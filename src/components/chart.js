@@ -17,7 +17,6 @@ import Chart , {
   ConstantLine,Size as SizeS,
   CommonPaneSettings,Border
 } from 'devextreme-react/chart';
-
 import PolarChart, {
   Series as SeriesPolar,
   Label as LabelPolar,
@@ -25,10 +24,10 @@ import PolarChart, {
   Size ,
   Export 
 } from 'devextreme-react/polar-chart';
-
 import RadioGroup from 'devextreme-react/ui/radio-group'
 import { Card } from 'reactstrap';
 import { Scale } from '@devexpress/dx-react-chart';
+import {formularios,estados} from '../data/tablas.json';
 
   function customizePercentageText(info) {
       return `${info.valueText}%`;
@@ -45,13 +44,17 @@ constructor(props) {
     serie:[],
     polarchart:[],
      isLoading: false,
-     error:null
+     error:null,
+     idestado:"00",
+     idformulario:"D1"
     };
+    this.onChangeFormularios = this.onChangeFormularios.bind(this)
+    this.onChangeEstados=this.onChangeEstados.bind(this)
   }
   componentDidMount() {
     this.setState({ isLoading: true });
-    var url="http://faro2018consultas.azurewebsites.net/api/nodosmuestrajsonsumate";
-    url="https://faro2018consultas.azurewebsites.net/api/polidatatotalizacion?formulario=D1&muestra=1&estrato=0"
+    var url="https://faro2018consultas.azurewebsites.net/api/polidatatotalizacion?formulario="+this.props.idformulario+"&muestra=1&estrato=0"
+    
     fetch(url)
     .then(response => {
       if (response.ok) {
@@ -68,8 +71,33 @@ constructor(props) {
       this.setState({muestra})
       this.setState({flag:true})         
   }
+  onChangeFormularios(e) {
+    this.setState({idformulario:e.target.value})
+   
+    this.props.onsetformulario(e.target.value)
+    /*
+    var url="https://faro2018consultas.azurewebsites.net/api/polidatatotalizacion?formulario="+this.state.idformulario+"&muestra=1&estrato=0"
+    //alert(url)
+    fetch(url)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error('Something went wrong ...');
+      }
+    })
+   .then(totalizacion => this.setState({totalizacion: totalizacion[0],serie:totalizacion[1],polarchart:totalizacion[2] ,isLoading:false}))
+   .catch(error => this.setState({ error, isLoading: false }));
+   */
+  }
+  onChangeEstados(e) {
+    this.setState({idestado:e.target.value})
+    alert("onChangeEstado"+e.target.value) 
+  }
   render() {      
     console.log("render chart")
+    console.log("this.props.idformulario"+this.props.idformulario)
+    //this.setState({idformulario:this.props.idformulario})
     const {muestra,totalizacion,serie,polarchart,flag,isLoading,error,isloading } = this.state;
     if (error) {
       return <p>{error.message}</p>;
@@ -83,7 +111,16 @@ constructor(props) {
 
     }
   //console.log(totalizacion)
-    
+  let formulariosOpciones=formularios.map(t=>{     
+    return(
+       <option key={t.idformulario} value={t.idformulario}>{t.nombre} </option>
+         )
+   } )
+   let estadosOpciones=estados.map(t=>{     
+    return(
+       <option key={t.id} value={t.id}>{t.name} </option>
+         )
+   } )
     var s=totalizacion[1]
      //console.log(s)
      const serieD=[]
@@ -94,10 +131,11 @@ constructor(props) {
       
     }
     var texto=["Ubicacion Punto Rojo","Solicitud Carnet P","Propaganda Electoral","Colas","qq","aa"] 
-    ///console.log(propspreguntas)
+    console.log(totalizacion)
      
-    var ii=-1
+    
     const t=totalizacion[0]
+    var ii=-1
     const respuestasC=totalizacion.map(r=>{  
       ii+=1;
       if (ii<7){
@@ -111,14 +149,20 @@ constructor(props) {
    //return <p>Loading...</p>
 
     return (
+     
       <Card>
-          
+           <select ref="formularios" onChange={this.onChangeFormularios}>
+              {formulariosOpciones}
+            </select>
+            <select ref="estados" onChange={this.onChangeEstados}>
+              {estadosOpciones}
+            </select>
            <div className="container-fluid" style={{marginLeft: '-15px'}}>
                 <div className="d-flex flex-row">                    
                     <div className="col-sm-12">
                     <div className="card-deck">
 
-                    <Chart               
+         <Chart               
                dataSource={serieD}
                id={'serie'}
                

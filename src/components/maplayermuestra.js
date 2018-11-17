@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import  MapboxGL, {Layer,Feature,GeoJSONLayer} from 'react-mapbox-gl';
-
-
 //import {muestra} from '../data/muestra.json';
 import {coffe} from '../geo/coffe.json';
-
 import MapPopupTestigo from './mappopuptestigos';
 //https://stackoverflow.com/questions/49059467/display-polygon-in-react-mapbox-gl
 
@@ -73,7 +70,6 @@ componentDidMount() {
 })
 .then(result => this.setState({muestra:result,isLoading:false,coffe:coffe,idestrato:this.props.propidestrato}))
 .catch(error => this.setState({ error, isLoading: false }));
-
 
   }
   onSetResult = (result) => {
@@ -155,7 +151,8 @@ render() {
              
           }
      }
-     console.log("O9D "+azules.length)  
+     console.log("O9D "+azules.length) 
+     //this.props.propsetasignados(33) 
      //console.log(azules)
      //alert(idestrato)
      let nodoserojos=rojos;
@@ -199,7 +196,11 @@ render() {
      popupnodoinfo={popupInfo} 
      flagPopupTestigo={this.props.flagPopupTestigo} 
      />
-       
+      <label>Tendencia:</label>
+      <form >
+     <h6>{'aaa'}{'-'}</h6>
+     <h6>{'aaa'}{'-'}</h6>
+     </form>
      </div>
  
  )

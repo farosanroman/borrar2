@@ -43,7 +43,8 @@ class Map2 extends Component {
       flagPopupTestigo:true,
       idformulario:1,
       idestrato:0,
-      muestra:[]
+      muestra:[],
+      asignados:100
     }
     this.onMapClick = this.onMapClick.bind(this)
     this.onChangeEstrato=this.onChangeEstrato.bind(this)  
@@ -55,7 +56,10 @@ class Map2 extends Component {
     this.setState({popupType:"msg"})
     this.setState({comentario:popupInfo0.nombre})
   }
-
+  onSetEstadisticas = (cant) => {
+    
+    this.setState({asignados:cant})
+}
   onChangeEstrato(e) {
     this.setState({idestrato:e.target.value})
    // alert("onChangeEstrato"+e.target.value) 
@@ -107,13 +111,13 @@ onMuestraClick = (e) => {
   this.setState({flagCentros:false})
   this.setState({flagMuestra:true})
   this.setState({zoom:[6]})
-  this.setState({center:[-66.65286,8]})
+  this.setState({center:[-66.65286,9.2]})
 
 }
     render() {
      
       //const { styleKey } = this.state;
-    const {flagPopupTestigo, idestrato,nodos,comentario,flagMuestra,flagMunicipios,flagParroquias,flagCentros,zoom,center } = this.state;
+    const {flagPopupTestigo, idestrato,nodos,comentario,flagMuestra,flagMunicipios,flagParroquias,flagCentros,zoom,center,asignados } = this.state;
     console.log({flagPopupTestigo})
     const Button = styled.button`
     border: 1px solid #3770c6;
@@ -173,14 +177,12 @@ onMuestraClick = (e) => {
          <option key={e.id} value={e.id}>{e.nombre}</option>
            )
      } )
-           let tendenciasOpciones=tendencias.map(t=>{
-     
+           let tendenciasOpciones=tendencias.map(t=>{     
             return(
                <option key={t.idt} value={t.idy}>{t.tendencia}</option>
                  )
            } )
-           let evaluacionOpciones=evaluacion.map(t=>{
-     
+           let evaluacionOpciones=evaluacion.map(t=>{     
             return(
                <option key={t.ide} value={t.ide}>{t.puntos}</option>
                  )
@@ -210,17 +212,7 @@ onMuestraClick = (e) => {
               {formulariosOpciones}
             </select>
             <label>Tendencia:</label>
-        <select ref="tendencia">
-              {tendenciasOpciones}
-            </select>
-            <label>Evaluacion:</label>
-            <select ref="evaluacion">
-              {evaluacionOpciones}
-            </select>
-            <label>Calidad de Correos:</label>
-            <select ref="correos">
-              {correosOpciones}
-            </select>
+        
             <table><tbody><tr><td valign="top">
         <Map        
           style={"mapbox://styles/mapbox/light-v9"}
@@ -237,6 +229,7 @@ onMuestraClick = (e) => {
            proppopupinfo={this.state.popupInfo}
            flagPopupTestigo={this.state.flagPopupTestigo}
            flagPopUpTestigoTrue={this.onflagPopupTestigo}
+           propsetasignados={this.onSetEstadisticas}
           ></MapLayerMuestra>}
         
         <Layer
@@ -262,16 +255,12 @@ onMuestraClick = (e) => {
           </Map>
 </td><td>
 
-<Chart/>
-<Formulario />
-          </td></tr>
-          </tbody>
-          </table>
-          <BottomBar>
-         
-          <Indicator>{`${comentario}`}</Indicator>
-        </BottomBar>
-          </div>
+<label >{'Tendencia:'}+{asignados}</label>
+</td></tr>
+</tbody>
+</table>
+          
+</div>
         )    
      }
  }
