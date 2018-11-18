@@ -37,10 +37,15 @@ class Main extends Component {
       idformulario:"D3"
      };
   }
+  onSetLogin = (flag) => {
+    
+    this.setState({flagLogin:true})
+} 
   onSetFormulario = (id) => {
     
     this.setState({idformulario:id})
-}
+} 
+
   render() { 
     const { flagLogin } = this.state;
     
@@ -58,11 +63,12 @@ class Main extends Component {
            
             {flagLogin&&<Route path="/personas" component={Personas}/>}
             <Route path="/farobot" component={FaroBot}/>
-            <Route path="/mensajeria" component={Mensajeria}/>
+            {flagLogin&&<Route path="/mensajeria" component={Mensajeria}/>}
             <Route path="/about" component={About}/>
-            <Route path="/login" component={Login}/>  
-            <Route path="/polar" component={()=><ChartTestigos />}/>/>  
-            <Route path="/chart" component={()=><ChartFaro onsetformulario={this.onSetFormulario} idformulario={this.state.idformulario}/>}/>/>  
+            <Route path="/login" component={()=><Login onsetlogin={this.onSetLogin} />}/>  
+        
+      {flagLogin&& <Route path="/polar" component={()=><ChartTestigos />}/> } 
+      {flagLogin&&<Route path="/chart" component={()=><ChartFaro onsetformulario={this.onSetFormulario} idformulario={this.state.idformulario}/>}/> } 
                              
             <Redirect to="/home"/>
             </Switch>         

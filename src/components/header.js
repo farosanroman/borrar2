@@ -73,6 +73,16 @@ class Header extends Component {
                   </NavLink>
               </NavItem>
               <NavItem>
+                  <NavLink className="nav-link" to="/polar">
+                  <span className="fa fa-users"></span>O9D
+                  </NavLink>
+              </NavItem>
+              <NavItem>
+                  <NavLink className="nav-link" to="/chart">
+                  <span className="fa fa-gavel"></span>Total
+                  </NavLink>
+              </NavItem>
+              <NavItem>
                   <NavLink className="nav-link" to="/about">
                   <span className="fa fa-info-circle"></span>OpenFaro
                   </NavLink>
@@ -83,16 +93,7 @@ class Header extends Component {
                   </NavLink>
               </NavItem>
              
-              <NavItem>
-                  <NavLink className="nav-link" to="/polar">
-                  <span className="fa fa-users"></span>O9D
-                  </NavLink>
-              </NavItem>
-              <NavItem>
-                  <NavLink className="nav-link" to="/chart">
-                  <span className="fa fa-gavel"></span>Total
-                  </NavLink>
-              </NavItem>
+             
                          
             </Nav>
             

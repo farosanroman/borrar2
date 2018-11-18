@@ -212,7 +212,7 @@ onMuestraClick = (e) => {
               {formulariosOpciones}
             </select>
             <label>Tendencia:</label>
-        
+             <Formulario />
             <table><tbody><tr><td valign="top">
         <Map        
           style={"mapbox://styles/mapbox/light-v9"}

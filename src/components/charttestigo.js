@@ -4,7 +4,7 @@ import React, { Component } from 'react';
     Label ,
     Connector ,
     Size ,
-    Export ,Legend
+    Export ,Legend,Title,Subtitle
   } from 'devextreme-react/polar-chart';
   import {estados} from '../data/tablas.json';
   class ChartTestigo extends Component {
@@ -28,9 +28,9 @@ import React, { Component } from 'react';
         { "arg": "E7","F1": polard[6],"F2":5}
         ];
         const estado=estados[idestado].name
-        let ww=300;
+        let ww='250';
         if (idestado==0){
-            ww=500
+            ww='300'
             polar1=[
                 { "arg": "E1","F1": polard[0],"F2":170},
                 { "arg": "E2","F1": polard[1],"F2":170},
@@ -41,11 +41,11 @@ import React, { Component } from 'react';
                 { "arg": "E7","F1": polard[6],"F2":170}
                 ];
         }
-    //console.log("render testigo")
-    //console.log(polard)
-  
-    //console.log("render chart pies")
-    //console.log(respuestas)
+        let totasignaciones=0
+        for (var i = 0; i< polard.length-1; ++i) {
+          totasignaciones+=polard[i]
+        }
+        
     return(
         <div>
             
@@ -54,16 +54,16 @@ import React, { Component } from 'react';
         dataSource={polar1}
         useSpiderWeb={true}
         commonSeriesSettings= {{type: "line"}}        
-        palette={['deepskyblue', 'red', 'limegreen', 'lightgrey', '#DEB887', '#87CEFA', '#BDBDBD']}
-        
+       // palette={['deepskyblue', 'red', 'limegreen', 'lightgrey', '#DEB887', '#87CEFA', '#BDBDBD']}
         title={estado}
-        tooltip= {{
-          enabled: true
-        }
-      }
+        tooltip= {{enabled: true}
+         }
       >
+      <Title text={estado}  size={1}>
+           
+          </Title>
         <Series          
-          valueField={'F1'} name={'Asignaciones'} 
+          valueField={'F1'} name={totasignaciones+' Asignaciones'}   width={1} color={'deepskyblue'}
         >
 
           <Label visible={false}>
@@ -71,7 +71,7 @@ import React, { Component } from 'react';
           </Label>
         </Series>
         <Series          
-          valueField={'F2'} name={'Meta'} 
+          valueField={'F2'} name={'Meta'}  width={1} color={'red'}
         >
 
           <Label visible={false}>

@@ -8,54 +8,59 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            personas:[],
+          roles:[],
           flag:0,          
-          config:null };
+          config:null ,
+          isLoading: false,
+          error:null
+        };
       }
-      componentDidMount() {
-        console.log("componentDidMount()")
-        fetch('https://faro2018consultas.azurewebsites.net/api/personasuber?codcne=00&roles=229,230,231,233,232')
-          .then(response => response.json())
-          .then(result => this.onSetResult(result))
-          //.then(data => this.setState({ personas: data }))
-          .catch((error) => {
-            console.error(error);
-        });
-        console.log(this.state.personas)
-        console.log("componentDidMounted()")
-    }
+     
     onSearch = (e) => {
-        alert('The value is: ' + this.login.value+'  '+this.pwd.value);
+        //alert('The value is: ' + this.login.value+'  '+this.pwd.value);
+        const login=this.login.value;
+        const pwd=this.login.value;
         /////////this.refs.myForm.submit();
         console.log("onSearch")
         e.preventDefault();
-        const { value } = this.login;
-        console.log(value)
-        this.setState({flag:1});
-        //fetch('http://nodebiz.azurewebsites.net/autenticacion')
-        fetch('https://faro2018consultas.azurewebsites.net/api/personasuber?codcne=00&roles=229,230,231,233,232')
-          .then(response => response.json())
-          //.then(result => this.onSetResult(result, value))
-          .then(data => this.setState({ personas: data }))
-          .catch((error) => {
-            console.error(error);
-        });
-        console.log("onSearch3")
-        console.log(this.state.personas)
-        if (value === '') {
-          return;
-        }
-        //https://www.robinwieruch.de/local-storage-react/
-     //https://carlosazaustre.es/consumiendo-un-api-rest-desde-react-js-con-ecmascript6/
+    fetch('https://Faro2018seguridad.azurewebsites.net/api/faroautenticacionapi_faroautenticacionapp?login='+this.login.valu+'&clave='+pwd+'&idfaroaplicacion=3&plataforma=SIN&uuid=SIN')
+    .then(response => {
+      if (response.ok) {
+          //alert(JSON.stringify(response.json()))
+        return response.json();
+      } else {
+        throw new Error('Something went wrong ...');
       }
+    })
+   .then(result => this.onSetResult(result))
+   //.then(result => this.setState({roles:result,isLoading:false}))
+   .catch(error => this.setState({ error, isLoading: false }));
+    
+ 
+  };
+       
       onSetResult = (result) => {
-          console.log("onSetRsultss")
+         // alert()
+          console.log("onSetResults")
           console.log(result)
-          this.setState({ personas: result })
-          console.log(this.state)
+          if (result.length>0){
+            if (result[0].id==0){  
+               this.props.onsetlogin(true)
+            }
+          }else{
+            return <p>No Autenticado ...</p>;
+          }
+          //this.setState({ personas: result })
+          //console.log(this.state)
       }
   render() {
-    console.log(this.state)
+    const {error,isLoading } = this.state;
+    if (error) {
+        return <p>{error.message}</p>;
+      }
+    if (isLoading) {
+        return <p>Loading ...</p>;
+      }
     return(
         <div>
             
@@ -72,7 +77,6 @@ class Login extends Component {
           </label>
           <button type="submit">Click</button>
         </form>
-        
         <Jumbotron>
            <div  dark className="container">
                <div className="row row-header">
@@ -83,6 +87,7 @@ class Login extends Component {
                </div>
            </div>
        </Jumbotron>
+       
         </div>
     );
   }
