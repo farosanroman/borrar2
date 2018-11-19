@@ -33,7 +33,7 @@ class Main extends Component {
     this.state = { 
       flag:0,     
       config:null,
-      flagLogin:true,
+      flagLogin:false,
       idformulario:"D3"
      };
   }

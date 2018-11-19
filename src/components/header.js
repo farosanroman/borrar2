@@ -6,7 +6,7 @@ import { Navbar, NavbarBrand,Nav,NavbarToggler,Collapse,NavItem }
  //import { MenuItem} from 'react-bootstrap'
  import {NavLink} from 'react-router-dom'
  //import {LinkContainer} from 'react-router-bootstrap' video de devextreme Mahul
-import logo from '../logo.png';
+import logo from '../farocirculo.png';
 class Header extends Component {
     constructor(props) {
         super(props);    
@@ -48,28 +48,28 @@ class Header extends Component {
               </NavItem>
               <NavItem>
                   <NavLink className="nav-link" to="/cursos">
-                  <span className="fa fa-graduation-cap"></span>Netflix
+                  <span className="fa fa-graduation-cap"></span>Contenidos
                   </NavLink>
               </NavItem>
               
               <NavItem>
                   <NavLink className="nav-link" to="/map">
-                  <span className="fa fa-map-marker"></span>Uber
+                  <span className="fa fa-map-marker"></span>GeoFaro
                   </NavLink>
               </NavItem>
               <NavItem>
                   <NavLink className="nav-link" to="/personas">
-                  <span className="fa fa-rebel"></span>Facebook
+                  <span className="fa fa-rebel"></span>Personas
                   </NavLink>
               </NavItem>
               <NavItem>
                   <NavLink className="nav-link" to="/farobot">
-                  <span className="fa fa-twitter"></span>FaroBot
+                  <span className="fa fa-twitter"></span>FaroBOT
                   </NavLink>
               </NavItem>
               <NavItem>
                   <NavLink className="nav-link" to="/mensajeria">
-                  <span className="fa fa-phone"></span>SMS Colmena
+                  <span className="fa fa-phone"></span>DIfusion
                   </NavLink>
               </NavItem>
               <NavItem>
@@ -84,7 +84,7 @@ class Header extends Component {
               </NavItem>
               <NavItem>
                   <NavLink className="nav-link" to="/about">
-                  <span className="fa fa-info-circle"></span>OpenFaro
+                  <span className="fa fa-info-circle"></span>GeoFaro
                   </NavLink>
               </NavItem>
               <NavItem>

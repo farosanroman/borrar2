@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
 
-import Form from 'devextreme-react/ui/form';
-import RadioGroup,{dxRadioGroup} from 'devextreme-react/ui/radio-group';
-import 'devextreme-react/ui/text-area';
+import Form from 'devextreme-react/form';
+import  'devextreme-react/radio-group';
+import 'devextreme-react/text-area';
 const employee = {
   "FirstName":"pedro",
   "LastName":"Azpurua",

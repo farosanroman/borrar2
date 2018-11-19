@@ -190,6 +190,7 @@ onMuestraClick = (e) => {
            let correosOpciones=correos.map(t=>{
      
             return(
+             
                <option key={t.idc} value={t.idc}>{t.correo}</option>
                  )
            } )
@@ -197,7 +198,7 @@ onMuestraClick = (e) => {
         //this.setState({comentario:"otra mas"})
         return(
         <div>
-         
+          <Formulario />
         <Button onClick={this.onMClick}>Municipios</Button>
         <Button onClick={this.onPClick}>Parroquias</Button>
         <Button onClick={this.onCClick}>Centros</Button>
@@ -212,7 +213,7 @@ onMuestraClick = (e) => {
               {formulariosOpciones}
             </select>
             <label>Tendencia:</label>
-             <Formulario />
+            
             <table><tbody><tr><td valign="top">
         <Map        
           style={"mapbox://styles/mapbox/light-v9"}
@@ -255,7 +256,7 @@ onMuestraClick = (e) => {
           </Map>
 </td><td>
 
-<label >{'Tendencia:'}+{asignados}</label>
+
 </td></tr>
 </tbody>
 </table>
