@@ -26,9 +26,9 @@ import PolarChart, {
 } from 'devextreme-react/polar-chart';
 import RadioGroup from 'devextreme-react/ui/radio-group'
 import { Card } from 'reactstrap';
-import { Scale } from '@devexpress/dx-react-chart';
+//import { Scale } from '@devexpress/dx-react-chart';
 import {formularios,estados} from '../data/tablas.json';
-
+import {D1,D2,D3} from '../data/formularios.json';
   function customizePercentageText(info) {
       return `${info.valueText}%`;
     }
@@ -45,16 +45,19 @@ constructor(props) {
     polarchart:[],
      isLoading: false,
      error:null,
-     idestado:"00",
-     idformulario:"D1"
+     
+     idformulario:this.props.idformulario,
+     formulario:this.props.formulario,
+     idestado:this.props.idestado
     };
     this.onChangeFormularios = this.onChangeFormularios.bind(this)
     this.onChangeEstados=this.onChangeEstados.bind(this)
   }
   componentDidMount() {
     this.setState({ isLoading: true });
-    var url="https://faro2018consultas.azurewebsites.net/api/polidatatotalizacion?formulario="+this.props.idformulario+"&muestra=1&estrato=0"
-    
+    alert(this.props.idestado)
+    var url="https://faro2018consultas.azurewebsites.net/api/polidatatotalizacion?estado="+this.props.idestado+"&formulario="+this.props.idformulario+"&muestra=1&estrato=0"
+    console.log(url)
     fetch(url)
     .then(response => {
       if (response.ok) {
@@ -69,36 +72,29 @@ constructor(props) {
     onSetResult = (muestra) => {
       //console.log("onSetRsultss sss")
       this.setState({muestra})
-      this.setState({flag:true})         
+      this.setState({flag:true})  
+     //this.setState({formulario:D3})       
   }
   onChangeFormularios(e) {
     this.setState({idformulario:e.target.value})
-   
-    this.props.onsetformulario(e.target.value)
-    /*
-    var url="https://faro2018consultas.azurewebsites.net/api/polidatatotalizacion?formulario="+this.state.idformulario+"&muestra=1&estrato=0"
-    //alert(url)
-    fetch(url)
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error('Something went wrong ...');
-      }
-    })
-   .then(totalizacion => this.setState({totalizacion: totalizacion[0],serie:totalizacion[1],polarchart:totalizacion[2] ,isLoading:false}))
-   .catch(error => this.setState({ error, isLoading: false }));
-   */
+    this.setState({formulario:"Otro Formulario"})
+    this.props.onsetformulario(e.target.value,"Otro Formulario")
+    
   }
   onChangeEstados(e) {
     this.setState({idestado:e.target.value})
-    alert("onChangeEstado"+e.target.value) 
+    //alert(e.target.value)
+    this.props.onsetestado(e.target.value)
+    //alert("onChangeEstado"+e.target.value) 
   }
   render() {      
     console.log("render chart")
     console.log("this.props.idformulario"+this.props.idformulario)
+    this.formatFormulario("Primera opcion")
     //this.setState({idformulario:this.props.idformulario})
     const {muestra,totalizacion,serie,polarchart,flag,isLoading,error,isloading } = this.state;
+    console.log(D3)
+    console.log("render chart")
     if (error) {
       return <p>{error.message}</p>;
     }
@@ -132,8 +128,12 @@ constructor(props) {
     }
     var texto=["Ubicacion Punto Rojo","Solicitud Carnet P","Propaganda Electoral","Colas","qq","aa"] 
     console.log(totalizacion)
-     
     
+    let totpolarchart=0;
+    for (let k = 0; k < polarchart.length; ++k) {
+         totpolarchart+=polarchart[k].F1;
+
+    }
     const t=totalizacion[0]
     var ii=-1
     const respuestasC=totalizacion.map(r=>{  
@@ -157,11 +157,16 @@ constructor(props) {
             <select ref="estados" onChange={this.onChangeEstados}>
               {estadosOpciones}
             </select>
+            <h2>
+              <span className="badge badge-primary m-2">{this.formatFormulario()}</span>
+              <span className="badge badge-success m-2">{this.formatFormulario()}</span>
+            
+            </h2>
            <div className="container-fluid" style={{marginLeft: '-15px'}}>
                 <div className="d-flex flex-row">                    
                     <div className="col-sm-12">
                     <div className="card-deck">
-
+         
          <Chart               
                dataSource={serieD}
                id={'serie'}
@@ -221,18 +226,16 @@ constructor(props) {
         id={'contactos'}
         dataSource={polarchart}
         useSpiderWeb={true}
-        commonSeriesSettings= {{type: "line"}}
-        
-        palette={['deepskyblue', 'orange', 'limegreen', 'lightgrey', '#DEB887', '#87CEFA', '#BDBDBD']}
-        
+        commonSeriesSettings= {{type: "line"}}        
+        palette={['deepskyblue', 'red', 'limegreen', 'lightgrey', '#DEB887', '#87CEFA', '#BDBDBD']}
         title={'% Recepcion Formularios'}
         tooltip= {{
           enabled: true
         }
       }
       >
-        <Series          
-          valueField={'F1'} name={'A1'} 
+       <Series          
+          valueField={'F1'} name={totpolarchart+' Recibidas'} 
         >
 
           <Label visible={false}>
@@ -241,33 +244,22 @@ constructor(props) {
         </Series>
         <Series
           
-          valueField={'F2'} name={'A2'}
+          valueField={'F2'} name={'170 Meta'}
         >
 
           <Label visible={false}>
             <Connector visible={true} width={1} />
           </Label>
         </Series>
-        <Series
-          
-          valueField={'F3'} name={'D1'}
-        >
-
-          <Label visible={false}>
-            <Connector visible={true} width={1} />
-          </Label>
-        </Series>
-        <Series
-          
-          valueField={'F4'} name={'D2'}
-        >
-
-          <Label visible={false}>
-            <Connector visible={true} width={1} />
-          </Label>
-        </Series>
+        
         <Size width={400} />
-        <Export enabled={true} />
+        <Export enabled={false} />
+        <Legend
+            verticalAlignment={'bottom'}
+            horizontalAlignment={'center'}
+            itemTextPosition={'bottom'}
+            visible={true}
+          />
       </PolarChart>
                     </div>
                     </div>
@@ -289,6 +281,9 @@ constructor(props) {
        
       </Card>
     );
+  }
+  formatFormulario(f){
+    return this.state.formulario
   }
 }
 export default ChartFaro;

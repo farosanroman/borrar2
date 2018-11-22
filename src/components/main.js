@@ -34,18 +34,23 @@ class Main extends Component {
       flag:0,     
       config:null,
       flagLogin:false,
-      idformulario:"D3"
+      idformulario:"D3",
+      formulario:"formulario AAA",
+      idestado:"00"
      };
   }
-  onSetLogin = (flag) => {
-    
+  onSetLogin = (flag) => { 
+   // alert("login")   
+    //console.log("login")
     this.setState({flagLogin:true})
 } 
-  onSetFormulario = (id) => {
-    
-    this.setState({idformulario:id})
+  onSetFormulario = (id,nombre) => {    
+    this.setState({idformulario:id,formulario:nombre})
 } 
-
+onSetEstado = (id) => {
+    
+  this.setState({idestado:id})
+} 
   render() { 
     const { flagLogin } = this.state;
     
@@ -55,20 +60,18 @@ class Main extends Component {
             <Header></Header>
             <Switch>
             <Route path="/home" component={()=><Home/>}/>
-
             {flagLogin&&<Route path="/carousel" component={Carousel}/>}
             <Route path="/cursos" component={Cursos}/>
             <Route path="/youtube" component={YouTube}/>
-            {flagLogin&&<Route path="/map" component={MapBox}/>}
-           
+            {flagLogin&&<Route path="/map" component={MapBox}/>}           
             {flagLogin&&<Route path="/personas" component={Personas}/>}
             <Route path="/farobot" component={FaroBot}/>
             {flagLogin&&<Route path="/mensajeria" component={Mensajeria}/>}
             <Route path="/about" component={About}/>
             <Route path="/login" component={()=><Login onsetlogin={this.onSetLogin} />}/>  
         
-      {flagLogin&& <Route path="/polar" component={()=><ChartTestigos />}/> } 
-      {flagLogin&&<Route path="/chart" component={()=><ChartFaro onsetformulario={this.onSetFormulario} idformulario={this.state.idformulario}/>}/> } 
+           {flagLogin&& <Route path="/polar" component={()=><ChartTestigos />}/> } 
+           {flagLogin&&<Route path="/chart" component={()=><ChartFaro onsetformulario={this.onSetFormulario} onsetestado={this.onSetEstado} idestado={this.state.idestado} idformulario={this.state.idformulario} formulario={this.state.formulario}/>}/> } 
                              
             <Redirect to="/home"/>
             </Switch>         

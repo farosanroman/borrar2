@@ -45,49 +45,41 @@ import {estados} from '../data/tablas.json';
       }
      
     
-    console.log("render chart testigos")
-    console.log(muestra)
-    var polarchart1=[
-        { "arg": "E1","F1": 0},
-        { "arg": "E2","F1": 0},
-        { "arg": "E3","F1": 0},
-        { "arg": "E4","F1": 0},
-        { "arg": "E5","F1": 0},
-        { "arg": "E6","F1": 0},
-        { "arg": "E7","F1": 0}
-        ];
+    //console.log("render chart testigos")
+    //console.log(muestra)
+    
         var polarEstados=[]
-        for (var i = 0; i< estados.length-1; ++i) {//-1 es porque son 24 y no 25
+        for (var iii = 0; iii< estados.length-1; ++iii) {//-1 es porque son 24 y no 25
               polarEstados.push([0,0,0,0,0,0,0])
-              console.log(estados[i].name)
+              //console.log(estados[iii].name)
         }
         for (var i = 0; i< muestra.length; ++i) {
             let estado=muestra[i].idestado*1-1
             let estrato=(muestra[i].estratocentro*1-1)
             //console.log(muestra[i].idestado+" "+estado+" "+estrato)
-            if(muestra[i].nombretestigo != "SIN OBSERVADOR 9D"){
-                console.log("OBSERVADOR")
+            if(muestra[i].nombretestigo !== "SIN OBSERVADOR 9D"){
+               // console.log("OBSERVADOR")
             polarEstados[estado][estrato]+=1
             //console.log(polarEstados[estado,estrato].F1)
             }
         }
-        console.log(polarEstados)
+        //console.log(polarEstados)
         const ven=[0,0,0,0,0,0,0]
-        for (var i = 0; i< estados.length-1; ++i) {
+        for (var ii = 1; ii< estados.length-1; ++ii) {
             for (var j = 0; j< 8; ++j) {
-             ven[j]+=polarEstados[i][j] 
+             ven[j]+=polarEstados[ii][j] 
              //ven[0]+=polarEstados[i][0] 
             }
         }
 
-            var ii=0
+            var z=0
             const polares=polarEstados.map(r=>{  
-                ii+=1;
+                z+=1;
                 //var n=estados[ii].name
                 //var name =estados[ii].name
                  return(
                      
-                  <ChartTestigo key={ii} idestado={ii} polard={r} />
+                  <ChartTestigo key={z} idestado={z} polard={r} />
               
                      )  
                  }   

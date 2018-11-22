@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
 
 import Form from 'devextreme-react/form';
-import  'devextreme-react/radio-group';
 import 'devextreme-react/text-area';
+import 'devextreme-react/radio-group';
 const employee = {
   "FirstName":"pedro",
   "LastName":"Azpurua",
@@ -11,7 +11,6 @@ const employee = {
   "Pregunta":"Si"
 
 };
-
 const formItems = 
 [{
 itemType: 'group',
@@ -44,7 +43,8 @@ items: ["Si", "No", "No obtuve los resultados"],
 }
 ]
 }]
-}]
+}];
+
 
 ;
 class Formulario extends Component {

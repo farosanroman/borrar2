@@ -12,7 +12,7 @@ import React, { Component } from 'react';
         super(props);
         this.state = { 
             polard:this.props.polard,
-            idestado:this.props.idestado+''
+            idestado:this.props.idestado
         };
       }
     
@@ -29,8 +29,8 @@ import React, { Component } from 'react';
         ];
         const estado=estados[idestado].name
         let ww='250';
-        if (idestado==0){
-            ww='300'
+        if (idestado===0){
+            ww='400'
             polar1=[
                 { "arg": "E1","F1": polard[0],"F2":170},
                 { "arg": "E2","F1": polard[1],"F2":170},
@@ -49,7 +49,7 @@ import React, { Component } from 'react';
     return(
         <div>
             
-            <PolarChart
+    <PolarChart
         id={'contactos'}
         dataSource={polar1}
         useSpiderWeb={true}

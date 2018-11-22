@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Popup} from 'react-mapbox-gl';
-import styled ,{csc} from 'styled-components';
+//import styled ,{csc} from 'styled-components';
 class MapPopupTestigos extends Component {
 constructor(props) {
   super(props);
@@ -13,7 +13,7 @@ constructor(props) {
    };
   }
   componentDidMount() {
-   this.state.Ppopupnodoinfo=this.props.popupnodoinfo
+   //this.state.Ppopupnodoinfo=this.props.popupnodoinfo
   }
   onSubmit = (e) => {
     e.preventDefault();
@@ -35,8 +35,8 @@ constructor(props) {
     }
   
   render() {
-    console.log("RENDER MapPopUpTestigo")
-    console.log(this.props.flagPopupTestigo)
+   // console.log("RENDER MapPopUpTestigo")
+   // console.log(this.props.flagPopupTestigo)
    //console.log("Popiuppppp")
     const {Ppopupnodoinfo}= this.state
     console.log({Ppopupnodoinfo})
@@ -44,7 +44,7 @@ constructor(props) {
     //const {popupnodoinfo } = this.state;
     
     let coor=this.props.popupnodoinfo.coordinates;
-    if (this.props.flagPopupTestigo==false)coor=[0,0]
+    if (this.props.flagPopupTestigo===false)coor=[0,0]
       //const popupinfo=this.props.popupnodoinfo   
       return (
       <div className= "Popup">

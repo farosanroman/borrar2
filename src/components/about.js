@@ -4,12 +4,7 @@ import {Card, CardBody, CardHeader, Media } from 'reactstrap';
 //import { Link } from 'react-router-dom';
 //import {leaderss} from '../data/productos.json';
 function About(props) {
-   // console.log(leaderss)
-    //const leaders = leaderss.map((leader) => {
-    //    return (
-    //        <p>Leader {leader.name}</p>
-    //    );
-    //});
+  
     
     return(
         <div className="container">
@@ -36,7 +31,7 @@ function About(props) {
                                 <dd className="col-6">3 Feb. 2013</dd>
                                 <dt className="col-6">Esfuerzo de Voluntarios</dt>
                                 <dd className="col-6">Basado en OpenSource</dd>
-                                <dt className="col-6">250.000 Activistas de la Dmocracia</dt>
+                                <dt className="col-6">50.000 Activistas de la Dmocracia</dt>
                                 <dd className="col-6">20.000</dd>
                                 <dt className="col-6">Formadores</dt>
                                 <dd className="col-6">40</dd>

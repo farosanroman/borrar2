@@ -1,25 +1,41 @@
 import React, { Component } from 'react';
-import {facilitadores} from '../data/facilitadores.json';
+//import {facilitadores} from '../data/facilitadores.json';
 import {defensores} from '../data/defensores.json';
-import Persona from '../components/persona';
+//import Persona from '../components/persona';
 import '@devexpress/dx-react-grid-bootstrap4/dist/dx-react-grid-bootstrap4.css';
 //console.log({facilitadores})
 //import { Grid, Table, TableHeaderRow } from '@devexpress/dx-react-grid-bootstrap4';
-const pageSizes = [10, 25, 50, 100];      
+//const pageSizes = [10, 25, 50, 100];      
 class Mensajeria extends Component {
     constructor(props) {
         super(props);    
         this.state = {
           defensores,
-          personas:null,
-          dm:null
+          
+          isLoading: false,
+     error:null
         };
       }
       componentDidMount() {
           console.log("componentDidMount()")
-        this.setState({ personas: [{a:1}] })
-        
-        console.log(this.state.personas)
+       
+            this.setState({ isLoading: true });
+            var url="http://faro2018consultas.azurewebsites.net/api/sendsmsdmmail";
+            fetch(url)
+          // .then(response => response.json())
+          // .then(result => this.onSetResult(result))
+           
+           .then(response => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              throw new Error('Something went wrong ...');
+            }
+          })
+          .then(result => this.setState({defensores:result,isLoading:false}))
+          .catch(error => this.setState({ error, isLoading: false }));
+          
+            
       }
       sendMensaje = (e) => {
         //alert('The value is: ' + this.mensaje.value);
@@ -59,16 +75,17 @@ class Mensajeria extends Component {
         //console.log(this.state.personas)
     }
     render() {
-
+      const { error,isLoading } = this.state;
+      if (error) {
+        return <p>{error.message}</p>;
+      }
+    
+      if (isLoading) {
+        return <p>Loading ...</p>;
+      }
         return (
             <div>
-            <ul>
-            {this.state.defensores.map(item => (
-              <li key={item.key}>{item.cedula}-{item.celular}-{item.mail}-{item.twt}<button type="button" width="100px" height="40px
-              " ></button></li>
-            ))}
-          </ul>
-          <form onSubmit={this.sendMensaje}>
+                <form onSubmit={this.sendMensaje}>
         <label>
           Mensaje:
           <input type="text" ref={mensaje => this.mensaje = mensaje} />
@@ -76,6 +93,13 @@ class Mensajeria extends Component {
          
           <button type="submit">Enviar</button>
         </form>
+            <ul>
+            {this.state.defensores.map(item => (
+              <li key={item.key}>{item.cedula}-{item.celular}-{item.mail}-{item.twt}<button type="button" width="100px" height="40px
+              " ></button></li>
+            ))}
+          </ul>
+        
         
           </div>
         )

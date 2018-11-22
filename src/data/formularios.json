@@ -1,0 +1,110 @@
+{
+    "D1":
+        [
+            {
+                "idpregunta": "1", "pregunta": "1. ¿Hay Militares del Plan República ubicados en la mesa de votación? ", "titulo": "Militares", "location": "top", "color": "red", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 1",
+                "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" }
+                ]
+            },
+            {
+                "idpregunta": "2", "pregunta": "2. ¿El Voto Asistido es utilizado para inducir, amenazar o coaccionar a los electores en el Acto de Votación?", "titulo": "Voto Asistido", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 2",
+                "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" }
+                ]
+            },
+            {
+                "idpregunta": "3", "pregunta": "3. ¿La ubicación de los parabanes en la Mesa de Votación permite garantizar el Secreto del Voto?", "titulo": "Parabanes", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 3",
+                "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" }
+                ]
+            },
+            {
+                "idpregunta": "4", "pregunta": "4. ¿El Punto Rojo o toldo de la campaña Oficialista, esta?", "titulo": "Punto Rojo", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 4",
+                "respuestas": [
+                    { "idrespuesta": 1, "respuesta": "Menos de 200 del CDV" }, { "idrespuesta": 2, "respuesta": "Mas de 200m del CDV" },
+                    { "idrespuesta": 3, "respuesta": "Dentro del CDV" }, { "idrespuesta": 4, "respuesta": "No hay" }
+                ]
+            },
+            {
+                "idpregunta": "5", "pregunta": "5. ¿El Carnet de la Patria esta siendo solicitado a los electores? ", "titulo": "Carnet Patria", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 4",
+                "respuestas": [
+                    { "idrespuesta": 1, "respuesta": "En Punto Rojo" }, { "idrespuesta": 2, "respuesta": "En el Cemtro o Mesa de Votacion" },
+                    { "idrespuesta": 3, "respuesta": "No fue Solicitado" }
+                ]
+            },
+            {
+                "idpregunta": "6", "pregunta": "6. ¿Observo usted Propaganda electoral? ", "titulo": "Propaganda", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 4",
+                "respuestas": [
+                    { "idrespuesta": 1, "respuesta": "Adentro del Centro" }, { "idrespuesta": 2, "respuesta": "Afuera del Centro" },
+                    { "idrespuesta": 3, "respuesta": "Adentro y Afuera del Centro" }, { "idrespuesta": 4, "respuesta": "No se Observo Propaganda" }
+                ]
+            }
+        
+            ],
+    "D2":
+    [
+        {
+            "idpregunta": "1", "pregunta": "1. ¿Puede usted averiguar de forma aproximada cuántas personas han votado en la Mesa 1 del Centro de Votacion hasta este momento?","titulo":"participacion", "location": "top", "color": "red", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 1",
+            "respuestas": [{ "idrespuesta": 1, "respuesta": "Menos de 100" }, { "idrespuesta": 2, "respuesta": "Entre 100 y 200" },
+                { "idrespuesta": 3, "respuesta": "Mas de 200" }, { "idrespuesta": 4, "respuesta": "No Pude Obtener Dato" }
+            ]
+            
+        },
+    
+        {
+            "idpregunta": "2", "pregunta": "2. ¿Hay cola a las afueras del centro para entrar a ejercer el derecho al voto?", "titulo":"Cola Votantes", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 2",
+            "respuestas": [{ "idrespuesta": 1, "respuesta": "Menos de 20" }, { "idrespuesta": 2, "respuesta": "Entre 20 y 50" },
+            { "idrespuesta": 3, "respuesta": "Mas de 50" }, { "idrespuesta": 4, "respuesta": "No hay cola" }
+            ]  },
+        {
+            "idpregunta": "3", "pregunta": "3. ¿Hay cola en el Punto Rojo para escanear el QR del Carne de la Patria o para recibir algún beneficio?","titulo":"Cola Puntos Rojos", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 3",
+            "respuestas": [{ "idrespuesta": 1, "respuesta": "Menos de 20" }, { "idrespuesta": 2, "respuesta": "Entre 20 y 50" },
+                { "idrespuesta": 3, "respuesta": "Mas de 50" }, { "idrespuesta": 4, "respuesta": "No hay cola" }
+            ]
+        },
+        {
+            "idpregunta": "4", "pregunta": "4. ¿En su Centro fueron movilizados electores utilizando Bienes o Recursos del Estado?", "titulo": "Movilizacion", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 4",
+        "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" }]
+        },
+        {
+            "idpregunta": "5", "pregunta": "5. ¿Observo repartición de comida, CLAP u otros beneficios en el Punto Rojo?", "titulo": "CLAP/Beneficios", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 4",
+            "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" }]
+        },
+        {
+            "idpregunta": "6", "pregunta": "6. ¿Observó la presencia de Grupos armados o Violentos en los alrededores del centro?", "titulo": "Grupos Armados/Violentos", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 4",
+            "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" }]
+        }
+    ],
+    "D3":
+    [
+        {
+            "idpregunta": "1", "pregunta": "1. ¿Después de las 6pm había Mesas de Votación abiertas sin tener electores en cola?", "titulo": "Despues de las 6pm", "location": "top", "color": "red", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 1",
+            "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" }]
+        },
+        {
+            "idpregunta": "2", "pregunta": "2. ¿Permitieron la entrada de los ciudadanos al Acto de Escrutinio? ", "idrespuesta": 0, "titulo": "Acceso a Escrutinios", "respuesta": "", "comentario": "Falta Pregunta 2",
+            "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" }]
+            },
+                {
+                    "idpregunta": "3", "pregunta": "3. ¿El Acto de Escrutinio se realizó según lo establecido en las Leyes Electorales? ", "titulo": "Leyes", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 3",
+                    "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" } , { "idrespuesta": 3, "respuesta": "No Observe Escrutinio" }]
+        },
+        {
+            "idpregunta": "4", "pregunta": "4. ¿Permitieron la entrada de los ciudadanos al Acto de Verificación Ciudadana? ", "titulo": "Acceso a Verificacion", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 4",
+                   "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" }]
+        },
+        {
+            "idpregunta": "5", "pregunta": "5 ¿El sorteo para la Verificación Ciudadana, se realizó antes o después de la impresión de las Actas?", "titulo": "Sorteo", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 4",
+            "respuestas": [{ "idrespuesta": 1, "respuesta": "Antes" }, { "idrespuesta": 2, "respuesta": "Despues" },
+                { "idrespuesta": 3, "respuesta": "No se Realizo" }, { "idrespuesta": 4, "respuesta": "No Observe la Verificacion" }
+            ]
+        },
+        
+        {
+            "idpregunta": "6", "pregunta": "6. ¿El Acto de Verificación Ciudadana se realizó según lo establecido en las Leyes Electorales ?", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 4",
+            "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" },
+            { "idrespuesta": 3, "respuesta": "No Observe la Verificacion" }
+            ]
+        }
+    ]
+
+
+}

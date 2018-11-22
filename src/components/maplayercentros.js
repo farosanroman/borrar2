@@ -30,7 +30,7 @@ import {CV0119} from '../geo/0119.json';
 import {CV0120} from '../geo/0120.json';
 import {CV0121} from '../geo/0121.json';
 import {CV0122} from '../geo/0122.json';
-import MapPopup from './mappopup';
+//import MapPopup from './mappopup';
 
 const popupInfo0={"coordinates":[0,0],"nombre":"oJo","error":"sin error"}
 
@@ -178,7 +178,7 @@ render() {
   
      //console.log(this.state.center)
      
-     const {nuevaesparta,coffe, nodos ,poligono01,poligono02,poligono03,poligono04,poligono05,poligono06,poligono07,poligono08,poligono09,poligono10,poligono11,poligono12,poligono13,poligono14,poligono15,poligono16,poligono17,poligono18,poligono19,poligono20,poligono21,poligono22} = this.state;
+     const {nuevaesparta,coffe ,poligono01,poligono02,poligono03,poligono04,poligono05,poligono06,poligono07,poligono08,poligono09,poligono10,poligono11,poligono12,poligono13,poligono14,poligono15,poligono16,poligono17,poligono18,poligono19,poligono20,poligono21,poligono22} = this.state;
      //const parroquiasf0 = this.state.nodos.filter(r => (r.nivel === 7)&&(r.OBSERVADOR===0));
     
      var i;

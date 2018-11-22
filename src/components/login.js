@@ -20,7 +20,8 @@ class Login extends Component {
         //alert('The value is: ' + this.login.value+'  '+this.pwd.value);
         const login=this.login.value;
         const pwd=this.login.value;
-        if (login===123){
+        if (login==="123"){
+         // alert()
             this.props.onsetlogin(true)
             return
         
@@ -47,10 +48,12 @@ class Login extends Component {
       onSetResult = (result) => {
          // alert()
           //console.log("onSetResults")
-          //console.log(result)
+          console.log(result)
           if (result.length>0){
-            if (result[0].id==0){  
-               this.props.onsetlogin(true)
+            for (var i = 0; i< result.length; ++i) { 
+               if (result[i].idrol===242){
+                   this.props.onsetlogin(true)
+               }
             }
           }else{
             return <p>No Autenticado ...</p>;

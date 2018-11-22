@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import MapGL,{Layer,Feature,ZoomControl} from 'react-mapbox-gl';
-import Chart from './chart';
+//import Chart from './chart';
 import MapLayerMunicipios from './maplayermunicipios';
 import MapLayerParroquias from './maplayerparroquias';
 import MapLayerCentros from './maplayercentros';
 import MapLayerMuestra from './maplayermuestra';
-import Formulario from './formulario';
+//import Formulario from './formulario';
 import {resumen} from '../data/resumen.json';
 //import {muestra} from '../data/muestra.json';
-import {tendencias,estratos,formularios,roles,evaluacion,correos} from '../data/tablas.json';
-import styled ,{csc} from 'styled-components';
+import {estratos,formularios} from '../data/tablas.json';
+import styled  from 'styled-components';
 //https://mpv.cenditel.gob.ve/cadenas/browser/observatorio/procesos/apps/geocadena/media/geojson?rev=4b459a71f72c425396d545c0dcf9ec6dca20171a&order=name
 //import Popup2 from './popup2';
 const TOKEN="pk.eyJ1IjoiZmFyb21hcGJveCIsImEiOiJjamt6amF4c3MwdXJ3M3JxdDRpYm9ha2pzIn0.V8cqmZH6dFIcxtKoaWcZZw"
@@ -117,8 +117,8 @@ onMuestraClick = (e) => {
     render() {
      
       //const { styleKey } = this.state;
-    const {flagPopupTestigo, idestrato,nodos,comentario,flagMuestra,flagMunicipios,flagParroquias,flagCentros,zoom,center,asignados } = this.state;
-    console.log({flagPopupTestigo})
+    const {flagMuestra,flagMunicipios,flagParroquias,flagCentros,zoom,center } = this.state;
+    //console.log({flagPopupTestigo})
     const Button = styled.button`
     border: 1px solid #3770c6;
   background-color: rgb(84, 152, 255);
@@ -146,26 +146,23 @@ onMuestraClick = (e) => {
     background-color: #3770c6;
   };`
     ;
-      const Container = styled.div`
-      position: relative;
-      height: 100%;
-      flex: 1;
-    `;
+    //  const Container = styled.div`
+    //  position: relative;
+    //  height: 100%;
+    //  flex: 1;
+    //`;
       
-      const BottomBar = styled.div`
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      right: 20px;
-      height: 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    `;
-    const Indicator = styled.div`
-      padding: 6px 10px;
-      background-color: white;
-    `;
+    //  const BottomBar = styled.div`
+    ///  position: absolute;
+     // bottom: 20px;
+     // left: 20px;
+     // right: 20px;
+     // height: 40px;
+     // display: flex;
+     // justify-content: space-between;
+     // align-items: center;
+    //`;
+   
     let formulariosOpciones=formularios.map(t=>{
      
       return(
@@ -177,28 +174,28 @@ onMuestraClick = (e) => {
          <option key={e.id} value={e.id}>{e.nombre}</option>
            )
      } )
-           let tendenciasOpciones=tendencias.map(t=>{     
-            return(
-               <option key={t.idt} value={t.idy}>{t.tendencia}</option>
-                 )
-           } )
-           let evaluacionOpciones=evaluacion.map(t=>{     
-            return(
-               <option key={t.ide} value={t.ide}>{t.puntos}</option>
-                 )
-           } )
-           let correosOpciones=correos.map(t=>{
+          // let tendenciasOpciones=tendencias.map(t=>{     
+          //  return(
+          //     <option key={t.idt} value={t.idy}>{t.tendencia}</option>
+          //       )
+          // } )
+          // let evaluacionOpciones=evaluacion.map(t=>{     
+          //  return(
+          //     <option key={t.ide} value={t.ide}>{t.puntos}</option>
+          //       )
+          // } )
+         //  let correosOpciones=correos.map(t=>{
      
-            return(
-             
-               <option key={t.idc} value={t.idc}>{t.correo}</option>
-                 )
-           } )
+           // return(
+           //  
+           //    <option key={t.idc} value={t.idc}>{t.correo}</option>
+           //      )
+           //} )
         //console.log(features)
         //this.setState({comentario:"otra mas"})
         return(
         <div>
-          <Formulario />
+        
         <Button onClick={this.onMClick}>Municipios</Button>
         <Button onClick={this.onPClick}>Parroquias</Button>
         <Button onClick={this.onCClick}>Centros</Button>
@@ -216,10 +213,11 @@ onMuestraClick = (e) => {
             
             <table><tbody><tr><td valign="top">
         <Map        
-          style={"mapbox://styles/mapbox/light-v9"}
+            
+          style="mapbox://styles/mapbox/streets-v10"
           center={center} 
           zoom={zoom}
-          containerStyle={{height: "80vh",width: "70vw"}}
+          containerStyle={{height: "80vh",width: "90vw"}}
           onClick={this.onMapClick}
         > 
         {flagMunicipios&&<MapLayerMunicipios></MapLayerMunicipios>}

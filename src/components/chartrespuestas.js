@@ -18,8 +18,8 @@ import PieChart, {
 
   render() {
     const { respuestas } = this.state;
-    //console.log("render chart pies")
-    //console.log(respuestas)
+    console.log("render chart pies")
+    console.log(respuestas)
     return(
         <div>
             

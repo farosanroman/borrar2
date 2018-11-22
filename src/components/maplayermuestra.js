@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import  MapboxGL, {Layer,Feature,GeoJSONLayer} from 'react-mapbox-gl';
+import  MapboxGL, {Layer,Feature} from 'react-mapbox-gl';
 //import {muestra} from '../data/muestra.json';
 import {coffe} from '../geo/coffe.json';
 import MapPopupTestigo from './mappopuptestigos';
@@ -137,17 +137,17 @@ render() {
     
      const {muestra } = this.state;
      //console.log({muestra })
-     var i;
+    
      //let nodosprop=this.props.propmuestra
      
      //const azules = muestra.filter(r => (r.nombretestigo.indexOf('SIN')>-1));
      const azules=[]
      const rojos=[]
-     for (var i = 0; i< muestra.length; ++i) {
-          if (muestra[i].nombretestigo==="SIN OBSERVADOR 9D"){
-             rojos.push(muestra[i])
+     for (var ii = 0; ii< muestra.length; ++ii) {
+          if (muestra[ii].nombretestigo==="SIN OBSERVADOR 9D"){
+             rojos.push(muestra[ii])
           }else{
-             azules.push(muestra[i])  
+             azules.push(muestra[ii])  
              
           }
      }
@@ -159,6 +159,7 @@ render() {
      if (idestrato>0){
          nodoserojos = rojos.filter(r => (r.estratocentro === idestrato));
      }
+     var i;
      const muestraroja=nodoserojos.map(cv=>{     
        i+=1;
         return(
