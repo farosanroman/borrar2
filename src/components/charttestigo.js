@@ -42,7 +42,7 @@ import React, { Component } from 'react';
                 ];
         }
         let totasignaciones=0
-        for (var i = 0; i< polard.length-1; ++i) {
+        for (var i = 0; i< polard.length; ++i) {
           totasignaciones+=polard[i]
         }
         

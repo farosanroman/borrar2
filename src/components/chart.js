@@ -49,15 +49,16 @@ constructor(props) {
      idformulario:this.props.idformulario,
      formulario:this.props.formulario,
      nombreformulario:this.props.nombreformulario,
-     idestado:this.props.idestado
+     idestado:this.props.idestado,
+     nombreestado:this.props.nombreestado
     };
     this.onChangeFormularios = this.onChangeFormularios.bind(this)
     this.onChangeEstados=this.onChangeEstados.bind(this)
   }
   componentDidMount() {
     this.setState({ isLoading: true });
-    alert(this.props.idestado+" "+this.props.idformulario)
-    alert(JSON.stringify(this.props.formulario))
+    //alert(this.props.idestado+" "+this.props.idformulario)
+   // alert(JSON.stringify(this.props.formulario))
     var url="https://faro2018consultas.azurewebsites.net/api/polidatatotalizacion?estado="+this.props.idestado+"&idformulario="+this.props.idformulario+"&muestra=1&estrato=0"
     console.log(url)
     fetch(url)
@@ -78,6 +79,7 @@ constructor(props) {
      this.setState({formulario:D3})       
   }
   onChangeFormularios(e) {
+    //alert("onChangeFormularios"+e.target.value)
     this.setState({idformulario:e.target.value})
     let formjson=null;
     if (e.target.value=="D1"){
@@ -105,10 +107,11 @@ constructor(props) {
     const {formulario,nombreformulario,muestra,totalizacion,serie,polarchart,flag,isLoading,error,isloading } = this.state;
     
     console.log("render chart>>>>>>>>>")
-    console.log("this.props.idformulario"+this.props.idformulario)
+    //console.log("this.props.idformulario"+this.props.idformulario)
     
-     console.log(D3)
-     console.log("this.props.nombreformulario"+this.props.nombreformulario)
+     //console.log(D3)
+     //console.log("this.props.nombreformulario"+this.props.nombreformulario)
+     console.log(polarchart)
     console.log("render chart<<<<<<<<<<<")
     if (error) {
       return <p>{error.message}</p>;

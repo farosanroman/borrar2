@@ -49,7 +49,7 @@ import {estados} from '../data/tablas.json';
     //console.log(muestra)
     
         var polarEstados=[]
-        for (var iii = 0; iii< estados.length-1; ++iii) {//-1 es porque son 24 y no 25
+        for (var iii = 0; iii< estados.length-1; ++iii) {
               polarEstados.push([0,0,0,0,0,0,0])
               //console.log(estados[iii].name)
         }
@@ -59,19 +59,31 @@ import {estados} from '../data/tablas.json';
             //console.log(muestra[i].idestado+" "+estado+" "+estrato)
             if(muestra[i].nombretestigo !== "SIN OBSERVADOR 9D"){
                // console.log("OBSERVADOR")
-            polarEstados[estado][estrato]+=1
+                polarEstados[estado][estrato]+=1
             //console.log(polarEstados[estado,estrato].F1)
             }
         }
         //console.log(polarEstados)
-        const ven=[0,0,0,0,0,0,0]
-        for (var ii = 1; ii< estados.length-1; ++ii) {
-            for (var j = 0; j< 8; ++j) {
+        let ven=[0,0,0,0,0,0,0]
+       // console.log("vvvveeeeennnnn....")
+       // console.log("estados")
+       // console.log(estados)
+       // console.log("polarestados")
+       // console.log(polarEstados)
+       // console.log("vvvveeeeennnnn.....")
+        var ttt=0
+        
+        for (var ii = 0; ii< estados.length-1; ++ii) {
+            for (var j = 0; j< 7; ++j) {
+              ttt+=polarEstados[ii][j]
              ven[j]+=polarEstados[ii][j] 
              //ven[0]+=polarEstados[i][0] 
             }
         }
-
+       // console.log("ttt"+ttt)
+       //  console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+      // console.log(ven)
+       //  console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
             var z=0
             const polares=polarEstados.map(r=>{  
                 z+=1;
