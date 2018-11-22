@@ -18,6 +18,7 @@ import Mensajeria from  '../components/mensajeria'
 import Carousel from  '../components/carousel'
 import ChartFaro from  '../components/chart'
 import ChartTestigos from  '../components/charttestigos'
+import {formularios,D1,D2,D3} from '../data/formularios.json';
 //https://www.coursera.org/lecture/front-end-react/exercise-video-header-and-footer-7abwF
 
    
@@ -35,7 +36,8 @@ class Main extends Component {
       config:null,
       flagLogin:false,
       idformulario:"D3",
-      formulario:"formulario AAA",
+      formulario:D3,
+      nombreformulario:"sin nombre",
       idestado:"00"
      };
   }
@@ -44,8 +46,8 @@ class Main extends Component {
     //console.log("login")
     this.setState({flagLogin:true})
 } 
-  onSetFormulario = (id,nombre) => {    
-    this.setState({idformulario:id,formulario:nombre})
+  onSetFormulario = (id,formulario,nombreformulario) => {    
+    this.setState({idformulario:id,formulario:formulario,nombreformulario:nombreformulario})
 } 
 onSetEstado = (id) => {
     
@@ -71,7 +73,7 @@ onSetEstado = (id) => {
             <Route path="/login" component={()=><Login onsetlogin={this.onSetLogin} />}/>  
         
            {flagLogin&& <Route path="/polar" component={()=><ChartTestigos />}/> } 
-           {flagLogin&&<Route path="/chart" component={()=><ChartFaro onsetformulario={this.onSetFormulario} onsetestado={this.onSetEstado} idestado={this.state.idestado} idformulario={this.state.idformulario} formulario={this.state.formulario}/>}/> } 
+           {flagLogin&&<Route path="/chart" component={()=><ChartFaro onsetformulario={this.onSetFormulario} onsetestado={this.onSetEstado} idestado={this.state.idestado} idformulario={this.state.idformulario} formulario={this.state.formulario} nombreformulario={this.state.nombreformulario}/>}/> } 
                              
             <Redirect to="/home"/>
             </Switch>         

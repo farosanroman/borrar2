@@ -42,14 +42,7 @@
         { "id": 7,  "nombre": "Estrato 7" }
         
     ],
-    "formularios":[
-        { "id": 0, "idformulario": "A1", "nombre": "SIMULACRO / CENTROS PILOTOS" },
-        { "id": 1, "idformulario": "A2", "nombre": "COACCION / INTIMIDACION / CARNET DE LA PATRIA" },
-        { "id": 2, "idformulario": "D1", "nombre": "SECRETO DEL VOTO / COACCION / INTIMIDACION / PUNTOS ROJOS/ CARNET DE LA PATRIA" },
-        { "id": 3, "idformulario": "D2", "nombre": "PARTICIPACION / COLA / MOVILIZACION" },
-        { "id": 4, "idformulario": "D3", "nombre": "CIERRE / ESCRUTINIO / VERIFICACION CIUDADANA" }
-       
-    ],
+
     "correos":[
         {
             "idc":1,

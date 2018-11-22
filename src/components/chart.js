@@ -27,8 +27,8 @@ import PolarChart, {
 import RadioGroup from 'devextreme-react/ui/radio-group'
 import { Card } from 'reactstrap';
 //import { Scale } from '@devexpress/dx-react-chart';
-import {formularios,estados} from '../data/tablas.json';
-import {D1,D2,D3} from '../data/formularios.json';
+import {estados} from '../data/tablas.json';
+import {formularios,D1,D2,D3} from '../data/formularios.json';
   function customizePercentageText(info) {
       return `${info.valueText}%`;
     }
@@ -48,6 +48,7 @@ constructor(props) {
      
      idformulario:this.props.idformulario,
      formulario:this.props.formulario,
+     nombreformulario:this.props.nombreformulario,
      idestado:this.props.idestado
     };
     this.onChangeFormularios = this.onChangeFormularios.bind(this)
@@ -55,8 +56,9 @@ constructor(props) {
   }
   componentDidMount() {
     this.setState({ isLoading: true });
-    alert(this.props.idestado)
-    var url="https://faro2018consultas.azurewebsites.net/api/polidatatotalizacion?estado="+this.props.idestado+"&formulario="+this.props.idformulario+"&muestra=1&estrato=0"
+    alert(this.props.idestado+" "+this.props.idformulario)
+    alert(JSON.stringify(this.props.formulario))
+    var url="https://faro2018consultas.azurewebsites.net/api/polidatatotalizacion?estado="+this.props.idestado+"&idformulario="+this.props.idformulario+"&muestra=1&estrato=0"
     console.log(url)
     fetch(url)
     .then(response => {
@@ -73,12 +75,24 @@ constructor(props) {
       //console.log("onSetRsultss sss")
       this.setState({muestra})
       this.setState({flag:true})  
-     //this.setState({formulario:D3})       
+     this.setState({formulario:D3})       
   }
   onChangeFormularios(e) {
     this.setState({idformulario:e.target.value})
-    this.setState({formulario:"Otro Formulario"})
-    this.props.onsetformulario(e.target.value,"Otro Formulario")
+    let formjson=null;
+    if (e.target.value=="D1"){
+      this.setState({formulario:D1})
+      this.props.onsetformulario(e.target.value,D1,D1.nombre)
+    }
+    if (e.target.value=="D2"){
+      this.setState({formulario:D2})
+      this.props.onsetformulario(e.target.value,D2,D2.nombre)
+    }
+    if (e.target.value=="D3"){
+      this.setState({formulario:D3})
+      this.props.onsetformulario(e.target.value,D3,D3.nombre)
+    }
+    
     
   }
   onChangeEstados(e) {
@@ -87,14 +101,15 @@ constructor(props) {
     this.props.onsetestado(e.target.value)
     //alert("onChangeEstado"+e.target.value) 
   }
-  render() {      
-    console.log("render chart")
+  render() {     
+    const {formulario,nombreformulario,muestra,totalizacion,serie,polarchart,flag,isLoading,error,isloading } = this.state;
+    
+    console.log("render chart>>>>>>>>>")
     console.log("this.props.idformulario"+this.props.idformulario)
-    this.formatFormulario("Primera opcion")
-    //this.setState({idformulario:this.props.idformulario})
-    const {muestra,totalizacion,serie,polarchart,flag,isLoading,error,isloading } = this.state;
-    console.log(D3)
-    console.log("render chart")
+    
+     console.log(D3)
+     console.log("this.props.nombreformulario"+this.props.nombreformulario)
+    console.log("render chart<<<<<<<<<<<")
     if (error) {
       return <p>{error.message}</p>;
     }
@@ -158,8 +173,8 @@ constructor(props) {
               {estadosOpciones}
             </select>
             <h2>
-              <span className="badge badge-primary m-2">{this.formatFormulario()}</span>
-              <span className="badge badge-success m-2">{this.formatFormulario()}</span>
+              <span className="badge badge-primary m-2">{this.formatNombreFormulario()}</span>
+              <span className="badge badge-success m-2">{this.formatNombreFormulario()}</span>
             
             </h2>
            <div className="container-fluid" style={{marginLeft: '-15px'}}>
@@ -282,8 +297,8 @@ constructor(props) {
       </Card>
     );
   }
-  formatFormulario(f){
-    return this.state.formulario
+  formatNombreFormulario(f){
+    return this.props.nombreformulario
   }
 }
 export default ChartFaro;

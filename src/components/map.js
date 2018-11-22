@@ -8,7 +8,8 @@ import MapLayerMuestra from './maplayermuestra';
 //import Formulario from './formulario';
 import {resumen} from '../data/resumen.json';
 //import {muestra} from '../data/muestra.json';
-import {estratos,formularios} from '../data/tablas.json';
+import {estratos} from '../data/tablas.json';
+import {formularios} from '../data/formularios.json'
 import styled  from 'styled-components';
 //https://mpv.cenditel.gob.ve/cadenas/browser/observatorio/procesos/apps/geocadena/media/geojson?rev=4b459a71f72c425396d545c0dcf9ec6dca20171a&order=name
 //import Popup2 from './popup2';

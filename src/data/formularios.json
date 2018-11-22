@@ -1,6 +1,16 @@
 {
+    "formularios":[
+        { "id": 0, "idformulario": "A1", "nombre": "SIMULACRO / CENTROS PILOTOS" },
+        { "id": 1, "idformulario": "A2", "nombre": "COACCION / INTIMIDACION / CARNET DE LA PATRIA" },
+        { "id": 2, "idformulario": "D1", "nombre": "SECRETO DEL VOTO / COACCION / INTIMIDACION / PUNTOS ROJOS/ CARNET DE LA PATRIA" },
+        { "id": 3, "idformulario": "D2", "nombre": "PARTICIPACION / COLA / MOVILIZACION" },
+        { "id": 4, "idformulario": "D3", "nombre": "CIERRE / ESCRUTINIO / VERIFICACION CIUDADANA" }
+       
+    ],
     "D1":
-        [
+    {
+    "nombre": "SECRETO DEL VOTO / COACCION / INTIMIDACION / PUNTOS ROJOS/ CARNET DE LA PATRIA",
+     "preguntas":   [
             {
                 "idpregunta": "1", "pregunta": "1. ¿Hay Militares del Plan República ubicados en la mesa de votación? ", "titulo": "Militares", "location": "top", "color": "red", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 1",
                 "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" }
@@ -38,8 +48,10 @@
                 ]
             }
         
-            ],
-    "D2":
+            ]},
+    "D2": {   "nombre": "PARTICIPACION / COLA / MOVILIZACION",
+    "preguntas":   
+
     [
         {
             "idpregunta": "1", "pregunta": "1. ¿Puede usted averiguar de forma aproximada cuántas personas han votado en la Mesa 1 del Centro de Votacion hasta este momento?","titulo":"participacion", "location": "top", "color": "red", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 1",
@@ -72,8 +84,10 @@
             "idpregunta": "6", "pregunta": "6. ¿Observó la presencia de Grupos armados o Violentos en los alrededores del centro?", "titulo": "Grupos Armados/Violentos", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 4",
             "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" }]
         }
-    ],
-    "D3":
+    ]},
+    "D3": {   "nombre": "CIERRE / ESCRUTINIO / VERIFICACION CIUDADANA",
+    "preguntas":   
+
     [
         {
             "idpregunta": "1", "pregunta": "1. ¿Después de las 6pm había Mesas de Votación abiertas sin tener electores en cola?", "titulo": "Despues de las 6pm", "location": "top", "color": "red", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 1",
@@ -104,7 +118,7 @@
             { "idrespuesta": 3, "respuesta": "No Observe la Verificacion" }
             ]
         }
-    ]
+    ]}
 
 
 }
