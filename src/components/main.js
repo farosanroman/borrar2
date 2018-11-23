@@ -37,9 +37,9 @@ class Main extends Component {
       flagLogin:false,
       idformulario:"D3",
       formulario:D3,
-      nombreformulario:"sin nombre",
+      nombreformulario:"CIERRE / ESCRUTINIO / VERIFICACION CIUDADANA",
       idestado:"00",
-      nombreestado:"sin nombre"
+      nombreestado:"Venezuela"
      };
   }
   onSetLogin = (flag) => { 
@@ -74,7 +74,7 @@ onSetEstado = (id,nombreestado) => {
             <Route path="/login" component={()=><Login onsetlogin={this.onSetLogin} />}/>  
         
            {flagLogin&& <Route path="/polar" component={()=><ChartTestigos />}/> } 
-           {flagLogin&&<Route path="/chart" component={()=><ChartFaro onsetformulario={this.onSetFormulario} onsetestado={this.onSetEstado} idestado={this.state.idestado} nombreestado={this.onSetEstado} idformulario={this.state.idformulario} formulario={this.state.formulario} nombreformulario={this.state.nombreformulario}/>}/> } 
+           {flagLogin&&<Route path="/chart" component={()=><ChartFaro onsetformulario={this.onSetFormulario} onsetestado={this.onSetEstado} idestado={this.state.idestado} nombreestado={this.state.nombreestado} idformulario={this.state.idformulario} formulario={this.state.formulario} nombreformulario={this.state.nombreformulario}/>}/> } 
                              
             <Redirect to="/home"/>
             </Switch>         

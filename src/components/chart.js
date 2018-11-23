@@ -59,7 +59,7 @@ constructor(props) {
     this.setState({ isLoading: true });
     //alert(this.props.idestado+" "+this.props.idformulario)
    // alert(JSON.stringify(this.props.formulario))
-    var url="https://faro2018consultas.azurewebsites.net/api/polidatatotalizacion?estado="+this.props.idestado+"&idformulario="+this.props.idformulario+"&muestra=1&estrato=0"
+    var url="https://faro2018consultas.azurewebsites.net/api/polidatatotalizacion?idestado="+this.props.idestado+"&idformulario="+this.props.idformulario+"&muestra=1&estrato=0"
     console.log(url)
     fetch(url)
     .then(response => {
@@ -73,7 +73,9 @@ constructor(props) {
    .catch(error => this.setState({ error, isLoading: false }));
     }
     onSetResult = (muestra) => {
-      //console.log("onSetRsultss sss")
+      console.log("onSetRsultss sss")
+console.log
+      console.log("onSetRsultss sss")
       this.setState({muestra})
       this.setState({flag:true})  
      this.setState({formulario:D3})       
@@ -106,13 +108,7 @@ constructor(props) {
   render() {     
     const {formulario,nombreformulario,muestra,totalizacion,serie,polarchart,flag,isLoading,error,isloading } = this.state;
     
-    console.log("render chart>>>>>>>>>")
-    //console.log("this.props.idformulario"+this.props.idformulario)
     
-     //console.log(D3)
-     //console.log("this.props.nombreformulario"+this.props.nombreformulario)
-     console.log(polarchart)
-    console.log("render chart<<<<<<<<<<<")
     if (error) {
       return <p>{error.message}</p>;
     }
@@ -125,6 +121,13 @@ constructor(props) {
 
     }
   //console.log(totalizacion)
+  console.log("render chart>>>>>>>>>")
+    //console.log("this.props.idformulario"+this.props.idformulario)
+    
+     //console.log(D3)
+     //console.log("this.props.nombreformulario"+this.props.nombreformulario)
+     console.log(polarchart)
+    console.log("render chart<<<<<<<<<<<")
   let formulariosOpciones=formularios.map(t=>{     
     return(
        <option key={t.idformulario} value={t.idformulario}>{t.nombre} </option>
@@ -145,7 +148,7 @@ constructor(props) {
       
     }
     var texto=["Ubicacion Punto Rojo","Solicitud Carnet P","Propaganda Electoral","Colas","qq","aa"] 
-    console.log(totalizacion)
+    //console.log(totalizacion)
     
     let totpolarchart=0;
     for (let k = 0; k < polarchart.length; ++k) {
@@ -169,27 +172,25 @@ constructor(props) {
     return (
      
       <Card>
+         <select ref="estados" onChange={this.onChangeEstados}>
+              {estadosOpciones}
+            </select>
            <select ref="formularios" onChange={this.onChangeFormularios}>
               {formulariosOpciones}
             </select>
-            <select ref="estados" onChange={this.onChangeEstados}>
-              {estadosOpciones}
-            </select>
+           
             <h2>
-              <span className="badge badge-primary m-2">{this.formatNombreFormulario()}</span>
-              <span className="badge badge-success m-2">{this.formatNombreFormulario()}</span>
-            
+            <span className="badge badge-success m-2">{this.formatNombreEstado()}</span>
+            <span className="badge badge-primary m-2">{this.formatNombreFormulario()}</span>
             </h2>
            <div className="container-fluid" style={{marginLeft: '-15px'}}>
                 <div className="d-flex flex-row">                    
                     <div className="col-sm-12">
                     <div className="card-deck">
-         
-         <Chart               
+            <Chart               
                dataSource={serieD}
                id={'serie'}
-               
-           >
+          >
            <SizeS height={400} width={400} />
            <ValueAxis
             grid={{ opacity: 0.2 }}
@@ -262,7 +263,7 @@ constructor(props) {
         </Series>
         <Series
           
-          valueField={'F2'} name={'170 Meta'}
+          valueField={'F2'} name={'1.204 Meta'}
         >
 
           <Label visible={false}>
@@ -302,6 +303,9 @@ constructor(props) {
   }
   formatNombreFormulario(f){
     return this.props.nombreformulario
+  }
+  formatNombreEstado(f){
+    return this.props.nombreestado
   }
 }
 export default ChartFaro;
