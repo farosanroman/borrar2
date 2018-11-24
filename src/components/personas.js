@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {facilitadores} from '../data/facilitadores.json';
+import {observadores}  from '../data/observadores.json'
+import DataGrid, { Column, RemoteOperations, Paging, Pager } from 'devextreme-react/data-grid';
 import Persona from '../components/persona';
+
 //console.log({facilitadores})
 class Personas extends Component {
     render() {
@@ -12,13 +15,29 @@ class Personas extends Component {
          } )
         return (
             
-          <div  style={{width:"201px", height: "600px", overflow: "auto" }}>
-            <h3>Facilitadores</h3>
-            <ul >
-          {personas}
-            </ul>
+          <div  >
+          <DataGrid
+              dataSource={observadores}              
+              showBorders={true}
+           >
+             <Column dataField={'FechaAsignado'} dataType={'date'} />
+             <Column dataField={'codcne'} />
+             <Column dataField={'muestra'} />
+             <Column dataField={'E'} />
+             <Column dataField={'RE'} />
+             <Column dataField={'nombre'} />
+             <RemoteOperations sorting={true}  paging={true} />
+        
+           </DataGrid>
+           
           </div>
         );
       }
     }
     export default Personas;
+/*
+    <h3>Facilitadores</h3>
+    <ul >
+  {personas}
+    </ul>
+    */
