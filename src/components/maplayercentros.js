@@ -196,7 +196,7 @@ render() {
       <div className= "Popup">
      
      <GeoJSONLayer
-   key={"g1"}
+   key={"g01"}
    data={nuevaesparta}
    fillPaint={polygonPaint}
 />
