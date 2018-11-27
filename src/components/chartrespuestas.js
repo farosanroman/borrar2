@@ -4,29 +4,41 @@ import PieChart, {
     Label ,
     Connector,
     Size,
-    Export
+    Export,Legend
   } from 'devextreme-react/pie-chart';
   class ChartRespuestas extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            respuestas:this.props.respuestas,
+            respuestas:props.respuestas,
+            formulario:props.formulario,
+            index:props.index,
             error:null,
             flag:0,          
             config:null };
       }
 
   render() {
-    const { respuestas } = this.state;
+    const {index, respuestas, formulario } = this.state;
     console.log("render chart pies")
+    console.log(index)
+    console.log(formulario)
     console.log(respuestas)
+    console.log("render chart pies")
+    var res=[]
+    for (var k = 0; k< formulario.preguntas[index].respuestas.length; ++k) {
+      res.push({cant:respuestas[k].cant,respuesta:formulario.preguntas[index].respuestas[k].respuesta})
+    
+      //respuestas[k].respuesta=formulario.preguntas[index].respuestas[k].respuesta
+      
+    }
     return(
         <div>
             
     <PieChart
         id={'resultados'}
-        dataSource={respuestas}
-        palette={['deepskyblue', 'orange', 'limegreen', 'lightgrey', '#DEB887', '#87CEFA', '#BDBDBD']}
+        dataSource={res}
+        palette={['deepskyblue','red', 'orange', 'limegreen', 'lightgrey', '#DEB887', '#87CEFA', '#BDBDBD']}
         
         title={this.props.pregunta}
         onPointClick={this.pointClickHandler}
@@ -37,6 +49,12 @@ import PieChart, {
       </Series>
         <Size width={400} />
         <Export enabled={false} />
+        <Legend
+            verticalAlignment={'bottom'}
+            horizontalAlignment={'center'}
+            itemTextPosition={'bottom'}
+            visible={true}
+          />
       </PieChart>
 
         

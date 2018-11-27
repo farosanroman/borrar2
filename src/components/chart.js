@@ -32,7 +32,7 @@ import {formularios,D1,D2,D3} from '../data/formularios.json';
   function customizePercentageText(info) {
       return `${info.valueText}%`;
     }
-    
+    //[Faro2016Mensajes].[FaroInicializaFaroEscrutinioSOS] 0
 //export default class Chart extends React.PureComponent {
 class ChartFaro extends Component { 
 constructor(props) {
@@ -46,11 +46,11 @@ constructor(props) {
      isLoading: false,
      error:null,
      
-     idformulario:this.props.idformulario,
-     formulario:this.props.formulario,
-     nombreformulario:this.props.nombreformulario,
-     idestado:this.props.idestado,
-     nombreestado:this.props.nombreestado
+     idformulario:props.idformulario,
+     formulario:props.formulario,
+     nombreformulario:props.nombreformulario,
+     idestado:props.idestado,
+     nombreestado:props.nombreestado
     };
     this.onChangeFormularios = this.onChangeFormularios.bind(this)
     this.onChangeEstados=this.onChangeEstados.bind(this)
@@ -72,14 +72,14 @@ constructor(props) {
    .then(totalizacion => this.setState({totalizacion: totalizacion[0],serie:totalizacion[1],polarchart:totalizacion[2] ,isLoading:false}))
    .catch(error => this.setState({ error, isLoading: false }));
     }
-    onSetResult = (muestra) => {
-      console.log("onSetRsultss sss")
-console.log
-      console.log("onSetRsultss sss")
-      this.setState({muestra})
-      this.setState({flag:true})  
-     this.setState({formulario:D3})       
-  }
+    //onSetResult = (muestra) => {
+    //  console.log("onSetRsultss sss")
+    // console.log
+    //  console.log("onSetRsultss sss")
+     // this.setState({muestra})
+    //  this.setState({flag:true})  
+    // this.setState({formulario:D3})       
+  ///}
   onChangeFormularios(e) {
     //alert("onChangeFormularios"+e.target.value)
     this.setState({idformulario:e.target.value})
@@ -116,18 +116,14 @@ console.log
     if (isLoading) {
       return <p>Loading ...</p>;
     }
-    if (totalizacion===undefined){
+    if (formulario===undefined){
       return <p>Undefined ...</p>;
 
     }
-  //console.log(totalizacion)
-  console.log("render chart>>>>>>>>>")
-    //console.log("this.props.idformulario"+this.props.idformulario)
-    
-     //console.log(D3)
-     //console.log("this.props.nombreformulario"+this.props.nombreformulario)
-     console.log(polarchart)
-    console.log("render chart<<<<<<<<<<<")
+  
+  //console.log("render chart>>>>>>>>>")
+  //console.log(polarchart)
+  //  console.log("render chart<<<<<<<<<<<")
   let formulariosOpciones=formularios.map(t=>{     
     return(
        <option key={t.idformulario} value={t.idformulario}>{t.nombre} </option>
@@ -157,11 +153,16 @@ console.log
     }
     const t=totalizacion[0]
     var ii=-1
-    const respuestasC=totalizacion.map(r=>{  
+    const respuestasC=totalizacion.map(r=>{ 
+      console.log('map')
+      console.log(r)
+      console.log('map')
+      
       ii+=1;
       if (ii<7){
+      
        return(
-        <ChartRespuestas key={ii} pregunta={texto[ii]} respuestas={totalizacion[ii]}/>
+        <ChartRespuestas key={ii} index={ii} formulario={formulario} pregunta={formulario.preguntas[ii].titulo} respuestas={r}/>
     
            )  
        }   

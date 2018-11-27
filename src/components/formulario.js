@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import Form from 'devextreme-react/form';
 import 'devextreme-react/text-area';
 import 'devextreme-react/radio-group';
+import 'devextreme/dist/css/dx.common.css';
+import 'devextreme/dist/css/dx.light.compact.css';
 const employee = {
   "FirstName":"pedro",
   "LastName":"Azpurua",

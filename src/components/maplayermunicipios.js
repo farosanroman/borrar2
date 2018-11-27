@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import  MapboxGL, {Layer,Feature,GeoJSONLayer} from 'react-mapbox-gl';
 import MapGeoJSONLayer from './mapgeojsonlayer';
 import {resumen} from '../data/resumen.json';
-import {e010000} from '../geo/010000.json';
-import {e020000} from '../geo/020000.json';
+//import {e010000} from '../geo/010000.json';
+//import {e020000} from '../geo/020000.json';
 import {nuevaesparta} from '../geo/nuevaesparta.json';
 //import {Popup} from 'react-mapbox-gl';
 //var ReactMapboxGl = require("react-mapbox-gl");
@@ -20,8 +20,6 @@ constructor(props) {
     nodos:resumen,
     popupType:"msg",
     poly01:null,
-    e010000:e010000,
-    e020000:e020000,
     nuevaesparta:nuevaesparta,
     config:null,
     geojson:[],
@@ -58,22 +56,14 @@ getCirclePaint = (color) => ({
     'fill-opacity': 0.2
   });
 render() { 
-  const {poly01,e010000,e020000,nuevaesparta,geojson,error,isLoading} = this.state;
+  const {poly01,nuevaesparta,geojson,error,isLoading} = this.state;
   if (error) {
     return <p>{error.message}</p>;
   }
   if (isLoading) {
     return <p>Loading ...</p>;
   }
-    console.log('render')
-     console.log({geojson})
-     console.log('render')
-    
-     let polys=[]
-     polys.push(<MapGeoJSONLayer key={1} poligono={e010000}/>)
-   polys.push(<MapGeoJSONLayer key={2} poligono={e020000}/>)
-   console.log(polys)
-     //polys.push(nuevaesparta)
+  
      const geoJSON=geojson.map(geo=>{
       return(
         <MapGeoJSONLayer key={geo.id} poligono={geo}/>

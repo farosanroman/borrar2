@@ -67,7 +67,7 @@ onSetEstado = (id,nombreestado) => {
             <Route path="/cursos" component={Cursos}/>
             <Route path="/youtube" component={YouTube}/>
             {flagLogin&&<Route path="/map" component={MapBox}/>}           
-            <Route path="/personas" component={Personas}/>
+            {flagLogin&& <Route path="/personas" component={Personas}/>}
             <Route path="/farobot" component={FaroBot}/>
             {flagLogin&&<Route path="/mensajeria" component={Mensajeria}/>}
             <Route path="/about" component={About}/>

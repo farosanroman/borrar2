@@ -10,10 +10,9 @@ constructor(props) {
     config:null };
 }
 getColor(){
-    const palette2=['deepskyblue', 'orange', 'limegreen', 'lightgrey', '#DEB887', '#87CEFA', '#BDBDBD']
-    const palette=['powderblue','lightblue','lightskyblue','skyblue','deepskyblue','lightsteelblue',
-    'dodgerblue','cornflowerblue','steelblue','royalblue','blue','mediumblue'
-    ,'darkblue','navy','midnightblue','mediumslateblue','slateblue','darkslateblue']
+    const palette=['green','lightblue','deepskyblue',
+    'dodgerblue','red','orange','purple','deeppink','orangered'
+    ,'magenta','lime','goldenrod','brown','olive','gold','gray','fuchsia']
     var min = Math.ceil(17);
     var max = Math.floor(0);
     var pos= Math.floor(Math.random() * (max - min + 1)) + min;

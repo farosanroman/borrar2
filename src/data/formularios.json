@@ -54,7 +54,7 @@
 
     [
         {
-            "idpregunta": "1", "pregunta": "1. ¿Puede usted averiguar de forma aproximada cuántas personas han votado en la Mesa 1 del Centro de Votacion hasta este momento?","titulo":"participacion", "location": "top", "color": "red", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 1",
+            "idpregunta": "1", "pregunta": "1. ¿Puede usted averiguar de forma aproximada cuántas personas han votado en la Mesa 1 del Centro de Votacion hasta este momento?","titulo":"Participacion", "location": "top", "color": "red", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 1",
             "respuestas": [{ "idrespuesta": 1, "respuesta": "Menos de 100" }, { "idrespuesta": 2, "respuesta": "Entre 100 y 200" },
                 { "idrespuesta": 3, "respuesta": "Mas de 200" }, { "idrespuesta": 4, "respuesta": "No Pude Obtener Dato" }
             ]
@@ -113,7 +113,7 @@
         },
         
         {
-            "idpregunta": "6", "pregunta": "6. ¿El Acto de Verificación Ciudadana se realizó según lo establecido en las Leyes Electorales ?", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 4",
+            "idpregunta": "6", "pregunta": "6. ¿El Acto de Verificación Ciudadana se realizó según lo establecido en las Leyes Electorales ?","titulo":"Verificacion Ciudadana", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 4",
             "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" },
             { "idrespuesta": 3, "respuesta": "No Observe la Verificacion" }
             ]

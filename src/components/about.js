@@ -4,7 +4,6 @@ import {Card, CardBody, CardHeader, Media } from 'reactstrap';
 //import { Link } from 'react-router-dom';
 //import {leaderss} from '../data/productos.json';
 function About(props) {
-  
     
     return(
         <div className="container">
@@ -20,7 +19,7 @@ function About(props) {
                 <div className="col-12 col-md-6">
                     <h2>Nuestra Historia</h2>
                     <p>Faro comenzo a germinar en el anno 2005...</p>
-                    <p>Luego con la aparicion d ela Internet y telefonos Nokia<em>Modelo xxx</em>,sucediron un conjunto de decisiones.</p>
+                    <p>Luego con la aparicion de la Internet y los telefonos Nokia<em>Modelo xxx</em>,sucediron un conjunto de decisiones.</p>
                 </div>
                 <div className="col-12 col-md-5">
                     <Card>

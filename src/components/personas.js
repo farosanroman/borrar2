@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 //import {observadores}  from '../data/observadores.json'
 import DataGrid, { Column, RemoteOperations, Paging, Pager } from 'devextreme-react/data-grid';
+import 'devextreme/dist/css/dx.common.css';
+import 'devextreme/dist/css/dx.light.compact.css';
 import Persona from '../components/persona';
 
 //console.log({facilitadores})
@@ -50,10 +52,9 @@ class Personas extends Component {
           <div  >
           <DataGrid
               dataSource={personas}              
-              showBorders={true}
-              
-        columnAutoWidth={true}
-        wordWrapEnabled={true}
+              showBorders={true}             
+              columnAutoWidth={true}
+              wordWrapEnabled={true}
            >
              <Column dataField={'FechaAsignado'} dataType={'date'} format={'dd/MM/yyyy HH:mm'} />
              <Column dataField={'codcne'} />

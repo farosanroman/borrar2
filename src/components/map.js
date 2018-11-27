@@ -5,7 +5,7 @@ import MapLayerMunicipios from './maplayermunicipios';
 import MapLayerParroquias from './maplayerparroquias';
 import MapLayerCentros from './maplayercentros';
 import MapLayerMuestra from './maplayermuestra';
-//import Formulario from './formulario';
+import Formulario from './formulario';
 import {resumen} from '../data/resumen.json';
 //import {muestra} from '../data/muestra.json';
 import {estratos} from '../data/tablas.json';
