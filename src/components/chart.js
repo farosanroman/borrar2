@@ -29,6 +29,7 @@ import { Card } from 'reactstrap';
 //import { Scale } from '@devexpress/dx-react-chart';
 import {estados} from '../data/tablas.json';
 import {formularios,D1,D2,D3} from '../data/formularios.json';
+import { Background } from 'devextreme-react/vector-map';
   function customizePercentageText(info) {
       return `${info.valueText}%`;
     }
@@ -184,10 +185,10 @@ constructor(props) {
             <span className="badge badge-success m-2">{this.formatNombreEstado()}</span>
             <span className="badge badge-primary m-2">{this.formatNombreFormulario()}</span>
             </h2>
-           <div className="container-fluid" style={{marginLeft: '-15px'}}>
-                <div className="d-flex flex-row">                    
-                    <div className="col-sm-12">
-                    <div className="card-deck">
+            <div className="row ">
+    <div className="d-flex flex-row">                    
+      <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+        <div className="card-deck">
             <Chart               
                dataSource={serieD}
                id={'serie'}
@@ -287,12 +288,14 @@ constructor(props) {
             </div>
            
           
-<div className="container-fluid" style={{marginLeft: '-15px'}}>
+<div className="container-fluid" style={{marginLeft: '10px'}}>
+    <div className="row">
     <div className="d-flex flex-row">                    
-      <div className="col-sm-12">
+      <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div className="card-deck">
         {respuestasC}
      </div>
+   </div>
    </div>
  </div>
 </div>
