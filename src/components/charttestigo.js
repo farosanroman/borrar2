@@ -11,40 +11,42 @@ import React, { Component } from 'react';
     constructor(props) {
         super(props);
         this.state = { 
-            polard:this.props.polard,
-            idestado:this.props.idestado
+            polard:props.polard,
+            idestado:props.idestado,
+            r:props.r
         };
       }
     
   render() {
-    const { polard,idestado } = this.state;
+    const {r, polard,idestado } = this.state;
+    let ww='400';
     var polar1=[
-        { "arg": "E1","F1": polard[0],"F2":5},
-        { "arg": "E2","F1": polard[1],"F2":5},
-        { "arg": "E3","F1": polard[2],"F2":5},
-        { "arg": "E4","F1": polard[3],"F2":5},
-        { "arg": "E5","F1": polard[4],"F2":5},
-        { "arg": "E6","F1": polard[5],"F2":5},
-        { "arg": "E7","F1": polard[6],"F2":5}
+        { "arg": "E1","F2": r.e1,"F1":r.m1,"F3":r.tot1},
+        { "arg": "E2","F2": r.e2,"F1":r.m2,"F3":r.tot2},
+        { "arg": "E3","F2": r.e3,"F1":r.m3,"F3":r.tot3},
+        { "arg": "E4","F2": r.e4,"F1":r.m4,"F3":r.tot4},
+        { "arg": "E5","F2": r.e5,"F1":r.m5,"F3":r.tot5},
+        { "arg": "E6","F2": r.e6,"F1":r.m6,"F3":r.tot6},
+        { "arg": "E7","F2": r.e7,"F1":r.m7,"F3":r.tot7}
         ];
         const estado=estados[idestado].name
-        let ww='250';
+        
         if (idestado===0){
             ww='400'
             polar1=[
-                { "arg": "E1","F1": polard[0],"F2":170},
-                { "arg": "E2","F1": polard[1],"F2":170},
-                { "arg": "E3","F1": polard[2],"F2":170},
-                { "arg": "E4","F1": polard[3],"F2":170},
-                { "arg": "E5","F1": polard[4],"F2":170},
-                { "arg": "E6","F1": polard[5],"F2":170},
-                { "arg": "E7","F1": polard[6],"F2":170}
-                ];
+              { "arg": "E1","F2": r.e1,"F1":r.m1,"F3":r.tot1},
+              { "arg": "E2","F2": r.e2,"F1":r.m2,"F3":r.tot2},
+              { "arg": "E3","F2": r.e3,"F1":r.m3,"F3":r.tot3},
+              { "arg": "E4","F2": r.e4,"F1":r.m4,"F3":r.tot4},
+              { "arg": "E5","F2": r.e5,"F1":r.m5,"F3":r.tot5},
+              { "arg": "E6","F2": r.e6,"F1":r.m6,"F3":r.tot6},
+              { "arg": "E7","F2": r.e7,"F1":r.m7,"F3":r.tot7}
+              ];
         }
-        let totasignaciones=0
-        for (var i = 0; i< polard.length; ++i) {
-          totasignaciones+=polard[i]
-        }
+       
+        let  totasignaciones=r.tot1+r.tot2+r.tot3+r.tot4+r.tot5+r.tot6+r.tot7
+        let  totcentros=r.m1+r.m2+r.m3+r.m4+r.m5+r.m6+r.m7
+        let  totmeta=r.e1+r.e2+r.e3+r.e4+r.e5+r.e6+r.e7
         
     return(
         <div>
@@ -63,7 +65,16 @@ import React, { Component } from 'react';
            
           </Title>
         <Series          
-          valueField={'F1'} name={totasignaciones+' Asignaciones'}   width={1} color={'deepskyblue'}
+          valueField={'F1'} name={totcentros+' O9D'}   width={1} color={'deepskyblue'}
+        >
+
+          <Label visible={false}>
+            <Connector visible={true} width={1} />
+          </Label>
+        </Series>
+       
+        <Series          
+          valueField={'F3'} name={totasignaciones+' Tot Asig'}  width={1} color={'gray'}
         >
 
           <Label visible={false}>
@@ -71,7 +82,7 @@ import React, { Component } from 'react';
           </Label>
         </Series>
         <Series          
-          valueField={'F2'} name={'Meta'}  width={1} color={'red'}
+          valueField={'F2'} name={totmeta+' Meta'}  width={1} color={'red'}
         >
 
           <Label visible={false}>
