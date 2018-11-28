@@ -16,8 +16,9 @@ import YouTube from  '../components/youtube'
 //import Sms from  '../components/sms'
 import Mensajeria from  '../components/mensajeria'
 import Carousel from  '../components/carousel'
-import ChartFaro from  '../components/chart'
+import ChartFormularios from  '../components/chartformularios'
 import ChartTestigos from  '../components/charttestigos'
+import ChartFaro from  '../components/chart'
 import {formularios,D1,D2,D3} from '../data/formularios.json';
 //https://www.coursera.org/lecture/front-end-react/exercise-video-header-and-footer-7abwF
 
@@ -70,11 +71,13 @@ onSetEstado = (id,nombreestado) => {
             {flagLogin&& <Route path="/personas" component={Personas}/>}
             <Route path="/farobot" component={FaroBot}/>
             {flagLogin&&<Route path="/mensajeria" component={Mensajeria}/>}
+            {flagLogin&& <Route path="/polar" component={()=><ChartTestigos />}/> } 
+            {flagLogin&& <Route path="/polarf" component={()=><ChartFormularios />}/> }
+           {flagLogin&&<Route path="/chart" component={()=><ChartFaro onsetformulario={this.onSetFormulario} onsetestado={this.onSetEstado} idestado={this.state.idestado} nombreestado={this.state.nombreestado} idformulario={this.state.idformulario} formulario={this.state.formulario} nombreformulario={this.state.nombreformulario}/>}/> } 
             <Route path="/about" component={About}/>
             <Route path="/login" component={()=><Login onsetlogin={this.onSetLogin} />}/>  
         
-           {flagLogin&& <Route path="/polar" component={()=><ChartTestigos />}/> } 
-           {flagLogin&&<Route path="/chart" component={()=><ChartFaro onsetformulario={this.onSetFormulario} onsetestado={this.onSetEstado} idestado={this.state.idestado} nombreestado={this.state.nombreestado} idformulario={this.state.idformulario} formulario={this.state.formulario} nombreformulario={this.state.nombreformulario}/>}/> } 
+           
                              
             <Redirect to="/home"/>
             </Switch>         

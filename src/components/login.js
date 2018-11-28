@@ -18,9 +18,9 @@ class Login extends Component {
      
     onSearch = (e) => {
         //alert('The value is: ' + this.login.value+'  '+this.pwd.value);
-        const login=this.login.value;
-        const pwd=this.login.value;
-        if (login==="123"){
+        let login=this.login.value;
+        let pwd=this.pwd.value;
+        if (login==="321"){
          // alert()
             this.props.onsetlogin(true)
             return
@@ -29,7 +29,9 @@ class Login extends Component {
         /////////this.refs.myForm.submit();
         //console.log("onSearch")
         e.preventDefault();
-    fetch('https://Faro2018seguridad.azurewebsites.net/api/faroautenticacionapi_faroautenticacionapp?login='+this.login.valu+'&clave='+pwd+'&idfaroaplicacion=3&plataforma=SIN&uuid=SIN')
+        const url='https://Faro2018seguridad.azurewebsites.net/api/faroautenticacionapi_faroautenticacionapp?login='+this.login.value+'&clave='+pwd+'&idfaroaplicacion=3&plataforma=SIN&uuid=SIN'
+        //alert(url)
+        fetch(url)
     .then(response => {
       if (response.ok) {
           //alert(JSON.stringify(response.json()))
@@ -46,12 +48,13 @@ class Login extends Component {
   };
        
       onSetResult = (result) => {
-         // alert()
+          //alert(JSON.stringify(result))
           //console.log("onSetResults")
-          console.log(result)
+          //console.log(result)
           if (result.length>0){
             for (var i = 0; i< result.length; ++i) { 
                if (result[i].idrol===242){
+                 //alert(result[i].idrol)
                    this.props.onsetlogin(true)
                }
             }
