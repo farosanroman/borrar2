@@ -19,7 +19,7 @@ import Carousel from  '../components/carousel'
 import ChartFormularios from  '../components/chartformularios'
 import ChartTestigos from  '../components/charttestigos'
 import ChartFaro from  '../components/chart'
-import {formularios,D1,D2,D3} from '../data/formularios.json';
+import {formularios,A1,A2,D1,D2,D3} from '../data/formularios.json';
 //https://www.coursera.org/lecture/front-end-react/exercise-video-header-and-footer-7abwF
 
    
@@ -36,9 +36,9 @@ class Main extends Component {
       flag:0,     
       config:null,
       flagLogin:false,
-      idformulario:"D3",
-      formulario:D3,
-      nombreformulario:"CIERRE / ESCRUTINIO / VERIFICACION CIUDADANA",
+      idformulario:"A1",
+      formulario:A1,
+      nombreformulario:"A1 COACCION / INTIMIDACION / CARNET DE LA PATRIA",
       idestado:"00",
       nombreestado:"Venezuela"
      };
@@ -51,13 +51,12 @@ class Main extends Component {
   onSetFormulario = (id,formulario,nombreformulario) => {    
     this.setState({idformulario:id,formulario:formulario,nombreformulario:nombreformulario})
 } 
-onSetEstado = (id,nombreestado) => {
-    
+onSetEstado = (id,nombreestado) => {  
+ 
   this.setState({idestado:id,nombreestado:nombreestado})
 } 
   render() { 
-    const { flagLogin } = this.state;
-    
+    const { flagLogin } = this.state;    
       return(
         <Router>
            <div >

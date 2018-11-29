@@ -27,9 +27,9 @@ import PolarChart, {
 import RadioGroup from 'devextreme-react/ui/radio-group'
 import { Card } from 'reactstrap';
 //import { Scale } from '@devexpress/dx-react-chart';
-import {estados} from '../data/tablas.json';
-import {formularios,D1,D2,D3} from '../data/formularios.json';
-import { Background } from 'devextreme-react/vector-map';
+//import {estados} from '../data/tablas.json';
+import {estados,formularios,A1,A2,D1,D2,D3} from '../data/formularios.json';
+//import { Background } from 'devextreme-react/vector-map';
   function customizePercentageText(info) {
       return `${info.valueText}%`;
     }
@@ -61,7 +61,8 @@ constructor(props) {
     //alert(this.props.idestado+" "+this.props.idformulario)
    // alert(JSON.stringify(this.props.formulario))
     var url="https://faro2018consultas.azurewebsites.net/api/polidatatotalizacion?idestado="+this.props.idestado+"&idformulario="+this.props.idformulario+"&muestra=1&estrato=0"
-    console.log(url)
+    //alert(url)
+    //console.log(url)
     fetch(url)
     .then(response => {
       if (response.ok) {
@@ -85,31 +86,44 @@ constructor(props) {
     //alert("onChangeFormularios"+e.target.value)
     this.setState({idformulario:e.target.value})
     let formjson=null;
+    if (e.target.value=="A1"){
+      this.setState({formulario:A1})
+      this.props.onsetformulario(e.target.value,A1,"A1 "+A1.nombre)
+    }
+    if (e.target.value=="A2"){
+      this.setState({formulario:A2})
+      this.props.onsetformulario(e.target.value,A2,"A2 "+A2.nombre)
+    }
     if (e.target.value=="D1"){
       this.setState({formulario:D1})
-      this.props.onsetformulario(e.target.value,D1,D1.nombre)
+      this.props.onsetformulario(e.target.value,D1,"D1 "+D1.nombre)
     }
     if (e.target.value=="D2"){
       this.setState({formulario:D2})
-      this.props.onsetformulario(e.target.value,D2,D2.nombre)
+      this.props.onsetformulario(e.target.value,D2,"D2 "+D2.nombre)
     }
     if (e.target.value=="D3"){
       this.setState({formulario:D3})
-      this.props.onsetformulario(e.target.value,D3,D3.nombre)
+      this.props.onsetformulario(e.target.value,D3,"D3 "+D3.nombre)
     }
     
     
   }
   onChangeEstados(e) {
+    //console.log(e.target)
     this.setState({idestado:e.target.value})
     //alert(e.target.value)
-    this.props.onsetestado(e.target.value)
+    let nombreestado=""
+    for (let ii = 0; ii < estados.length; ++ii) {
+      if (estados[ii].id==e.target.value){
+        nombreestado=estados[ii].name
+      }
+    }
+    this.props.onsetestado(e.target.value,nombreestado)
     //alert("onChangeEstado"+e.target.value) 
   }
   render() {     
-    const {formulario,nombreformulario,muestra,totalizacion,serie,polarchart,flag,isLoading,error,isloading } = this.state;
-    
-    
+    const {formulario,totalizacion,serie,polarchart,flag,isLoading,error,isloading } = this.state;
     if (error) {
       return <p>{error.message}</p>;
     }
@@ -125,6 +139,7 @@ constructor(props) {
   //console.log("render chart>>>>>>>>>")
   //console.log(polarchart)
   //  console.log("render chart<<<<<<<<<<<")
+  //alert(JSON.stringify(totalizacion[0]))
   let formulariosOpciones=formularios.map(t=>{     
     return(
        <option key={t.idformulario} value={t.idformulario}>{t.nombre} </option>
@@ -135,7 +150,7 @@ constructor(props) {
        <option key={t.id} value={t.id}>{t.name} </option>
          )
    } )
-    var s=totalizacion[1]
+    //var s=totalizacion[1]
      //console.log(s)
      const serieD=[]
      if (serie!==undefined){
@@ -150,15 +165,13 @@ constructor(props) {
     let totpolarchart=0;
     for (let k = 0; k < polarchart.length; ++k) {
          totpolarchart+=polarchart[k].F1;
-
     }
     const t=totalizacion[0]
     var ii=-1
     const respuestasC=totalizacion.map(r=>{ 
-      console.log('map')
-      console.log(r)
-      console.log('map')
-      
+      //console.log('map')
+      //console.log(r)
+      //console.log('map')      
       ii+=1;
       if (ii<7){
       
@@ -171,8 +184,7 @@ constructor(props) {
     
    //return <p>Loading...</p>
 
-    return (
-     
+    return (     
       <Card>
          <select ref="estados" onChange={this.onChangeEstados}>
               {estadosOpciones}

@@ -31,7 +31,7 @@ import {estados} from '../data/tablas.json';
        
   render() {
     const {muestra,isLoading,error } = this.state;
-    console.log(muestra)
+   // console.log(muestra)
         //for (var i = 0; i < muestra.length; ++i) {
         //     if ( muestra[i].r1>0){ 
         //          polarchart[muestra[i].ec-1].F1 += 1;
@@ -58,21 +58,29 @@ import {estados} from '../data/tablas.json';
             
         }
         
-        var ttt=0
+        //var ttt=0
            var z=0
                const polares=muestra.map(r=>{  
                 z+=1;                
                  return(
-                  <ChartTestigo key={z} idestado={z} r={r} />
+                  <ChartTestigo key={z} idestado={z} r={r} tipo={'porc'}/>
+                   )  
+                 }   
+               )
+               var z=0
+               const polaresC=muestra.map(r=>{  
+                z+=1;                
+                 return(
+                  <ChartTestigo key={z} idestado={z} r={r} tipo={'cant'}/>
                    )  
                  }   
                )
     return(
         <div>
            <h2>
-            <span className="badge badge-success m-2">{'Genoma Electoral'}</span>
+            <span className="badge badge-success m-2">{'Genoma Electoral (%)'}</span>
             </h2>
-        <ChartTestigo key={0} idestado={0} r={venezuela} />
+        <ChartTestigo key={0} idestado={0} r={venezuela} tipo={'porc'} />
         <div className="row ">
     <div className="d-flex flex-row">                    
       <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
@@ -84,7 +92,23 @@ import {estados} from '../data/tablas.json';
  </div>
 </div>     
     
-        
+
+       <h2>
+            <span className="badge badge-warning m-2">{'Genoma Electoral (cant)'}</span>
+            </h2>
+        <ChartTestigo key={0} idestado={0} r={venezuela} tipo={'cant'}/>
+        <div className="row ">
+    <div className="d-flex flex-row">                    
+      <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+        <div className="card-deck">
+        {polaresC}
+
+     </div></div>
+  
+ </div>
+</div>      
+
+
         </div>
     );
   }

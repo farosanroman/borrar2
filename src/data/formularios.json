@@ -1,12 +1,104 @@
 {
+    "estados" : [
+        { "id": "0", "name": "Seleccione Estado" },
+        { "id": "00", "name": "Venezuela" },
+        { "id": "01", "name": "Distrito Capital" },
+        { "id": "02", "name": "Anzoátegui" },
+        { "id": "03", "name": "Apure" },
+        { "id": "04", "name": "Aragua" },
+        { "id": "05", "name": "Barinas" },
+        { "id": "06", "name": "Bolívar" },
+        { "id": "07", "name": "Carabobo" },
+        { "id": "08", "name": "Cojedes" },
+        { "id": "09", "name": "Falcón" },
+        { "id": "10", "name": "Guárico" },
+        { "id": "11", "name": "Lara" },
+        { "id": "12", "name": "Mérida" },
+        { "id": "13", "name": "Miranda" },
+        { "id": "14", "name": "Monagas" },
+        { "id": "15", "name": "Nueva Esparta" },
+        { "id": "16", "name": "Portuguesa" },
+        { "id": "17", "name": "Sucre" },
+        { "id": "18", "name": "Táchira" },
+        { "id": "19", "name": "Trujillo" },
+        { "id": "20", "name": "Yaracauy" },
+        { "id": "21", "name": "Zulia" },
+        { "id": "22", "name": "Amazonas" },    
+        { "id": "23", "name": "Delta" },
+        { "id": "24", "name": "Vargas" }
+        
+    ],
     "formularios":[
-        { "id": 0, "idformulario": "A1", "nombre": "SIMULACRO / CENTROS PILOTOS" },
-        { "id": 1, "idformulario": "A2", "nombre": "COACCION / INTIMIDACION / CARNET DE LA PATRIA" },
+        { "id": -1, "idformulario": "", "nombre": "Seleccion de Formularios" },
+        { "id": 0, "idformulario": "A1", "nombre": "COACCION / INTIMIDACION / CARNET DE LA PATRIA" },
+        { "id": 1, "idformulario": "A2", "nombre": "USO DE RECURSOS DEL ESTADO / PUBLICIDAD ELECTORAL" },
         { "id": 2, "idformulario": "D1", "nombre": "SECRETO DEL VOTO / COACCION / INTIMIDACION / PUNTOS ROJOS/ CARNET DE LA PATRIA" },
         { "id": 3, "idformulario": "D2", "nombre": "PARTICIPACION / COLA / MOVILIZACION" },
         { "id": 4, "idformulario": "D3", "nombre": "CIERRE / ESCRUTINIO / VERIFICACION CIUDADANA" }
        
     ],
+
+    "A1":
+    {
+    "nombre": "COACCION / INTIMIDACION / CARNET DE LA PATRIA",
+    "preguntas":    [
+        {
+            "idpregunta": "1", "pregunta": "1> ¿Ha observado o recibido amenazas o intimidacion para votar por la opcion oficialista en el entorno de su Centro de Votacion?", "titulo": "Amenaza/Intimidacion del Voto", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 3",
+            "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" }]
+        },
+        {
+            "idpregunta": "2", "pregunta": "2 ¿Ha observado o conocido sobre amenazas de despido o intimidacion a familiares o amigos trabajadores de la Administracion Publica para votar por la opcion oficialista?", "titulo": "Amenaza/Intimidacion a Relacionados", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 4",
+            "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" }]
+        },
+        {
+            "idpregunta": "3", "pregunta": "3> ¿Ha observado o conocido de ciudadanos intimidados, forzados u obligados a sacar el carnet de la patria en el entorno de su Centro de Votacion?", "titulo": "Sacar el Carnet de la Patria", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 5",
+            "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" }]
+        },
+        {
+            "idpregunta": "4", "pregunta": "4> ¿Ha observado o conocido sobre amenazas o intimidacion que a traves del Carnet de la Patria se puede conocer el secreto del voto en el entorno de su Centro de Votacion?", "titulo": "Carnet devela el Secreto", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 6",
+            "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" }]
+        },
+        {
+            "idpregunta": "5", "pregunta": "5> ¿Ha observado ciudadanos obligados a presentar el Carnet de la Patria para comprar el CLAP?", "titulo": "Carnet para el CLAP", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 6",
+            "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" }]
+        },
+        {
+            "idpregunta": "6", "pregunta": "6> ¿Ha observado ciudadanos obligados a presentar el Carnet de la Patria para realizar tramites ante Organismos del Estado?", "titulo": "Carnet para tramites", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 6",
+            "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" }]
+        }
+    ]},
+    "A2":
+    {
+    "nombre": "USO DE RECURSOS DEL ESTADO / PUBLICIDAD ELECTORAL",
+    "preguntas":   
+    [
+        {
+            "idpregunta": "1", "pregunta": "1> ¿Ha observado uso de recursos del Estado en actos de campaña electoral en el entorno de su Centro de Votacion?", "titulo": "Recursos del Estado", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 3",
+            "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" }]
+        },
+        {
+            "idpregunta": "2", "pregunta": "2> ¿Ha observado propaganda electoral en instituciones del Estado?", "titulo": "Propaganda Centro", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 4",
+            "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" }]
+        },
+        {
+            "idpregunta": "3", "pregunta": "3> ¿Ha observado propaganda electoral en Pre-Escolares, Colegios o Liceos Publicos?", "titulo": "Propaganda en Colegios", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 5",
+            "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" }]
+        },
+        {
+            "idpregunta": "4", "pregunta": "4> ¿Ha observado propaganda electoral en vehiculos de Organismos Publicos?", "titulo": "Propaganda Vehiculos", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 6",
+            "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" }]
+        },
+        {
+            "idpregunta": "5", "pregunta": "5> ¿Ha observado propaganda electoral en los CLAP o uso de la entrega de CLAP para hacer proselitismo?", "titulo": "Propaganda en CLAP", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 6",
+            "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" }]
+        },
+        {
+            "idpregunta": "6", "pregunta": "6> ¿Ha observado funcionarios publicos haciendo campaña en sus sitios de trabajo u otros Organismos del Estado?", "titulo": "Propaganda Organismos Publicos", "idrespuesta": 0, "respuesta": "", "comentario": "Falta Pregunta 6",
+            "respuestas": [{ "idrespuesta": 1, "respuesta": "Si" }, { "idrespuesta": 2, "respuesta": "No" }]
+        }
+    ]
+},
+
     "D1":
     {
     "nombre": "SECRETO DEL VOTO / COACCION / INTIMIDACION / PUNTOS ROJOS/ CARNET DE LA PATRIA",

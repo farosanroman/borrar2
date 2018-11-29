@@ -59,7 +59,7 @@ class Header extends Component {
               </NavItem>
               <NavItem>
                   <NavLink className="nav-link" to="/personas">
-                  <span className="fa fa-rebel"></span>Personas
+                  <span className="fa fa-rebel"></span>Defensores
                   </NavLink>
               </NavItem>
               <NavItem>
@@ -74,12 +74,12 @@ class Header extends Component {
               </NavItem>
               <NavItem>
                   <NavLink className="nav-link" to="/polar">
-                  <span className="fa fa-users"></span>O9D
+                  <span className="fa fa-user-circle"></span>O9D
                   </NavLink>
               </NavItem>
               <NavItem>
                   <NavLink className="nav-link" to="/polarf">
-                  <span className="fa fa-users"></span>F9D
+                  <span className="fa fa-bullseye"></span>F9D
                   </NavLink>
               </NavItem>
               <NavItem>

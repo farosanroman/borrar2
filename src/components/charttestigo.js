@@ -29,6 +29,7 @@ import React, { Component } from 'react';
         { "arg": "E6","F2": r.e6,"F1":r.m6,"F3":r.tot6},
         { "arg": "E7","F2": r.e7,"F1":r.m7,"F3":r.tot7}
         ];
+
         const estado=estados[idestado].name
         
         if (idestado===0){
@@ -43,7 +44,13 @@ import React, { Component } from 'react';
               { "arg": "E7","F2": r.e7,"F1":r.m7,"F3":r.tot7}
               ];
         }
-       
+        if (this.props.tipo=='porc'){
+        for (var k = 0; k< polar1.length; ++k) {          
+          polar1[k].F1=(polar1[k].F1/polar1[k].F2*100.0)
+          polar1[k].F3=(polar1[k].F3/polar1[k].F2*100.0)          
+          polar1[k].F2=100.0
+        }
+      }
         let  totasignaciones=r.tot1+r.tot2+r.tot3+r.tot4+r.tot5+r.tot6+r.tot7
         let  totcentros=r.m1+r.m2+r.m3+r.m4+r.m5+r.m6+r.m7
         let  totmeta=r.e1+r.e2+r.e3+r.e4+r.e5+r.e6+r.e7
@@ -64,6 +71,22 @@ import React, { Component } from 'react';
       <Title text={estado}  size={1}>
            
           </Title>
+          <Series          
+          valueField={'F2'} name={totmeta+' Meta'}  width={1} color={'red'}
+        >
+
+          <Label visible={false}>
+            <Connector visible={true} width={1} />
+          </Label>
+        </Series>
+          <Series          
+          valueField={'F3'} name={totasignaciones+' Tot Asig'}  width={1} color={'gray'}
+        >
+
+          <Label visible={false}>
+            <Connector visible={true} width={1} />
+          </Label>
+        </Series>
         <Series          
           valueField={'F1'} name={totcentros+' O9D'}   width={1} color={'deepskyblue'}
         >
@@ -73,22 +96,8 @@ import React, { Component } from 'react';
           </Label>
         </Series>
        
-        <Series          
-          valueField={'F3'} name={totasignaciones+' Tot Asig'}  width={1} color={'gray'}
-        >
-
-          <Label visible={false}>
-            <Connector visible={true} width={1} />
-          </Label>
-        </Series>
-        <Series          
-          valueField={'F2'} name={totmeta+' Meta'}  width={1} color={'red'}
-        >
-
-          <Label visible={false}>
-            <Connector visible={true} width={1} />
-          </Label>
-        </Series>
+       
+       
         <Size width={ww} />
         <Export enabled={false} />
         <Legend

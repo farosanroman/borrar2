@@ -20,11 +20,11 @@ import PieChart, {
 
   render() {
     const {index, respuestas, formulario } = this.state;
-    console.log("render chart pies")
-    console.log(index)
-    console.log(formulario)
-    console.log(respuestas)
-    console.log("render chart pies")
+   // console.log("render chart pies")
+   // console.log(index)
+   // console.log(formulario)
+   // console.log(respuestas)
+   // console.log("render chart pies")
     var res=[]
     for (var k = 0; k< formulario.preguntas[index].respuestas.length; ++k) {
       res.push({cant:respuestas[k].cant,respuesta:formulario.preguntas[index].respuestas[k].respuesta})
