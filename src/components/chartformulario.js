@@ -44,11 +44,19 @@ import React, { Component } from 'react';
               { "arg": "E7","F0": r.e7,"F1":r.d17,"F2":r.d27,"F3":r.d31}
               ];
         }
+        if (this.props.tipo=='porc'){
+          for (var k = 0; k< polar1.length; ++k) {          
+            polar1[k].F1=(polar1[k].F1/polar1[k].F0*100.0)
+            polar1[k].F2=(polar1[k].F2/polar1[k].F0*100.0) 
+            polar1[k].F3=(polar1[k].F3/polar1[k].F0*100.0)          
+            polar1[k].F0=100.0
+          }
+        }
         let totd1=r.d11+r.d12+r.d13+r.d14+r.d15+r.d16+r.d17
         let totd2=r.d21+r.d22+r.d23+r.d24+r.d25+r.d26+r.d27
         let totd3=r.d31+r.d32+r.d33+r.d34+r.d35+r.d36+r.d37
-        let  totasignaciones=r.tot1+r.tot2+r.tot3+r.tot4+r.tot5+r.tot6+r.tot7
-        let  totcentros=r.m1+r.m2+r.m3+r.m4+r.m5+r.m6+r.m7
+       // let  totasignaciones=r.tot1+r.tot2+r.tot3+r.tot4+r.tot5+r.tot6+r.tot7
+        //let  totcentros=r.m1+r.m2+r.m3+r.m4+r.m5+r.m6+r.m7
         let  totmeta=r.e1+r.e2+r.e3+r.e4+r.e5+r.e6+r.e7
         
     return(

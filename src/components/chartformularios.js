@@ -68,14 +68,7 @@ import {estados} from '../data/tablas.json';
         }
         
         //var ttt=0
-           var z=0
-               const polaresC=muestra.map(r=>{  
-                z+=1;                
-                 return(
-                  <ChartFormulario key={z} idestado={z} tipo={'cant'} r={r} />
-                   )  
-                 }   
-               )
+           
                var z=0
                const polares=muestra.map(r=>{  
                 z+=1;                
@@ -84,23 +77,44 @@ import {estados} from '../data/tablas.json';
                    )  
                  }   
                )
+               var z=0
+               const polaresC=muestra.map(r=>{  
+                z+=1;                
+                 return(
+                  <ChartFormulario key={z} idestado={z} tipo={'cant'} r={r} />
+                   )  
+                 }   
+               )
     return(
         <div>
            <h2>
-            <span className="badge badge-danger m-2">{'Tablero de Registro de Formularios'}</span>
+            <span className="badge badge-danger m-2">{'Tablero de Registro de Formularios (%)'}</span>
             </h2>
-        <ChartFormulario key={0} idestado={0} r={venezuela} />
+        <ChartFormulario key={0} idestado={0} r={venezuela} tipo={'porc'} />
         <div className="row ">
     <div className="d-flex flex-row">                    
       <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
         <div className="card-deck">
         {polares}
 
-     </div></div>
-  
- </div>
-</div>     
+     </div></div>  
+     </div>
+     </div>     
     
+
+     <h2>
+            <span className="badge badge-warning m-2">{'Tablero de Registro de Formularios (cant)'}</span>
+            </h2>
+        <ChartFormulario key={0} idestado={0} r={venezuela} tipo={'cant'} />
+        <div className="row ">
+    <div className="d-flex flex-row">                    
+      <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+        <div className="card-deck">
+        {polaresC}
+
+     </div></div>  
+     </div>
+     </div>     
         
         </div>
     );

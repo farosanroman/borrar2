@@ -48,7 +48,12 @@ import React, { Component } from 'react';
         for (var k = 0; k< polar1.length; ++k) {          
           polar1[k].F1=(polar1[k].F1/polar1[k].F2*100.0)
           polar1[k].F3=(polar1[k].F3/polar1[k].F2*100.0)          
-          polar1[k].F2=100.0
+          if (polar1[k].F2==0){
+            polar1[k].F2=0
+          }else{
+            polar1[k].F2=100.0
+          }
+         
         }
       }
         let  totasignaciones=r.tot1+r.tot2+r.tot3+r.tot4+r.tot5+r.tot6+r.tot7
