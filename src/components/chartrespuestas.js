@@ -38,8 +38,7 @@ import PieChart, {
     <PieChart
         id={'resultados'}
         dataSource={res}
-        palette={['deepskyblue','red', 'orange', 'limegreen', 'lightgrey', '#DEB887', '#87CEFA', '#BDBDBD']}
-        
+        palette={['red','deepskyblue', 'orange', 'limegreen', 'lightgrey', '#DEB887', '#87CEFA', '#BDBDBD']}
         title={this.props.pregunta}
         onPointClick={this.pointClickHandler}
         onLegendClick={this.legendClickHandler}

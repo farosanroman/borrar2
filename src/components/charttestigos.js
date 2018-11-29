@@ -59,7 +59,7 @@ import {estados} from '../data/tablas.json';
         }
         
         //var ttt=0
-           var z=0
+               var z=0
                const polares=muestra.map(r=>{  
                 z+=1;                
                  return(

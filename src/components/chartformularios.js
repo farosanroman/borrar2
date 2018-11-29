@@ -44,22 +44,43 @@ import {estados} from '../data/tablas.json';
     
     //console.log("render chart testigos")
     //console.log(muestra)
-        var venezuela={"idestado":"00","nombreestado":"VENEZUELA LIBRE","e1":0,"e2":0,"e3":0,"e4":0,"e5":0,"e6":0,"e7":0,"m1":0,"m2":0,"m3":0,"m4":0,"m5":0,"m6":0,"m7":0,"tot1":0,"tot2":0,"tot3":0,"tot4":0,"tot5":0,"tot6":0,"tot7":0}
-        var polarEstados=[]
+    
+        var venezuela={"idestado":"00","nombreestado":"VENEZUELA LIBRE","e1":0,"e2":0,"e3":0,"e4":0,"e5":0,"e6":0,"e7":0,"d11":0,"d12":0,"d13":0,"d14":0,"d15":0,"d16":0,"d17":0,"d21":0,"d22":0,"d23":0,"d24":0,"d25":0,"d26":0,"d27":0,"d31":0,"d32":0,"d33":0,"d34":0,"d35":0,"d36":0,"d37":0}
+        //var polarEstados=[]
         for (var iii = 0; iii< muestra.length; ++iii) {
-          
-          venezuela.e1+=muestra[iii].e1;venezuela.e2+=muestra[iii].e2;venezuela.e3+=muestra[iii].e3;venezuela.e4+=muestra[iii].e4;venezuela.e5+=muestra[iii].e5;venezuela.e6+=muestra[iii].e6;venezuela.e7+=muestra[iii].e7
-          venezuela.m1+=muestra[iii].m1;venezuela.m2+=muestra[iii].m2;venezuela.m3+=muestra[iii].m3;venezuela.m4+=muestra[iii].m4;venezuela.m5+=muestra[iii].m5;venezuela.m6+=muestra[iii].m6;venezuela.m7+=muestra[iii].m7
-          venezuela.tot1+=muestra[iii].tot1;venezuela.tot2+=muestra[iii].tot2;venezuela.tot3+=muestra[iii].tot3;venezuela.tot4+=muestra[iii].tot4;venezuela.tot5+=muestra[iii].tot5;venezuela.tot6+=muestra[iii].tot6;venezuela.tot7+=muestra[iii].tot7
-            
+          venezuela.e1+=muestra[iii].e1;venezuela.e2+=muestra[iii].e2;
+          venezuela.e3+=muestra[iii].e3;venezuela.e4+=muestra[iii].e4;
+          venezuela.e5+=muestra[iii].e5;venezuela.e6+=muestra[iii].e6;
+          venezuela.e7+=muestra[iii].e7;
+          venezuela.d11+=muestra[iii].d11;venezuela.d12+=muestra[iii].d12;
+          venezuela.d13+=muestra[iii].d13;venezuela.d14+=muestra[iii].d14;
+          venezuela.d15+=muestra[iii].d15;venezuela.d16+=muestra[iii].d16;
+          venezuela.d17+=muestra[iii].d17;
+          venezuela.d21+=muestra[iii].d21;venezuela.d22+=muestra[iii].d22;
+          venezuela.d23+=muestra[iii].d23;venezuela.d24+=muestra[iii].d24;
+          venezuela.d25+=muestra[iii].d25;venezuela.d26+=muestra[iii].d26;
+          venezuela.d27+=muestra[iii].d27;
+          venezuela.d31+=muestra[iii].d31;venezuela.d32+=muestra[iii].d32;
+          venezuela.d33+=muestra[iii].d33;venezuela.d34+=muestra[iii].d34;
+          venezuela.d35+=muestra[iii].d35;venezuela.d36+=muestra[iii].d36;
+          venezuela.d37+=muestra[iii].d37;
+           
         }
         
-        var ttt=0
+        //var ttt=0
            var z=0
+               const polaresC=muestra.map(r=>{  
+                z+=1;                
+                 return(
+                  <ChartFormulario key={z} idestado={z} tipo={'cant'} r={r} />
+                   )  
+                 }   
+               )
+               var z=0
                const polares=muestra.map(r=>{  
                 z+=1;                
                  return(
-                  <ChartFormulario key={z} idestado={z} r={r} />
+                  <ChartFormulario key={z} idestado={z} tipo={'porc'} r={r} />
                    )  
                  }   
                )
