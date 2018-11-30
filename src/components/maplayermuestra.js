@@ -87,7 +87,7 @@ componentDidMount() {
     'fill-opacity': 0.3
   });
 getCirclePaint = (color) => ({
-    'circle-radius': 4,
+    'circle-radius': 3,
     'circle-color': color,
     'circle-opacity': 0.8
   });

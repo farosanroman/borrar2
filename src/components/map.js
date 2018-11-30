@@ -5,7 +5,7 @@ import MapLayerMunicipios from './maplayermunicipios';
 import MapLayerParroquias from './maplayerparroquias';
 import MapLayerCentros from './maplayercentros';
 import MapLayerMuestra from './maplayermuestra';
-import Formulario from './formulario';
+//import Formulario from './formulario';
 import {resumen} from '../data/resumen.json';
 //import {muestra} from '../data/muestra.json';
 import {estratos} from '../data/tablas.json';
@@ -39,8 +39,8 @@ class Map2 extends Component {
       popupType:"msg",
       flagMunicipios:false,
       flagParroquias:false,
-      flagCentros:true,
-      flagMuestra:false,
+      flagCentros:false,
+      flagMuestra:true,
       flagPopupTestigo:true,
       idformulario:1,
       idestrato:0,
@@ -147,22 +147,7 @@ onMuestraClick = (e) => {
     background-color: #3770c6;
   };`
     ;
-    //  const Container = styled.div`
-    //  position: relative;
-    //  height: 100%;
-    //  flex: 1;
-    //`;
-      
-    //  const BottomBar = styled.div`
-    ///  position: absolute;
-     // bottom: 20px;
-     // left: 20px;
-     // right: 20px;
-     // height: 40px;
-     // display: flex;
-     // justify-content: space-between;
-     // align-items: center;
-    //`;
+    
    
     let formulariosOpciones=formularios.map(t=>{
      
@@ -175,25 +160,7 @@ onMuestraClick = (e) => {
          <option key={e.id} value={e.id}>{e.nombre}</option>
            )
      } )
-          // let tendenciasOpciones=tendencias.map(t=>{     
-          //  return(
-          //     <option key={t.idt} value={t.idy}>{t.tendencia}</option>
-          //       )
-          // } )
-          // let evaluacionOpciones=evaluacion.map(t=>{     
-          //  return(
-          //     <option key={t.ide} value={t.ide}>{t.puntos}</option>
-          //       )
-          // } )
-         //  let correosOpciones=correos.map(t=>{
-     
-           // return(
-           //  
-           //    <option key={t.idc} value={t.idc}>{t.correo}</option>
-           //      )
-           //} )
-        //console.log(features)
-        //this.setState({comentario:"otra mas"})
+          
         return(
         <div>
         

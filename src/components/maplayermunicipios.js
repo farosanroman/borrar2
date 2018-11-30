@@ -53,7 +53,9 @@ getCirclePaint = (color) => ({
   });
   getPolygonPaint = (color) => (MapboxGL.FillPaint = {
     'fill-color': color,
-    'fill-opacity': 0.2
+    'fill-opacity': 0.2,
+    'line-color': 'blue',
+    'line-width': 6
   });
 render() { 
   const {poly01,nuevaesparta,geojson,error,isLoading} = this.state;
