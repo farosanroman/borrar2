@@ -23,7 +23,7 @@ const Map = MapGL({
 
 const popupInfo0={"coordinates":[0,0],"nombre":"oJo","error":"sin error"}
 
-let centro=[-66.95286,8]
+let centro=[-66.95286,8.8]
 let zoom=[6]
 class Map2 extends Component {    
   constructor(props){
@@ -93,7 +93,7 @@ onPClick = (e) => {
   this.setState({flagCentros:false})
   this.setState({flagMuestra:false})
   this.setState({zoom:[5]})
-  this.setState({center:[-66.95286,7]})
+  this.setState({center:[-66.95286,8.8]})
 
 }
 onCClick = (e) => {
@@ -102,7 +102,7 @@ onCClick = (e) => {
   this.setState({flagCentros:true})
   this.setState({flagMuestra:false})
   this.setState({zoom:[9]})
-  this.setState({center:[-66.65286,10.3]})
+  this.setState({center:[-66.65286,8.8]})
 }
 onMuestraClick = (e) => {
   //window.open("https://polidata.azurewebsites.net/#observacion?cedula=v3664204","_blank")
@@ -112,7 +112,7 @@ onMuestraClick = (e) => {
   this.setState({flagCentros:false})
   this.setState({flagMuestra:true})
   this.setState({zoom:[6]})
-  this.setState({center:[-66.65286,9.2]})
+  this.setState({center:[-66.65286,8.8]})
 
 }
     render() {

@@ -259,7 +259,7 @@ constructor(props) {
       }
       >
        <Series          
-          valueField={'F1'} name={totpolarchart+' Recibidas'} 
+          valueField={'F1'} name={totpolarchart+' Recibidos'} 
         >
 
           <Label visible={false}>

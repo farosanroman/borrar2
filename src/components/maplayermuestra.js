@@ -7,7 +7,7 @@ import MapPopupTestigo from './mappopuptestigos';
 
 const popupInfo0={"coordinates":[0,0],"nombre":"oJo","error":"sin error"}
 //console.log(muestra)
-let centro=[-66.45286,10.3]
+let centro=[-66.45286,14.3]
 let zoom=[8]
 let polygonPaint = MapboxGL.FillPaint = {
   'fill-color': "blue",
