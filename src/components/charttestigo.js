@@ -48,7 +48,7 @@ import React, { Component } from 'react';
         for (var k = 0; k< polar1.length; ++k) {          
           polar1[k].F1=(polar1[k].F1/polar1[k].F2*100.0)
           polar1[k].F3=(polar1[k].F3/polar1[k].F2*100.0) 
-          if (polar1[k].F3>100){polar1[k].F3=100}         
+          if (polar1[k].F3>100){polar1[k].F3=105}         
           if (polar1[k].F2==0){
             polar1[k].F2=0
           }else{

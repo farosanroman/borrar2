@@ -24,7 +24,7 @@ import PolarChart, {
   Size ,
   Export 
 } from 'devextreme-react/polar-chart';
-import RadioGroup from 'devextreme-react/ui/radio-group'
+//import RadioGroup from 'devextreme-react/ui/radio-group'
 import { Card } from 'reactstrap';
 //import { Scale } from '@devexpress/dx-react-chart';
 //import {estados} from '../data/tablas.json';
@@ -136,10 +136,6 @@ constructor(props) {
 
     }
   
-  //console.log("render chart>>>>>>>>>")
-  //console.log(polarchart)
-  //  console.log("render chart<<<<<<<<<<<")
-  //alert(JSON.stringify(totalizacion[0]))
   let formulariosOpciones=formularios.map(t=>{     
     return(
        <option key={t.idformulario} value={t.idformulario}>{t.nombre} </option>
@@ -154,36 +150,31 @@ constructor(props) {
      //console.log(s)
      const serieD=[]
      if (serie!==undefined){
+      //serieD.push({fecha:new Date(serie[0].fecha),cant:0,acum:0})
      for (let i = 0; i < serie.length; ++i) {
-        serieD.push({fecha:new Date(serie[i].fecha),cant:i,acum:i})
+        var ii=i+1
+        serieD.push({fecha:new Date(serie[i].fecha),cant:ii,acum:ii})
      }
       
     }
-    var texto=["Ubicacion Punto Rojo","Solicitud Carnet P","Propaganda Electoral","Colas","qq","aa"] 
-    //console.log(totalizacion)
-    
+  
+    let metapolarchart=0;
     let totpolarchart=0;
     for (let k = 0; k < polarchart.length; ++k) {
          totpolarchart+=polarchart[k].F1;
-    }
+         metapolarchart+=polarchart[k].F2;
+        }
     const t=totalizacion[0]
     var ii=-1
     const respuestasC=totalizacion.map(r=>{ 
-      //console.log('map')
-      //console.log(r)
-      //console.log('map')      
       ii+=1;
-      if (ii<7){
-      
+      if (ii<7){      
        return(
-        <ChartRespuestas key={ii} index={ii} formulario={formulario} pregunta={formulario.preguntas[ii].titulo} respuestas={r}/>
-    
-           )  
+           <ChartRespuestas key={ii} index={ii} formulario={formulario} pregunta={formulario.preguntas[ii].titulo} respuestas={r}/>
+        )  
        }   
      }) 
-    
-   //return <p>Loading...</p>
-
+ 
     return (     
       <Card>
          <select ref="estados" onChange={this.onChangeEstados}>
@@ -277,7 +268,7 @@ constructor(props) {
         </Series>
         <Series
           
-          valueField={'F2'} name={'1.204 Meta'}
+          valueField={'F2'} name={metapolarchart+' Meta'}
         >
 
           <Label visible={false}>
