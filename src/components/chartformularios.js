@@ -44,8 +44,19 @@ import {estados} from '../data/tablas.json';
     
     //console.log("render chart testigos")
     //console.log(muestra)
-    
+    /*
+    venezuela=[
+          { "arg": "E1","F0": 0,"F1":0,"F2":0,"F3":r.d31},
+          { "arg": "E2","F0":0,"F1":0,"F2":r.d22,"F3":r.d31},
+          { "arg": "E3","F0": 0,"F1":0,"F2":r.d23,"F3":r.d31},
+          { "arg": "E4","F0": 0,"F1":0,"F2":r.d24,"F3":r.d31},
+          { "arg": "E5","F0": 0,"F1":0,"F2":r.d25,"F3":r.d31},
+          { "arg": "E6","F0": 0,"F1":0,"F2":r.d26,"F3":r.d31},
+          { "arg": "E7","F0": 0,"F1":0,"F2":r.d27,"F3":r.d31}
+          ];
+          */
         var venezuela={"idestado":"00","nombreestado":"VENEZUELA LIBRE","e1":0,"e2":0,"e3":0,"e4":0,"e5":0,"e6":0,"e7":0,"d11":0,"d12":0,"d13":0,"d14":0,"d15":0,"d16":0,"d17":0,"d21":0,"d22":0,"d23":0,"d24":0,"d25":0,"d26":0,"d27":0,"d31":0,"d32":0,"d33":0,"d34":0,"d35":0,"d36":0,"d37":0}
+       
         //var polarEstados=[]
         for (var iii = 0; iii< muestra.length; ++iii) {
           venezuela.e1+=muestra[iii].e1;venezuela.e2+=muestra[iii].e2;
@@ -56,6 +67,7 @@ import {estados} from '../data/tablas.json';
           venezuela.d13+=muestra[iii].d13;venezuela.d14+=muestra[iii].d14;
           venezuela.d15+=muestra[iii].d15;venezuela.d16+=muestra[iii].d16;
           venezuela.d17+=muestra[iii].d17;
+
           venezuela.d21+=muestra[iii].d21;venezuela.d22+=muestra[iii].d22;
           venezuela.d23+=muestra[iii].d23;venezuela.d24+=muestra[iii].d24;
           venezuela.d25+=muestra[iii].d25;venezuela.d26+=muestra[iii].d26;
@@ -64,9 +76,9 @@ import {estados} from '../data/tablas.json';
           venezuela.d33+=muestra[iii].d33;venezuela.d34+=muestra[iii].d34;
           venezuela.d35+=muestra[iii].d35;venezuela.d36+=muestra[iii].d36;
           venezuela.d37+=muestra[iii].d37;
-           
+          
         }
-        
+        console.log(venezuela)
         //var ttt=0
            
                var z=0

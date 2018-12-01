@@ -36,12 +36,12 @@ import React, { Component } from 'react';
             ww='400'
             polar1=[
               { "arg": "E1","F0": r.e1,"F1":r.d11,"F2":r.d21,"F3":r.d31},
-              { "arg": "E2","F0": r.e2,"F1":r.d12,"F2":r.d22,"F3":r.d31},
-              { "arg": "E3","F0": r.e3,"F1":r.d13,"F2":r.d23,"F3":r.d31},
-              { "arg": "E4","F0": r.e4,"F1":r.d14,"F2":r.d24,"F3":r.d31},
-              { "arg": "E5","F0": r.e5,"F1":r.d15,"F2":r.d25,"F3":r.d31},
-              { "arg": "E6","F0": r.e6,"F1":r.d16,"F2":r.d26,"F3":r.d31},
-              { "arg": "E7","F0": r.e7,"F1":r.d17,"F2":r.d27,"F3":r.d31}
+              { "arg": "E2","F0": r.e2,"F1":r.d12,"F2":r.d22,"F3":r.d32},
+              { "arg": "E3","F0": r.e3,"F1":r.d13,"F2":r.d23,"F3":r.d33},
+              { "arg": "E4","F0": r.e4,"F1":r.d14,"F2":r.d24,"F3":r.d34},
+              { "arg": "E5","F0": r.e5,"F1":r.d15,"F2":r.d25,"F3":r.d35},
+              { "arg": "E6","F0": r.e6,"F1":r.d16,"F2":r.d26,"F3":r.d36},
+              { "arg": "E7","F0": r.e7,"F1":r.d17,"F2":r.d27,"F3":r.d37}
               ];
         }
         if (this.props.tipo=='porc'){
