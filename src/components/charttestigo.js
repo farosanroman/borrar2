@@ -79,6 +79,14 @@ import React, { Component } from 'react';
            
           </Title>
           <Series          
+          valueField={'F4'} name={'.'}  width={0.2} color={'lightgray'}
+        >
+
+          <Label visible={false}>
+            <Connector visible={true} width={1} />
+          </Label>
+        </Series>
+          <Series          
           valueField={'F3'} name={totasignaciones+' Tot Asig'}  width={1} color={'gray'}
         >
 
@@ -102,14 +110,7 @@ import React, { Component } from 'react';
             <Connector visible={true} width={1} />
           </Label>
         </Series>
-        <Series          
-          valueField={'F4'} name={'.'}  width={0.2} color={'lightgray'}
-        >
-
-          <Label visible={false}>
-            <Connector visible={true} width={1} />
-          </Label>
-        </Series>
+        
        
        
        

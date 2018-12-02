@@ -62,16 +62,7 @@ class Header extends Component {
                   <span className="fa fa-rebel"></span>Defensores
                   </NavLink>
               </NavItem>
-              <NavItem>
-                  <NavLink className="nav-link" to="/farobot">
-                  <span className="fa fa-twitter"></span>FaroBOT
-                  </NavLink>
-              </NavItem>
-              <NavItem>
-                  <NavLink className="nav-link" to="/mensajeria">
-                  <span className="fa fa-phone"></span>DIfusion
-                  </NavLink>
-              </NavItem>
+             
               <NavItem>
                   <NavLink className="nav-link" to="/polar">
                   <span className="fa fa-user-circle"></span>O9D
@@ -85,6 +76,16 @@ class Header extends Component {
               <NavItem>
                   <NavLink className="nav-link" to="/chart">
                   <span className="fa fa-gavel"></span>9D
+                  </NavLink>
+              </NavItem>
+              <NavItem>
+                  <NavLink className="nav-link" to="/farobot">
+                  <span className="fa fa-twitter"></span>FaroBOT
+                  </NavLink>
+              </NavItem>
+              <NavItem>
+                  <NavLink className="nav-link" to="/mensajeria">
+                  <span className="fa fa-phone"></span>DIfusion
                   </NavLink>
               </NavItem>
               <NavItem>
