@@ -123,7 +123,11 @@ constructor(props) {
     //alert("onChangeEstado"+e.target.value) 
   }
   render() {     
-    const {formulario,totalizacion,serie,polarchart,flag,isLoading,error,isloading } = this.state;
+    const {idestado,formulario,totalizacion,serie,polarchart,flag,isLoading,error,isloading } = this.state;
+    let flagEstado=true;
+    if (idestado!='00'){
+      flagEstado=false
+    }
     if (error) {
       return <p>{error.message}</p>;
     }
@@ -166,11 +170,21 @@ constructor(props) {
         }
     const t=totalizacion[0]
     var ii=-1
+
+    const respuestasP=totalizacion.map(r=>{ 
+      ii+=1;
+      if (ii<7){      
+       return(
+           <ChartRespuestas key={ii} index={ii} tipo={'porc'} formulario={formulario} pregunta={formulario.preguntas[ii].titulo} respuestas={r}/>
+        )  
+       }   
+     }) 
+     ii=-1
     const respuestasC=totalizacion.map(r=>{ 
       ii+=1;
       if (ii<7){      
        return(
-           <ChartRespuestas key={ii} index={ii} formulario={formulario} pregunta={formulario.preguntas[ii].titulo} respuestas={r}/>
+           <ChartRespuestas key={ii+6} index={ii} tipo={'cant'}  formulario={formulario} pregunta={formulario.preguntas[ii].titulo} respuestas={r}/>
         )  
        }   
      }) 
@@ -258,23 +272,33 @@ constructor(props) {
         }
       }
       >
-       <Series          
-          valueField={'F1'} name={totpolarchart+' Recibidos'} 
-        >
-
-          <Label visible={false}>
-            <Connector visible={true} width={1} />
-          </Label>
-        </Series>
-        <Series
+      <Series
           
-          valueField={'F2'} name={metapolarchart+' Meta'}
+          valueField={'F0'} name={'.'} color={'lightgray'}
         >
 
           <Label visible={false}>
             <Connector visible={true} width={1} />
           </Label>
         </Series>
+      <Series
+          
+          valueField={'F2'} name={metapolarchart+' Meta'} color={'red'}
+        >
+
+          <Label visible={false}>
+            <Connector visible={true} width={1} />
+          </Label>
+        </Series>
+       <Series          
+          valueField={'F1'} name={totpolarchart+' Recibidos'} color={'deepskyblue'}
+        >
+
+          <Label visible={false}>
+            <Connector visible={true} width={1} />
+          </Label>
+        </Series>
+        
         
         <Size width={400} />
         <Export enabled={false} />
@@ -289,8 +313,25 @@ constructor(props) {
                     </div>
                 </div>
             </div>
-           
-          
+    {flagEstado&& <div>      
+            <h2>
+  <span className="badge badge-warning m-2">{'Resultados de Formularios (%)'}</span>
+</h2>
+<div className="container-fluid" style={{marginLeft: '10px'}}>
+    <div className="row">
+    <div className="d-flex flex-row">                    
+      <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div className="card-deck">
+        {respuestasP}
+     </div>
+   </div>
+   </div>
+ </div>
+</div>
+  </div>  }
+<h2>
+  <span className="badge badge-warning m-2">{'Resultados de Formularios en Cantidades'}</span>
+</h2>         
 <div className="container-fluid" style={{marginLeft: '10px'}}>
     <div className="row">
     <div className="d-flex flex-row">                    
@@ -302,6 +343,7 @@ constructor(props) {
    </div>
  </div>
 </div>
+
        
         
        

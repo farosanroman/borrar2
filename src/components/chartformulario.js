@@ -75,6 +75,14 @@ import React, { Component } from 'react';
       <Title text={estado}  size={1}>
            
           </Title>
+          <Series          
+          valueField={'F0'} name={totmeta+' Meta'}  width={1} color={'red'}
+        >
+
+          <Label visible={false}>
+            <Connector visible={true} width={1} />
+          </Label>
+        </Series>
         <Series          
           valueField={'F1'} name={totd1+' D1'}   width={1} color={'orange'}
         >
@@ -100,14 +108,7 @@ import React, { Component } from 'react';
             <Connector visible={true} width={1} />
           </Label>
         </Series>
-        <Series          
-          valueField={'F0'} name={totmeta+' Meta'}  width={1} color={'red'}
-        >
-
-          <Label visible={false}>
-            <Connector visible={true} width={1} />
-          </Label>
-        </Series>
+        
         <Size width={ww} />
         <Export enabled={false} />
         <Legend

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 //import {observadores}  from '../data/observadores.json'
-import DataGrid, { Column, RemoteOperations,Grouping, Paging,Export, Pager } from 'devextreme-react/data-grid';
+import DataGrid, { Column, RemoteOperations,Grouping,Summary,TotalItem,GroupItem, Paging,Export, Pager } from 'devextreme-react/data-grid';
 import 'devextreme/dist/css/dx.common.css';
 import 'devextreme/dist/css/dx.light.compact.css';
 import Persona from '../components/persona';
@@ -60,7 +60,7 @@ class Personas extends Component {
              
            >
             <Grouping autoExpandAll={false} />
-             <Column dataField={'FechaAsignado'} dataType={'date'} format={'dd/MM HH:mm'}  width={80} />
+             <Column dataField={'FechaAsignado'} caption={'Fecha'} dataType={'date'} format={'dd/MM HH:mm'}  width={80} />
              <Column dataField={'estado'} dataType={'string'} groupIndex={0} width={100}/>
              <Column dataField={'codcne'} width={100}/>
              <Column dataField={'muestra'} width={15}/>
@@ -74,6 +74,16 @@ class Personas extends Component {
              <RemoteOperations sorting={true}  paging={true} />
              <Paging defaultPageSize={1000} />
              <Export enabled={true}  />
+             <Summary recalculateWhileEditing={true}>
+             <GroupItem
+              column={'FechaAsignado'}
+              summaryType={'count'}
+              displayFormat={'{0} O9Ds'} />
+                <TotalItem
+                 column={'FechaAsignado'}
+                 summaryType={'count'} />
+           
+             </Summary>
            </DataGrid>
            
           </div>

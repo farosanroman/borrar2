@@ -20,7 +20,7 @@ class Login extends Component {
         //alert('The value is: ' + this.login.value+'  '+this.pwd.value);
         let login=this.login.value;
         let pwd=this.pwd.value;
-        if (login==="321"){
+        if (login==="333"){
          // alert()
             this.props.onsetlogin(true)
             return

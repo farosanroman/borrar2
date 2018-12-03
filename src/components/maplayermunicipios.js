@@ -11,6 +11,8 @@ import {nuevaesparta} from '../geo/nuevaesparta.json';
 
 //import {tendencias,roles} from '../data/tablas.json';
 //import {observadores} from '../data/observadores.json';
+
+//https://mpv.cenditel.gob.ve/cadenas/browser/observatorio/procesos/apps/geocadena/media/geojson?rev=4b459a71f72c425396d545c0dcf9ec6dca20171a&order=name#municipios
 class MapLayerMunicipios extends Component {
  
 

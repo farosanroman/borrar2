@@ -79,15 +79,16 @@ class Header extends Component {
                   </NavLink>
               </NavItem>
               <NavItem>
+                  <NavLink className="nav-link" to="/mensajeria">
+                  <span className="fa fa-phone"></span>Difusion
+                  </NavLink>
+              </NavItem>
+              <NavItem>
                   <NavLink className="nav-link" to="/farobot">
                   <span className="fa fa-twitter"></span>FaroBOT
                   </NavLink>
               </NavItem>
-              <NavItem>
-                  <NavLink className="nav-link" to="/mensajeria">
-                  <span className="fa fa-phone"></span>DIfusion
-                  </NavLink>
-              </NavItem>
+             
               <NavItem>
                   <NavLink className="nav-link" to="/about">
                   <span className="fa fa-info-circle"></span>GeoFaro

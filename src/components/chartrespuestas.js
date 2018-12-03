@@ -12,6 +12,8 @@ import PieChart, {
         this.state = { 
             respuestas:props.respuestas,
             formulario:props.formulario,
+            tipo:props.tipo,
+            idestado:0,
             index:props.index,
             error:null,
             flag:0,          
@@ -19,22 +21,28 @@ import PieChart, {
       }
 
   render() {
-    const {index, respuestas, formulario } = this.state;
+    const {index, respuestas, formulario,tipo } = this.state;
    // console.log("render chart pies")
    // console.log(index)
    // console.log(formulario)
    // console.log(respuestas)
    // console.log("render chart pies")
+   
     var res=[]
+    if (tipo=='porc'){
+    for (var k = 0; k< formulario.preguntas[index].respuestas.length; ++k) {
+      res.push({cant:respuestas[k].porc,respuesta:formulario.preguntas[index].respuestas[k].respuesta})
+      //respuestas[k].respuesta=formulario.preguntas[index].respuestas[k].respuesta
+    }
+  }
+  if (tipo=='cant'){
     for (var k = 0; k< formulario.preguntas[index].respuestas.length; ++k) {
       res.push({cant:respuestas[k].cant,respuesta:formulario.preguntas[index].respuestas[k].respuesta})
-    
       //respuestas[k].respuesta=formulario.preguntas[index].respuestas[k].respuesta
-      
     }
+  }
     return(
-        <div>
-            
+        <div>            
     <PieChart
         id={'resultados'}
         dataSource={res}
