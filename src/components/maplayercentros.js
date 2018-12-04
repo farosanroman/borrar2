@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import  MapboxGL, {Layer,Feature,GeoJSONLayer} from 'react-mapbox-gl';
-import {centros} from '../data/acevedo.json';
+//import {centros} from '../data/acevedo.json';
 
-import {nuevaesparta} from '../geo/nuevaesparta.json';
-import {poliacevedo} from '../geo/poliacevedo.json';
+//import {nuevaesparta} from '../geo/nuevaesparta.json';
+//import {poliacevedo} from '../geo/poliacevedo.json';
 import {coffe} from '../geo/coffe.json';
 import {CV0101} from '../geo/0101.json';
 import {CV0102} from '../geo/0102.json';
@@ -92,7 +92,7 @@ constructor(props) {
     
     poligono21:[],
     poligono22:[],
-    nuevaesparta:null,
+    
     coffe:null
 };
 this.onFeatureClick = this.onFeatureClick.bind(this)
@@ -101,9 +101,9 @@ this.onFeatureMouseLeave = this.onFeatureMouseLeave.bind(this)
     
 }
 componentDidMount() {
-     this.setState({nodos:centros})
+    
     this.setState({comentario:"sin"})
-    this.setState({nuevaesparta:nuevaesparta})
+    //this.setState({nuevaesparta:nuevaesparta})
     this.setState({coffe:coffe})
     this.setState({poligono01:CV0101.features[0].geometry.coordinates})
     this.setState({poligono02:CV0102.features[0].geometry.coordinates})
@@ -178,28 +178,17 @@ render() {
   
      //console.log(this.state.center)
      
-     const {nuevaesparta,coffe ,poligono01,poligono02,poligono03,poligono04,poligono05,poligono06,poligono07,poligono08,poligono09,poligono10,poligono11,poligono12,poligono13,poligono14,poligono15,poligono16,poligono17,poligono18,poligono19,poligono20,poligono21,poligono22} = this.state;
+     const {coffe ,poligono01,poligono02,poligono03,poligono04,poligono05,poligono06,poligono07,poligono08,poligono09,poligono10,poligono11,poligono12,poligono13,poligono14,poligono15,poligono16,poligono17,poligono18,poligono19,poligono20,poligono21,poligono22} = this.state;
      //const parroquiasf0 = this.state.nodos.filter(r => (r.nivel === 7)&&(r.OBSERVADOR===0));
     
      var i;
      
-     const centroslayer=centros.map(cv=>{
-       i+=1;
-        return(
-          <Feature key={i}   coordinates={[cv.lng,cv.lat]} 
-          />
-            )
-      } )  
-      
+    
     
       return (
       <div className= "Popup">
      
-     <GeoJSONLayer
-   key={"g01"}
-   data={nuevaesparta}
-   fillPaint={polygonPaint}
-/>
+     
 <GeoJSONLayer
           data={coffe}
           circleLayout={circleLayout}
@@ -210,15 +199,9 @@ render() {
         />
 
      <Layer key={"polygonKeyA"} type="fill" paint={this.getPolygonPaint('lightyellow')}>
-    <Feature coordinates=
-    {poliacevedo}
-     />
+  
  </Layer> 
-  <Layer type="circle" radius={100} color={ 'green'} fillColor= 'green' 
-       fillOpacity= {0.5} paint={this.getCirclePaint('purple')}> 
-      {centroslayer}
- </Layer>
-
+  
 
  
  <Layer key={"polygonKey1"} type="fill" paint={this.getPolygonPaint('orange')}>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import {facilitadores} from '../data/facilitadores.json';
-import {defensores} from '../data/defensores.json';
+//import {defensores} from '../data/defensores.json';
 //import Persona from '../components/persona';
 import '@devexpress/dx-react-grid-bootstrap4/dist/dx-react-grid-bootstrap4.css';
 //console.log({facilitadores})
@@ -10,7 +10,7 @@ class Mensajeria extends Component {
     constructor(props) {
         super(props);    
         this.state = {
-          defensores,
+          defensores:[],
           
           isLoading: false,
      error:null

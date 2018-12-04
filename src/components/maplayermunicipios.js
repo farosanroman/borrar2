@@ -5,7 +5,7 @@ import MapGeoJSONLayer from './mapgeojsonlayer';
 import {resumen} from '../data/resumen.json';
 //import {e010000} from '../geo/010000.json';
 //import {e020000} from '../geo/020000.json';
-import {nuevaesparta} from '../geo/nuevaesparta.json';
+//import {nuevaesparta} from '../geo/nuevaesparta.json';
 //import {Popup} from 'react-mapbox-gl';
 //var ReactMapboxGl = require("react-mapbox-gl");
 
@@ -22,7 +22,7 @@ constructor(props) {
     nodos:resumen,
     popupType:"msg",
     poly01:null,
-    nuevaesparta:nuevaesparta,
+    
     config:null,
     geojson:[],
     isLoading: false,
