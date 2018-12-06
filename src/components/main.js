@@ -19,6 +19,7 @@ import Carousel from  '../components/carousel'
 import ChartFormularios from  '../components/chartformularios'
 import ChartTestigos from  '../components/charttestigos'
 import ChartFaro from  '../components/chart'
+import ChartEstratos from  '../components/estratos'
 import {formularios,A1,A2,D1,D2,D3} from '../data/formularios.json';
 //https://www.coursera.org/lecture/front-end-react/exercise-video-header-and-footer-7abwF
 
@@ -48,7 +49,8 @@ class Main extends Component {
     //console.log("login")
     this.setState({flagLogin:true})
 } 
-  onSetFormulario = (id,formulario,nombreformulario) => {    
+  onSetFormulario = (id,formulario,nombreformulario) => {  
+    //alert("onSetFormulario "+id)  
     this.setState({idformulario:id,formulario:formulario,nombreformulario:nombreformulario})
 } 
 onSetEstado = (id,nombreestado) => {  
@@ -72,7 +74,8 @@ onSetEstado = (id,nombreestado) => {
             {flagLogin&&<Route path="/mensajeria" component={Mensajeria}/>}
             {flagLogin&& <Route path="/polar" component={()=><ChartTestigos />}/> } 
             {flagLogin&& <Route path="/polarf" component={()=><ChartFormularios />}/> }
-           {flagLogin&&<Route path="/chart" component={()=><ChartFaro onsetformulario={this.onSetFormulario} onsetestado={this.onSetEstado} idestado={this.state.idestado} nombreestado={this.state.nombreestado} idformulario={this.state.idformulario} formulario={this.state.formulario} nombreformulario={this.state.nombreformulario}/>}/> } 
+            {flagLogin&&<Route path="/chart" component={()=><ChartFaro onsetformulario={this.onSetFormulario} onsetestado={this.onSetEstado} idestado={this.state.idestado} nombreestado={this.state.nombreestado} idformulario={this.state.idformulario} formulario={this.state.formulario} nombreformulario={this.state.nombreformulario}/>}/> } 
+            {flagLogin&&<Route path="/estratos" component={()=><ChartEstratos onsetformulario={this.onSetFormulario}  idformulario={this.state.idformulario} formulario={this.state.formulario} nombreformulario={this.state.nombreformulario} />}/>}
             <Route path="/about" component={About}/>
             <Route path="/login" component={()=><Login onsetlogin={this.onSetLogin} />}/>  
         

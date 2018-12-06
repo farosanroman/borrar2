@@ -210,7 +210,7 @@ constructor(props) {
                dataSource={serieD}
                id={'serie'}
           >
-           <SizeS height={400} width={400} />
+           <SizeS height={400} width={380} />
            <ValueAxis
             grid={{ opacity: 0.2 }}
             valueType={'currency'}
@@ -267,11 +267,13 @@ constructor(props) {
         commonSeriesSettings= {{type: "line"}}        
         palette={['deepskyblue', 'red', 'limegreen', 'lightgrey', '#DEB887', '#87CEFA', '#BDBDBD']}
         title={'% Recepcion Formularios'}
+        
         tooltip= {{
           enabled: true
         }
       }
       >
+      <Size width={380} />
       <Series
           
           valueField={'F0'} name={'.'} color={'lightgray'}

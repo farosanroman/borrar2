@@ -36,13 +36,13 @@ import React, { Component } from 'react';
         if (idestado===0){
             ww='600'
             polar1=[
-              { "arg": "E1","F2": r.e1,"F1":r.m1,"F3":r.tot1},
-              { "arg": "E2","F2": r.e2,"F1":r.m2,"F3":r.tot2},
-              { "arg": "E3","F2": r.e3,"F1":r.m3,"F3":r.tot3},
-              { "arg": "E4","F2": r.e4,"F1":r.m4,"F3":r.tot4},
-              { "arg": "E5","F2": r.e5,"F1":r.m5,"F3":r.tot5},
-              { "arg": "E6","F2": r.e6,"F1":r.m6,"F3":r.tot6},
-              { "arg": "E7","F2": r.e7,"F1":r.m7,"F3":r.tot7}
+              { "arg": "E1","F2": r.e1,"F1":r.m1,"F3":r.tot1,"F4":0},
+              { "arg": "E2","F2": r.e2,"F1":r.m2,"F3":r.tot2,"F4":0},
+              { "arg": "E3","F2": r.e3,"F1":r.m3,"F3":r.tot3,"F4":0},
+              { "arg": "E4","F2": r.e4,"F1":r.m4,"F3":r.tot4,"F4":0},
+              { "arg": "E5","F2": r.e5,"F1":r.m5,"F3":r.tot5,"F4":0},
+              { "arg": "E6","F2": r.e6,"F1":r.m6,"F3":r.tot6,"F4":0},
+              { "arg": "E7","F2": r.e7,"F1":r.m7,"F3":r.tot7,"F4":0}
               ];
         }
         if (this.props.tipo=='porc'){
@@ -86,6 +86,14 @@ import React, { Component } from 'react';
             <Connector visible={true} width={1} />
           </Label>
         </Series>
+        <Series          
+          valueField={'F2'} name={totmeta+' Meta'}  width={1} color={'red'}
+        >
+
+          <Label visible={false}>
+            <Connector visible={true} width={1} />
+          </Label>
+        </Series>
           <Series          
           valueField={'F3'} name={totasignaciones+' Tot Asig'}  width={1} color={'gray'}
         >
@@ -102,14 +110,7 @@ import React, { Component } from 'react';
             <Connector visible={true} width={1} />
           </Label>
         </Series>
-        <Series          
-          valueField={'F2'} name={totmeta+' Meta'}  width={1} color={'red'}
-        >
-
-          <Label visible={false}>
-            <Connector visible={true} width={1} />
-          </Label>
-        </Series>
+       
         
        
        

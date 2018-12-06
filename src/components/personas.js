@@ -4,7 +4,8 @@ import React, { Component } from 'react';
 import DataGrid, { Column, RemoteOperations,Grouping,Summary,TotalItem,GroupItem, Paging,Export, Pager } from 'devextreme-react/data-grid';
 import 'devextreme/dist/css/dx.common.css';
 import 'devextreme/dist/css/dx.light.compact.css';
-import Persona from '../components/persona';
+//import Persona from '../components/persona';
+import Piramide from '../components/personaspiramide';
 
 //console.log({facilitadores})
 class Personas extends Component {
@@ -85,7 +86,7 @@ class Personas extends Component {
            
              </Summary>
            </DataGrid>
-           
+           <Piramide defensores={personas}/>
           </div>
         );
       }

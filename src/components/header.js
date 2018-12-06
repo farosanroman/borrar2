@@ -75,7 +75,12 @@ class Header extends Component {
               </NavItem>
               <NavItem>
                   <NavLink className="nav-link" to="/chart">
-                  <span className="fa fa-gavel"></span>9D
+                  <span className="fa fa-gavel"></span>R9D
+                  </NavLink>
+              </NavItem>
+              <NavItem>
+                  <NavLink className="nav-link" to="/estratos">
+                  <span className="fa fa-bars"></span>E9D
                   </NavLink>
               </NavItem>
               <NavItem>

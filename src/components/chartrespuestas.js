@@ -54,7 +54,7 @@ import PieChart, {
       <Series argumentField={'respuesta'} valueField={'cant'} >
          <Label visible={true}>  <Connector visible={true} width={1} /> </Label>
       </Series>
-        <Size width={400} />
+        <Size width={380} />
         <Export enabled={false} />
         <Legend
             verticalAlignment={'bottom'}
