@@ -157,7 +157,12 @@ constructor(props) {
       //serieD.push({fecha:new Date(serie[0].fecha),cant:0,acum:0})
      for (let i = 0; i < serie.length; ++i) {
         var ii=i+1
-        serieD.push({fecha:new Date(serie[i].fecha),cant:ii,acum:ii})
+        if (serie[i].medio=="CC"){
+         serieD.push({fecha:new Date(serie[i].fecha),cant:ii,acum:ii})
+        }else{
+          serieD.push({fecha:new Date(serie[i].fecha),polidata:ii,acum:ii})
+        
+        }
      }
       
     }
@@ -237,6 +242,7 @@ constructor(props) {
           <Series key={'2'} valueField={'acum'} color={'lightgrey'} name={'acumulado'} type={'area'}/>
        
         <Series key={'1'} valueField={'cant'} color={'deepskyblue'} name={'cantidad'} type={'bar'}/>
+        <Series key={'3'} valueField={'polidata'} color={'darkorange'} name={'polidata'} type={'bar'}/>
       
         <Grid visible={true} />
         

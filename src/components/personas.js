@@ -21,7 +21,7 @@ class Personas extends Component {
   componentDidMount() {
     this.setState({ isLoading: true });
     
-    var url="https://faro2018consultas.azurewebsites.net/api/personasxcodcnexroles?codcne=00&roles=247"
+    var url="https://faro2018consultas.azurewebsites.net/api/personasxcodcnexroles2?codcne=00&roles=247"
     //console.log(url)
     fetch(url)
     .then(response => {
@@ -80,7 +80,7 @@ class Personas extends Component {
               column={'FechaAsignado'}
               summaryType={'count'}
               displayFormat={'{0} O9Ds'} />
-                <TotalItem
+              <TotalItem
                  column={'FechaAsignado'}
                  summaryType={'count'} />
            

@@ -183,11 +183,11 @@ render() {
        })   
       return (
       <div className= "Popup">
-       <Layer type="circle" radius={100} color={ 'green'} fillColor= 'green' 
+       <Layer type="circle" radius={250} color={ 'green'} fillColor= 'green' 
          fillOpacity= {0.5} paint={this.getCirclePaint('red')}> 
         {muestraroja}
      </Layer> 
-     <Layer type="circle" radius={100} color={ 'green'} fillColor= 'green' 
+     <Layer type="circle" radius={250} color={ 'green'} fillColor= 'green' 
          fillOpacity= {0.5} paint={this.getCirclePaint('dodgerblue')}> 
         {muestraazul}
      </Layer> 
