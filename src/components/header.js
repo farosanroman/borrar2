@@ -62,7 +62,11 @@ class Header extends Component {
                   <span className="fa fa-rebel"></span>Defensores
                   </NavLink>
               </NavItem>
-             
+              <NavItem>
+                  <NavLink className="nav-link" to="/ficha">
+                  <span className=" fa fa-address-card"></span>Ficha
+                  </NavLink>
+              </NavItem>
               <NavItem>
                   <NavLink className="nav-link" to="/polar">
                   <span className="fa fa-user-circle"></span>O9D
