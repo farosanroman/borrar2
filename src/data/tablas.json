@@ -43,6 +43,55 @@
         
     ],
 
+    "dxformItems":
+    [{
+        "itemType": "group",
+        "cssClass": "first-group",
+        "colCount": 4,
+        "items": [{
+        "template": "<div class='form-avatar'></div>"
+        }, 
+        {
+        "itemType": "group",
+        "colSpan": 3,
+        "items": [{
+        "dataField": "nombre1",
+        "label": {
+            "text":"Nombre"
+          },
+          "editorOptions": {
+            "width": 300
+            }
+        }, {
+        "dataField": "apellido1",
+        "label": {
+            "text": "Apellido"
+          },
+          "editorOptions": {
+            "width": 300
+            }
+        
+        },
+        {
+        "dataField": "fecha",
+        "editorType": "dxDateBox",
+        "editorOptions": {
+           "width": 200
+            }
+        },
+        {
+            "dataField": "orientacion",
+            "editorType": "dxSelectBox",
+            "editorOptions": {
+              "items": ["AD","PJ","VP","UNT","SUMATE","MUD","INDEPENDIENTE","FRENTE"],
+              "width": 300
+            }
+            
+        }   
+        
+        ]
+        }]
+        }],
     "correos":[
         {
             "idc":1,

@@ -1,18 +1,12 @@
 import React from 'react';
 import Form  from 'devextreme-react/form';
 import Button  from 'devextreme-react/button';
-
+import notify from 'devextreme/ui/notify';
 import 'devextreme-react/text-area';
 import 'devextreme-react/radio-group';
 import 'devextreme/dist/css/dx.common.css';
 import 'devextreme/dist/css/dx.light.compact.css';
-const employee = {
-  "nombre1":"pedro",
-  "apellido1":"Azpurua",
-  "fecha":"2010-01-01",
-  "orientacion":"AD"
-
-};
+import {dxformItems} from '../data/formularios.json';
 const partidos = ['AD','PJ','VP','UNT','SUMATE','MUD','INDEPENDIENTE','FRENTE'];
 const formItems = 
 [{
@@ -23,30 +17,81 @@ items: [{
 template: '<div class="form-avatar"></div>'
 }, {
 itemType: 'group',
-colSpan: 3,
+colCount: 2,
+colSpan: 4,
 items: [{
 dataField: 'nombre1',
 label: {
     text: 'Nombre'
   },
   editorOptions: {
-    width: 300
+    width: 300,
+    disabled: true,
     },
-}, {
+},
+{
+  dataField: 'nombre2',
+  label: {
+      text: 'Nombre2',
+      disabled: true,
+    },
+    editorOptions: {
+      width: 300,
+      disabled: true,
+      },
+  }, 
+{
 dataField: 'apellido1',
 label: {
-    text: 'Apellido'
+    text: 'Apellido',
+   
   },
   editorOptions: {
-    width: 300
+    width: 300,
+    disabled: true,
     },
 
 },
 {
+  dataField: 'apellido2',
+  label: {
+      text: 'Apellido2'
+    },
+    editorOptions: {
+      width: 300,
+      disabled: true,
+      },
+  
+  },
+  {
+    dataField: 'correo',
+    label: {
+        text: 'Correo',
+       
+      },
+      editorOptions: {
+        width: 300,
+        disabled: true,
+        },
+    
+    },
+    {
+      dataField: 'telefono',
+      label: {
+          text: 'Telefono'
+        },
+        editorOptions: {
+          width: 300,
+          disabled: true,
+          },
+      
+      },
+{
 dataField: 'fecha',
 editorType: 'dxDateBox',
 editorOptions: {
-width: 200
+width: 200,
+disabled: true,
 },
 },
 {
@@ -67,27 +112,31 @@ class Ficha extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      error:null     
+      observador:[],
+      formdata: {
+        "nombre1":"","nombre2":"",
+        "apellido1":"","apellido2":"",
+        "fecha":"",
+        "orientacion":""
+     },
+      error:null,
+      isLoading:false
+
     };
-    this.setForm = (ref) => {
+    this.setForm2 = (ref) => {
+      if (ref!=null){
+      
         this.form = ref.instance;
-  };
+        }
+     };
     this.onClick = this.onClick.bind(this);
   } 
   onSearch = (e) => {
-    alert('The value is: ' + this.cedula.value);
-    let login=this.login.value;
-    let pwd=this.pwd.value;
-    if (login==="O9D"){
-     // alert()
-        this.props.onsetlogin(true)
-        return
-    
-    }
-    /////////this.refs.myForm.submit();
-    //console.log("onSearch")
+    this.setState({ isLoading: true });
+   // alert('The value is: ' + this.cedula.value);
+    let cedula=this.cedula.value;    
     e.preventDefault();
-    const url='https://Faro2018seguridad.azurewebsites.net/api/faroautenticacionapi_faroautenticacionapp?login='+this.login.value+'&clave='+pwd+'&idfaroaplicacion=3&plataforma=SIN&uuid=SIN'
+    const url='https://faro2018consultas.azurewebsites.net/api/twtpersona?cedula=V3664204'
     //alert(url)
     fetch(url)
 .then(response => {
@@ -101,13 +150,55 @@ class Ficha extends React.Component {
 .then(result => this.onSetResult(result))
 //.then(result => this.setState({roles:result,isLoading:false}))
 .catch(error => this.setState({ error, isLoading: false }));
-
-
 };
+onSetResult = (result) => {
+ // alert(JSON.stringify(result))
+  //console.log("onSetResults")
+  //console.log(result)
+  const formdata={
+    "nombre1":"Pedro",
+    "nombre2":"Pablo",
+    "apellido1":"Azpurua",
+    "apellido2":"SIN",
+    "fecha":"2010-01-01",
+    "correo":"ppaapap@gmail.com",
+    "telefono":"02727827287",
+    "orientacion":"PJ"
+  
+  };
+  this.setState({observador:result,formdata,isLoading:false})
+  
+  /*
+  if (result.length>0){
+    for (var i = 0; i< result.length; ++i) { 
+       if (result[i].idrol===242){
+         //alert(result[i].idrol)
+           this.props.onsetlogin(true)
+       
+          }
+    }
+    
+  }else{
+    return <p>No Autenticado ...</p>;
+  }
+  */
+  //this.setState({ personas: result })
+  //console.log(this.state)
+}
 onClick(e){
+    
+  notify("Informacion Registrada", "success", 600);
     alert(JSON.stringify(this.form.option("formData")));
   }
   render() {
+    
+    if (error) {
+        return <p>{error.message}</p>;
+      }
+    if (isLoading) {
+        return <p>Loading ...</p>;
+      }
+      const {observador,formdata,error,isLoading } = this.state;
     
     return(
         <div>
@@ -122,11 +213,11 @@ onClick(e){
         </form>
         </td></tr>
         <tr><td>
-           <Form ref={this.setForm} formData={employee} items={formItems} />;
+           <Form ref={this.setForm2} formData={formdata} items={formItems} />;
            </td></tr>
            <tr><td>
            <Button
-            text={"Grabar"}
+            text={"Registrar Orientacion Politica"}
             onClick={this.onClick}
             type='success'
           />
