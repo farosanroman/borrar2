@@ -7,18 +7,18 @@ import 'devextreme-react/radio-group';
 import 'devextreme/dist/css/dx.common.css';
 import 'devextreme/dist/css/dx.light.compact.css';
 import {dxformItems} from '../data/formularios.json';
+import { Height } from 'devextreme-react/range-selector';
 const partidos = ['AD','PJ','VP','UNT','SUMATE','MUD','INDEPENDIENTE','FRENTE'];
 const formItems = 
 [{
 itemType: 'group',
 cssClass: 'first-group',
 colCount: 4,
-items: [{
-template: '<div class="form-avatar"></div>'
-}, {
+items: [ {
 itemType: 'group',
 colCount: 2,
 colSpan: 4,
+caption: "Nombre y Apellido",
 items: [{
 dataField: 'nombre1',
 label: {
@@ -86,6 +86,9 @@ label: {
           },
       
       },
+     
+        
+               
 {
 dataField: 'fecha',
 editorType: 'dxDateBox',
@@ -94,19 +97,133 @@ width: 200,
 disabled: true,
 },
 },
-{
-    dataField: 'orientacion',
-    editorType: 'dxSelectBox',
-    editorOptions: {
-      items: partidos,
-      width: 300
-    },
-    
-},
+
 
 
 ]
-}]
+},
+{
+  itemType: 'group',
+  colCount: 2,
+  colSpan: 4,
+  caption: "Registro Electoral",
+  items: [
+          {
+            dataField: 'codcne',
+            label: {
+                text: 'CodCne'
+              },
+              editorOptions: {
+                width: 300,
+                disabled: true,
+                },
+            
+            },
+            {
+              dataField: 'nombre',
+              label: {
+                  text: 'Nombre'
+                },
+                editorOptions: {
+                  width: 300,
+                  disabled: true,
+                  },
+              
+              },
+            {
+              dataField: 'estado',
+              label: {
+                  text: 'Estado',
+                 
+                },
+                editorOptions: {
+                  width: 300,
+                  disabled: true,
+                  },
+              
+              },
+              {
+                dataField: 'municipio',
+                label: {
+                    text: 'Municipio'
+                  },
+                  editorOptions: {
+                    width: 300,
+                    disabled: true,
+                    },
+                
+                },
+                {
+                  dataField: 'parroquia',
+                  label: {
+                      text: 'Parroquia',
+                     
+                    },
+                    editorOptions: {
+                      width: 300,
+                      disabled: true,
+                      },
+                  
+                  },
+                 
+  
+  
+  
+  
+  ]
+  },
+  {
+    itemType: 'group',
+    colCount: 2,
+    colSpan: 4,
+    caption: "Roles Asignados",
+    items: [
+     
+      {
+        dataField: 'rol1',
+        label: {
+            text: 'rol'
+          },
+          editorOptions: {
+            width: 300,
+            disabled: true,
+            },
+        
+        },
+        {
+          dataField: 'rol2',
+          label: {
+              text: 'rol'
+            },
+            editorOptions: {
+              width: 300,
+              disabled: true,
+              },
+          
+          },
+    ]
+    },
+  {
+    itemType: 'group',
+    colCount: 2,
+    colSpan: 4,
+    caption: "Seleccion de la Orientacion",
+    items: [
+     
+    {
+        dataField: 'orientacion',
+        editorType: 'dxSelectBox',
+        editorOptions: {
+          items: partidos,
+          width: 300
+        },
+        
+    },
+    
+    
+    ]
+    }
+]
 }];
 class Ficha extends React.Component {
   constructor(props) {
@@ -116,6 +233,8 @@ class Ficha extends React.Component {
       formdata: {
         "nombre1":"","nombre2":"",
         "apellido1":"","apellido2":"",
+        "estado":"","municipio":"","parroquia":"",
+        "codcne":"",
         "fecha":"",
         "orientacion":""
      },
@@ -124,8 +243,7 @@ class Ficha extends React.Component {
 
     };
     this.setForm2 = (ref) => {
-      if (ref!=null){
-      
+      if (ref!=null){      
         this.form = ref.instance;
         }
      };
@@ -136,7 +254,7 @@ class Ficha extends React.Component {
    // alert('The value is: ' + this.cedula.value);
     let cedula=this.cedula.value;    
     e.preventDefault();
-    const url='https://faro2018consultas.azurewebsites.net/api/twtpersona?cedula=V3664204'
+    const url='https://faro2018consultas.azurewebsites.net/api/twtpersona?cedula='+cedula
     //alert(url)
     fetch(url)
 .then(response => {
@@ -155,15 +273,35 @@ onSetResult = (result) => {
  // alert(JSON.stringify(result))
   //console.log("onSetResults")
   //console.log(result)
+  var correo="";
+  var celular="";
+  
+  for (let i = 0; i < result[0].direcciones.length; ++i) {
+      if ((result[0].direcciones[i].IdOpcion==8)&&(result[0].direcciones[i].TipoDireccion==1)){
+        celular=result[0].direcciones[i].direccion
+      }
+      if ((result[0].direcciones[i].IdOpcion==5)&&(result[0].direcciones[i].TipoDireccion==2)){
+        correo=result[0].direcciones[i].direccion
+      }
+  }  
   const formdata={
-    "nombre1":"Pedro",
-    "nombre2":"Pablo",
-    "apellido1":"Azpurua",
-    "apellido2":"SIN",
+    "nombre1":result[0].nombre1,
+    "nombre2":result[0].nombre2,
+    "apellido1":result[0].apellido1,
+    "apellido2":result[0].apellido1,
     "fecha":"2010-01-01",
-    "correo":"ppaapap@gmail.com",
-    "telefono":"02727827287",
-    "orientacion":"PJ"
+    "correo":correo,
+    "telefono":celular,
+    "estado":result[0].cv.estado,
+    "municipio":result[0].cv.municipio,
+    "parroquia":result[0].cv.parroquia,
+    "codcne":result[0].cv.codcne,
+    "nombre":result[0].cv.nombre,
+    "orientacion":"",
+    "rol1":"O9D",
+    "rol2":"Defensor",
+    
+    
   
   };
   this.setState({observador:result,formdata,isLoading:false})
@@ -187,8 +325,8 @@ onSetResult = (result) => {
 }
 onClick(e){
     
-  notify("Informacion Registrada", "success", 600);
-    alert(JSON.stringify(this.form.option("formData")));
+  notify("En desarrollo", "error", 600);
+    //alert(JSON.stringify(this.form.option("formData")));
   }
   render() {
     
@@ -202,7 +340,9 @@ onClick(e){
     
     return(
         <div>
-           <h2>Actualizacion de Datos</h2>
+          <h3>
+             <span  className="badge badge-secondary">{'Actualizacion de Partido en Observadores 9D'}</span>
+          </h3>
         <table><tr><td>
         <form onSubmit={this.onSearch}>
         <label>
@@ -213,7 +353,7 @@ onClick(e){
         </form>
         </td></tr>
         <tr><td>
-           <Form ref={this.setForm2} formData={formdata} items={formItems} />;
+           <Form ref={this.setForm2} formData={formdata} items={formItems} />
            </td></tr>
            <tr><td>
            <Button

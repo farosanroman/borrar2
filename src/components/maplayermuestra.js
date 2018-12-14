@@ -188,7 +188,7 @@ render() {
         {muestraroja}
      </Layer> 
      <Layer type="circle" radius={250} color={ 'green'} fillColor= 'green' 
-         fillOpacity= {0.5} paint={this.getCirclePaint('dodgerblue')}> 
+         fillOpacity= {0.5} paint={this.getCirclePaint('blue')}> 
         {muestraazul}
      </Layer> 
   <MapPopupTestigo key={111} 
