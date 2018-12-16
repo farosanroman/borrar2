@@ -208,7 +208,7 @@ constructor(props) {
             <span className="badge badge-primary m-2">{this.formatNombreFormulario()}</span>
             </h2>
             <div className="row ">
-    <div className="d-flex flex-row">                    
+    <div className="d-flex flex-row ">                    
       <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
         <div className="card-deck">
             <Chart               

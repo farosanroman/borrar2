@@ -1,4 +1,5 @@
 import React from 'react';
+import FichaGeo from './fichageo';
 import Form  from 'devextreme-react/form';
 import Button  from 'devextreme-react/button';
 import notify from 'devextreme/ui/notify';
@@ -25,7 +26,7 @@ label: {
     text: 'Nombre'
   },
   editorOptions: {
-    width: 300,
+    width: 150,
     disabled: true,
     },
 },
@@ -36,7 +37,7 @@ label: {
       disabled: true,
     },
     editorOptions: {
-      width: 300,
+      width: 150,
       disabled: true,
       },
   }, 
@@ -47,7 +48,7 @@ label: {
    
   },
   editorOptions: {
-    width: 300,
+    width: 150,
     disabled: true,
     },
 
@@ -58,7 +59,7 @@ label: {
       text: 'Apellido2'
     },
     editorOptions: {
-      width: 300,
+      width: 150,
       disabled: true,
       },
   
@@ -70,7 +71,7 @@ label: {
        
       },
       editorOptions: {
-        width: 300,
+        width: 150,
         disabled: true,
         },
     
@@ -81,7 +82,7 @@ label: {
           text: 'Telefono'
         },
         editorOptions: {
-          width: 300,
+          width: 150,
           disabled: true,
           },
       
@@ -93,7 +94,7 @@ label: {
 dataField: 'fecha',
 editorType: 'dxDateBox',
 editorOptions: {
-width: 200,
+width: 150,
 disabled: true,
 },
 },
@@ -114,7 +115,7 @@ disabled: true,
                 text: 'CodCne'
               },
               editorOptions: {
-                width: 300,
+                width: 150,
                 disabled: true,
                 },
             
@@ -125,7 +126,7 @@ disabled: true,
                   text: 'Nombre'
                 },
                 editorOptions: {
-                  width: 300,
+                  width: 150,
                   disabled: true,
                   },
               
@@ -137,7 +138,7 @@ disabled: true,
                  
                 },
                 editorOptions: {
-                  width: 300,
+                  width: 150,
                   disabled: true,
                   },
               
@@ -148,7 +149,7 @@ disabled: true,
                     text: 'Municipio'
                   },
                   editorOptions: {
-                    width: 300,
+                    width: 150,
                     disabled: true,
                     },
                 
@@ -160,7 +161,7 @@ disabled: true,
                      
                     },
                     editorOptions: {
-                      width: 300,
+                      width: 150,
                       disabled: true,
                       },
                   
@@ -174,33 +175,22 @@ disabled: true,
   },
   {
     itemType: 'group',
-    colCount: 2,
+    colCount: 1,
     colSpan: 4,
     caption: "Roles Asignados",
     items: [
      
       {
-        dataField: 'rol1',
+        dataField: 'rol',
         label: {
             text: 'rol'
           },
           editorOptions: {
-            width: 300,
+            width: 400,
             disabled: true,
             },
         
-        },
-        {
-          dataField: 'rol2',
-          label: {
-              text: 'rol'
-            },
-            editorOptions: {
-              width: 300,
-              disabled: true,
-              },
-          
-          },
+        }
     ]
     },
   {
@@ -215,7 +205,7 @@ disabled: true,
         editorType: 'dxSelectBox',
         editorOptions: {
           items: partidos,
-          width: 300
+          width: 150
         },
         
     },
@@ -230,14 +220,8 @@ class Ficha extends React.Component {
     super(props);
     this.state = { 
       observador:[],
-      formdata: {
-        "nombre1":"","nombre2":"",
-        "apellido1":"","apellido2":"",
-        "estado":"","municipio":"","parroquia":"",
-        "codcne":"",
-        "fecha":"",
-        "orientacion":""
-     },
+      formItems:formItems,
+      formdata: null,
       error:null,
       isLoading:false
 
@@ -284,6 +268,10 @@ onSetResult = (result) => {
         correo=result[0].direcciones[i].direccion
       }
   }  
+  var rolesstr=""
+  for (let ii = 0; ii < result[0].rol.length; ++ii) {
+      rolesstr+=" | "+result[0].rol[ii].rol
+  }
   const formdata={
     "nombre1":result[0].nombre1,
     "nombre2":result[0].nombre2,
@@ -298,9 +286,7 @@ onSetResult = (result) => {
     "codcne":result[0].cv.codcne,
     "nombre":result[0].cv.nombre,
     "orientacion":"",
-    "rol1":"O9D",
-    "rol2":"Defensor",
-    
+    "rol": rolesstr
     
   
   };
@@ -329,21 +315,25 @@ onClick(e){
     //alert(JSON.stringify(this.form.option("formData")));
   }
   render() {
-    
+   
     if (error) {
         return <p>{error.message}</p>;
       }
     if (isLoading) {
         return <p>Loading ...</p>;
       }
-      const {observador,formdata,error,isLoading } = this.state;
-    
+      const {observador,formItems, formdata,error,isLoading } = this.state;
+     
+      
+    //alert(JSON.stringify(formItems[0].items[2].items))
     return(
         <div>
+         
           <h3>
              <span  className="badge badge-secondary">{'Actualizacion de Partido en Observadores 9D'}</span>
           </h3>
         <table><tr><td>
+        
         <form onSubmit={this.onSearch}>
         <label>
           Cedula:
@@ -353,7 +343,16 @@ onClick(e){
         </form>
         </td></tr>
         <tr><td>
+         
+    <div className="d-flex flex-row">                    
+      <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+        <div className="card-deck">
            <Form ref={this.setForm2} formData={formdata} items={formItems} />
+           <FichaGeo />
+     </div></div>
+  
+ </div>
+     
            </td></tr>
            <tr><td>
            <Button
