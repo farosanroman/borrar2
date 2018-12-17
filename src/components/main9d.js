@@ -31,15 +31,13 @@ import {formularios,A1,A2,D1,D2,D3} from '../data/formularios.json';
 
 //https://www.robinwieruch.de/local-storage-react/
 
-class Main extends Component {
+class Main9D extends Component {
   constructor(props) {
     super(props);
     this.state = { 
       flag:0,     
       config:null,
       flagLogin:false,
-      flagMenu:true,
-      flagMenu9D:false,
       idformulario:"A1",
       formulario:A1,
       nombreformulario:"A1 COACCION / INTIMIDACION / CARNET DE LA PATRIA",
@@ -47,12 +45,10 @@ class Main extends Component {
       nombreestado:"Venezuela"
      };
   }
-  onSetLogin = (flag,flagmenu,flagmenu9d) => { 
+  onSetLogin = (flag) => { 
    // alert("login")   
     //console.log("login")
-    //alert("onSetLogin main"+JSON.stringify({flagLogin:true,flagMenu:flagmenu,flagMenu9D:flagmenu9d}))
-    this.setState({flagLogin:true,flagMenu:flagmenu,flagMenu9D:flagmenu9d})
-
+    this.setState({flagLogin:true})
 } 
   onSetFormulario = (id,formulario,nombreformulario) => {  
     //alert("onSetFormulario "+id)  
@@ -63,12 +59,11 @@ onSetEstado = (id,nombreestado) => {
   this.setState({idestado:id,nombreestado:nombreestado})
 } 
   render() { 
-    const { flagLogin,flagMenu,flagMenu9D } = this.state; 
-    //alert("render main"+flagMenu+" "+flagMenu9D)   
+    const { flagLogin } = this.state;    
       return(
         <Router>
            <div >
-            <Header flagmenu={flagMenu} flagmenu9d={flagMenu9D}></Header>
+            <Header></Header>
             <Switch>
             <Route path="/home" component={()=><Home/>}/>
             {flagLogin&&<Route path="/carousel" component={Carousel}/>}
@@ -85,7 +80,9 @@ onSetEstado = (id,nombreestado) => {
             {flagLogin&&<Route path="/estratos" component={()=><ChartEstratos onsetformulario={this.onSetFormulario}  idformulario={this.state.idformulario} formulario={this.state.formulario} nombreformulario={this.state.nombreformulario} />}/>}
             <Route path="/about" component={About}/>
             <Route path="/login" component={()=><Login onsetlogin={this.onSetLogin} />}/>  
-                        
+        
+           
+                             
             <Redirect to="/home"/>
             </Switch>         
            </div>
@@ -97,4 +94,4 @@ onSetEstado = (id,nombreestado) => {
 }
 //npm i devextreme@18.2.1-pre-18268
 
-export default Main;
+export default Main9D;

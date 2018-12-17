@@ -22,10 +22,16 @@ class Login extends Component {
         let pwd=this.pwd.value;
         if (login==="C19"){
          // alert()
-            this.props.onsetlogin(true)
+            this.props.onsetlogin(true,true,false)
             return
         
         }
+        if (login==="O9D"){
+          // alert()
+             this.props.onsetlogin(true,false,true)
+             return
+         
+         }
         /////////this.refs.myForm.submit();
         //console.log("onSearch")
         e.preventDefault();

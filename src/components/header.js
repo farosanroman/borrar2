@@ -10,33 +10,40 @@ import logo from '../farocirculo.png';
 class Header extends Component {
     constructor(props) {
         super(props);    
-        this.toggleNav = this.toggleNav.bind(this);
         this.state = {
           isNavOpen: false,
-          flagLogin:false
+          flagLogin:false,
+          flagMenu:props.flagmenu,
+          flagMenu9D:props.flagmenu9d,
         };
+        this.toggleNav = this.toggleNav.bind(this);
+       
       }
       toggleNav() {
         this.setState({
           isNavOpen: !this.state.isNavOpen
         });
+        alert('toggle')
       }
   render() {
-    const { flagLogin } = this.state;
+    let { flagLogin,flagMenu,flagMenu9D } = this.state;
+    //alert("header"+JSON.stringify({ flagLogin,flagMenu,flagMenu9D }))
+    flagMenu=this.props.flagmenu
+    flagMenu9D=this.props.flagmenu9d
     return(
        <div>
       <Navbar dark expand="md"> 
       <div className="container">
       <NavbarToggler onClick={this.toggleNav} />   
-            <NavbarBrand className="mr-auto" href="/">
+         <NavbarBrand className="mr-auto" href="/">
              <img src={logo} height="30" alt="Plataforma BizAccount" />  
-            </NavbarBrand> 
-            <Collapse isOpen={this.state.isNavOpen} navbar>
-            
-            <Nav navbar>
-            {flagLogin&&
-            <NavItem>
-                  <NavLink className="nav-link" to="/carousel">
+         </NavbarBrand> 
+         <Collapse isOpen={this.state.isNavOpen} navbar>
+         {flagMenu&& 
+         <Nav navbar>
+         {flagLogin&&
+         <NavItem>
+              <NavLink className="nav-link" to="/carousel">
                   <span className="fa fa-home"></span>Home
                   </NavLink>
               </NavItem>
@@ -46,7 +53,7 @@ class Header extends Component {
                   <span className="fa fa-home"></span>Home
                   </NavLink>
               </NavItem>
-              <NavItem>
+            <NavItem>
                   <NavLink className="nav-link" to="/cursos">
                   <span className="fa fa-graduation-cap"></span>Contenidos
                   </NavLink>
@@ -67,26 +74,8 @@ class Header extends Component {
                   <span className=" fa fa-address-card"></span>Ficha
                   </NavLink>
               </NavItem>
-              <NavItem>
-                  <NavLink className="nav-link" to="/polar">
-                  <span className="fa fa-user-circle"></span>O9D
-                  </NavLink>
-              </NavItem>
-              <NavItem>
-                  <NavLink className="nav-link" to="/polarf">
-                  <span className="fa fa-bullseye"></span>F9D
-                  </NavLink>
-              </NavItem>
-              <NavItem>
-                  <NavLink className="nav-link" to="/chart">
-                  <span className="fa fa-gavel"></span>R9D
-                  </NavLink>
-              </NavItem>
-              <NavItem>
-                  <NavLink className="nav-link" to="/estratos">
-                  <span className="fa fa-bars"></span>E9D
-                  </NavLink>
-              </NavItem>
+            
+             
               <NavItem>
                   <NavLink className="nav-link" to="/mensajeria">
                   <span className="fa fa-phone"></span>Difusion
@@ -112,7 +101,33 @@ class Header extends Component {
              
                          
             </Nav>
+         }
+         {flagMenu9D&& 
+         <Nav navbar>
             
+            
+              <NavItem>
+                  <NavLink className="nav-link" to="/polar">
+                  <span className="fa fa-user-circle"></span>O9D
+                  </NavLink>
+              </NavItem>
+              <NavItem>
+                  <NavLink className="nav-link" to="/polarf">
+                  <span className="fa fa-bullseye"></span>F9D
+                  </NavLink>
+              </NavItem>
+              <NavItem>
+                  <NavLink className="nav-link" to="/chart">
+                  <span className="fa fa-gavel"></span>R9D
+                  </NavLink>
+              </NavItem>
+              <NavItem>
+                  <NavLink className="nav-link" to="/estratos">
+                  <span className="fa fa-bars"></span>E9D
+                  </NavLink>
+              </NavItem>
+            </Nav>
+         }
             </Collapse>
             
             </div>      
