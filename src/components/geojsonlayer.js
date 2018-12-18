@@ -75,7 +75,7 @@ class GeoJsonLayer extends Component {
     });
     getPolygonPaint = (color) => (MapGL.FillPaint = {
       'fill-color': color,
-      'fill-opacity': 0.05,
+      'fill-opacity': 0.1,
      
     });
     render() {

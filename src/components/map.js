@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import MapGL,{Layer,Feature,ZoomControl} from 'react-mapbox-gl';
 //import Chart from './chart';
 import MapLayerMunicipios from './maplayermunicipios';
-import MapLayerParroquias from './maplayerparroquias';
 import MapLayerCentros from './maplayercentros';
 import MapLayerMuestra from './maplayermuestra';
 //import Formulario from './formulario';
-import {resumen} from '../data/resumen.json';
+
 //import {muestra} from '../data/muestra.json';
 import {estratos} from '../data/tablas.json';
 import {formularios} from '../data/formularios.json'
@@ -51,7 +50,7 @@ class Map2 extends Component {
     this.onChangeEstrato=this.onChangeEstrato.bind(this)  
   }
   componentDidMount() { 
-    this.setState({nodos:resumen})
+    
     this.setState({comentario:"sin"})
     this.setState({popupInfo:popupInfo0})
     this.setState({popupType:"msg"})
@@ -165,7 +164,6 @@ onMuestraClick = (e) => {
         <div>
         
         <Button onClick={this.onMClick}>Municipios</Button>
-        <Button onClick={this.onPClick}>Parroquias</Button>
         <Button onClick={this.onCClick}>Centros</Button>
         <ButtonRed onClick={this.onMuestraClick}>Muestra</ButtonRed>
         
@@ -189,7 +187,7 @@ onMuestraClick = (e) => {
           onClick={this.onMapClick}
         > 
         {flagMunicipios&&<MapLayerMunicipios></MapLayerMunicipios>}
-        {flagParroquias&&<MapLayerParroquias></MapLayerParroquias>}
+        
         {flagCentros&&<MapLayerCentros></MapLayerCentros>}
         {flagMuestra&&<MapLayerMuestra propmuestra={this.state.muestra}
            propidestrato={this.state.idestrato} 

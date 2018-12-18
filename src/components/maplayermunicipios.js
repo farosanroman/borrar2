@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 //import {Layer,Feature} from 'react-mapbox-gl';
 import  MapboxGL, {Layer,Feature,GeoJSONLayer} from 'react-mapbox-gl';
 import MapGeoJSONLayer from './mapgeojsonlayer';
-import {resumen} from '../data/resumen.json';
+//import {resumen} from '../data/resumen.json';
 //import {e010000} from '../geo/010000.json';
 //import {e020000} from '../geo/020000.json';
 //import {nuevaesparta} from '../geo/nuevaesparta.json';
@@ -19,7 +19,7 @@ class MapLayerMunicipios extends Component {
 constructor(props) {
   super(props);
   this.state = { 
-    nodos:resumen,
+    
     popupType:"msg",
     poly01:null,
     
