@@ -36,7 +36,7 @@ componentDidMount() {
   //alert(this.props.idestado+" "+this.props.idformulario)
  // alert(JSON.stringify(this.props.formulario))
   var url="https://f18.azurewebsites.net/api/GeoJSONGet?code=71Esf7JNvNa2WkN5beemvAEXhK0GhAmrSoTZaMHpKKNn9mDrhxFKdw=="
-  console.log(url)
+  //console.log(url)
   fetch(url)
   .then(response => {
     if (response.ok) {

@@ -65,8 +65,8 @@ class Header extends Component {
                   </NavLink>
               </NavItem>
               <NavItem>
-                  <NavLink className="nav-link" to="/personas">
-                  <span className="fa fa-rebel"></span>Defensores
+                  <NavLink className="nav-link" to="/geo">
+                  <span className="fa fa-map-marker"></span>GeoFaro II
                   </NavLink>
               </NavItem>
               <NavItem>
@@ -74,6 +74,12 @@ class Header extends Component {
                   <span className=" fa fa-address-card"></span>Ficha
                   </NavLink>
               </NavItem>
+              <NavItem>
+                  <NavLink className="nav-link" to="/personas">
+                  <span className="fa fa-rebel"></span>Defensores
+                  </NavLink>
+              </NavItem>
+              
             
              
               <NavItem>
