@@ -70,6 +70,11 @@ class Header extends Component {
                   </NavLink>
               </NavItem>
               <NavItem>
+                  <NavLink className="nav-link" to="/geomodelo">
+                  <span className="fa fa-tachometer"></span>Modelo
+                  </NavLink>
+              </NavItem>
+              <NavItem>
                   <NavLink className="nav-link" to="/ficha">
                   <span className=" fa fa-address-card"></span>Ficha
                   </NavLink>

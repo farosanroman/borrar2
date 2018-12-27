@@ -1,4 +1,190 @@
 {
+    "primaria":
+    {
+        "id": "8760953*D1",
+        "fecha": "2018-10-26T11:57:04.711Z",
+        "type": "encuestaPOLI",
+        "idformulario": "P1",
+        "nombreformulario": "Prmarias 2019",
+        "medio": "polidata",
+        "self": "",
+        "idrol": 0,
+        "rol": "SIN",
+        "idactividad": 100,
+        "id_str": "zoiloescobar@hotmail.com",
+        "cedula": "8760953",
+        "nombre": "ZOILO JOSE ESCOBAR",
+        "edad": 51,
+        "sexo": 2,
+        "tendencia": "Accion Democratica",
+        "cedulaoperador": "8760953",
+        "telefono": "zoiloescobar@hotmail.com",
+        "correo": "zoiloescobar@hotmail.com",
+        "codcne": "131301005",
+        "pais": "VE",
+        "estado": "MIRANDA",
+        "municipio": "LOS SALIAS",
+        "parroquia": "SAN ANTONIO LOS ALTOS",
+        "centro": "UNIDAD EDUCATIVA LOS CASTORES",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                -66.96788,
+                10.37232
+            ]
+        },
+        "preguntas": [
+            {
+                "idpregunta": "1",
+                "pregunta": "Candidato de su preferencia",
+                "location": "top",
+                "color": "red",
+                "idrespuesta": 0,
+                "respuesta": "SIN RESPUESTA",
+                "comentario": "Falta Pregunta 1",
+                "respuestas": [
+                    {
+                        "idrespuesta": 1,
+                        "respuesta": "Candidato Blanco"
+                    },
+                    {
+                        "idrespuesta": 2,
+                        "respuesta": "Candidato Amarillo"
+                    },
+                    {
+                        "idrespuesta": 3,
+                        "respuesta": "Candidato Naranja"
+                    },
+                    {
+                        "idrespuesta": 4,
+                        "respuesta": "Candidato Azul"
+                    }
+                ]
+            }
+            
+        ]
+        
+    },
+    "polidata":
+    {
+        "id": "8760953*D1",
+        "fecha": "2018-10-26T11:57:04.711Z",
+        "type": "encuestaPOLI",
+        "idformulario": "D1",
+        "nombreformulario": "ACTO DE VOTACIÓN / MAQUINAS ELECTORALES (Reporte 10am/2pm)",
+        "medio": "polidata",
+        "self": "",
+        "idrol": 0,
+        "rol": "SIN",
+        "idactividad": 100,
+        "id_str": "zoiloescobar@hotmail.com",
+        "cedula": "8760953",
+        "nombre": "ZOILO JOSE ESCOBAR",
+        "edad": 51,
+        "sexo": 2,
+        "tendencia": "Accion Democratica",
+        "cedulaoperador": "8760953",
+        "telefono": "zoiloescobar@hotmail.com",
+        "correo": "zoiloescobar@hotmail.com",
+        "codcne": "131301005",
+        "pais": "VE",
+        "estado": "MIRANDA",
+        "municipio": "LOS SALIAS",
+        "parroquia": "SAN ANTONIO LOS ALTOS",
+        "centro": "UNIDAD EDUCATIVA LOS CASTORES",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                -66.96788,
+                10.37232
+            ]
+        },
+        "preguntas": [
+            {
+                "idpregunta": "1",
+                "pregunta": "1 ¿A que hora abrieron las mesas electorales del Centro de Votacion?",
+                "location": "top",
+                "color": "red",
+                "idrespuesta": 2,
+                "respuesta": "Entre las 7:00 y las 8:00 am.",
+                "comentario": "Falta Pregunta 1",
+                "respuestas": [
+                    {
+                        "idrespuesta": 1,
+                        "respuesta": "Antes de las 7:00 am."
+                    },
+                    {
+                        "idrespuesta": 2,
+                        "respuesta": "Entre las 7:00 y las 8:00 am."
+                    },
+                    {
+                        "idrespuesta": 3,
+                        "respuesta": "Despues de las 10:00 am."
+                    },
+                    {
+                        "idrespuesta": 4,
+                        "respuesta": "Nunca"
+                    }
+                ]
+            },
+            {
+                "idpregunta": "2",
+                "pregunta": "2> ¿El proceso de votación se detuvo más de 15 minutos en alguna mesa por fallas en las máquinas de votación?",
+                "idrespuesta": 2,
+                "respuesta": "No",
+                "comentario": "Falta Pregunta 2",
+                "respuestas": [
+                    {
+                        "idrespuesta": 1,
+                        "respuesta": "Si"
+                    },
+                    {
+                        "idrespuesta": 2,
+                        "respuesta": "No"
+                    }
+                ]
+            },
+            {
+                "idpregunta": "3",
+                "pregunta": "3> ¿En su Centro se efectuó el reemplazo de alguna máquina dañada? ",
+                "idrespuesta": 2,
+                "respuesta": "No",
+                "comentario": "Falta Pregunta 3",
+                "respuestas": [
+                    {
+                        "idrespuesta": 1,
+                        "respuesta": "Si"
+                    },
+                    {
+                        "idrespuesta": 2,
+                        "respuesta": "No"
+                    },
+                    {
+                        "idrespuesta": 3,
+                        "respuesta": "No hubo maquinas dañadas"
+                    }
+                ]
+            },
+            {
+                "idpregunta": "4",
+                "pregunta": "4> ¿En alguna mesa de su Centro el Proceso de Votación se pasó a Voto Manual?",
+                "idrespuesta": 2,
+                "respuesta": "No",
+                "comentario": "Falta Pregunta 4",
+                "respuestas": [
+                    {
+                        "idrespuesta": 1,
+                        "respuesta": "Si"
+                    },
+                    {
+                        "idrespuesta": 2,
+                        "respuesta": "No"
+                    }
+                ]
+            }
+        ]
+        
+    },
     "estados" : [
         { "id": "0", "name": "Seleccione Estado" },
         { "id": "00", "name": "Venezuela" },

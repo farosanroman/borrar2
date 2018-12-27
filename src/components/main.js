@@ -11,6 +11,7 @@ import Personas from  '../components/personas'
 import Ficha from  '../components/ficha'
 import MapBox from  '../components/map'
 import Geo from  '../components/geo'
+import GeoModelo from  '../components/geomodelo'
 
 import FaroBot from  '../components/farobot'
 import About from  '../components/about'
@@ -78,6 +79,7 @@ onSetEstado = (id,nombreestado) => {
             <Route path="/youtube" component={YouTube}/>
             {flagLogin&&<Route path="/map" component={MapBox}/>}
             <Route path="/geo" component={()=><Geo />}/>  
+            <Route path="/geomodelo" component={()=><GeoModelo />}/>  
             <Route path="/ficha"  component={()=><Ficha />}/>         
             {flagLogin&& <Route path="/personas" component={Personas}/>}
             <Route path="/farobot" component={FaroBot}/>

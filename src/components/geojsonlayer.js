@@ -12,8 +12,7 @@ const Map = MapGL({
 });
 
 
-let centro=[-66.813312,7.064872]
-let zoom=[5]
+
  const circleLayout= MapGL.CircleLayout = { visibility: 'visible' };
 const circlePaint= MapGL.CirclePaint = {
   'circle-color': 'black'
@@ -40,17 +39,23 @@ class GeoJsonLayer extends Component {
     this.state={
       nodos:[],
       comentario:"comentario",      
-      center:centro,
-      zoom:zoom,
+      center:props.center,
+      zoom:props.zoom,
       error:null,
       isLoading:false,
-      geojson:props.geojson   
-      
+      geojson:props.geojson,   
+      centros:props.centros,
+      centrospoli:props.centrospoli
     }
     
     this.onMapClick = this.onMapClick.bind(this)
     //this.onChangeEstrato=this.onChangeEstrato.bind(this)  
   }
+  //componentDidMount() {
+  //  this.setState({geojson:this.props.geojson,centrospoli:this.props.centrospoli,centros:this.props.centros })
+  //  console.log('componentDidMount')
+  //  console.log(this.props.centrospoli)
+ // }
   onMapClick(evt) {
      console.log("evt evt evt evt evt")
      console.log(evt.features[0].properties)
@@ -75,16 +80,20 @@ class GeoJsonLayer extends Component {
     });
     getPolygonPaint = (color) => (MapGL.FillPaint = {
       'fill-color': color,
-      'fill-opacity': 0.1,
+      'fill-opacity': 0.3,
      
     });
     render() {
      
       //const { styleKey } = this.state;
     //const {zoom,center } = this.state;
-    let {zoom,center,geojson,error,isLoading} = this.state;
-    geojson=this.props.geojson
-     
+    let {zoom,center,centros,centrospoli,error,isLoading} = this.state;
+    let geojson=this.props.geojson
+    console.log('centros')
+    console.log(centros)
+    console.log(centrospoli)
+    //console.log(this.props.geojson)
+        
   
     if (error) {
     return <p>{error.message}</p>;
@@ -109,6 +118,15 @@ class GeoJsonLayer extends Component {
     //console.log({geoJSON})
          let sanroman=[{id:1,nombre:"San Roman"}]
          //var roman={id:1,nombre:"San Roman"}
+         let i=0;
+         const muestraazul=this.props.centrospoli.map(cv=>{     
+         i+=1;
+            return(
+              <Feature key={i} properties={cv}   coordinates={[cv.lng,cv.lat]} 
+             />
+        )     
+     })   
+        //console.log(muestraazul)
         return(
         <div>
         <Map        
@@ -116,7 +134,7 @@ class GeoJsonLayer extends Component {
           style="mapbox://styles/mapbox/light-v9"
           center={center} 
           zoom={zoom}
-          containerStyle={{height: "70vh",width: "70vw"}}        
+          containerStyle={{height: "50vh",width: "50vw"}}        
           
         > 
          <Layer type="symbol" id="marker" layout={{ 'icon-image': 'londonCycle' }} images={images}>
@@ -142,6 +160,10 @@ class GeoJsonLayer extends Component {
           symbolLayout={symbolLayout}
           symbolPaint={symbolPaint}
         />
+        <Layer type="circle" radius={250} color={ 'green'} fillColor= 'green' 
+         fillOpacity= {0.5} paint={this.getCirclePaint('blue')}> 
+        {muestraazul}
+     </Layer> 
           <ZoomControl position={"bottomRight"} />
           </Map>
 

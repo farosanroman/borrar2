@@ -7,6 +7,8 @@ class Geo extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
+      center:[-66.45286,10.3],
+      zoom:[8],
      error:null,
       isLoading:false,
       geojson:[],
@@ -17,13 +19,13 @@ class Geo extends React.Component {
   } 
   
   componentDidMount() {
-    console.log("componentDidMount")
+    console.log("geo componentDidMount")
     console.log(this.state.geojson)
     this.setState({ isLoading: true });
     //alert(this.props.idestado+" "+this.props.idformulario)
    // alert(JSON.stringify(this.props.formulario))
     var url="https://f18.azurewebsites.net/api/GeoJSONGet?code=71Esf7JNvNa2WkN5beemvAEXhK0GhAmrSoTZaMHpKKNn9mDrhxFKdw=="
-    //url="https://f18.azurewebsites.net/api/GeoMunJSONGet?code=K39ClZV7YrIxt74EO1Ueryk6ZKaevDxu32ys4OW/D3qnNhawd4WFBA==&id=13"
+    url="https://f18.azurewebsites.net/api/GeoMunJSONGet?code=K39ClZV7YrIxt74EO1Ueryk6ZKaevDxu32ys4OW/D3qnNhawd4WFBA==&id=13"
     //console.log(url)
     fetch(url)
     .then(response => {
@@ -69,9 +71,9 @@ class Geo extends React.Component {
     if (isLoading) {
         return <p>Loading ...</p>;
       }
-      const {geojson,error,isLoading,COD_ESTADO,ESTADO } = this.state;
-     // console.log("render geo")
-     //console.log(geojson)
+      const {center, zoom,geojson,error,isLoading,COD_ESTADO,ESTADO } = this.state;
+     console.log("render geo")
+     console.log(geojson)
       
     //alert(JSON.stringify(formItems[0].items[2].items))
     return(
@@ -80,7 +82,7 @@ class Geo extends React.Component {
           <h3>
              <span  className="badge badge-secondary">{COD_ESTADO+" "+ESTADO}</span>
           </h3>
-        <GeoJsonLayer geojson={geojson} onsetgeojson={this.onSetGeoJson} />
+        <GeoJsonLayer geojson={geojson} centros={[]} center={center} zoom={zoom} onsetgeojson={this.onSetGeoJson} />
       </div>
       )
     }

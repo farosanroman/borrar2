@@ -2,6 +2,800 @@
 
 
 {
+    "E01":
+    [
+        {
+            "id": 3008,
+            "codigocanonicocne": "01011304000",
+            "nombre": "(***) AMBULATORIO DOCTOR PASTOR OROPEZA",
+            "nombregenerico": "Centro",
+            "electores": 1303,
+            "muestra": 1,
+            "lng": -66.8915,
+            "lat": 10.514
+        },
+        {
+            "id": 3138,
+            "codigocanonicocne": "01011602300",
+            "nombre": "(***) CASA COMUNAL LOS MUJICAS",
+            "nombregenerico": "Centro",
+            "electores": 398,
+            "muestra": 1,
+            "lng": -67.022,
+            "lat": 10.4144
+        },
+        {
+            "id": 2813,
+            "codigocanonicocne": "01011017500",
+            "nombre": "(***) CASA DE LA SALUD RIO CARIBE",
+            "nombregenerico": "Centro",
+            "electores": 931,
+            "muestra": 1,
+            "lng": -66.9788,
+            "lat": 10.5115
+        },
+        {
+            "id": 2975,
+            "codigocanonicocne": "01011300100",
+            "nombre": "(***) CENTRO AMBULATORIO DOCTOR DILIO SEQUERA PERAZA INSTITUTO VENEZOLANO DE LOS SEGUROS SOCIALES",
+            "nombregenerico": "Centro",
+            "electores": 1024,
+            "muestra": 1,
+            "lng": -66.89446,
+            "lat": 10.5054
+        },
+        {
+            "id": 2765,
+            "codigocanonicocne": "01011010500",
+            "nombre": "(***) CENTRO DE CAPACITACION ISAIAS MEDINA ANGARITA",
+            "nombregenerico": "Centro",
+            "electores": 2089,
+            "muestra": 1,
+            "lng": -66.9617,
+            "lat": 10.5131
+        },
+        {
+            "id": 2888,
+            "codigocanonicocne": "01011103900",
+            "nombre": "(***) CENTRO DE EDUCACION INICIAL CAJIGAL",
+            "nombregenerico": "Centro",
+            "electores": 432,
+            "muestra": 1,
+            "lng": -66.93491,
+            "lat": 10.50539
+        },
+        {
+            "id": 3340,
+            "codigocanonicocne": "01012204400",
+            "nombre": "(***) CENTRO DE EDUCACION INICIAL CARMEN SALLES",
+            "nombregenerico": "Centro",
+            "electores": 476,
+            "muestra": 1,
+            "lng": -66.94894,
+            "lat": 10.47771
+        },
+        {
+            "id": 3030,
+            "codigocanonicocne": "01011401700",
+            "nombre": "(***) CENTRO DE EDUCACION INICIAL CECILIA PIMENTEL",
+            "nombregenerico": "Centro",
+            "electores": 1990,
+            "muestra": 1,
+            "lng": -66.91042,
+            "lat": 10.47258
+        },
+        {
+            "id": 3040,
+            "codigocanonicocne": "01011402800",
+            "nombre": "(***) CENTRO DE EDUCACION INICIAL EL PARAISO",
+            "nombregenerico": "Centro",
+            "electores": 922,
+            "muestra": 1,
+            "lng": -66.91667,
+            "lat": 10.45763
+        },
+        {
+            "id": 2472,
+            "codigocanonicocne": "01010101000",
+            "nombre": "(***) CENTRO DE EDUCACION INICIAL RAFAEL MARIA BARALT",
+            "nombregenerico": "Centro",
+            "electores": 1412,
+            "muestra": 1,
+            "lng": -66.91158,
+            "lat": 10.52059
+        },
+        {
+            "id": 2804,
+            "codigocanonicocne": "01011016300",
+            "nombre": "(***) CENTRO DE ORIENTACION PEDAGOGICA ANDRES ELOY BLANCO I",
+            "nombregenerico": "Centro",
+            "electores": 460,
+            "muestra": 1,
+            "lng": -66.94837,
+            "lat": 10.5138
+        },
+        {
+            "id": 3100,
+            "codigocanonicocne": "01011502900",
+            "nombre": "(***) CENTRO DE SERVICIO COMUNAL EL MILAGRO",
+            "nombregenerico": "Centro",
+            "electores": 427,
+            "muestra": 1,
+            "lng": -66.94413,
+            "lat": 10.46069
+        },
+        {
+            "id": 2901,
+            "codigocanonicocne": "01011105600",
+            "nombre": "(***) CENTRO FAMILIAR DEPORTIVO Y CULTURAL LA CA?ADA",
+            "nombregenerico": "Centro",
+            "electores": 376,
+            "muestra": 1,
+            "lng": -66.93078,
+            "lat": 10.51123
+        },
+        {
+            "id": 3187,
+            "codigocanonicocne": "01011704900",
+            "nombre": "(***) CENTRO MUNICIPAL DE ATENCION INTEGRAL (CMAI CARICUAO",
+            "nombregenerico": "Centro",
+            "electores": 457,
+            "muestra": 1,
+            "lng": -66.99419,
+            "lat": 10.43637
+        },
+        {
+            "id": 2885,
+            "codigocanonicocne": "01011103600",
+            "nombre": "(***) CENTRO MUNICIPAL DE ATENCION INTEGRAL CMAI",
+            "nombregenerico": "Centro",
+            "electores": 1048,
+            "muestra": 1,
+            "lng": -66.94586,
+            "lat": 10.50283
+        },
+        {
+            "id": 3015,
+            "codigocanonicocne": "01011305500",
+            "nombre": "(***) COLEGIO UNIVERSITARIO DE CARACAS",
+            "nombregenerico": "Centro",
+            "electores": 873,
+            "muestra": 1,
+            "lng": -66.86975,
+            "lat": 10.496
+        },
+        {
+            "id": 2910,
+            "codigocanonicocne": "01011200100",
+            "nombre": "(***) COMPLEJO HOSPITALARIO JOSE IGNACIA BALDO.",
+            "nombregenerico": "Centro",
+            "electores": 970,
+            "muestra": 1,
+            "lng": -66.96924,
+            "lat": 10.47713
+        },
+        {
+            "id": 3145,
+            "codigocanonicocne": "01011603400",
+            "nombre": "(***) DESARROLLO URBANISTICO MACARAO",
+            "nombregenerico": "Centro",
+            "electores": 870,
+            "muestra": 1,
+            "lng": -67.01219,
+            "lat": 10.43282
+        },
+        {
+            "id": 2632,
+            "codigocanonicocne": "01010802200",
+            "nombre": "(***) EDIFICIO PANAMA COMPLEJO GRAN COLOMBIA",
+            "nombregenerico": "Centro",
+            "electores": 1542,
+            "muestra": 1,
+            "lng": -66.90921,
+            "lat": 10.47788
+        },
+        {
+            "id": 2940,
+            "codigocanonicocne": "01011203700",
+            "nombre": "(***) ESCUELA BASICA DISTRITAL BOLIVARIANA JUAN BAUTISTA ARISMENDI",
+            "nombregenerico": "Centro",
+            "electores": 1636,
+            "muestra": 1,
+            "lng": -66.99071,
+            "lat": 10.45874
+        },
+        {
+            "id": 3093,
+            "codigocanonicocne": "01011502100",
+            "nombre": "(***) ESCUELA BASICA NACIONAL AMANDA DE SCHNELL",
+            "nombregenerico": "Centro",
+            "electores": 6781,
+            "muestra": 1,
+            "lng": -66.94609,
+            "lat": 10.46941
+        },
+        {
+            "id": 3349,
+            "codigocanonicocne": "01012205500",
+            "nombre": "(***) ESCUELA BASICA NACIONAL BARRIO GUZMAN BLANCO",
+            "nombregenerico": "Centro",
+            "electores": 865,
+            "muestra": 1,
+            "lng": -66.91911,
+            "lat": 10.48921
+        },
+        {
+            "id": 2807,
+            "codigocanonicocne": "01011016900",
+            "nombre": "(***) ESCUELA BASICA NACIONAL ESPA?A",
+            "nombregenerico": "Centro",
+            "electores": 5127,
+            "muestra": 1,
+            "lng": -66.9527,
+            "lat": 10.5158
+        },
+        {
+            "id": 3101,
+            "codigocanonicocne": "01011503000",
+            "nombre": "(***) ESCUELA BASICA NACIONAL JOSE VINICIO ADAMES PI?ERO",
+            "nombregenerico": "Centro",
+            "electores": 4753,
+            "muestra": 1,
+            "lng": -66.95063,
+            "lat": 10.45358
+        },
+        {
+            "id": 3112,
+            "codigocanonicocne": "01011504400",
+            "nombre": "(***) ESCUELA BOLIVARIANA NACIONAL SIMON RODRIGUEZ",
+            "nombregenerico": "Centro",
+            "electores": 1468,
+            "muestra": 1,
+            "lng": -66.95782,
+            "lat": 10.44723
+        },
+        {
+            "id": 2698,
+            "codigocanonicocne": "01011003100",
+            "nombre": "(***) ESCUELA GRADUADA GRACIELA NAVAS TOVAR",
+            "nombregenerico": "Centro",
+            "electores": 3771,
+            "muestra": 1,
+            "lng": -66.98138,
+            "lat": 10.52868
+        },
+        {
+            "id": 2913,
+            "codigocanonicocne": "01011200600",
+            "nombre": "(***) ESCUELA GRADUADA GUADALUPE ALFONSO FALERO",
+            "nombregenerico": "Centro",
+            "electores": 2753,
+            "muestra": 1,
+            "lng": -66.97527,
+            "lat": 10.47538
+        },
+        {
+            "id": 2703,
+            "codigocanonicocne": "01011003600",
+            "nombre": "(***) ESCUELA NACIONAL AMERICA",
+            "nombregenerico": "Centro",
+            "electores": 648,
+            "muestra": 1,
+            "lng": -66.94376,
+            "lat": 10.51405
+        },
+        {
+            "id": 2654,
+            "codigocanonicocne": "01010805000",
+            "nombre": "(***) ESCUELA SANTA TERESITA DEL NI?O JESUS",
+            "nombregenerico": "Centro",
+            "electores": 480,
+            "muestra": 1,
+            "lng": -66.9171,
+            "lat": 10.48341
+        },
+        {
+            "id": 2773,
+            "codigocanonicocne": "01011011400",
+            "nombre": "(***) ESCUELA TECNICA  INDUSTRIAL ROBINSONIANA RAFAEL VEGAS",
+            "nombregenerico": "Centro",
+            "electores": 2149,
+            "muestra": 1,
+            "lng": -66.96076,
+            "lat": 10.50797
+        },
+        {
+            "id": 3332,
+            "codigocanonicocne": "01012203000",
+            "nombre": "(***) ESCUELA TECNICA INDUSTRIAL JOSE DE SAN MARTIN",
+            "nombregenerico": "Centro",
+            "electores": 1865,
+            "muestra": 1,
+            "lng": -66.9451,
+            "lat": 10.49097
+        },
+        {
+            "id": 2728,
+            "codigocanonicocne": "01011006500",
+            "nombre": "(***) ESCUELA TECNICA INDUSTRIAL JULIO CALCA?O",
+            "nombregenerico": "Centro",
+            "electores": 2246,
+            "muestra": 1,
+            "lng": -66.95432,
+            "lat": 10.51116
+        },
+        {
+            "id": 2496,
+            "codigocanonicocne": "01010300100",
+            "nombre": "(***) INSTITUTO CICLO DIVERSIFICADO FERMIN TORO",
+            "nombregenerico": "Centro",
+            "electores": 8487,
+            "muestra": 1,
+            "lng": -66.91917,
+            "lat": 10.50595
+        },
+        {
+            "id": 3013,
+            "codigocanonicocne": "01011305200",
+            "nombre": "(***) INSTITUTO NACIONAL DE SERVICIOS SOCIALES",
+            "nombregenerico": "Centro",
+            "electores": 3856,
+            "muestra": 1,
+            "lng": -66.87613,
+            "lat": 10.49547
+        },
+        {
+            "id": 3076,
+            "codigocanonicocne": "01011500300",
+            "nombre": "(***) JARDIN DE INFANCIA BOLIVARIANO LA VEGA",
+            "nombregenerico": "Centro",
+            "electores": 932,
+            "muestra": 1,
+            "lng": -66.94836,
+            "lat": 10.46766
+        },
+        {
+            "id": 2508,
+            "codigocanonicocne": "01010400600",
+            "nombre": "(***) JARDIN DE INFANCIA DOCTORA  CARMEN VERONICA COELLO",
+            "nombregenerico": "Centro",
+            "electores": 839,
+            "muestra": 1,
+            "lng": -66.92969,
+            "lat": 10.52218
+        },
+        {
+            "id": 2860,
+            "codigocanonicocne": "01011100700",
+            "nombre": "(***) JARDIN DE INFANCIA LEONCIO MARTINEZ",
+            "nombregenerico": "Centro",
+            "electores": 1005,
+            "muestra": 1,
+            "lng": -66.92545,
+            "lat": 10.51031
+        },
+        {
+            "id": 3091,
+            "codigocanonicocne": "01011501800",
+            "nombre": "(***) JUNTA PARROQUIAL LA VEGA",
+            "nombregenerico": "Centro",
+            "electores": 852,
+            "muestra": 1,
+            "lng": -66.94799,
+            "lat": 10.47088
+        },
+        {
+            "id": 2487,
+            "codigocanonicocne": "01010201000",
+            "nombre": "(***) LICEO ANDRES BELLO",
+            "nombregenerico": "Centro",
+            "electores": 13052,
+            "muestra": 1,
+            "lng": -66.9034,
+            "lat": 10.50129
+        },
+        {
+            "id": 3325,
+            "codigocanonicocne": "01012202300",
+            "nombre": "(***) LICEO BOLIVARIANO ANTONIO MU?OZ TEBAR",
+            "nombregenerico": "Centro",
+            "electores": 3134,
+            "muestra": 1,
+            "lng": -66.94372,
+            "lat": 10.49177
+        },
+        {
+            "id": 3025,
+            "codigocanonicocne": "01011401000",
+            "nombre": "(***) LICEO BOLIVARIANO JOSE AVALOS",
+            "nombregenerico": "Centro",
+            "electores": 8603,
+            "muestra": 1,
+            "lng": -66.91077,
+            "lat": 10.46314
+        },
+        {
+            "id": 2513,
+            "codigocanonicocne": "01010401400",
+            "nombre": "(***) LICEO BOLIVARIANO LINO GALLARDO",
+            "nombregenerico": "Centro",
+            "electores": 4434,
+            "muestra": 1,
+            "lng": -66.91844,
+            "lat": 10.52098
+        },
+        {
+            "id": 2524,
+            "codigocanonicocne": "01010402800",
+            "nombre": "(***) LICEO BOLIVARIANO PERU DE LA CROIX",
+            "nombregenerico": "Centro",
+            "electores": 3773,
+            "muestra": 1,
+            "lng": -66.9276,
+            "lat": 10.5183
+        },
+        {
+            "id": 3071,
+            "codigocanonicocne": "01011406400",
+            "nombre": "(***) LICEO ECOLOGICO NACIONAL BOLIVARIANO GENERAL EN JEFE ALBERTO MULLER ROJAS",
+            "nombregenerico": "Centro",
+            "electores": 7070,
+            "muestra": 1,
+            "lng": -66.91053,
+            "lat": 10.45191
+        },
+        {
+            "id": 3039,
+            "codigocanonicocne": "01011402700",
+            "nombre": "(***) PREESCOLAR NACIONAL CALIXTO SUAREZ GOMEZ",
+            "nombregenerico": "Centro",
+            "electores": 698,
+            "muestra": 1,
+            "lng": -66.91836,
+            "lat": 10.45986
+        },
+        {
+            "id": 2714,
+            "codigocanonicocne": "01011005000",
+            "nombre": "(***) PREESCOLAR SANTA RITA",
+            "nombregenerico": "Centro",
+            "electores": 988,
+            "muestra": 1,
+            "lng": -66.97048,
+            "lat": 10.49396
+        },
+        {
+            "id": 2502,
+            "codigocanonicocne": "01010300800",
+            "nombre": "(***) TORRE EL CHORRO",
+            "nombregenerico": "Centro",
+            "electores": 408,
+            "muestra": 1,
+            "lng": -66.91235,
+            "lat": 10.50332
+        },
+        {
+            "id": 3273,
+            "codigocanonicocne": "01012001400",
+            "nombre": "(***) UNIDA EDUCATIVA COLEGIO LAS ACACIAS",
+            "nombregenerico": "Centro",
+            "electores": 4114,
+            "muestra": 1,
+            "lng": -66.90084,
+            "lat": 10.48363
+        },
+        {
+            "id": 3270,
+            "codigocanonicocne": "01012001100",
+            "nombre": "(***) UNIDAD EDUCATIVA BOLIVARIANA DOCTOR NICOLAS JOSE MENDIBLE",
+            "nombregenerico": "Centro",
+            "electores": 1252,
+            "muestra": 1,
+            "lng": -66.89945,
+            "lat": 10.48023
+        },
+        {
+            "id": 2725,
+            "codigocanonicocne": "01011006200",
+            "nombre": "(***) UNIDAD EDUCATIVA BOLIVARIANA JOSE GERVASIO ARTIGAS",
+            "nombregenerico": "Centro",
+            "electores": 2283,
+            "muestra": 1,
+            "lng": -66.95975,
+            "lat": 10.50745
+        },
+        {
+            "id": 2501,
+            "codigocanonicocne": "01010300600",
+            "nombre": "(***) UNIDAD EDUCATIVA COLEGIO AVILA",
+            "nombregenerico": "Centro",
+            "electores": 2471,
+            "muestra": 1,
+            "lng": -66.91151,
+            "lat": 10.50247
+        },
+        {
+            "id": 2803,
+            "codigocanonicocne": "01011016100",
+            "nombre": "(***) UNIDAD EDUCATIVA COLEGIO CRISTO REDENTOR",
+            "nombregenerico": "Centro",
+            "electores": 1718,
+            "muestra": 1,
+            "lng": -66.9724,
+            "lat": 10.492
+        },
+        {
+            "id": 2633,
+            "codigocanonicocne": "01010802500",
+            "nombre": "(***) UNIDAD EDUCATIVA COLEGIO GRAN COLOMBIA",
+            "nombregenerico": "Centro",
+            "electores": 5704,
+            "muestra": 1,
+            "lng": -66.90921,
+            "lat": 10.47788
+        },
+        {
+            "id": 2707,
+            "codigocanonicocne": "01011004100",
+            "nombre": "(***) UNIDAD EDUCATIVA COLEGIO LA SANTISIMA TRINIDAD",
+            "nombregenerico": "Centro",
+            "electores": 3556,
+            "muestra": 1,
+            "lng": -66.9484,
+            "lat": 10.5182
+        },
+        {
+            "id": 2630,
+            "codigocanonicocne": "01010802000",
+            "nombre": "(***) UNIDAD EDUCATIVA COLEGIO SANTA LUISA N? 76",
+            "nombregenerico": "Centro",
+            "electores": 3545,
+            "muestra": 1,
+            "lng": -66.908,
+            "lat": 10.48119
+        },
+        {
+            "id": 2475,
+            "codigocanonicocne": "01010102700",
+            "nombre": "(***) UNIDAD EDUCATIVA DISTRITAL ANTONIO ORNES",
+            "nombregenerico": "Centro",
+            "electores": 1475,
+            "muestra": 1,
+            "lng": -66.91193,
+            "lat": 10.52157
+        },
+        {
+            "id": 3075,
+            "codigocanonicocne": "01011500200",
+            "nombre": "(***) UNIDAD EDUCATIVA DISTRITAL BERMUDEZ",
+            "nombregenerico": "Centro",
+            "electores": 4977,
+            "muestra": 1,
+            "lng": -66.94839,
+            "lat": 10.46747
+        },
+        {
+            "id": 2873,
+            "codigocanonicocne": "01011102200",
+            "nombre": "(***) UNIDAD EDUCATIVA DISTRITAL PREESCOLAR LA LIBERTAD",
+            "nombregenerico": "Centro",
+            "electores": 1957,
+            "muestra": 1,
+            "lng": -66.92886,
+            "lat": 10.51009
+        },
+        {
+            "id": 2532,
+            "codigocanonicocne": "01010403700",
+            "nombre": "(***) UNIDAD EDUCATIVA DISTRITAL URDANETA",
+            "nombregenerico": "Centro",
+            "electores": 1167,
+            "muestra": 1,
+            "lng": -66.91825,
+            "lat": 10.51421
+        },
+        {
+            "id": 2934,
+            "codigocanonicocne": "01011203000",
+            "nombre": "(***) UNIDAD EDUCATIVA GENERAL CRUZ CARRILLO",
+            "nombregenerico": "Centro",
+            "electores": 1240,
+            "muestra": 1,
+            "lng": -66.98379,
+            "lat": 10.4617
+        },
+        {
+            "id": 2979,
+            "codigocanonicocne": "01011300500",
+            "nombre": "(***) UNIDAD EDUCATIVA INICIAL MI DULCE REFUGIO",
+            "nombregenerico": "Centro",
+            "electores": 1631,
+            "muestra": 1,
+            "lng": -66.89073,
+            "lat": 10.50785
+        },
+        {
+            "id": 2951,
+            "codigocanonicocne": "01011205100",
+            "nombre": "(***) UNIDAD EDUCATIVA INTEGRAL PADRE MANUEL MARIA DE AGUILAR",
+            "nombregenerico": "Centro",
+            "electores": 588,
+            "muestra": 1,
+            "lng": -66.98071,
+            "lat": 10.4653
+        },
+        {
+            "id": 3079,
+            "codigocanonicocne": "01011500600",
+            "nombre": "(***) UNIDAD EDUCATIVA MARIA ANTONIA BOLIVAR",
+            "nombregenerico": "Centro",
+            "electores": 1966,
+            "muestra": 1,
+            "lng": -66.94892,
+            "lat": 10.4708
+        },
+        {
+            "id": 2734,
+            "codigocanonicocne": "01011007100",
+            "nombre": "(***) UNIDAD EDUCATIVA MARIA ROSA MOLAS FE Y ALEGRIA",
+            "nombregenerico": "Centro",
+            "electores": 2009,
+            "muestra": 1,
+            "lng": -66.95107,
+            "lat": 10.50875
+        },
+        {
+            "id": 3179,
+            "codigocanonicocne": "01011703600",
+            "nombre": "(***) UNIDAD EDUCATIVA MIREYA VANEGAS",
+            "nombregenerico": "Centro",
+            "electores": 3439,
+            "muestra": 1,
+            "lng": -66.97179,
+            "lat": 10.43407
+        },
+        {
+            "id": 3088,
+            "codigocanonicocne": "01011501500",
+            "nombre": "(***) UNIDAD EDUCATIVA NACIONAL APLICACION",
+            "nombregenerico": "Centro",
+            "electores": 4969,
+            "muestra": 1,
+            "lng": -66.96031,
+            "lat": 10.47292
+        },
+        {
+            "id": 2584,
+            "codigocanonicocne": "01010701200",
+            "nombre": "(***) UNIDAD EDUCATIVA NACIONAL BOLIVARIANA 25 DE JULIO.",
+            "nombregenerico": "Centro",
+            "electores": 5509,
+            "muestra": 1,
+            "lng": -66.92277,
+            "lat": 10.4992
+        },
+        {
+            "id": 2528,
+            "codigocanonicocne": "01010403200",
+            "nombre": "(***) UNIDAD EDUCATIVA NACIONAL BOLIVARIANA JOSE IGNACIO PAZ CASTILLO",
+            "nombregenerico": "Centro",
+            "electores": 1519,
+            "muestra": 1,
+            "lng": -66.91858,
+            "lat": 10.51948
+        },
+        {
+            "id": 2673,
+            "codigocanonicocne": "01011000100",
+            "nombre": "(***) UNIDAD EDUCATIVA NACIONAL FIDEL JESUS OROZCO",
+            "nombregenerico": "Centro",
+            "electores": 2969,
+            "muestra": 1,
+            "lng": -66.96723,
+            "lat": 10.53164
+        },
+        {
+            "id": 2580,
+            "codigocanonicocne": "01010700600",
+            "nombre": "(***) UNIDAD EDUCATIVA NACIONAL LOS EUCALIPTOS",
+            "nombregenerico": "Centro",
+            "electores": 1690,
+            "muestra": 1,
+            "lng": -66.935,
+            "lat": 10.4985
+        },
+        {
+            "id": 3097,
+            "codigocanonicocne": "01011502500",
+            "nombre": "(***) UNIDAD EDUCATIVA NACIONAL VICENTE EMILIO SOJO",
+            "nombregenerico": "Centro",
+            "electores": 5239,
+            "muestra": 1,
+            "lng": -66.94461,
+            "lat": 10.46133
+        },
+        {
+            "id": 3295,
+            "codigocanonicocne": "01012100700",
+            "nombre": "(***) UNIDAD EDUCATIVA NACIONAL VICENTE LANDAETA",
+            "nombregenerico": "Centro",
+            "electores": 2234,
+            "muestra": 1,
+            "lng": -66.90056,
+            "lat": 10.518
+        },
+        {
+            "id": 3109,
+            "codigocanonicocne": "01011504100",
+            "nombre": "(***) UNIDAD EDUCATIVA PRIVADA  ALMIRANTE LUIS BRION",
+            "nombregenerico": "Centro",
+            "electores": 690,
+            "muestra": 1,
+            "lng": -66.95193,
+            "lat": 10.44175
+        },
+        {
+            "id": 2760,
+            "codigocanonicocne": "01011010000",
+            "nombre": "(***) UNIDAD EDUCATIVA PRIVADA FEDERICO QUIROZ",
+            "nombregenerico": "Centro",
+            "electores": 2592,
+            "muestra": 1,
+            "lng": -66.94501,
+            "lat": 10.51639
+        },
+        {
+            "id": 2519,
+            "codigocanonicocne": "01010402200",
+            "nombre": "(***) UNIDAD EDUCATIVA SAN FRANCISCO JAVIER",
+            "nombregenerico": "Centro",
+            "electores": 3498,
+            "muestra": 1,
+            "lng": -66.92822,
+            "lat": 10.5194
+        },
+        {
+            "id": 2960,
+            "codigocanonicocne": "01011206000",
+            "nombre": "(***) UNIDAD EDUCATIVA SAN JOSE OBRERO FE Y ALEGRIA",
+            "nombregenerico": "Centro",
+            "electores": 762,
+            "muestra": 1,
+            "lng": -66.9875,
+            "lat": 10.46541
+        },
+        {
+            "id": 2500,
+            "codigocanonicocne": "01010300500",
+            "nombre": "(***) UNIDAD EDUCATIVA SAN RAFAEL DE PAGUITA",
+            "nombregenerico": "Centro",
+            "electores": 3269,
+            "muestra": 1,
+            "lng": -66.92204,
+            "lat": 10.50793
+        },
+        {
+            "id": 2974,
+            "codigocanonicocne": "01011209600",
+            "nombre": "(***) URBANISMO AMANATINA",
+            "nombregenerico": "Centro",
+            "electores": 288,
+            "muestra": 1,
+            "lng": 0,
+            "lat": 0
+        },
+        {
+            "id": 3292,
+            "codigocanonicocne": "01012100300",
+            "nombre": "(***) YMCA ASOCIACION CRISTIANA DE JOVENES",
+            "nombregenerico": "Centro",
+            "electores": 2397,
+            "muestra": 1,
+            "lng": -66.89639,
+            "lat": 10.51085
+        }
+    ]
+    ,
     "estados" : [
         { "id": "00", "name": "Venezuela" },
         { "id": "01", "name": "Distrito Capital" },
