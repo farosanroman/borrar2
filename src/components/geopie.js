@@ -18,27 +18,42 @@ import PieChart, {
       }
 
   render() {
-    const {respuestas } = this.state;
-   // console.log("render chart pies")
-   // console.log(index)
+    //const {respuestas } = this.state;
+    //console.log("render chart pies")
+    //console.log(this.props.centrospoli)
+   // console.logthis.pros.(index)
    // console.log(formulario)
    // console.log(respuestas)
    // console.log("render chart pies")
    
     var res=[
         {"cant":0,"respuesta":"steelblue"},
-    {"cant":0,"respuesta":"white"},{"cant":0,"respuesta":"yellow"},
-    {"cant":0,"respuesta":"orange"},{"cant":0,"respuesta":"mediumblue"},
+    {"cant":0,"respuesta":"white"},
+    {"cant":0,"respuesta":"yellow"},
+    {"cant":0,"respuesta":"orange"},
+    {"cant":0,"respuesta":"mediumblue"},
     ]
     
-    /*
-  if (tipo=='cant'){
-    for (var k = 0; k< formulario.preguntas[index].respuestas.length; ++k) {
-      res.push({cant:respuestas[k].cant,respuesta:formulario.preguntas[index].respuestas[k].respuesta})
-      //respuestas[k].respuesta=formulario.preguntas[index].respuestas[k].respuesta
+    const centrosp = this.props.centrospoli.filter(r => r.color !== 'sin');
+    //console.log(centrosp)
+    for (let i = 0; i < centrosp.length; ++i) {
+      if (centrosp[i].color=="steelblue"){
+        res[0].cant+=1;
+      }
+      if (centrosp[i].color=="white"){
+        res[1].cant+=1;
+      }
+      if (centrosp[i].color=="yellow"){
+        res[2].cant+=1;
+      }
+      if (centrosp[i].color=="orange"){
+        res[3].cant+=1;
+      }
+      if (centrosp[i].color=="mediumblue"){
+        res[4].cant+=1;
+      }
     }
-  }
-  */
+   
     return(
         <div>            
     <PieChart
