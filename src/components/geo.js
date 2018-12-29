@@ -82,7 +82,7 @@ class Geo extends React.Component {
           <h3>
              <span  className="badge badge-secondary">{COD_ESTADO+" "+ESTADO}</span>
           </h3>
-        <GeoJsonLayer geojson={geojson} centros={[]} center={center} zoom={zoom} onsetgeojson={this.onSetGeoJson} />
+        <GeoJsonLayer geojson={geojson} centrospoli={[]} centros={[]} center={center} zoom={zoom} onsetgeojson={this.onSetGeoJson} />
       </div>
       )
     }

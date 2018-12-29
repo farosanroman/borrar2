@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import MapGL,{Layer,Feature,ZoomControl} from 'react-mapbox-gl';
 //import Chart from './chart';
 import MapLayerMunicipios from './maplayermunicipios';
-import MapLayerCentros from './maplayercentros';
+//import MapLayerCentros from './maplayercentros';
 import MapLayerMuestra from './maplayermuestra';
 //import Formulario from './formulario';
 
@@ -95,14 +95,7 @@ onPClick = (e) => {
   this.setState({center:[-66.95286,8.8]})
 
 }
-onCClick = (e) => {
-  this.setState({flagMunicipios:false})
-  this.setState({flagParroquias:false})
-  this.setState({flagCentros:true})
-  this.setState({flagMuestra:false})
-  this.setState({zoom:[9]})
-  this.setState({center:[-66.65286,8.8]})
-}
+
 onMuestraClick = (e) => {
   //window.open("https://polidata.azurewebsites.net/#observacion?cedula=v3664204","_blank")
   
@@ -164,7 +157,7 @@ onMuestraClick = (e) => {
         <div>
         
         <Button onClick={this.onMClick}>Municipios</Button>
-        <Button onClick={this.onCClick}>Centros</Button>
+       
         <ButtonRed onClick={this.onMuestraClick}>Muestra</ButtonRed>
         
             <select ref="estratos" onChange={this.onChangeEstrato}>
@@ -188,7 +181,7 @@ onMuestraClick = (e) => {
         > 
         {flagMunicipios&&<MapLayerMunicipios></MapLayerMunicipios>}
         
-        {flagCentros&&<MapLayerCentros></MapLayerCentros>}
+       
         {flagMuestra&&<MapLayerMuestra propmuestra={this.state.muestra}
            propidestrato={this.state.idestrato} 
            proppopupinfo={this.state.popupInfo}

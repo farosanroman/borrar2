@@ -73,13 +73,7 @@ render() {
         <MapGeoJSONLayer key={geo.id} poligono={geo}/>
            )
      } )  
-    const municipiosf = this.state.nodos.filter(r => r.nivel === 5);
-      const municipios=municipiosf.map(cv=>{
-        return(
-           <Feature key={cv.id} popuptype={this.state.popupType} onMouseEnter={this.onFeatureMouseEnter} onClick={this.onFeatureClick}  coordinates={cv.latlng} 
-           />
-             )
-       } )  
+    
       return (
       <div className= "Popup">
    <Layer type="circle" radius={100} color={ 'green'} fillColor= 'green' 
