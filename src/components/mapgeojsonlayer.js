@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 //import {Layer,Feature} from 'react-mapbox-gl';
 import  MapboxGL, {Layer,Feature,GeoJSONLayer} from 'react-mapbox-gl';
+//NOTA iggual a geojsonlayer
 class MapGeoJSONLayer extends Component {
 constructor(props) {
   super(props);
