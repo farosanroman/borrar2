@@ -25,6 +25,7 @@ class Cursos extends Component {
                </CursoCard>
                  )
            } )
+           console.log(cursosreact)
         console.log(cursosreact)
         return (
             <div className="container-fluid" style={{marginLeft: '-15px'}}>
