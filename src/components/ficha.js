@@ -223,7 +223,8 @@ class Ficha extends React.Component {
       formItems:formItems,
       formdata: null,
       error:null,
-      isLoading:false
+      isLoading:false,
+      comentario:"sin verificar correo"
 
     };
     this.setForm2 = (ref) => {
@@ -232,6 +233,7 @@ class Ficha extends React.Component {
         }
      };
     this.onClick = this.onClick.bind(this);
+    this.verifyMail = this.verifyMail.bind(this);
   } 
   onSearch = (e) => {
     this.setState({ isLoading: true });
@@ -290,7 +292,7 @@ onSetResult = (result) => {
     
   
   };
-  this.setState({observador:result,formdata,isLoading:false})
+  this.setState({observador:result,formdata,isLoading:false,comentario:"sin verificacion de correo"})
   
   /*
   if (result.length>0){
@@ -312,7 +314,36 @@ onSetResult = (result) => {
 onClick(e){
     
   notify("En desarrollo", "error", 600);
-    //alert(JSON.stringify(this.form.option("formData")));
+    }
+  verifyMail(e){
+    
+    //notify("En desarrollo", "error", 600);
+    //alert(JSON.stringify(e))
+      var correo=this.form.option("formData").correo;
+      //alert(correo)
+      //alert(JSON.stringify(correo))
+      var url="http://nodechatbotjson.azurewebsites.net/mailverify?mail="+JSON.stringify(correo)
+      fetch(url)
+    .then(response => {
+      if (response.ok) {
+          //alert(JSON.stringify(response.json()))
+        return response.json();
+      } else {
+        throw new Error('Something went wrong ...');
+      }
+    })
+   .then(result => this.onSetResultVerify(result))
+   //.then(result => this.setState({roles:result,isLoading:false}))
+   .catch(error => this.setState({ error, isLoading: false }));
+    
+    }
+    onSetResultVerify = (result) => {
+      //alert(JSON.stringify(result))
+      //console.log("onSetResults")
+      //console.log(result)
+      //alert(JSON.stringify(result))
+      this.setState({ comentario: "correo valido" })
+      //console.log(this.state)
   }
   render() {
    
@@ -322,7 +353,7 @@ onClick(e){
     if (isLoading) {
         return <p>Loading ...</p>;
       }
-      const {observador,formItems, formdata,error,isLoading } = this.state;
+      const {observador,formItems, formdata,error,isLoading,comentario } = this.state;
      
       
     //alert(JSON.stringify(formItems[0].items[2].items))
@@ -330,7 +361,8 @@ onClick(e){
         <div>
          
           <h3>
-             <span  className="badge badge-secondary">{'Actualizacion de Partido en Observadores 9D'}</span>
+             <span  className="badge badge-secondary">{'Actualizacion de Observadores por el Partido'}</span>
+         
           </h3>
         <table><tr><td>
         
@@ -341,26 +373,36 @@ onClick(e){
           </label>
           <button type="submit">Buscar</button>
         </form>
-        </td></tr>
-        <tr><td>
+        </td>
+        <td>
+           <Button
+            text={"Registrar Orientacion Politica"}
+            onClick={this.onClick}
+            type='success'
+            stylingMode='outlined'
+          />
+           <Button
+            text={"Verificacion de Existencia de Correo"}
+            onClick={this.verifyMail}
+            type='default'
+            stylingMode={'text'}
+          />
+          </td>
+        </tr>
+        <tr><td colspan="2">
          
     <div className="d-flex flex-row">                    
       <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
         <div className="card-deck">
            <Form ref={this.setForm2} formData={formdata} items={formItems} />
-           <FichaGeo />
+           <FichaGeo comentario={comentario} />
+                    
      </div></div>
   
  </div>
-     
-           </td></tr>
-           <tr><td>
-           <Button
-            text={"Registrar Orientacion Politica"}
-            onClick={this.onClick}
-            type='success'
-          />
-          </td></tr></table>
+ </td></tr>
+          </table>
+          
       </div>
       )
     }
