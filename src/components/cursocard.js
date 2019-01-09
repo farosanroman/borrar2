@@ -23,8 +23,8 @@ class CursoCard extends Component {
     
     render() {
         
-        console.log("PROPS")
-        console.log(this.state.flag)
+        //console.log("PROPS")
+        //console.log(this.state.flag)
         //console.log({manual})
         
         if (this.state.flag === 1) {
