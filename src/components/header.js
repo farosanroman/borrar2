@@ -23,7 +23,7 @@ class Header extends Component {
         this.setState({
           isNavOpen: !this.state.isNavOpen
         });
-        alert('toggle')
+        //alert('toggle')
       }
   render() {
     let { flagLogin,flagMenu,flagMenu9D } = this.state;
